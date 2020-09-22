@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="FTI-xG-ojZ" customClass="SavedEntryFormCell" customModule="ForensiDoc" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="FTI-xG-ojZ" id="BXy-FJ-XKy">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="127.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vg7-RW-27u">
+                        <rect key="frame" x="13" y="13" width="299" height="20"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6J-OW-6GP">
+                        <rect key="frame" x="13" y="41" width="299" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="CLf-h8-2vZ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P38-Fg-eUJ">
+                        <rect key="frame" x="13" y="67" width="178" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="NEO-UL-1Ew"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" red="0.56459295749664307" green="0.5644456148147583" blue="0.58095484972000122" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atp-15-Zzr">
+                        <rect key="frame" x="258" y="65" width="54" height="54"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="54" id="Nkf-NL-eCi"/>
+                        </constraints>
+                        <state key="normal" image="Btn-Share">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="actionReportBtnTapped:" destination="FTI-xG-ojZ" eventType="touchUpInside" id="COh-R3-qH4"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WEA-Y0-wSs">
+                        <rect key="frame" x="196" y="65" width="54" height="54"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="54" id="A4t-zg-ztz"/>
+                        </constraints>
+                        <state key="normal" image="Btn-Report">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                        <connections>
+                            <action selector="generateRportTapped:" destination="FTI-xG-ojZ" eventType="touchUpInside" id="dJv-49-vBZ"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="atp-15-Zzr" firstAttribute="bottom" secondItem="BXy-FJ-XKy" secondAttribute="bottomMargin" id="2mq-ce-TI3"/>
+                    <constraint firstItem="Vg7-RW-27u" firstAttribute="trailing" secondItem="BXy-FJ-XKy" secondAttribute="trailingMargin" id="5Xu-5R-xL0"/>
+                    <constraint firstItem="Vg7-RW-27u" firstAttribute="leading" secondItem="BXy-FJ-XKy" secondAttribute="leadingMargin" constant="5" id="5eN-LS-OLL"/>
+                    <constraint firstItem="WEA-Y0-wSs" firstAttribute="baseline" secondItem="atp-15-Zzr" secondAttribute="baseline" id="KdV-0H-Qci"/>
+                    <constraint firstItem="atp-15-Zzr" firstAttribute="top" secondItem="WEA-Y0-wSs" secondAttribute="top" id="Mqo-Vd-xFv"/>
+                    <constraint firstItem="J6J-OW-6GP" firstAttribute="leading" secondItem="P38-Fg-eUJ" secondAttribute="leading" id="TPV-Hm-l39"/>
+                    <constraint firstItem="J6J-OW-6GP" firstAttribute="top" secondItem="Vg7-RW-27u" secondAttribute="bottom" constant="8" symbolic="YES" id="UcF-iy-h7z"/>
+                    <constraint firstItem="atp-15-Zzr" firstAttribute="firstBaseline" secondItem="WEA-Y0-wSs" secondAttribute="firstBaseline" id="VYF-ky-O2p"/>
+                    <constraint firstItem="J6J-OW-6GP" firstAttribute="trailing" secondItem="atp-15-Zzr" secondAttribute="trailing" id="XES-gX-ht6"/>
+                    <constraint firstItem="Vg7-RW-27u" firstAttribute="trailing" secondItem="J6J-OW-6GP" secondAttribute="trailing" id="f3Z-DW-w0w"/>
+                    <constraint firstItem="atp-15-Zzr" firstAttribute="leading" secondItem="WEA-Y0-wSs" secondAttribute="trailing" constant="8" symbolic="YES" id="gAJ-Al-I0X"/>
+                    <constraint firstItem="WEA-Y0-wSs" firstAttribute="leading" secondItem="P38-Fg-eUJ" secondAttribute="trailing" constant="5" id="iGb-X8-apq"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="P38-Fg-eUJ" secondAttribute="bottom" constant="36" id="p9Z-8d-pBE"/>
+                    <constraint firstItem="Vg7-RW-27u" firstAttribute="leading" secondItem="J6J-OW-6GP" secondAttribute="leading" id="r61-Xn-4fx"/>
+                    <constraint firstItem="P38-Fg-eUJ" firstAttribute="top" secondItem="J6J-OW-6GP" secondAttribute="bottom" constant="8" symbolic="YES" id="rlE-cL-yN0"/>
+                    <constraint firstItem="Vg7-RW-27u" firstAttribute="top" secondItem="BXy-FJ-XKy" secondAttribute="topMargin" constant="5" id="ruE-Ln-2ba"/>
+                    <constraint firstItem="WEA-Y0-wSs" firstAttribute="top" secondItem="J6J-OW-6GP" secondAttribute="bottom" constant="6" id="wTf-We-tF3"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="actionReportBtn" destination="atp-15-Zzr" id="9uy-Ve-9op"/>
+                <outlet property="generateReportBtn" destination="WEA-Y0-wSs" id="wc5-K8-8qU"/>
+                <outlet property="reportExtraInformation" destination="P38-Fg-eUJ" id="FUG-h5-PDt"/>
+                <outlet property="reportSubtitle" destination="J6J-OW-6GP" id="2X0-ov-YDs"/>
+                <outlet property="reportTitle" destination="Vg7-RW-27u" id="FSf-Y3-N8c"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Btn-Report" width="43" height="30"/>
+        <image name="Btn-Share" width="35" height="30"/>
+    </resources>
+</document>

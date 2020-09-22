@@ -1,0 +1,3274 @@
+{
+    "_comment_basetype": "Int, Float, String",
+    "_comment_field_types": "Radio, Checkbox, Textbox, Multiline, RadioWithOther, CheckboxWithOther, Drawing, Date, Time, DateAndTime, Calculated, MultipleEntry, Location",
+    "title": "Test ForensiDoc",
+    "save_display_title_pattern": "{given_name} {family_name} ({reference})",
+    "save_display_subtitle_pattern": "{location}",
+    "save_display_extra_details_pattern": "",
+    "formid": 123456789,
+    "report_template": "001",
+    "settings": [
+                 {
+                 "id": "header",
+                 "title": "Header",
+                 "type": "Multiline",
+                 "basetype": "String",
+                 "values": [
+                            {
+                            "title": "Text for header goes here",
+                            "value": "Text for header goes here"
+                            }
+                            ]
+                 },
+                 {
+                 "id": "footer",
+                 "title": "Footer",
+                 "type": "Multiline",
+                 "basetype": "String",
+                 "values": [
+                            {
+                            "title": "Text for footer goes here",
+                            "value": "Text for footer goes here"
+                            }
+                            ]
+                 },
+                 {
+                 "id": "professional_statement",
+                 "title": "Professional Statement",
+                 "type": "Multiline",
+                 "basetype": "String",
+                 "values": [
+                            {
+                            "title": "Text for professional statement goes here",
+                            "value": "Text for professional statement goes here"
+                            }
+                            ]
+                 }
+                 ],
+    "spec": {
+        "allowed_attachments": {
+            "images": true,
+            "audio": true,
+            "video": true,
+            "saved_video": true,
+            "drawings": {
+                "allowed": true,
+                "backgroundimages": [
+                                     {
+                                     "title": "Car",
+                                     "img": "CarPlan.jpg"
+                                     }
+                                     ],
+                "drawing_settings": {
+                    "color_settings": true,
+                    "eraser": true,
+                    "undo": true,
+                    "reset": true
+                }
+            }
+        },
+        "fields": [
+                   {
+                   "group": "Report Details",
+                   "id": "report_details",
+                   "fields": [
+                              {
+                              "id": "reference",
+                              "title": "Report Reference",
+                              "type": "Textbox",
+                              "basetype": "String",
+                              "placeholder": "Reference must contain alphanumeric _ and -",
+                              "required": true,
+                              "allowed_characters":"QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0123456789_-",
+                              "allowed_characters_error_message" : "Only alphanumeric characters _ and - are allowed!"
+                              },
+                              {
+                              "id": "date",
+                              "title": "Date",
+                              "type": "Date",
+                              "required": true,
+                              "basetype": "Double"
+                              },
+                              {
+                              "id": "arrival_time",
+                              "title": "Arrival Time",
+                              "type": "Time",
+                              "required": true,
+                              "basetype": "Double"
+                              },
+                              {
+                              "id": "type_of_assessment",
+                              "title": "Type of Assessment",
+                              "type": "Checkbox",
+                              "required": false,
+                              "comment": {
+                              "required": false
+                              },
+                              "basetype": "String",
+                              "values" : [
+                                          {
+                                          "title": "Healthcare Assessment",
+                                          "value": "Healthcare Assessment"
+                                          },
+                                          {
+                                          "title": "Injuries, Marks and Scars Assessment",
+                                          "value": "Injuries, Marks and Scars Assessment"
+                                          },
+                                          {
+                                          "title": "Location or Scene Assessment",
+                                          "value": "Location or Scene Assessment"
+                                          },
+                                          {
+                                          "title": "Scene of Death Assessment",
+                                          "value": "Scene of Death Assessment"
+                                          },
+                                          {
+                                          "title": "Miscellaneous",
+                                          "value": "Miscellaneous"
+                                          }
+                                          ]
+                              },
+                              {
+                              "id": "assessment_start_time",
+                              "title": "Assessment Start Time",
+                              "type": "Time",
+                              "required": true,
+                              "basetype": "Double"
+                              },
+                              {
+                              "id": "location",
+                              "title": "Location",
+                              "type": "Location",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "interpreter",
+                              "title": "Interpreter",
+                              "type": "Radio",
+                              "basetype": "String",
+                              "values": [
+                                         {
+                                         "title": "Yes",
+                                         "value": "Yes"
+                                         },
+                                         {
+                                         "title": "No",
+                                         "value": "No"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "chaperone",
+                              "title": "Chaperone",
+                              "type": "Radio",
+                              "basetype": "String",
+                              "comment": {
+                              "required": false
+                              },
+                              "values": [
+                                         {
+                                         "title": "Yes",
+                                         "value": "Yes"
+                                         },
+                                         {
+                                         "title": "No",
+                                         "value": "No"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "reason_for_assessment",
+                              "title": "Reason(s) for Assessment",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "time_of_incident",
+                              "title": "Time of Incident",
+                              "type": "Time",
+                              "required": true,
+                              "basetype": "Double"
+                              },
+                              {
+                              "id": "date_of_incident",
+                              "title": "Date of Incident",
+                              "type": "Date",
+                              "required": true,
+                              "basetype": "Double"
+                              }
+                              ]
+                   },
+                   {
+                   "group": "Consent",
+                   "id": "consent",
+                   "fields":[
+                             {
+                             "id": "consent_to_examination",
+                             "title": "Consent to examination",
+                             "type": "Radio",
+                             "required": true,
+                             "basetype": "String",
+                             "comment": {
+                             "required": false
+                             },
+                             "values": [
+                                        {
+                                        "title": "Yes",
+                                        "value": "Yes"
+                                        },
+                                        {
+                                        "title": "No",
+                                        "value": "No"
+                                        }
+                                        ]
+                             },
+                             {
+                             "id": "consent_to_taking_images",
+                             "title": "Consent to taking images",
+                             "type": "Radio",
+                             "required": true,
+                             "basetype": "String",
+                             "comment": {
+                             "required": false
+                             },
+                             "values": [
+                                        {
+                                        "title": "Yes",
+                                        "value": "Yes"
+                                        },
+                                        {
+                                        "title": "No",
+                                        "value": "No"
+                                        }
+                                        ]
+                             },
+                             {
+                             "id": "consent_to_taking_evidential_samples",
+                             "title": "Consent to taking evidential samples",
+                             "type": "Radio",
+                             "required": true,
+                             "basetype": "String",
+                             "comment": {
+                             "required": false
+                             },
+                             "values": [
+                                        {
+                                        "title": "Yes",
+                                        "value": "Yes"
+                                        },
+                                        {
+                                        "title": "No",
+                                        "value": "No"
+                                        }
+                                        ]
+                             },
+                             {
+                             "id": "consent_to_providing_a_report",
+                             "title": "Consent to providing a report",
+                             "type": "Radio",
+                             "required": true,
+                             "basetype": "String",
+                             "comment": {
+                             "required": false
+                             },
+                             "values": [
+                                        {
+                                        "title": "Yes",
+                                        "value": "Yes"
+                                        },
+                                        {
+                                        "title": "No",
+                                        "value": "No"
+                                        }
+                                        ]
+                             },
+                             {
+                             "id": "consent_to_disclose_medical_records",
+                             "title": "Consent to disclose medical records",
+                             "type": "Radio",
+                             "required": true,
+                             "basetype": "String",
+                             "comment": {
+                             "required": false
+                             },
+                             "values": [
+                                        {
+                                        "title": "Yes",
+                                        "value": "Yes"
+                                        },
+                                        {
+                                        "title": "No",
+                                        "value": "No"
+                                        }
+                                        ]
+                             }
+                             ]
+                   },
+                   {
+                   "group": "Examinee Details",
+                   "id": "personal_details",
+                   "fields": [
+                              {
+                              "id": "given_name",
+                              "title": "Given Names",
+                              "type": "Textbox",
+                              "required": true,
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "family_name",
+                              "title": "Family Name",
+                              "type": "Textbox",
+                              "required": true,
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "other_name",
+                              "title": "Other Names",
+                              "type": "Textbox",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "date_of_birth",
+                              "title": "Date of Birth",
+                              "type": "Date",
+                              "required": true,
+                              "basetype": "Double"
+                              },
+                              {
+                              "id": "sex",
+                              "title": "Sex",
+                              "type": "Radio",
+                              "required": true,
+                              "basetype": "String",
+                              "values": [
+                                         {
+                                         "title": "Male",
+                                         "value": "Male"
+                                         },
+                                         {
+                                         "title": "Female",
+                                         "value": "Female"
+                                         },
+                                         {
+                                         "title": "Transgender",
+                                         "value": "Transgender"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "ethnicity",
+                              "title": "Ethnicity",
+                              "type": "Radio",
+                              "required": true,
+                              "basetype": "String",
+                              "values": [
+                                         {
+                                         "title": "A1 - Indian",
+                                         "value": "A1 - Indian"
+                                         },
+                                         {
+                                         "title": "A2 - Pakistani",
+                                         "value": "A2 - Pakistani"
+                                         },
+                                         {
+                                         "title": "A3 - Bangladeshi",
+                                         "value": "A3 - Bangladeshi"
+                                         },
+                                         {
+                                         "title": "A9 - Any other Asian ethnic background",
+                                         "value": "A9 - Any other Asian ethnic background"
+                                         },
+                                         {
+                                         "title": "B1 - Caribbean",
+                                         "value": "B1 - Caribbean"
+                                         },
+                                         {
+                                         "title": "B2 - African",
+                                         "value": "B2 - African"
+                                         },
+                                         {
+                                         "title": "B9 - Any other Black ethnic background",
+                                         "value": "B9 - Any other Black ethnic background"
+                                         },
+                                         {
+                                         "title": "M1 - White and Black Caribbean",
+                                         "value": "M1 - White and Black Caribbean"
+                                         },
+                                         {
+                                         "title": "M2 - White and Black African",
+                                         "value": "M2 - White and Black African"
+                                         },
+                                         {
+                                         "title": "M3 - White and Asian",
+                                         "value": "M3 - White and Asian"
+                                         },
+                                         {
+                                         "title": "O1 - Chinese",
+                                         "value": "O1 - Chinese"
+                                         },
+                                         {
+                                         "title": "O9 - Any other ethnic group",
+                                         "value": "O9 - Any other ethnic group"
+                                         },
+                                         {
+                                         "title": "W1 - British",
+                                         "value": "W1 - British"
+                                         },
+                                         {
+                                         "title": "W2 - Irish",
+                                         "value": "W2 - Irish"
+                                         },
+                                         {
+                                         "title": "W9 - Any other White ethnic background",
+                                         "value": "W9 - Any other White ethnic background"
+                                         },
+                                         {
+                                         "title": "NS - Not Stated",
+                                         "value": "NS - Not Stated"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "height",
+                              "title": "Height",
+                              "type": "Textbox",
+                              "required": false,
+                              "basetype": "Float",
+                              "result_display": "{result} cm"
+                              },
+                              {
+                              "id": "weight",
+                              "title": "Weight",
+                              "type": "Textbox",
+                              "required": false,
+                              "basetype": "Float",
+                              "result_display": "{result} kg"
+                              },
+                              {
+                              "id": "bmi",
+                              "title": "BMI (Body Mass Index)",
+                              "type": "Calculated",
+                              "basetype": "Float",
+                              "formula": "function(){var t=({weight}/{height})/{height} * 10000;if(isNaN(t))return'';var e='';return t=Math.round(10*t)/10,18.5>t?e='Underweight':t>=18.5&&24.9>=t?e='Normal Weight':t>24.9&&29.9>=t?e='Overweight':t>29.9&&(e='Obesity'),''.concat(t.toString(),' kg/m2 (',e,')')}",
+                              "formula_is_format_only": true,
+                              "result_display": "var formatDisplayResult = {result}",
+                              "result_display_should_be_js_evaluated": true
+                              },
+                              {
+                              "id": "nature_of_work",
+                              "title": "Nature of Work",
+                              "type": "Textbox",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "contact_address",
+                              "title": "Contact Address",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "first_language",
+                              "title": "First Language",
+                              "type": "RadioWithOther",
+                              "basetype": "String",
+                              "values": [
+                                         {
+                                         "title": "English",
+                                         "value": "English"
+                                         },
+                                         {
+                                         "title": "Polish",
+                                         "value": "Polish"
+                                         },
+                                         {
+                                         "title": "Punjabi",
+                                         "value": "Punjabi"
+                                         },
+                                         {
+                                         "title": "Urdu",
+                                         "value": "Urdu"
+                                         },
+                                         {
+                                         "title": "Bengali",
+                                         "value": "Bengali"
+                                         },
+                                         {
+                                         "title": "Gujarati",
+                                         "value": "Gujarati"
+                                         },
+                                         {
+                                         "title": "Arabic",
+                                         "value": "Arabic"
+                                         },
+                                         {
+                                         "title": "French",
+                                         "value": "French"
+                                         },
+                                         {
+                                         "title": "Mandarin",
+                                         "value": "Mandarin"
+                                         },
+                                         {
+                                         "title": "Cantonese",
+                                         "value": "Cantonese"
+                                         },
+                                         {
+                                         "title": "Portuguese",
+                                         "value": "Portuguese"
+                                         },
+                                         {
+                                         "title": "Spanish",
+                                         "value": "Spanish"
+                                         },
+                                         {
+                                         "title": "Tamil",
+                                         "value": "Tamil"
+                                         },
+                                         {
+                                         "title": "Turkish",
+                                         "value": "Turkish"
+                                         },
+                                         {
+                                         "title": "Italian",
+                                         "value": "Italian"
+                                         },
+                                         {
+                                         "title": "Somali",
+                                         "value": "Somali"
+                                         },
+                                         {
+                                         "title": "Lithuanian",
+                                         "value": "Lithuanian"
+                                         },
+                                         {
+                                         "title": "German",
+                                         "value": "German"
+                                         },
+                                         {
+                                         "title": "Persian / Farsi",
+                                         "value": "Persian / Farsi"
+                                         },
+                                         {
+                                         "title": "Tagalog / Filipino",
+                                         "value": "Tagalog / Filipino"
+                                         },
+                                         {
+                                         "title": "Romanian",
+                                         "value": "Romanian"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "country_of_origin",
+                              "title": "Nationality",
+                              "type": "RadioWithOther",
+                              "basetype": "String",
+                              "values": [
+                                         {
+                                         "title": "United States",
+                                         "value": "United States"
+                                         },
+                                         {
+                                         "title": "United Kingdom",
+                                         "value": "United Kingdom"
+                                         },
+                                         {
+                                         "title": "Afghanistan",
+                                         "value": "Afghanistan"
+                                         },
+                                         {
+                                         "title": "Albania",
+                                         "value": "Albania"
+                                         },
+                                         {
+                                         "title": "Algeria",
+                                         "value": "Algeria"
+                                         },
+                                         {
+                                         "title": "American Samoa",
+                                         "value": "American Samoa"
+                                         },
+                                         {
+                                         "title": "Andorra",
+                                         "value": "Andorra"
+                                         },
+                                         {
+                                         "title": "Angola",
+                                         "value": "Angola"
+                                         },
+                                         {
+                                         "title": "Anguilla",
+                                         "value": "Anguilla"
+                                         },
+                                         {
+                                         "title": "Antarctica",
+                                         "value": "Antarctica"
+                                         },
+                                         {
+                                         "title": "Antigua and Barbuda",
+                                         "value": "Antigua and Barbuda"
+                                         },
+                                         {
+                                         "title": "Argentina",
+                                         "value": "Argentina"
+                                         },
+                                         {
+                                         "title": "Armenia",
+                                         "value": "Armenia"
+                                         },
+                                         {
+                                         "title": "Aruba",
+                                         "value": "Aruba"
+                                         },
+                                         {
+                                         "title": "Australia",
+                                         "value": "Australia"
+                                         },
+                                         {
+                                         "title": "Austria",
+                                         "value": "Austria"
+                                         },
+                                         {
+                                         "title": "Azerbaijan",
+                                         "value": "Azerbaijan"
+                                         },
+                                         {
+                                         "title": "Bahamas",
+                                         "value": "Bahamas"
+                                         },
+                                         {
+                                         "title": "Bahrain",
+                                         "value": "Bahrain"
+                                         },
+                                         {
+                                         "title": "Bangladesh",
+                                         "value": "Bangladesh"
+                                         },
+                                         {
+                                         "title": "Barbados",
+                                         "value": "Barbados"
+                                         },
+                                         {
+                                         "title": "Belarus",
+                                         "value": "Belarus"
+                                         },
+                                         {
+                                         "title": "Belgium",
+                                         "value": "Belgium"
+                                         },
+                                         {
+                                         "title": "Belize",
+                                         "value": "Belize"
+                                         },
+                                         {
+                                         "title": "Benin",
+                                         "value": "Benin"
+                                         },
+                                         {
+                                         "title": "Bermuda",
+                                         "value": "Bermuda"
+                                         },
+                                         {
+                                         "title": "Bhutan",
+                                         "value": "Bhutan"
+                                         },
+                                         {
+                                         "title": "Bolivia",
+                                         "value": "Bolivia"
+                                         },
+                                         {
+                                         "title": "Bosnia and Herzegovina",
+                                         "value": "Bosnia and Herzegovina"
+                                         },
+                                         {
+                                         "title": "Botswana",
+                                         "value": "Botswana"
+                                         },
+                                         {
+                                         "title": "Bouvet Island",
+                                         "value": "Bouvet Island"
+                                         },
+                                         {
+                                         "title": "Brazil",
+                                         "value": "Brazil"
+                                         },
+                                         {
+                                         "title": "British Indian Ocean Territory",
+                                         "value": "British Indian Ocean Territory"
+                                         },
+                                         {
+                                         "title": "Brunei Darussalam",
+                                         "value": "Brunei Darussalam"
+                                         },
+                                         {
+                                         "title": "Bulgaria",
+                                         "value": "Bulgaria"
+                                         },
+                                         {
+                                         "title": "Burkina Faso",
+                                         "value": "Burkina Faso"
+                                         },
+                                         {
+                                         "title": "Burundi",
+                                         "value": "Burundi"
+                                         },
+                                         {
+                                         "title": "Cambodia",
+                                         "value": "Cambodia"
+                                         },
+                                         {
+                                         "title": "Cameroon",
+                                         "value": "Cameroon"
+                                         },
+                                         {
+                                         "title": "Canada",
+                                         "value": "Canada"
+                                         },
+                                         {
+                                         "title": "Cape Verde",
+                                         "value": "Cape Verde"
+                                         },
+                                         {
+                                         "title": "Cayman Islands",
+                                         "value": "Cayman Islands"
+                                         },
+                                         {
+                                         "title": "Central African Republic",
+                                         "value": "Central African Republic"
+                                         },
+                                         {
+                                         "title": "Chad",
+                                         "value": "Chad"
+                                         },
+                                         {
+                                         "title": "Chile",
+                                         "value": "Chile"
+                                         },
+                                         {
+                                         "title": "China",
+                                         "value": "China"
+                                         },
+                                         {
+                                         "title": "Christmas Island",
+                                         "value": "Christmas Island"
+                                         },
+                                         {
+                                         "title": "Cocos (Keeling) Islands",
+                                         "value": "Cocos (Keeling) Islands"
+                                         },
+                                         {
+                                         "title": "Colombia",
+                                         "value": "Colombia"
+                                         },
+                                         {
+                                         "title": "Comoros",
+                                         "value": "Comoros"
+                                         },
+                                         {
+                                         "title": "Congo",
+                                         "value": "Congo"
+                                         },
+                                         {
+                                         "title": "Congo, The Democratic Republic of The",
+                                         "value": "Congo, The Democratic Republic of The"
+                                         },
+                                         {
+                                         "title": "Cook Islands",
+                                         "value": "Cook Islands"
+                                         },
+                                         {
+                                         "title": "Costa Rica",
+                                         "value": "Costa Rica"
+                                         },
+                                         {
+                                         "title": "Cote D'ivoire",
+                                         "value": "Cote D'ivoire"
+                                         },
+                                         {
+                                         "title": "Croatia",
+                                         "value": "Croatia"
+                                         },
+                                         {
+                                         "title": "Cuba",
+                                         "value": "Cuba"
+                                         },
+                                         {
+                                         "title": "Cyprus",
+                                         "value": "Cyprus"
+                                         },
+                                         {
+                                         "title": "Czech Republic",
+                                         "value": "Czech Republic"
+                                         },
+                                         {
+                                         "title": "Denmark",
+                                         "value": "Denmark"
+                                         },
+                                         {
+                                         "title": "Djibouti",
+                                         "value": "Djibouti"
+                                         },
+                                         {
+                                         "title": "Dominica",
+                                         "value": "Dominica"
+                                         },
+                                         {
+                                         "title": "Dominican Republic",
+                                         "value": "Dominican Republic"
+                                         },
+                                         {
+                                         "title": "Ecuador",
+                                         "value": "Ecuador"
+                                         },
+                                         {
+                                         "title": "Egypt",
+                                         "value": "Egypt"
+                                         },
+                                         {
+                                         "title": "El Salvador",
+                                         "value": "El Salvador"
+                                         },
+                                         {
+                                         "title": "Equatorial Guinea",
+                                         "value": "Equatorial Guinea"
+                                         },
+                                         {
+                                         "title": "Eritrea",
+                                         "value": "Eritrea"
+                                         },
+                                         {
+                                         "title": "Estonia",
+                                         "value": "Estonia"
+                                         },
+                                         {
+                                         "title": "Ethiopia",
+                                         "value": "Ethiopia"
+                                         },
+                                         {
+                                         "title": "Falkland Islands (Malvinas)",
+                                         "value": "Falkland Islands (Malvinas)"
+                                         },
+                                         {
+                                         "title": "Faroe Islands",
+                                         "value": "Faroe Islands"
+                                         },
+                                         {
+                                         "title": "Fiji",
+                                         "value": "Fiji"
+                                         },
+                                         {
+                                         "title": "Finland",
+                                         "value": "Finland"
+                                         },
+                                         {
+                                         "title": "France",
+                                         "value": "France"
+                                         },
+                                         {
+                                         "title": "French Guiana",
+                                         "value": "French Guiana"
+                                         },
+                                         {
+                                         "title": "French Polynesia",
+                                         "value": "French Polynesia"
+                                         },
+                                         {
+                                         "title": "French Southern Territories",
+                                         "value": "French Southern Territories"
+                                         },
+                                         {
+                                         "title": "Gabon",
+                                         "value": "Gabon"
+                                         },
+                                         {
+                                         "title": "Gambia",
+                                         "value": "Gambia"
+                                         },
+                                         {
+                                         "title": "Georgia",
+                                         "value": "Georgia"
+                                         },
+                                         {
+                                         "title": "Germany",
+                                         "value": "Germany"
+                                         },
+                                         {
+                                         "title": "Ghana",
+                                         "value": "Ghana"
+                                         },
+                                         {
+                                         "title": "Gibraltar",
+                                         "value": "Gibraltar"
+                                         },
+                                         {
+                                         "title": "Greece",
+                                         "value": "Greece"
+                                         },
+                                         {
+                                         "title": "Greenland",
+                                         "value": "Greenland"
+                                         },
+                                         {
+                                         "title": "Grenada",
+                                         "value": "Grenada"
+                                         },
+                                         {
+                                         "title": "Guadeloupe",
+                                         "value": "Guadeloupe"
+                                         },
+                                         {
+                                         "title": "Guam",
+                                         "value": "Guam"
+                                         },
+                                         {
+                                         "title": "Guatemala",
+                                         "value": "Guatemala"
+                                         },
+                                         {
+                                         "title": "Guinea",
+                                         "value": "Guinea"
+                                         },
+                                         {
+                                         "title": "Guinea-bissau",
+                                         "value": "Guinea-bissau"
+                                         },
+                                         {
+                                         "title": "Guyana",
+                                         "value": "Guyana"
+                                         },
+                                         {
+                                         "title": "Haiti",
+                                         "value": "Haiti"
+                                         },
+                                         {
+                                         "title": "Heard Island and Mcdonald Islands",
+                                         "value": "Heard Island and Mcdonald Islands"
+                                         },
+                                         {
+                                         "title": "Holy See (Vatican City State)",
+                                         "value": "Holy See (Vatican City State)"
+                                         },
+                                         {
+                                         "title": "Honduras",
+                                         "value": "Honduras"
+                                         },
+                                         {
+                                         "title": "Hong Kong",
+                                         "value": "Hong Kong"
+                                         },
+                                         {
+                                         "title": "Hungary",
+                                         "value": "Hungary"
+                                         },
+                                         {
+                                         "title": "Iceland",
+                                         "value": "Iceland"
+                                         },
+                                         {
+                                         "title": "India",
+                                         "value": "India"
+                                         },
+                                         {
+                                         "title": "Indonesia",
+                                         "value": "Indonesia"
+                                         },
+                                         {
+                                         "title": "Iran, Islamic Republic of",
+                                         "value": "Iran, Islamic Republic of"
+                                         },
+                                         {
+                                         "title": "Iraq",
+                                         "value": "Iraq"
+                                         },
+                                         {
+                                         "title": "Ireland",
+                                         "value": "Ireland"
+                                         },
+                                         {
+                                         "title": "Israel",
+                                         "value": "Israel"
+                                         },
+                                         {
+                                         "title": "Italy",
+                                         "value": "Italy"
+                                         },
+                                         {
+                                         "title": "Jamaica",
+                                         "value": "Jamaica"
+                                         },
+                                         {
+                                         "title": "Japan",
+                                         "value": "Japan"
+                                         },
+                                         {
+                                         "title": "Jordan",
+                                         "value": "Jordan"
+                                         },
+                                         {
+                                         "title": "Kazakhstan",
+                                         "value": "Kazakhstan"
+                                         },
+                                         {
+                                         "title": "Kenya",
+                                         "value": "Kenya"
+                                         },
+                                         {
+                                         "title": "Kiribati",
+                                         "value": "Kiribati"
+                                         },
+                                         {
+                                         "title": "Korea, Democratic People's Republic of",
+                                         "value": "Korea, Democratic People's Republic of"
+                                         },
+                                         {
+                                         "title": "Korea, Republic of",
+                                         "value": "Korea, Republic of"
+                                         },
+                                         {
+                                         "title": "Kuwait",
+                                         "value": "Kuwait"
+                                         },
+                                         {
+                                         "title": "Kyrgyzstan",
+                                         "value": "Kyrgyzstan"
+                                         },
+                                         {
+                                         "title": "Lao People's Democratic Republic",
+                                         "value": "Lao People's Democratic Republic"
+                                         },
+                                         {
+                                         "title": "Latvia",
+                                         "value": "Latvia"
+                                         },
+                                         {
+                                         "title": "Lebanon",
+                                         "value": "Lebanon"
+                                         },
+                                         {
+                                         "title": "Lesotho",
+                                         "value": "Lesotho"
+                                         },
+                                         {
+                                         "title": "Liberia",
+                                         "value": "Liberia"
+                                         },
+                                         {
+                                         "title": "Libyan Arab Jamahiriya",
+                                         "value": "Libyan Arab Jamahiriya"
+                                         },
+                                         {
+                                         "title": "Liechtenstein",
+                                         "value": "Liechtenstein"
+                                         },
+                                         {
+                                         "title": "Lithuania",
+                                         "value": "Lithuania"
+                                         },
+                                         {
+                                         "title": "Luxembourg",
+                                         "value": "Luxembourg"
+                                         },
+                                         {
+                                         "title": "Macao",
+                                         "value": "Macao"
+                                         },
+                                         {
+                                         "title": "Macedonia, The Former Yugoslav Republic of",
+                                         "value": "Macedonia, The Former Yugoslav Republic of"
+                                         },
+                                         {
+                                         "title": "Madagascar",
+                                         "value": "Madagascar"
+                                         },
+                                         {
+                                         "title": "Malawi",
+                                         "value": "Malawi"
+                                         },
+                                         {
+                                         "title": "Malaysia",
+                                         "value": "Malaysia"
+                                         },
+                                         {
+                                         "title": "Maldives",
+                                         "value": "Maldives"
+                                         },
+                                         {
+                                         "title": "Mali",
+                                         "value": "Mali"
+                                         },
+                                         {
+                                         "title": "Malta",
+                                         "value": "Malta"
+                                         },
+                                         {
+                                         "title": "Marshall Islands",
+                                         "value": "Marshall Islands"
+                                         },
+                                         {
+                                         "title": "Martinique",
+                                         "value": "Martinique"
+                                         },
+                                         {
+                                         "title": "Mauritania",
+                                         "value": "Mauritania"
+                                         },
+                                         {
+                                         "title": "Mauritius",
+                                         "value": "Mauritius"
+                                         },
+                                         {
+                                         "title": "Mayotte",
+                                         "value": "Mayotte"
+                                         },
+                                         {
+                                         "title": "Mexico",
+                                         "value": "Mexico"
+                                         },
+                                         {
+                                         "title": "Micronesia, Federated States of",
+                                         "value": "Micronesia, Federated States of"
+                                         },
+                                         {
+                                         "title": "Moldova, Republic of",
+                                         "value": "Moldova, Republic of"
+                                         },
+                                         {
+                                         "title": "Monaco",
+                                         "value": "Monaco"
+                                         },
+                                         {
+                                         "title": "Mongolia",
+                                         "value": "Mongolia"
+                                         },
+                                         {
+                                         "title": "Montenegro",
+                                         "value": "Montenegro"
+                                         },
+                                         {
+                                         "title": "Montserrat",
+                                         "value": "Montserrat"
+                                         },
+                                         {
+                                         "title": "Morocco",
+                                         "value": "Morocco"
+                                         },
+                                         {
+                                         "title": "Mozambique",
+                                         "value": "Mozambique"
+                                         },
+                                         {
+                                         "title": "Myanmar",
+                                         "value": "Myanmar"
+                                         },
+                                         {
+                                         "title": "Namibia",
+                                         "value": "Namibia"
+                                         },
+                                         {
+                                         "title": "Nauru",
+                                         "value": "Nauru"
+                                         },
+                                         {
+                                         "title": "Nepal",
+                                         "value": "Nepal"
+                                         },
+                                         {
+                                         "title": "Netherlands",
+                                         "value": "Netherlands"
+                                         },
+                                         {
+                                         "title": "Netherlands Antilles",
+                                         "value": "Netherlands Antilles"
+                                         },
+                                         {
+                                         "title": "New Caledonia",
+                                         "value": "New Caledonia"
+                                         },
+                                         {
+                                         "title": "New Zealand",
+                                         "value": "New Zealand"
+                                         },
+                                         {
+                                         "title": "Nicaragua",
+                                         "value": "Nicaragua"
+                                         },
+                                         {
+                                         "title": "Niger",
+                                         "value": "Niger"
+                                         },
+                                         {
+                                         "title": "Nigeria",
+                                         "value": "Nigeria"
+                                         },
+                                         {
+                                         "title": "Niue",
+                                         "value": "Niue"
+                                         },
+                                         {
+                                         "title": "Norfolk Island",
+                                         "value": "Norfolk Island"
+                                         },
+                                         {
+                                         "title": "Northern Mariana Islands",
+                                         "value": "Northern Mariana Islands"
+                                         },
+                                         {
+                                         "title": "Norway",
+                                         "value": "Norway"
+                                         },
+                                         {
+                                         "title": "Oman",
+                                         "value": "Oman"
+                                         },
+                                         {
+                                         "title": "Pakistan",
+                                         "value": "Pakistan"
+                                         },
+                                         {
+                                         "title": "Palau",
+                                         "value": "Palau"
+                                         },
+                                         {
+                                         "title": "Palestinian Territory, Occupied",
+                                         "value": "Palestinian Territory, Occupied"
+                                         },
+                                         {
+                                         "title": "Panama",
+                                         "value": "Panama"
+                                         },
+                                         {
+                                         "title": "Papua New Guinea",
+                                         "value": "Papua New Guinea"
+                                         },
+                                         {
+                                         "title": "Paraguay",
+                                         "value": "Paraguay"
+                                         },
+                                         {
+                                         "title": "Peru",
+                                         "value": "Peru"
+                                         },
+                                         {
+                                         "title": "Philippines",
+                                         "value": "Philippines"
+                                         },
+                                         {
+                                         "title": "Pitcairn",
+                                         "value": "Pitcairn"
+                                         },
+                                         {
+                                         "title": "Poland",
+                                         "value": "Poland"
+                                         },
+                                         {
+                                         "title": "Portugal",
+                                         "value": "Portugal"
+                                         },
+                                         {
+                                         "title": "Puerto Rico",
+                                         "value": "Puerto Rico"
+                                         },
+                                         {
+                                         "title": "Qatar",
+                                         "value": "Qatar"
+                                         },
+                                         {
+                                         "title": "Reunion",
+                                         "value": "Reunion"
+                                         },
+                                         {
+                                         "title": "Romania",
+                                         "value": "Romania"
+                                         },
+                                         {
+                                         "title": "Russian Federation",
+                                         "value": "Russian Federation"
+                                         },
+                                         {
+                                         "title": "Rwanda",
+                                         "value": "Rwanda"
+                                         },
+                                         {
+                                         "title": "Saint Helena",
+                                         "value": "Saint Helena"
+                                         },
+                                         {
+                                         "title": "Saint Kitts and Nevis",
+                                         "value": "Saint Kitts and Nevis"
+                                         },
+                                         {
+                                         "title": "Saint Lucia",
+                                         "value": "Saint Lucia"
+                                         },
+                                         {
+                                         "title": "Saint Pierre and Miquelon",
+                                         "value": "Saint Pierre and Miquelon"
+                                         },
+                                         {
+                                         "title": "Saint Vincent and The Grenadines",
+                                         "value": "Saint Vincent and The Grenadines"
+                                         },
+                                         {
+                                         "title": "Samoa",
+                                         "value": "Samoa"
+                                         },
+                                         {
+                                         "title": "San Marino",
+                                         "value": "San Marino"
+                                         },
+                                         {
+                                         "title": "Sao Tome and Principe",
+                                         "value": "Sao Tome and Principe"
+                                         },
+                                         {
+                                         "title": "Saudi Arabia",
+                                         "value": "Saudi Arabia"
+                                         },
+                                         {
+                                         "title": "Senegal",
+                                         "value": "Senegal"
+                                         },
+                                         {
+                                         "title": "Serbia",
+                                         "value": "Serbia"
+                                         },
+                                         {
+                                         "title": "Seychelles",
+                                         "value": "Seychelles"
+                                         },
+                                         {
+                                         "title": "Sierra Leone",
+                                         "value": "Sierra Leone"
+                                         },
+                                         {
+                                         "title": "Singapore",
+                                         "value": "Singapore"
+                                         },
+                                         {
+                                         "title": "Slovakia",
+                                         "value": "Slovakia"
+                                         },
+                                         {
+                                         "title": "Slovenia",
+                                         "value": "Slovenia"
+                                         },
+                                         {
+                                         "title": "Solomon Islands",
+                                         "value": "Solomon Islands"
+                                         },
+                                         {
+                                         "title": "Somalia",
+                                         "value": "Somalia"
+                                         },
+                                         {
+                                         "title": "South Africa",
+                                         "value": "South Africa"
+                                         },
+                                         {
+                                         "title": "South Georgia and The South Sandwich Islands",
+                                         "value": "South Georgia and The South Sandwich Islands"
+                                         },
+                                         {
+                                         "title": "South Sudan",
+                                         "value": "South Sudan"
+                                         },
+                                         {
+                                         "title": "Spain",
+                                         "value": "Spain"
+                                         },
+                                         {
+                                         "title": "Sri Lanka",
+                                         "value": "Sri Lanka"
+                                         },
+                                         {
+                                         "title": "Sudan",
+                                         "value": "Sudan"
+                                         },
+                                         {
+                                         "title": "Suriname",
+                                         "value": "Suriname"
+                                         },
+                                         {
+                                         "title": "Svalbard and Jan Mayen",
+                                         "value": "Svalbard and Jan Mayen"
+                                         },
+                                         {
+                                         "title": "Swaziland",
+                                         "value": "Swaziland"
+                                         },
+                                         {
+                                         "title": "Sweden",
+                                         "value": "Sweden"
+                                         },
+                                         {
+                                         "title": "Switzerland",
+                                         "value": "Switzerland"
+                                         },
+                                         {
+                                         "title": "Syrian Arab Republic",
+                                         "value": "Syrian Arab Republic"
+                                         },
+                                         {
+                                         "title": "Taiwan, Republic of China",
+                                         "value": "Taiwan, Republic of China"
+                                         },
+                                         {
+                                         "title": "Tajikistan",
+                                         "value": "Tajikistan"
+                                         },
+                                         {
+                                         "title": "Tanzania, United Republic of",
+                                         "value": "Tanzania, United Republic of"
+                                         },
+                                         {
+                                         "title": "Thailand",
+                                         "value": "Thailand"
+                                         },
+                                         {
+                                         "title": "Timor-leste",
+                                         "value": "Timor-leste"
+                                         },
+                                         {
+                                         "title": "Togo",
+                                         "value": "Togo"
+                                         },
+                                         {
+                                         "title": "Tokelau",
+                                         "value": "Tokelau"
+                                         },
+                                         {
+                                         "title": "Tonga",
+                                         "value": "Tonga"
+                                         },
+                                         {
+                                         "title": "Trinidad and Tobago",
+                                         "value": "Trinidad and Tobago"
+                                         },
+                                         {
+                                         "title": "Tunisia",
+                                         "value": "Tunisia"
+                                         },
+                                         {
+                                         "title": "Turkey",
+                                         "value": "Turkey"
+                                         },
+                                         {
+                                         "title": "Turkmenistan",
+                                         "value": "Turkmenistan"
+                                         },
+                                         {
+                                         "title": "Turks and Caicos Islands",
+                                         "value": "Turks and Caicos Islands"
+                                         },
+                                         {
+                                         "title": "Tuvalu",
+                                         "value": "Tuvalu"
+                                         },
+                                         {
+                                         "title": "Uganda",
+                                         "value": "Uganda"
+                                         },
+                                         {
+                                         "title": "Ukraine",
+                                         "value": "Ukraine"
+                                         },
+                                         {
+                                         "title": "United Arab Emirates",
+                                         "value": "United Arab Emirates"
+                                         },
+                                         {
+                                         "title": "United Kingdom",
+                                         "value": "United Kingdom"
+                                         },
+                                         {
+                                         "title": "United States",
+                                         "value": "United States"
+                                         },
+                                         {
+                                         "title": "United States Minor Outlying Islands",
+                                         "value": "United States Minor Outlying Islands"
+                                         },
+                                         {
+                                         "title": "Uruguay",
+                                         "value": "Uruguay"
+                                         },
+                                         {
+                                         "title": "Uzbekistan",
+                                         "value": "Uzbekistan"
+                                         },
+                                         {
+                                         "title": "Vanuatu",
+                                         "value": "Vanuatu"
+                                         },
+                                         {
+                                         "title": "Venezuela",
+                                         "value": "Venezuela"
+                                         },
+                                         {
+                                         "title": "Viet Nam",
+                                         "value": "Viet Nam"
+                                         },
+                                         {
+                                         "title": "Virgin Islands, British",
+                                         "value": "Virgin Islands, British"
+                                         },
+                                         {
+                                         "title": "Virgin Islands, U.S.",
+                                         "value": "Virgin Islands, U.S."
+                                         },
+                                         {
+                                         "title": "Wallis and Futuna",
+                                         "value": "Wallis and Futuna"
+                                         },
+                                         {
+                                         "title": "Western Sahara",
+                                         "value": "Western Sahara"
+                                         },
+                                         {
+                                         "title": "Yemen",
+                                         "value": "Yemen"
+                                         },
+                                         {
+                                         "title": "Zambia",
+                                         "value": "Zambia"
+                                         },
+                                         {
+                                         "title": "Zimbabwe",
+                                         "value": "Zimbabwe"
+                                         }
+                                         ]
+                              }
+                              ]
+                   },
+                   {
+                   "group": "History",
+                   "id": "medical_history",
+                   "fields": [
+                              {
+                              "id": "medications",
+                              "title": "Medications",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "allergies",
+                              "title": "Allergies",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "past_medical_history",
+                              "title": "Past Medical History",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "past_surgical_history",
+                              "title": "Past Surgical History",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "past_psychiatric_history",
+                              "title": "Past Psychiatric History",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "past_gynaecological_history",
+                              "title": "Past Gynaecological History",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "previous_self_harm",
+                              "title": "Previous Self-Harm (Nature)",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "skin_disease_or_abnormalities",
+                              "title": "Skin Conditions",
+                              "type": "MultipleEntry",
+                              "required": false,
+                              "basetype": "String",
+                              "entry_type": "Textbox",
+                              "allowed_attachments": {
+                              "images": true,
+                              "audio": false,
+                              "video": true,
+                              "drawings": {
+                              "allowed": true,
+                              "backgroundimages": [
+                                                   {
+                                                   "title": "Bottom Feet",
+                                                   "img": "Bottom Feet.png"
+                                                   },
+                                                   {
+                                                   "title": "Adult Left",
+                                                   "img": "FD Adult Left.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Adult Right",
+                                                   "img": "FD Adult Right.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Body Posterior",
+                                                   "img": "FD Body Posterior.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Female Anterior",
+                                                   "img": "FD Female Anterior.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Hand Dorsum Left",
+                                                   "img": "FD Hand Dorsum Left.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Hand Dorsum Right",
+                                                   "img": "FD Hand Dorsum Right.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Hand Palm Left",
+                                                   "img": "FD Hand Palm Left.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Hand Palm Right",
+                                                   "img": "FD Hand Palm Right.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Head Anterior",
+                                                   "img": "FD Head Anterior.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Head Left Side",
+                                                   "img": "FD Head Left Side.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Head Posterior",
+                                                   "img": "FD Head Posterior.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Head Right Side",
+                                                   "img": "FD Head Right Side.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Male  Anterior",
+                                                   "img": "FD Male  Anterior.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Hands Palm",
+                                                   "img": "Hands Palm.png"
+                                                   },
+                                                   {
+                                                   "title": "Head Multi",
+                                                   "img": "Head Multi.png"
+                                                   }
+                                                   ],
+                              "drawing_settings": {
+                              "color_settings": true,
+                              "eraser": true,
+                              "undo": true,
+                              "reset": true
+                              }
+                              }
+                              }
+                              },
+                              {
+                              "id": "injuries",
+                              "title": "Injuries (described location)",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "drugs",
+                              "title": "Drugs - non-prescribed",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "alcohol",
+                              "title": "Alcohol",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              }
+                              ]
+                   },
+                   {
+                   "group": "Physical Assessment",
+                   "id": "assesment",
+                   "fields": [
+                              {
+                              "id": "demeanour",
+                              "title": "Demeanour",
+                              "type": "Textbox",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "appearance",
+                              "title": "Appearance",
+                              "type": "Textbox",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "orientated_in_time",
+                              "title": "Orientated in Time",
+                              "type": "Radio",
+                              "basetype": "String",
+                              "values": [
+                                         {
+                                         "title": "Yes",
+                                         "value": "Yes"
+                                         },
+                                         {
+                                         "title": "No",
+                                         "value": "No"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "orientated_in_location",
+                              "title": "Orientated in Location",
+                              "type": "Radio",
+                              "basetype": "String",
+                              "values": [
+                                         {
+                                         "title": "Yes",
+                                         "value": "Yes"
+                                         },
+                                         {
+                                         "title": "No",
+                                         "value": "No"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "pulse_rate",
+                              "title": "Pulse Rate",
+                              "type": "Textbox",
+                              "basetype": "Int"
+                              },
+                              {
+                              "id": "systolic_blood_pressure",
+                              "title": "Systolic Blood Pressure",
+                              "type": "Textbox",
+                              "basetype": "Int"
+                              },
+                              {
+                              "id": "diastolic_blood_pressure",
+                              "title": "Diastolic Blood Pressure",
+                              "type": "Textbox",
+                              "basetype": "Int"
+                              },
+                              {
+                              "id": "blood_pressure",
+                              "title": "Blood Pressure",
+                              "type": "Calculated",
+                              "basetype": "String",
+                              "formula": "{systolic_blood_pressure}/{diastolic_blood_pressure}",
+                              "formula_is_format_only": true,
+                              "result_display": "{result}mmHg"
+                              },
+                              {
+                              "id": "cardiovascular_system",
+                              "title": "Cardiovascular System",
+                              "type": "Radio",
+                              "basetype": "String",
+                              "comment": {
+                              "required": false
+                              },
+                              "values": [
+                                         {
+                                         "title": "Normal",
+                                         "value": "Normal"
+                                         },
+                                         {
+                                         "title": "Clinically Significant Findings",
+                                         "value": "Clinically Significant Findings"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "respiratory_system",
+                              "title": "Respiratory System",
+                              "type": "Radio",
+                              "basetype": "String",
+                              "comment": {
+                              "required": false
+                              },
+                              "values": [
+                                         {
+                                         "title": "Normal",
+                                         "value": "Normal"
+                                         },
+                                         {
+                                         "title": "Clinically Significant Findings",
+                                         "value": "Clinically Significant Findings"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "abdominal_system",
+                              "title": "Abdominal System",
+                              "type": "Radio",
+                              "basetype": "String",
+                              "comment": {
+                              "required": false
+                              },
+                              "values": [
+                                         {
+                                         "title": "Normal",
+                                         "value": "Normal"
+                                         },
+                                         {
+                                         "title": "Clinically Significant Findings",
+                                         "value": "Clinically Significant Findings"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "neurological_system",
+                              "title": "Neurological System",
+                              "type": "Radio",
+                              "basetype": "String",
+                              "comment": {
+                              "required": false
+                              },
+                              "values": [
+                                         {
+                                         "title": "Normal",
+                                         "value": "Normal"
+                                         },
+                                         {
+                                         "title": "Clinically Significant Findings",
+                                         "value": "Clinically Significant Findings"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "musculoskeletal_system",
+                              "title": "Musculoskeletal System",
+                              "type": "Radio",
+                              "basetype": "String",
+                              "comment": {
+                              "required": false
+                              },
+                              "values": [
+                                         {
+                                         "title": "Normal",
+                                         "value": "Normal"
+                                         },
+                                         {
+                                         "title": "Clinically Significant Findings",
+                                         "value": "Clinically Significant Findings"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "genitourinary_system",
+                              "title": "Genitourinary System",
+                              "type": "Radio",
+                              "basetype": "String",
+                              "comment": {
+                              "required": false
+                              },
+                              "values": [
+                                         {
+                                         "title": "Normal",
+                                         "value": "Normal"
+                                         },
+                                         {
+                                         "title": "Clinically Significant Findings",
+                                         "value": "Clinically Significant Findings"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "chest_sounds",
+                              "title": "Respiratory System",
+                              "type": "Radio",
+                              "comment": {
+                              "required": false
+                              },
+                              "basetype": "String",
+                              "values": [
+                                         {
+                                         "title": "Normal",
+                                         "value": "Normal"
+                                         },
+                                         {
+                                         "title": "Clinically Significant Findings",
+                                         "value": "Clinically Significant Findings"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "temperature",
+                              "title": "Temperature",
+                              "type": "Textbox",
+                              "basetype": "Double",
+                              "result_format": ".1",
+                              "result_display": "{result} C"
+                              },
+                              {
+                              "id": "oxygen_saturation",
+                              "title": "Oxygen Saturation",
+                              "type": "Textbox",
+                              "basetype": "Int",
+                              "result_display": "{result} SpO2"
+                              },
+                              {
+                              "id": "peak_flow",
+                              "title": "Peak Expiratory Flow Rate",
+                              "type": "Textbox",
+                              "basetype": "Int",
+                              "comment": {
+                              "required": false
+                              }
+                              },
+                              {
+                              "id": "blood_glucose",
+                              "title": "Blood Glucose",
+                              "type": "Textbox",
+                              "basetype": "Float",
+                              "result_format": ".1",
+                              "result_display": "{result} mmol/L"
+                              },
+                              {
+                              "id": "tattoos",
+                              "title": "Tattoos and Piercings",
+                              "type": "MultipleEntry",
+                              "required": false,
+                              "basetype": "String",
+                              "entry_type": "Textbox",
+                              "allowed_attachments": {
+                              "images": true,
+                              "audio": false,
+                              "video": true,
+                              "drawings": {
+                              "allowed": false
+                              }
+                              }
+                              },
+                              {
+                              "id": "scars",
+                              "title": "Injuries, Cutaneous Marks and Scars",
+                              "type": "MultipleEntry",
+                              "required": false,
+                              "basetype": "String",
+                              "entry_type": "Textbox",
+                              "allowed_attachments": {
+                              "images": true,
+                              "audio": false,
+                              "video": true,
+                              "drawings": {
+                              "allowed": true,
+                              "backgroundimages": [
+                                                   {
+                                                   "title": "Bottom Feet",
+                                                   "img": "Bottom Feet.png"
+                                                   },
+                                                   {
+                                                   "title": "Adult Left",
+                                                   "img": "FD Adult Left.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Adult Right",
+                                                   "img": "FD Adult Right.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Body Posterior",
+                                                   "img": "FD Body Posterior.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Female Anterior",
+                                                   "img": "FD Female Anterior.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Hand Dorsum Left",
+                                                   "img": "FD Hand Dorsum Left.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Hand Dorsum Right",
+                                                   "img": "FD Hand Dorsum Right.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Hand Palm Left",
+                                                   "img": "FD Hand Palm Left.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Hand Palm Right",
+                                                   "img": "FD Hand Palm Right.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Head Anterior",
+                                                   "img": "FD Head Anterior.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Head Left Side",
+                                                   "img": "FD Head Left Side.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Head Posterior",
+                                                   "img": "FD Head Posterior.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Head Right Side",
+                                                   "img": "FD Head Right Side.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Male  Anterior",
+                                                   "img": "FD Male  Anterior.jpg"
+                                                   },
+                                                   {
+                                                   "title": "Hands Palm",
+                                                   "img": "Hands Palm.png"
+                                                   },
+                                                   {
+                                                   "title": "Head Multi",
+                                                   "img": "Head Multi.png"
+                                                   }
+                                                   ],
+                              "drawing_settings": {
+                              "color_settings": true,
+                              "eraser": true,
+                              "undo": true,
+                              "reset": true
+                              }
+                              }
+                              }
+                              },
+                              {
+                              "id": "handedness",
+                              "title": "Handedness",
+                              "type": "Radio",
+                              "basetype": "String",
+                              "values": [
+                                         {
+                                         "title": "Right",
+                                         "value": "Right"
+                                         },
+                                         {
+                                         "title": "Left",
+                                         "value": "Left"
+                                         },
+                                         {
+                                         "title": "Ambidextrous",
+                                         "value": "Ambidextrous"
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "scene_location_description",
+                              "title": "Scene/Location Description",
+                              "type": "MultipleEntry",
+                              "required": false,
+                              "basetype": "String",
+                              "entry_type": "Textbox",
+                              "allowed_attachments": {
+                              "images": true,
+                              "audio": false,
+                              "video": true,
+                              "drawings": {
+                              "allowed": false
+                              }
+                              }
+                              }
+                              ]
+                   },
+                   {
+                   "group": "Mental State",
+                   "id": "mental_state",
+                   "fields": [
+                              {
+                              "id": "behaviour",
+                              "title": "Behaviour",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "mood",
+                              "title": "Mood",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "speech_form",
+                              "title": "Speech (form)",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "thought_content",
+                              "title": "Thought Content",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "auditory_hallucinations",
+                              "title": "Auditory Hallucinations",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "visual_hallucinations",
+                              "title": "Visual Hallucinations",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "abnormal_beliefs",
+                              "title": "Abnormal Beliefs",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "abnormal_experiences",
+                              "title": "Abnormal Experiences",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              },
+                              {
+                              "id": "delusions",
+                              "title": "Delusions",
+                              "type": "Multiline",
+                              "basetype": "String"
+                              }
+                              ]
+                   },
+                   {
+                   "group": "Mini-Mental State Examination Score",
+                   "id": "mmse_score_group",
+                   "fields": [
+                              {
+                              "id": "mmse_question_1",
+                              "title": "Question 1",
+                              "display_label": "What is the year? Season? Date? Day of the week? Month?",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "Score 0",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "Score 1",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "Score 2",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "Score 3",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "Score 4",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "Score 5",
+                                         "value": 5
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "mmse_question_2",
+                              "title": "Question 2",
+                              "display_label": "Where are we now: State? County? Town/city? Hospital? Floor?",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "Score 0",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "Score 1",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "Score 2",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "Score 3",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "Score 4",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "Score 5",
+                                         "value": 5
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "mmse_question_3",
+                              "title": "Question 3",
+                              "display_label": "Name three unrelated objects clearly and slowly, then ask the patient to name all three of them.",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "Score 0",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "Score 1",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "Score 2",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "Score 3",
+                                         "value": 3
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "mmse_question_4",
+                              "title": "Question 4",
+                              "display_label": "Count backward from 100 by sevens.",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "Score 0",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "Score 1",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "Score 2",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "Score 3",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "Score 4",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "Score 5",
+                                         "value": 5
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "mmse_question_5",
+                              "title": "Question 5",
+                              "display_label": "Earlier I told you the names of three things. Can you tell me what those were?",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "Score 0",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "Score 1",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "Score 2",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "Score 3",
+                                         "value": 3
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "mmse_question_6",
+                              "title": "Question 6",
+                              "display_label": "Show the patient two simple objects, such as a wristwatch and a pencil, and ask the patient to name them.",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "Score 0",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "Score 1",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "Score 2",
+                                         "value": 2
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "mmse_question_7",
+                              "title": "Question 7",
+                              "display_label": "Repeat the phrase: ‘No ifs, ands, or buts.’",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "Score 0",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "Score 1",
+                                         "value": 1
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "mmse_question_8",
+                              "title": "Question 8",
+                              "display_label": "Take the paper in your right hand, fold it in half, and put it on the floor. (The examiner gives the patient a piece of blank paper.)",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "Score 0",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "Score 1",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "Score 2",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "Score 3",
+                                         "value": 3
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "mmse_question_9",
+                              "title": "Question 9",
+                              "display_label": "Please read this and do what it says. (Written instruction is “Close your eyes.”)",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "Score 0",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "Score 1",
+                                         "value": 1
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "mmse_question_10",
+                              "title": "Question 10",
+                              "display_label": "Make up and write a sentence about anything. (This sentence must contain a noun and a verb.)",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "Score 0",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "Score 1",
+                                         "value": 1
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "mmse_question_11",
+                              "title": "Question 11",
+                              "display_label": "Please copy this picture. (The examiner gives the patient a blank piece of paper and asks him/her to draw the symbol below. All 10 angles must be present and two must intersect.)",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "Score 0",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "Score 1",
+                                         "value": 1
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "mmse_score",
+                              "title": "MMSE Coma Score Result",
+                              "type": "Calculated",
+                              "basetype": "Int",
+                              "formula": "function() { var totalScore = {mmse_question_1}+{mmse_question_2}+{mmse_question_3}+{mmse_question_4}+{mmse_question_5}+{mmse_question_6}+{mmse_question_7}+{mmse_question_8}+{mmse_question_9}+{mmse_question_10}+{mmse_question_11}; var severityDisplay = ''; if (totalScore >= 0 && totalScore <= 17) { severityDisplay = '(Severe Cognitive Impairment)'; } else if (totalScore >= 18 && totalScore <= 23) { severityDisplay = '(Mild Cognitive Impairment)'; } else if (totalScore >= 24) { severityDisplay = '(No Cognitive Impairment)'; } return ''.concat(totalScore.toString(),' ',severityDisplay); }",
+                              "formula_is_format_only": true,
+                              "result_display": "var formatDisplayResult = {result}",
+                              "result_display_should_be_js_evaluated": true
+                              }
+                              ]
+                   },
+                   {
+                   "group": "Glasgow Coma Score",
+                   "id": "glasgow_coma_scale",
+                   "fields": [
+                              {
+                              "id": "best_eye_response",
+                              "title": "Best Eye Response",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "No eye opening",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "Eye opening to pain",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "Eye opening to verbal command",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "Eyes open spontaneously",
+                                         "value": 4
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "best_verbal_response",
+                              "title": "Best Verbal Response",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "No verbal response",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "Incomprehensible sounds",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "Inappropriate words",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "Confused",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "Orientated",
+                                         "value": 5
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "best_motor_response",
+                              "title": "Best Motor Response",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "No motor response",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "Extension to pain",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "Flexion to pain",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "Withdrawal from pain",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "Localising pain",
+                                         "value": 5
+                                         },
+                                         {
+                                         "title": "Obeys Commands",
+                                         "value": 6
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "glasgow_coma_score",
+                              "title": "Glasgow Coma Score",
+                              "type": "Calculated",
+                              "basetype": "Int",
+                              "formula": "function() { var totalScore = {best_eye_response} + {best_verbal_response} + {best_motor_response}; return ''.concat('E', '{best_eye_response}', 'V', '{best_verbal_response}', 'M', '{best_motor_response}', ' = ', 'GCS', totalScore.toString()); }",
+                              "formula_is_format_only": true,
+                              "result_display": "var formatDisplayResult = {result}",
+                              "result_display_should_be_js_evaluated": true
+                              }
+                              ]
+                   },
+                   {
+                   "group": "Clinical Opiate Withdrawal Scale (COWS)",
+                   "id": "cows_score_group",
+                   "fields": [
+                              {
+                              "id": "cows_question_1",
+                              "title": "Resting Pulse Rate",
+                              "display_label": "(record beats per minute) Measured after patient is sitting or lying for one minute",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "pulse rate 80 or below",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "pulse rate 81-100",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "pulse rate 101-120",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "pulse rate greater than 120",
+                                         "value": 4
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "cows_question_2",
+                              "title": "Sweating",
+                              "display_label": "over past ½ hour not accounted for by room temperature or patient activity",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "no report of chills or flushing",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "subjective report of chills or flushing",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "flushed or observable moistness on face",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "beads of sweat on brow or face",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "sweat streaming off face",
+                                         "value": 4
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "cows_question_3",
+                              "title": "Restlessness",
+                              "display_label": "Observation during assessment",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "able to sit still",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "reports difficulty sitting still, but is able to do so",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "frequent shifting or extraneous movements of legs/arms",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "Unable to sit still for more than a few seconds",
+                                         "value": 5
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "cows_question_4",
+                              "title": "Pupil size",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "pupils pinned or normal size for room light",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "pupils possibly larger than normal for room light",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "pupils moderately dilated",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "pupils so dilated that only the rim of the iris is visible",
+                                         "value": 5
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "cows_question_5",
+                              "title": "Bone or Joint aches",
+                              "display_label": "If patient was having pain previously, only the additional component attributed to opiates withdrawal is scored",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "not present",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "mild diffuse discomfort",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "patient reports severe diffuse aching of joints/ muscles",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "patient is rubbing joints or muscles and is unable to sit still because of discomfort",
+                                         "value": 5
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "cows_question_6",
+                              "title": "Runny nose or tearing",
+                              "display_label": "Not accounted for by cold symptoms or allergies",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "not present",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "nasal stuffiness or unusually moist eyes",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "nose running or tearing",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "nose constantly running or tears streaming down cheeks",
+                                         "value": 4
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "cows_question_7",
+                              "title": "GI Upset",
+                              "display_label": "over last ½ hour",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "no GI symptoms",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "stomach cramps",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "nausea or loose stool",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "vomiting or diarrhea",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "Multiple episodes of diarrhea or vomiting",
+                                         "value": 5
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "cows_question_8",
+                              "title": "Tremor",
+                              "display_label": "observation of outstretched hands",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "No tremor",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "tremor can be felt, but not observed",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "slight tremor observable",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "gross tremor or muscle twitching",
+                                         "value": 4
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "cows_question_9",
+                              "title": "Yawning",
+                              "display_label": "Observation during assessment",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "no yawning",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "yawning once or twice during assessment",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "yawning three or more times during assessment",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "yawning several times/minute",
+                                         "value": 4
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "cows_question_10",
+                              "title": "Anxiety or Irritability",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "none",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "patient reports increasing irritability or anxiousness",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "patient obviously irritable anxious",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "patient so irritable or anxious that participation in the assessment is difficult",
+                                         "value": 4
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "cows_question_11",
+                              "title": "Gooseflesh skin",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "skin is smooth",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "piloerrection of skin can be felt or hairs standing up on arms",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "prominent piloerrection",
+                                         "value": 5
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "cows_score",
+                              "title": "COWS Score",
+                              "type": "Calculated",
+                              "basetype": "Int",
+                              "formula": "function() { var totalScore = {cows_question_1}+{cows_question_2}+{cows_question_3}+{cows_question_4}+{cows_question_5}+{cows_question_6}+{cows_question_7}+{cows_question_8}+{cows_question_9}+{cows_question_10}+{cows_question_11}; var severityDisplay = ''; if (totalScore >= 5 && totalScore <= 12) { severityDisplay = 'mild'; } else if (totalScore >= 13 && totalScore <= 24) { severityDisplay = 'moderate'; } else if (totalScore >= 25 && totalScore <= 36) { severityDisplay = 'moderately severe'; } else if (totalScore > 36) { severityDisplay = 'severe withdrawal'; } return ''.concat(totalScore.toString(),' ',severityDisplay); }",
+                              "formula_is_format_only": true,
+                              "result_display": "var formatDisplayResult = {result}",
+                              "result_display_should_be_js_evaluated": true
+                              }
+                              ]
+                   },
+                   {
+                   "group": "CIWA Score",
+                   "id": "ciwa_score_group",
+                   "fields": [
+                              {
+                              "id": "ciwa_question_1",
+                              "title": "Nausea and vomiting",
+                              "display_label": "Do you feel sick to your stomach? Have you vomited?",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "no nausea and no vomiting",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "mild nausea with no vomiting",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "2",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "3",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "intermittent nausea with dry heaves",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "5",
+                                         "value": 5
+                                         },
+                                         {
+                                         "title": "6",
+                                         "value": 6
+                                         },
+                                         {
+                                         "title": "constant nausea, frequent dry heaves and vomiting",
+                                         "value": 7
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "ciwa_question_2",
+                              "title": "Tactile disturbances",
+                              "display_label": "Have you any itching, pins and needles sensations, any burning, any numbness, or do you feel bugs crawling on or under your skin?",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "none",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "very mild itching, pins and needles, burning or numbness",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "mild itching, pins and needles, burning or numbness",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "moderate itching, pins and needles, burning or numbness",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "moderately severe hallucinations",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "severe hallucinations",
+                                         "value": 5
+                                         },
+                                         {
+                                         "title": "extremely severe hallucinations",
+                                         "value": 6
+                                         },
+                                         {
+                                         "title": "continuous hallucinations",
+                                         "value": 7
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "ciwa_question_3",
+                              "title": "Tremor",
+                              "display_label": "Arms extended and fingers spread apart",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "no tremor",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "not visible, but can be felt fingertip to fingertip",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "2",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "3",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "moderate, with patient's arms extended",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "5",
+                                         "value": 5
+                                         },
+                                         {
+                                         "title": "6",
+                                         "value": 6
+                                         },
+                                         {
+                                         "title": "severe, even with arms not extended",
+                                         "value": 7
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "ciwa_question_4",
+                              "title": "Auditory disturbances",
+                              "display_label": "Are you more aware of sounds around you? Are they harsh? Do they frighten you? Are you hearing anything that is disturbing to you? Are you hearing things you know are not there?",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "not present",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "very mild harshness or ability to frighten",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "mild harshness or ability to frighten",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "moderate harshness or ability to frighten",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "moderately severe hallucinations",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "severe hallucinations",
+                                         "value": 5
+                                         },
+                                         {
+                                         "title": "extremely severe hallucinations",
+                                         "value": 6
+                                         },
+                                         {
+                                         "title": "continuous hallucinations",
+                                         "value": 7
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "ciwa_question_5",
+                              "title": "Paroxysmal sweats",
+                              "display_label": "Observation",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "no sweat visible",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "barely perceptible sweating, palms moist",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "2",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "3",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "beads of sweat obvious on forehead",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "5",
+                                         "value": 5
+                                         },
+                                         {
+                                         "title": "6",
+                                         "value": 6
+                                         },
+                                         {
+                                         "title": "drenching sweats",
+                                         "value": 7
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "ciwa_question_6",
+                              "title": "Visual disturbances",
+                              "display_label": "Does the light appear to be too bright? Is its color different? Does it hurt your eyes? Are you seeing anything that is disturbing to you? Are you seeing things you know are not there?",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "not present",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "very mild sensitivity",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "mild sensitivity",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "moderate sensitivity",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "moderately severe hallucinations",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "severe hallucinations",
+                                         "value": 5
+                                         },
+                                         {
+                                         "title": "extremely severe hallucinations",
+                                         "value": 6
+                                         },
+                                         {
+                                         "title": "continuous hallucinations",
+                                         "value": 7
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "ciwa_question_7",
+                              "title": "Anxiety",
+                              "display_label": "Do you feel nervous?",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "no anxiety, at ease",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "mild anxious",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "2",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "3",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "moderately anxious, or guarded, so anxiety is inferred",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "5",
+                                         "value": 5
+                                         },
+                                         {
+                                         "title": "6",
+                                         "value": 6
+                                         },
+                                         {
+                                         "title": "equivalent to acute panic states as seen in severe delirium or acute schizophrenic reactions",
+                                         "value": 7
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "ciwa_question_8",
+                              "title": "Headache, fullness in head",
+                              "display_label": "Does your head feel different? Does it feel like there is a band around your head?",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "not present",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "very mild",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "mild",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "moderate",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "moderately severe",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "severe",
+                                         "value": 5
+                                         },
+                                         {
+                                         "title": "very severe",
+                                         "value": 6
+                                         },
+                                         {
+                                         "title": "extremely severe",
+                                         "value": 7
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "ciwa_question_9",
+                              "title": "Agitation",
+                              "display_label": "Observation",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "normal activity",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "somewhat more than normal activity",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "2",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "3",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "moderately fidgety and restless",
+                                         "value": 4
+                                         },
+                                         {
+                                         "title": "5",
+                                         "value": 5
+                                         },
+                                         {
+                                         "title": "6",
+                                         "value": 6
+                                         },
+                                         {
+                                         "title": "paces back and forth during most of the interview, or constantly thrashes about",
+                                         "value": 7
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "ciwa_question_10",
+                              "title": "Orientation and clouding of sensorium",
+                              "display_label": "What day is this? Where are you? Who am I?",
+                              "type": "Radio",
+                              "basetype": "Int",
+                              "values": [
+                                         {
+                                         "title": "oriented and can do serial additions",
+                                         "value": 0
+                                         },
+                                         {
+                                         "title": "cannot do serial additions or is uncertain about date",
+                                         "value": 1
+                                         },
+                                         {
+                                         "title": "disoriented for date by no more than 2 calendar days",
+                                         "value": 2
+                                         },
+                                         {
+                                         "title": "disoriented for date by more than 2 calendar days",
+                                         "value": 3
+                                         },
+                                         {
+                                         "title": "disoriented for place/or person",
+                                         "value": 4
+                                         }
+                                         ]
+                              },
+                              {
+                              "id": "ciwa_score",
+                              "title": "CIWA Score",
+                              "type": "Calculated",
+                              "basetype": "Int",
+                              "formula": "{ciwa_question_1}+{ciwa_question_2}+{ciwa_question_3}+{ciwa_question_4}+{ciwa_question_5}+{ciwa_question_6}+{ciwa_question_7}+{ciwa_question_8}+{ciwa_question_9}+{ciwa_question_10}"
+                              }
+                              ]
+                   },
+                   {
+                   "id": "summary",
+                   "title": "Summary",
+                   "type": "Multiline",
+                   "basetype": "String"
+                   },
+                   {
+                   "id": "management_plan",
+                   "title": "Management Plan",
+                   "type": "Multiline",
+                   "basetype": "String"
+                   },
+                   {
+                   "id": "signature",
+                   "title": "Signature",
+                   "type": "Drawing",
+                   "required": true,
+                   "drawing_settings": {
+                   "color_settings": false,
+                   "eraser": false,
+                   "undo": false,
+                   "reset": true
+                   }
+                   },
+                   {
+                   "id": "witness_signature",
+                   "title": "Witness Signature",
+                   "type": "Drawing",
+                   "required": true,
+                   "drawing_settings": {
+                   "color_settings": false,
+                   "eraser": false,
+                   "undo": false,
+                   "reset": true
+                   }
+                   },
+                   {
+                   "id": "assessment_completion_time",
+                   "title": "Assessment Completion Time",
+                   "type": "Time",
+                   "required": true,
+                   "basetype": "Double"
+                   },
+                   {
+                   "id": "assessment_completion_date",
+                   "title": "Assessment Completion Date",
+                   "type": "Date",
+                   "required": true,
+                   "basetype": "Double"
+                   }
+                   ]
+    }
+}

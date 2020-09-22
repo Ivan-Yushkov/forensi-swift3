@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>64F96EA7-E7A4-47CE-8074-5101B0663D05</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ForensiDoc</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>05954A3BDBA3922EA0BD95E2BE0C0CDF85D1FD85</key>
+		<string>ssh://bitbucket.org/bitmelter/forensidoc-xcode.git</string>
+		<key>D01AE04555C3441CF13AC36F53339C07C41DF099</key>
+		<string>bitbucket.org:bitmelter/xcode.frameworks.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ForensiDoc/ForensiDoc.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>05954A3BDBA3922EA0BD95E2BE0C0CDF85D1FD85</key>
+		<string>../../..</string>
+		<key>D01AE04555C3441CF13AC36F53339C07C41DF099</key>
+		<string>../../../../xcode.frameworks</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://bitbucket.org/bitmelter/forensidoc-xcode.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>05954A3BDBA3922EA0BD95E2BE0C0CDF85D1FD85</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>05954A3BDBA3922EA0BD95E2BE0C0CDF85D1FD85</string>
+			<key>IDESourceControlWCCName</key>
+			<string>forensidoc-xcode</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D01AE04555C3441CF13AC36F53339C07C41DF099</string>
+			<key>IDESourceControlWCCName</key>
+			<string>xcode.frameworks</string>
+		</dict>
+	</array>
+</dict>
+</plist>

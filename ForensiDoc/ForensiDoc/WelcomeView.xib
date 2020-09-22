@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="ForensiDoc" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="aoN-1P-s5t"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="avt-LH-AkC">
+                    <rect key="frame" x="38" y="110" width="299" height="69"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="avt-LH-AkC" secondAttribute="height" multiplier="13:3" id="OfA-lE-kWc"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The new and improved way to collect evidence using your iPhone or iPad." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HIV-e1-eDC">
+                    <rect key="frame" x="38" y="189" width="299" height="42"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="HIV-e1-eDC" secondAttribute="height" multiplier="299:42" id="jyY-kf-k0t"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYT-jU-GF7">
+                    <rect key="frame" x="38" y="509" width="299" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="MYT-jU-GF7" secondAttribute="height" multiplier="299:40" id="f3T-oR-7LP"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment content="To start using Forensidoc you will have to setup a passcode to protect the data on this device.">
+                            <attributes>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="14" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aj5-hs-ZEP" userLabel="Create passcode button">
+                    <rect key="frame" x="38" y="569" width="299" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Aj5-hs-ZEP" secondAttribute="height" multiplier="299:60" id="rDY-MH-hFK"/>
+                    </constraints>
+                    <state key="normal" image="BtnStoreLocally">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="loginAsGuest:" destination="-1" eventType="touchUpInside" id="06E-CE-gfg"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpm-JW-0Wi">
+                    <rect key="frame" x="38" y="401" width="299" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="qpm-JW-0Wi" secondAttribute="height" multiplier="299:24" id="GIs-bE-cmv"/>
+                    </constraints>
+                    <state key="normal" title="Have a look at our privacy policy"/>
+                    <connections>
+                        <action selector="privacyPolicyTapped:" destination="-1" eventType="touchUpInside" id="Poy-F1-1Uj"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" minimumFontSize="9" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMC-qf-do1">
+                    <rect key="frame" x="38" y="251" width="299" height="130"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="aMC-qf-do1" secondAttribute="height" multiplier="23:10" id="BCi-m9-qNg"/>
+                    </constraints>
+                    <attributedString key="attributedText">
+                        <fragment>
+                            <string key="content">Here at Forensidoc we take data privacy very seriously. All the data entered into the app will be stored only locally on this device. 
+
+If you later on decide to generate a report the case file will be uploaded to our servers using SSL encryption and then deleted instantly after the report has been generated.</string>
+                            <attributes>
+                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <font key="NSFont" size="14" name="Helvetica"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="aMC-qf-do1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="38" id="70J-nX-eKb"/>
+                <constraint firstItem="qpm-JW-0Wi" firstAttribute="top" secondItem="aMC-qf-do1" secondAttribute="bottom" constant="20" id="Fn0-yb-YGw"/>
+                <constraint firstItem="avt-LH-AkC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="110" id="HJi-eL-MAm"/>
+                <constraint firstItem="aMC-qf-do1" firstAttribute="top" secondItem="HIV-e1-eDC" secondAttribute="bottom" constant="20" id="N7S-4r-Dyf"/>
+                <constraint firstItem="HIV-e1-eDC" firstAttribute="top" secondItem="avt-LH-AkC" secondAttribute="bottom" constant="10" id="RRd-eV-URX"/>
+                <constraint firstAttribute="bottom" secondItem="Aj5-hs-ZEP" secondAttribute="bottom" constant="38" id="YWl-yd-PPv"/>
+                <constraint firstItem="HIV-e1-eDC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="38" id="ckl-uH-Yiq"/>
+                <constraint firstAttribute="trailing" secondItem="qpm-JW-0Wi" secondAttribute="trailing" constant="38" id="dS2-pH-gyM"/>
+                <constraint firstAttribute="trailing" secondItem="HIV-e1-eDC" secondAttribute="trailing" constant="38" id="dse-6l-KQX"/>
+                <constraint firstItem="qpm-JW-0Wi" firstAttribute="top" secondItem="aMC-qf-do1" secondAttribute="bottom" constant="20" id="fLc-Rn-vgr"/>
+                <constraint firstAttribute="trailing" secondItem="aMC-qf-do1" secondAttribute="trailing" constant="38" id="grh-df-Ick"/>
+                <constraint firstItem="HIV-e1-eDC" firstAttribute="top" secondItem="avt-LH-AkC" secondAttribute="bottom" constant="10" id="h6j-1V-j4W"/>
+                <constraint firstItem="Aj5-hs-ZEP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="38" id="j3A-EO-HWN"/>
+                <constraint firstAttribute="trailing" secondItem="Aj5-hs-ZEP" secondAttribute="trailing" constant="38" id="joT-SM-5wN"/>
+                <constraint firstItem="Aj5-hs-ZEP" firstAttribute="top" secondItem="MYT-jU-GF7" secondAttribute="bottom" constant="20" id="lrW-dZ-bXV"/>
+                <constraint firstAttribute="trailing" secondItem="MYT-jU-GF7" secondAttribute="trailing" constant="38" id="nsn-vo-sgO"/>
+                <constraint firstItem="MYT-jU-GF7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="38" id="qtE-zQ-1zb"/>
+                <constraint firstItem="avt-LH-AkC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="38" id="rfm-RC-l4x"/>
+                <constraint firstItem="aMC-qf-do1" firstAttribute="top" secondItem="HIV-e1-eDC" secondAttribute="bottom" constant="20" id="tgt-AA-sFk"/>
+                <constraint firstAttribute="trailing" secondItem="avt-LH-AkC" secondAttribute="trailing" constant="38" id="tza-Nn-U4P"/>
+                <constraint firstItem="qpm-JW-0Wi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="38" id="uDC-U2-dk2"/>
+                <constraint firstItem="Aj5-hs-ZEP" firstAttribute="top" secondItem="MYT-jU-GF7" secondAttribute="bottom" constant="20" id="xWp-a2-9GQ"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="291.5" y="339.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="BtnStoreLocally" width="299" height="60"/>
+        <image name="Logo" width="299" height="69"/>
+    </resources>
+</document>

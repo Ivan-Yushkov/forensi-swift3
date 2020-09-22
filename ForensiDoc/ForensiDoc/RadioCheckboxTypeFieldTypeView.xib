@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RadioCheckboxTypeFieldTypeViewController" customModule="ForensiDoc" customModuleProvider="target">
+            <connections>
+                <outlet property="attachmentsSelectorView" destination="8F1-qw-uOD" id="mYH-Oz-CAi"/>
+                <outlet property="attachmentsSelectorViewHeightConstraint" destination="UjO-p9-Y01" id="Nex-99-WbU"/>
+                <outlet property="mainTbl" destination="erx-ng-zyc" id="25G-f0-aPj"/>
+                <outlet property="view" destination="iN0-l3-epB" id="4Tz-wn-E9q"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8F1-qw-uOD" userLabel="Attachments view" customClass="AttachmentsSelectorView" customModule="ForensiDoc" customModuleProvider="target">
+                    <rect key="frame" x="8" y="8" width="584" height="45"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="UjO-p9-Y01"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="erx-ng-zyc">
+                    <rect key="frame" x="0.0" y="61" width="600" height="475"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8F1-qw-uOD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="8Qj-gi-Tql"/>
+                <constraint firstAttribute="trailing" secondItem="8F1-qw-uOD" secondAttribute="trailing" constant="8" id="CDI-qS-yQ9"/>
+                <constraint firstAttribute="bottom" secondItem="erx-ng-zyc" secondAttribute="bottom" id="JPF-tb-MPZ"/>
+                <constraint firstItem="erx-ng-zyc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Psf-PC-DXW"/>
+                <constraint firstItem="8F1-qw-uOD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="SGH-gx-fy3"/>
+                <constraint firstItem="erx-ng-zyc" firstAttribute="top" secondItem="8F1-qw-uOD" secondAttribute="bottom" constant="8" id="pld-kJ-4tY"/>
+                <constraint firstAttribute="trailing" secondItem="erx-ng-zyc" secondAttribute="trailing" id="u5B-B1-Scf"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="496" y="368"/>
+        </view>
+    </objects>
+</document>

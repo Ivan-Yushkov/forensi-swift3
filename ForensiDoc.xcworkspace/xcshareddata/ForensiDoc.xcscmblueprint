@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "05954A3BDBA3922EA0BD95E2BE0C0CDF85D1FD85",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "D01AE04555C3441CF13AC36F53339C07C41DF099" : 0,
+    "05954A3BDBA3922EA0BD95E2BE0C0CDF85D1FD85" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "987CE296-0555-41B1-B315-F0E2055A2902",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "D01AE04555C3441CF13AC36F53339C07C41DF099" : "xcode.frameworks\/",
+    "05954A3BDBA3922EA0BD95E2BE0C0CDF85D1FD85" : "xcode.forensidoc\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ForensiDoc",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ForensiDoc.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/bitbucket.org\/bitmelter\/xcode.forensidoc.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "05954A3BDBA3922EA0BD95E2BE0C0CDF85D1FD85"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:bitmelter\/xcode.frameworks.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D01AE04555C3441CF13AC36F53339C07C41DF099"
+    }
+  ]
+}

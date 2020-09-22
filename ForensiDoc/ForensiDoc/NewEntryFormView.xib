@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewEntryFormViewController" customModule="ForensiDoc" customModuleProvider="target">
+            <connections>
+                <outlet property="mainTbl" destination="iOP-EI-5JV" id="9np-ts-vWv"/>
+                <outlet property="view" destination="iN0-l3-epB" id="c9h-GW-yaE"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iOP-EI-5JV">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="iOP-EI-5JV" secondAttribute="bottom" id="FLc-Pi-LdA"/>
+                <constraint firstItem="iOP-EI-5JV" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ohb-Nt-cBm"/>
+                <constraint firstItem="iOP-EI-5JV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WLH-op-aa4"/>
+                <constraint firstAttribute="trailing" secondItem="iOP-EI-5JV" secondAttribute="trailing" id="cHK-kK-4Lx"/>
+            </constraints>
+            <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="FLc-Pi-LdA"/>
+                    <exclude reference="Ohb-Nt-cBm"/>
+                    <exclude reference="WLH-op-aa4"/>
+                    <exclude reference="cHK-kK-4Lx"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=compact">
+                <mask key="constraints">
+                    <include reference="FLc-Pi-LdA"/>
+                    <include reference="Ohb-Nt-cBm"/>
+                    <include reference="WLH-op-aa4"/>
+                    <include reference="cHK-kK-4Lx"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="339" y="222"/>
+        </view>
+    </objects>
+</document>

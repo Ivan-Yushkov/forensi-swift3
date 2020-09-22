@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="17B1003" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TextboxTypeFieldTypeViewController" customModule="ForensiDoc" customModuleProvider="target">
+            <connections>
+                <outlet property="attachmentsSelectorView" destination="ThO-Ow-cX9" id="aul-A3-Xb7"/>
+                <outlet property="attachmentsSelectorViewHeightConstraint" destination="mVh-1e-jD7" id="XVy-ZS-E7Z"/>
+                <outlet property="textField" destination="cB8-7U-Qdc" id="8iw-Ma-bVw"/>
+                <outlet property="view" destination="iN0-l3-epB" id="eeB-3A-zSm"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ThO-Ow-cX9" userLabel="Attachments view" customClass="AttachmentsSelectorView" customModule="ForensiDoc" customModuleProvider="target">
+                    <rect key="frame" x="20" y="8" width="560" height="45"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="mVh-1e-jD7"/>
+                    </constraints>
+                </view>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cB8-7U-Qdc">
+                    <rect key="frame" x="20" y="61" width="560" height="50"/>
+                    <color key="backgroundColor" red="0.99204939603805542" green="0.99221879243850708" blue="0.99203866720199585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="1eV-Rs-Fpo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="cej-np-GY0"/>
+                    </connections>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cB8-7U-Qdc" firstAttribute="top" secondItem="ThO-Ow-cX9" secondAttribute="bottom" constant="8" id="6nf-DZ-o9e"/>
+                <constraint firstItem="cB8-7U-Qdc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="P07-My-MpQ"/>
+                <constraint firstAttribute="trailing" secondItem="ThO-Ow-cX9" secondAttribute="trailing" constant="20" id="UWE-Np-KyU"/>
+                <constraint firstItem="ThO-Ow-cX9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="VwR-cr-Lmu"/>
+                <constraint firstItem="ThO-Ow-cX9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="bhs-0k-Szi"/>
+                <constraint firstAttribute="trailing" secondItem="cB8-7U-Qdc" secondAttribute="trailing" constant="20" id="tlA-fK-kz8"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <point key="canvasLocation" x="339" y="354"/>
+        </view>
+    </objects>
+</document>

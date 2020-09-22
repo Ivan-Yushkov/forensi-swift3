@@ -1,0 +1,16 @@
+{
+    "formid": 123456789,
+    "fields": [
+               {
+                    "title" : "Reason for assessment",
+                    "type" : ["RadioWithOther"],
+                    "data":
+                        [
+                            {
+                                "type" : "String",
+                                "values": ["Drug dealing"]
+                            }
+                        ]
+                }
+               ]
+}

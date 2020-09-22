@@ -1,0 +1,99 @@
+{
+  "title" : "Test ForensiDoc",
+  "formid" : 123456789,
+  "spec" : 
+  {
+    "fields":
+    [
+      {
+        "group": "Report Details",
+        "fields": 
+        [
+          {
+            "id": 12841738173,
+            "title": "Consent",
+            "type": "radio",
+            "baseType": "string",
+            "searchable": true,
+            "values":
+            [
+              {
+                "title": "Yes",
+                "value": "yes"
+              },
+              {
+                "title": "No",
+                "value": "no"
+              }
+            ],
+            "selectedValues": 
+            [
+              {
+                "title": "No",
+                "value": "no"
+              }
+            ]
+          },
+          {
+            "id": 12843738173,
+            "title": "Reason for Assessment",
+            "type": "CheckboxWithOther",
+            "baseType": "string",
+            "searchable": true,
+            "values":
+            [
+              {
+                "title": "Document Injuries",
+                "value": "Document Injuries"
+              },
+              {
+                "title": "Probation Assesment",
+                "value": "Probation Assesment"
+              }
+            ],
+            "selectedValues": 
+            [
+              {
+                "title": "Document Injuries",
+                "value": "Document Injuries"
+              },
+              {
+                "title": "Something Custom",
+                "value": "Something Custom"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Personal Details",
+        "fields": 
+        [
+          {
+            "id": 12842738173,
+            "title": "Weight",
+            "type": "Textbox",
+            "baseType": "int",
+            "searchable": true,
+            "values":
+            [
+              {
+                "title": "85",
+                "value": 85
+              }
+            ],
+            "selectedValues": 
+            [
+              {
+                "title": "85",
+                "value": 85
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
+
+

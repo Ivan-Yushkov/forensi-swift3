@@ -1,0 +1,661 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A69A7D181A8B90B3003B43DA /* BitmelterAccount.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A69A7D171A8B90B3003B43DA /* BitmelterAccount.framework */; };
+		FE1B87771A6F15D7004A3C94 /* AccountDetailsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE1B87761A6F15D7004A3C94 /* AccountDetailsView.xib */; };
+		FE33D21C1A1BF88700E09AF4 /* WelcomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE33D21B1A1BF88700E09AF4 /* WelcomeView.xib */; };
+		FE33D21E1A1BF89800E09AF4 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE33D21D1A1BF89800E09AF4 /* WelcomeViewController.swift */; };
+		FE36C8E71A2D29E8009B89C6 /* CreatePasscodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE36C8E61A2D29E8009B89C6 /* CreatePasscodeView.xib */; };
+		FE36C8EB1A2D2AA1009B89C6 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE36C8EA1A2D2AA1009B89C6 /* LocalAuthentication.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FE46723F1A9D46A900A38F8F /* BitmelterEntryForm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE46723E1A9D46A900A38F8F /* BitmelterEntryForm.framework */; };
+		FE5DC7951A1BFD45005C5C04 /* RegisterForNewAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE5DC7941A1BFD45005C5C04 /* RegisterForNewAccountView.xib */; };
+		FE70EBDD1A65E46500327075 /* PasswordResetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE70EBDC1A65E46500327075 /* PasswordResetView.xib */; };
+		FE7156CE1A2E5E3A0021BCE4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7156CD1A2E5E3A0021BCE4 /* MobileCoreServices.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FE7156D01A2E5E440021BCE4 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7156CF1A2E5E440021BCE4 /* WebKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FE7156D11A2E5E640021BCE4 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE7156C81A2E5CC90021BCE4 /* CoreFoundation.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FE7156DD1A2E70AE0021BCE4 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7156DC1A2E70AE0021BCE4 /* Globals.swift */; };
+		FE8F29E01A09754500B3F2F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8F29DF1A09754500B3F2F9 /* AppDelegate.swift */; };
+		FE8F29E71A09754500B3F2F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE8F29E61A09754500B3F2F9 /* Images.xcassets */; };
+		FE8F29EA1A09754500B3F2F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE8F29E81A09754500B3F2F9 /* LaunchScreen.xib */; };
+		FE8F29F61A09754500B3F2F9 /* ForensiDocTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8F29F51A09754500B3F2F9 /* ForensiDocTests.swift */; };
+		FE97E4011A308F4D004731F3 /* PasscodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE97E4001A308F4D004731F3 /* PasscodeView.xib */; };
+		FEB381341A9BD479002F1EF2 /* BitmelterAlerts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEB381331A9BD479002F1EF2 /* BitmelterAlerts.framework */; };
+		FECB5F781A6C90C50081B46F /* NavigationControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECB5F771A6C90C50081B46F /* NavigationControllerDelegate.swift */; };
+		FEE2AFB31A26910100C451FE /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE2AFB21A26910100C451FE /* MainViewController.swift */; };
+		FEE2AFB51A26913800C451FE /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEE2AFB41A26913800C451FE /* MainView.xib */; };
+		FEE615AF1A1AC30700E1F307 /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEE615AE1A1AC30700E1F307 /* LoginView.xib */; };
+		FEE615B71A1ACC3300E1F307 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEE615B61A1ACC3300E1F307 /* MainWindow.xib */; };
+		FEEF587B1A6DD4BC002A4E5D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEF587A1A6DD4BC002A4E5D /* SettingsViewController.swift */; };
+		FEEF587D1A6DD4E0002A4E5D /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEEF587C1A6DD4E0002A4E5D /* SettingsView.xib */; };
+		FEEF58801A6DDF7E002A4E5D /* SettingsViewControllerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEF587F1A6DDF7E002A4E5D /* SettingsViewControllerTableViewDataSource.swift */; };
+		FEF1FD951A228B26000A4912 /* ActivateAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEF1FD941A228B26000A4912 /* ActivateAccountView.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE8F29F01A09754500B3F2F9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE8F29D21A09754500B3F2F9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE8F29D91A09754500B3F2F9;
+			remoteInfo = ForensiDoc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A69A7D171A8B90B3003B43DA /* BitmelterAccount.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BitmelterAccount.framework; path = "../../../xcode.frameworks/BitmelterAccount/build/Debug-iphoneos/BitmelterAccount.framework"; sourceTree = "<group>"; };
+		FE1B87761A6F15D7004A3C94 /* AccountDetailsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccountDetailsView.xib; sourceTree = "<group>"; };
+		FE33D21B1A1BF88700E09AF4 /* WelcomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeView.xib; sourceTree = "<group>"; };
+		FE33D21D1A1BF89800E09AF4 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		FE36C8E61A2D29E8009B89C6 /* CreatePasscodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CreatePasscodeView.xib; sourceTree = "<group>"; };
+		FE36C8EA1A2D2AA1009B89C6 /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		FE46723E1A9D46A900A38F8F /* BitmelterEntryForm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BitmelterEntryForm.framework; path = "../../../xcode.frameworks/BitmelterEntryForm/build/Debug-iphoneos/BitmelterEntryForm.framework"; sourceTree = "<group>"; };
+		FE5DC7941A1BFD45005C5C04 /* RegisterForNewAccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterForNewAccountView.xib; sourceTree = "<group>"; };
+		FE70EBDC1A65E46500327075 /* PasswordResetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasswordResetView.xib; sourceTree = "<group>"; };
+		FE7156C61A2E5C860021BCE4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FE7156C81A2E5CC90021BCE4 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		FE7156CB1A2E5D1C0021BCE4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FE7156CD1A2E5E3A0021BCE4 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FE7156CF1A2E5E440021BCE4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		FE7156DC1A2E70AE0021BCE4 /* Globals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		FE8F29DA1A09754500B3F2F9 /* ForensiDoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ForensiDoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE8F29DE1A09754500B3F2F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE8F29DF1A09754500B3F2F9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE8F29E61A09754500B3F2F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FE8F29E91A09754500B3F2F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		FE8F29EF1A09754500B3F2F9 /* ForensiDocTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForensiDocTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE8F29F41A09754500B3F2F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE8F29F51A09754500B3F2F9 /* ForensiDocTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForensiDocTests.swift; sourceTree = "<group>"; };
+		FE97E4001A308F4D004731F3 /* PasscodeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasscodeView.xib; sourceTree = "<group>"; };
+		FE97F2251A1C07FF00FC5895 /* TestOfFunctions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TestOfFunctions.playground; sourceTree = "<group>"; };
+		FEB381331A9BD479002F1EF2 /* BitmelterAlerts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BitmelterAlerts.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/ForensiDoc-abxsicikuozqofbzqxsxqzqeymmk/Build/Products/Debug-iphoneos/BitmelterAlerts.framework"; sourceTree = "<group>"; };
+		FECB5F771A6C90C50081B46F /* NavigationControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationControllerDelegate.swift; sourceTree = "<group>"; };
+		FEE2AFB21A26910100C451FE /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FEE2AFB41A26913800C451FE /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		FEE615AE1A1AC30700E1F307 /* LoginView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginView.xib; sourceTree = "<group>"; };
+		FEE615B61A1ACC3300E1F307 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		FEEF587A1A6DD4BC002A4E5D /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FEEF587C1A6DD4E0002A4E5D /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		FEEF587F1A6DDF7E002A4E5D /* SettingsViewControllerTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerTableViewDataSource.swift; sourceTree = "<group>"; };
+		FEF1FD941A228B26000A4912 /* ActivateAccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivateAccountView.xib; sourceTree = "<group>"; };
+		FEFAE77F1A27BC45008DB7D1 /* ForensiDoc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ForensiDoc-Bridging-Header.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE8F29D71A09754500B3F2F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE46723F1A9D46A900A38F8F /* BitmelterEntryForm.framework in Frameworks */,
+				FEB381341A9BD479002F1EF2 /* BitmelterAlerts.framework in Frameworks */,
+				A69A7D181A8B90B3003B43DA /* BitmelterAccount.framework in Frameworks */,
+				FE7156D11A2E5E640021BCE4 /* CoreFoundation.framework in Frameworks */,
+				FE7156CE1A2E5E3A0021BCE4 /* MobileCoreServices.framework in Frameworks */,
+				FE7156D01A2E5E440021BCE4 /* WebKit.framework in Frameworks */,
+				FE36C8EB1A2D2AA1009B89C6 /* LocalAuthentication.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8F29EC1A09754500B3F2F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE1B87731A6F15A7004A3C94 /* EditAccountDetails */ = {
+			isa = PBXGroup;
+			children = (
+				FE1B87761A6F15D7004A3C94 /* AccountDetailsView.xib */,
+			);
+			name = EditAccountDetails;
+			sourceTree = "<group>";
+		};
+		FE33D2141A1BEDB200E09AF4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FEFAE77F1A27BC45008DB7D1 /* ForensiDoc-Bridging-Header.h */,
+				FE7156DC1A2E70AE0021BCE4 /* Globals.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		FE33D21A1A1BF86500E09AF4 /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FE33D21B1A1BF88700E09AF4 /* WelcomeView.xib */,
+				FE33D21D1A1BF89800E09AF4 /* WelcomeViewController.swift */,
+			);
+			name = WelcomeScreen;
+			sourceTree = "<group>";
+		};
+		FE36C8E51A2D29CB009B89C6 /* CreatePasscode */ = {
+			isa = PBXGroup;
+			children = (
+				FE36C8E61A2D29E8009B89C6 /* CreatePasscodeView.xib */,
+			);
+			name = CreatePasscode;
+			sourceTree = "<group>";
+		};
+		FE5DC7911A1BFCEA005C5C04 /* RegisterForNewAccount */ = {
+			isa = PBXGroup;
+			children = (
+				FE5DC7941A1BFD45005C5C04 /* RegisterForNewAccountView.xib */,
+			);
+			name = RegisterForNewAccount;
+			sourceTree = "<group>";
+		};
+		FE70EBD91A65E34C00327075 /* PasswordReset */ = {
+			isa = PBXGroup;
+			children = (
+				FE70EBDC1A65E46500327075 /* PasswordResetView.xib */,
+			);
+			name = PasswordReset;
+			sourceTree = "<group>";
+		};
+		FE8F29D11A09754500B3F2F9 = {
+			isa = PBXGroup;
+			children = (
+				FE8F29DC1A09754500B3F2F9 /* ForensiDoc */,
+				FE8F29F21A09754500B3F2F9 /* ForensiDocTests */,
+				FE8F29DB1A09754500B3F2F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE8F29DB1A09754500B3F2F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F29DA1A09754500B3F2F9 /* ForensiDoc.app */,
+				FE8F29EF1A09754500B3F2F9 /* ForensiDocTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE8F29DC1A09754500B3F2F9 /* ForensiDoc */ = {
+			isa = PBXGroup;
+			children = (
+				FE33D2141A1BEDB200E09AF4 /* Classes */,
+				FEE615AC1A1ABE4D00E1F307 /* Views */,
+				FE8F29DF1A09754500B3F2F9 /* AppDelegate.swift */,
+				FE8F29E61A09754500B3F2F9 /* Images.xcassets */,
+				FE8F29DD1A09754500B3F2F9 /* Supporting Files */,
+				FE97F2251A1C07FF00FC5895 /* TestOfFunctions.playground */,
+			);
+			path = ForensiDoc;
+			sourceTree = "<group>";
+		};
+		FE8F29DD1A09754500B3F2F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE46723E1A9D46A900A38F8F /* BitmelterEntryForm.framework */,
+				FEB381331A9BD479002F1EF2 /* BitmelterAlerts.framework */,
+				A69A7D171A8B90B3003B43DA /* BitmelterAccount.framework */,
+				FE8F29DE1A09754500B3F2F9 /* Info.plist */,
+				FEE615B61A1ACC3300E1F307 /* MainWindow.xib */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE8F29F21A09754500B3F2F9 /* ForensiDocTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F29F51A09754500B3F2F9 /* ForensiDocTests.swift */,
+				FE8F29F31A09754500B3F2F9 /* Supporting Files */,
+			);
+			path = ForensiDocTests;
+			sourceTree = "<group>";
+		};
+		FE8F29F31A09754500B3F2F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FE7156CF1A2E5E440021BCE4 /* WebKit.framework */,
+				FE7156CD1A2E5E3A0021BCE4 /* MobileCoreServices.framework */,
+				FE7156CB1A2E5D1C0021BCE4 /* UIKit.framework */,
+				FE7156C81A2E5CC90021BCE4 /* CoreFoundation.framework */,
+				FE7156C61A2E5C860021BCE4 /* Foundation.framework */,
+				FE36C8EA1A2D2AA1009B89C6 /* LocalAuthentication.framework */,
+				FE8F29F41A09754500B3F2F9 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FE97E3FD1A308F13004731F3 /* Passcode */ = {
+			isa = PBXGroup;
+			children = (
+				FE97E4001A308F4D004731F3 /* PasscodeView.xib */,
+			);
+			name = Passcode;
+			sourceTree = "<group>";
+		};
+		FE97E4021A308F88004731F3 /* PasscodeViews */ = {
+			isa = PBXGroup;
+			children = (
+				FE97E3FD1A308F13004731F3 /* Passcode */,
+				FE36C8E51A2D29CB009B89C6 /* CreatePasscode */,
+			);
+			name = PasscodeViews;
+			sourceTree = "<group>";
+		};
+		FEE615A91A1ABDB000E1F307 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				FEE615AE1A1AC30700E1F307 /* LoginView.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		FEE615AC1A1ABE4D00E1F307 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE1B87731A6F15A7004A3C94 /* EditAccountDetails */,
+				FEEF58791A6DD493002A4E5D /* Settings */,
+				FE70EBD91A65E34C00327075 /* PasswordReset */,
+				FE97E4021A308F88004731F3 /* PasscodeViews */,
+				FEF1FD911A228A2C000A4912 /* ActivateAccount */,
+				FE5DC7911A1BFCEA005C5C04 /* RegisterForNewAccount */,
+				FE33D21A1A1BF86500E09AF4 /* WelcomeScreen */,
+				FEE615B31A1AC81F00E1F307 /* MainView */,
+				FEE615A91A1ABDB000E1F307 /* Login */,
+				FEE615AD1A1ABE5400E1F307 /* LaunchScreen */,
+				FECB5F771A6C90C50081B46F /* NavigationControllerDelegate.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FEE615AD1A1ABE5400E1F307 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				FE8F29E81A09754500B3F2F9 /* LaunchScreen.xib */,
+			);
+			name = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		FEE615B31A1AC81F00E1F307 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				FEE2AFB21A26910100C451FE /* MainViewController.swift */,
+				FEE2AFB41A26913800C451FE /* MainView.xib */,
+			);
+			name = MainView;
+			sourceTree = "<group>";
+		};
+		FEEF58791A6DD493002A4E5D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FEEF587E1A6DDF50002A4E5D /* Extensions */,
+				FEEF587A1A6DD4BC002A4E5D /* SettingsViewController.swift */,
+				FEEF587C1A6DD4E0002A4E5D /* SettingsView.xib */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		FEEF587E1A6DDF50002A4E5D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FEEF587F1A6DDF7E002A4E5D /* SettingsViewControllerTableViewDataSource.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		FEF1FD911A228A2C000A4912 /* ActivateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				FEF1FD941A228B26000A4912 /* ActivateAccountView.xib */,
+			);
+			name = ActivateAccount;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE8F29D91A09754500B3F2F9 /* ForensiDoc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE8F29F91A09754500B3F2F9 /* Build configuration list for PBXNativeTarget "ForensiDoc" */;
+			buildPhases = (
+				FE8F29D61A09754500B3F2F9 /* Sources */,
+				FE8F29D71A09754500B3F2F9 /* Frameworks */,
+				FE8F29D81A09754500B3F2F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ForensiDoc;
+			productName = ForensiDoc;
+			productReference = FE8F29DA1A09754500B3F2F9 /* ForensiDoc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FE8F29EE1A09754500B3F2F9 /* ForensiDocTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE8F29FC1A09754500B3F2F9 /* Build configuration list for PBXNativeTarget "ForensiDocTests" */;
+			buildPhases = (
+				FE8F29EB1A09754500B3F2F9 /* Sources */,
+				FE8F29EC1A09754500B3F2F9 /* Frameworks */,
+				FE8F29ED1A09754500B3F2F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE8F29F11A09754500B3F2F9 /* PBXTargetDependency */,
+			);
+			name = ForensiDocTests;
+			productName = ForensiDocTests;
+			productReference = FE8F29EF1A09754500B3F2F9 /* ForensiDocTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE8F29D21A09754500B3F2F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Bitmelter Ltd.";
+				TargetAttributes = {
+					FE8F29D91A09754500B3F2F9 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					FE8F29EE1A09754500B3F2F9 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = FE8F29D91A09754500B3F2F9;
+					};
+				};
+			};
+			buildConfigurationList = FE8F29D51A09754500B3F2F9 /* Build configuration list for PBXProject "ForensiDoc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE8F29D11A09754500B3F2F9;
+			productRefGroup = FE8F29DB1A09754500B3F2F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE8F29D91A09754500B3F2F9 /* ForensiDoc */,
+				FE8F29EE1A09754500B3F2F9 /* ForensiDocTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE8F29D81A09754500B3F2F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE5DC7951A1BFD45005C5C04 /* RegisterForNewAccountView.xib in Resources */,
+				FEE615B71A1ACC3300E1F307 /* MainWindow.xib in Resources */,
+				FE1B87771A6F15D7004A3C94 /* AccountDetailsView.xib in Resources */,
+				FEF1FD951A228B26000A4912 /* ActivateAccountView.xib in Resources */,
+				FEEF587D1A6DD4E0002A4E5D /* SettingsView.xib in Resources */,
+				FE33D21C1A1BF88700E09AF4 /* WelcomeView.xib in Resources */,
+				FE97E4011A308F4D004731F3 /* PasscodeView.xib in Resources */,
+				FE8F29EA1A09754500B3F2F9 /* LaunchScreen.xib in Resources */,
+				FEE2AFB51A26913800C451FE /* MainView.xib in Resources */,
+				FEE615AF1A1AC30700E1F307 /* LoginView.xib in Resources */,
+				FE36C8E71A2D29E8009B89C6 /* CreatePasscodeView.xib in Resources */,
+				FE8F29E71A09754500B3F2F9 /* Images.xcassets in Resources */,
+				FE70EBDD1A65E46500327075 /* PasswordResetView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8F29ED1A09754500B3F2F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE8F29D61A09754500B3F2F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE2AFB31A26910100C451FE /* MainViewController.swift in Sources */,
+				FECB5F781A6C90C50081B46F /* NavigationControllerDelegate.swift in Sources */,
+				FE33D21E1A1BF89800E09AF4 /* WelcomeViewController.swift in Sources */,
+				FE7156DD1A2E70AE0021BCE4 /* Globals.swift in Sources */,
+				FEEF587B1A6DD4BC002A4E5D /* SettingsViewController.swift in Sources */,
+				FEEF58801A6DDF7E002A4E5D /* SettingsViewControllerTableViewDataSource.swift in Sources */,
+				FE8F29E01A09754500B3F2F9 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8F29EB1A09754500B3F2F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8F29F61A09754500B3F2F9 /* ForensiDocTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE8F29F11A09754500B3F2F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE8F29D91A09754500B3F2F9 /* ForensiDoc */;
+			targetProxy = FE8F29F01A09754500B3F2F9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FE8F29E81A09754500B3F2F9 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE8F29E91A09754500B3F2F9 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE8F29F71A09754500B3F2F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE8F29F81A09754500B3F2F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE8F29FA1A09754500B3F2F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_MODULES_AUTOLINK = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BitmelterAccount-fhqjjcirtzekdkawcqriyntqabpq/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BitmelterAccount-gavjehmbjcckbzeplulkbotyexqv/Build/Products/Debug-iphoneos",
+					"/Users/andrzej/Desktop/xCodeProjects/Bitmelter/xcode.frameworks/BitmelterAccount/build/Debug-iphoneos",
+					"/Users/andrzejczarkowski/Desktop/xCodeProjects/Bitmelter/xcode.frameworks/BitmelterAccount/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ForensiDoc-abxsicikuozqofbzqxsxqzqeymmk/Build/Products/Debug-iphoneos",
+					"/Users/andrzej/Desktop/xCodeProjects/Bitmelter/xcode.frameworks/BitmelterEntryForm/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = ForensiDoc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ForensiDoc/ForensiDoc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FE8F29FB1A09754500B3F2F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_MODULES_AUTOLINK = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BitmelterAccount-fhqjjcirtzekdkawcqriyntqabpq/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BitmelterAccount-gavjehmbjcckbzeplulkbotyexqv/Build/Products/Debug-iphoneos",
+					"/Users/andrzej/Desktop/xCodeProjects/Bitmelter/xcode.frameworks/BitmelterAccount/build/Debug-iphoneos",
+					"/Users/andrzejczarkowski/Desktop/xCodeProjects/Bitmelter/xcode.frameworks/BitmelterAccount/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/ForensiDoc-abxsicikuozqofbzqxsxqzqeymmk/Build/Products/Debug-iphoneos",
+					"/Users/andrzej/Desktop/xCodeProjects/Bitmelter/xcode.frameworks/BitmelterEntryForm/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = ForensiDoc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ForensiDoc/ForensiDoc-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		FE8F29FD1A09754500B3F2F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BitmelterAccount-gavjehmbjcckbzeplulkbotyexqv/Build/Products/Debug-iphoneos",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = ForensiDocTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForensiDoc.app/ForensiDoc";
+			};
+			name = Debug;
+		};
+		FE8F29FE1A09754500B3F2F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/BitmelterAccount-gavjehmbjcckbzeplulkbotyexqv/Build/Products/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = ForensiDocTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ForensiDoc.app/ForensiDoc";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE8F29D51A09754500B3F2F9 /* Build configuration list for PBXProject "ForensiDoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8F29F71A09754500B3F2F9 /* Debug */,
+				FE8F29F81A09754500B3F2F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE8F29F91A09754500B3F2F9 /* Build configuration list for PBXNativeTarget "ForensiDoc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8F29FA1A09754500B3F2F9 /* Debug */,
+				FE8F29FB1A09754500B3F2F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE8F29FC1A09754500B3F2F9 /* Build configuration list for PBXNativeTarget "ForensiDocTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8F29FD1A09754500B3F2F9 /* Debug */,
+				FE8F29FE1A09754500B3F2F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE8F29D21A09754500B3F2F9 /* Project object */;
+}

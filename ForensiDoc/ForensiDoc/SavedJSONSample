@@ -1,0 +1,178 @@
+{
+    "title": "Test ForensiDoc",
+    "save_uuid": "FF7F28EF-8441-4AE6-8538-8A8BD641A0C3",
+    "formid": 123456789,
+    "saved_as_title": "",
+    "spec": {
+        "fields": [
+            {
+                "title": "Reason for Assessment",
+                "selected_values": [
+                    {
+                        "title": "Yes",
+                        "value": "yes"
+                    }
+                ],
+                "values": [
+                    {
+                        "title": "Yes",
+                        "value": "yes"
+                    },
+                    {
+                        "title": "No",
+                        "value": "no"
+                    }
+                ],
+                "id": 1,
+                "basetype": "String",
+                "type": "Radio"
+            },
+            {
+                "fields": [
+                    {
+                        "title": "This is something",
+                        "values": [
+                            {
+                                "title": "Option 1",
+                                "value": 10
+                            },
+                            {
+                                "title": "Option 2",
+                                "value": 20
+                            }
+                        ],
+                        "id": 50,
+                        "basetype": "Int",
+                        "type": "Radio"
+                    },
+                    {
+                        "fields": [
+                                   {
+                                        "title": "This is something22",
+                                        "values": [
+                                                   {
+                                                        "title": "Option 3",
+                                                        "value": 10
+                                                   },
+                                                   {
+                                                        "title": "Option 4",
+                                                        "value": 20
+                                                   }
+                                                   ],
+                                        "id": 53,
+                                        "basetype": "Int",
+                                        "type": "Radio"
+                                   },
+                                   {
+                                        "title": "Given Name in subgroup",
+                                        "id": 54,
+                                        "basetype": "Float",
+                                        "type": "Textbox"
+                                   }
+                                   ],
+                        "group": "Sub Grouped items"
+                    },
+                    {
+                           "title": "Given Name",
+                           "id": 51,
+                           "basetype": "Int",
+                           "type": "Textbox"
+                    }
+                ],
+            "group": "Grouped items"
+        },
+        {
+                   "title": "Risk",
+                   "values": [
+                              {
+                              "title": "First option",
+                              "value": 20
+                              },
+                              {
+                              "title": "Second option",
+                              "value": 30
+                              }
+                              ],
+                   "id": 2,
+                   "basetype": "Float",
+                   "type": "Checkbox"
+        },
+        {
+                   "title": "Given Name",
+                   "id": 3,
+                   "basetype": "Int",
+                   "type": "Textbox"
+        },
+        {
+                   "title": "First Name",
+                   "id": 4,
+                   "basetype": "String",
+                   "type": "Multiline"
+        },
+        {
+                   "title": "Radio with Other",
+                   "values": [
+                              {
+                              "title": "1st option",
+                              "value": 1
+                              },
+                              {
+                              "title": "2nd option",
+                              "value": 2
+                              },
+                              {
+                              "title": "3rd option",
+                              "value": 3
+                              },
+                              {
+                              "title": "11",
+                              "value": 11
+                              }
+                              ],
+                   "othervalue_value": 11,
+                   "id": 5,
+                   "basetype": "Float",
+                   "selected_values": [
+                                       {
+                                       "title": "11",
+                                       "value": 11
+                                       }
+                                       ],
+                   "othervalue_title": "11",
+                   "type": "RadioWithOther"
+                   },
+                   {
+                   "title": "Checkbox with other",
+                   "values": [
+                              {
+                              "title": "10 points",
+                              "value": 10
+                              },
+                              {
+                              "title": "20 points",
+                              "value": 20
+                              },
+                              {
+                              "title": "30 points",
+                              "value": 30
+                              },
+                              {
+                              "title": "444",
+                              "value": 444
+                              }
+                              ],
+                   "othervalue_value": 444,
+                   "id": 6,
+                   "basetype": "Int",
+                   "selected_values": [
+                                       {
+                                       "title": "444",
+                                       "value": 444
+                                       }
+                                       ],
+                   "othervalue_title": "444",
+                   "type": "CheckboxWithOther"
+                   }
+                   ]
+    }
+}
