@@ -69,7 +69,7 @@ public extension RNCryptorType {
     /// for code that is neutral on whether it is encrypting or decrypting.
     ///
     /// - throws: `Error`
-    private func oneshot(data: NSData) throws -> NSData {
+     func oneshot(data: NSData) throws -> NSData {
         let result = NSMutableData(data: try updateWithData(data: data) as Data)
         result.append(try finalData() as Data)
         return result
@@ -182,7 +182,7 @@ public final class RNCryptor: NSObject {
         /// password is incorrect or ciphertext is in the wrong format.
         /// - throws `Error`
         public func decryptData(data: NSData) throws -> NSData {
-            return try oneshot(data)
+            return try oneshot(data: data)
         }
 
         /// Updates cryptor with data and returns processed data.
@@ -293,8 +293,8 @@ public extension RNCryptor {
             self.init(
                 password: password,
                 encryptionSalt: RNCryptor.randomDataOfLength(length: V3.saltSize),
-                hmacSalt: RNCryptor.randomDataOfLength(V3.saltSize),
-                iv: RNCryptor.randomDataOfLength(V3.ivSize))
+                hmacSalt: RNCryptor.randomDataOfLength(length: V3.saltSize),
+                iv: RNCryptor.randomDataOfLength(length: V3.ivSize))
         }
 
         /// Creates and returns an encryptor using keys.
@@ -317,7 +317,7 @@ public extension RNCryptor {
 
         /// Takes a data, returns a processed data, and invalidates the cryptor.
         public func encryptData(data: NSData) -> NSData {
-            return try! oneshot(data)
+            return try! oneshot(data: data)
         }
 
         /// Updates cryptor with data and returns encrypted data.
@@ -326,14 +326,14 @@ public extension RNCryptor {
         /// - returns: Processed data. May be empty.
         public func updateWithData(data: NSData) -> NSData {
             // It should not be possible for this to fail during encryption
-            return handle(engine.updateWithData(data))
+            return handle(data: engine.updateWithData(data: data))
         }
 
         /// Returns trailing data and invalidates the cryptor.
         ///
         /// - returns: Trailing data
         public func finalData() -> NSData {
-            let result = NSMutableData(data: handle(engine.finalData()))
+            let result = NSMutableData(data: handle(data: engine.finalData()))
             result.appendData(hmac.finalData())
             return result
         }
@@ -348,8 +348,8 @@ public extension RNCryptor {
 
         // Expose random numbers for testing
         internal convenience init(password: String, encryptionSalt: NSData, hmacSalt: NSData, iv: NSData) {
-            let encryptionKey = V3.keyForPassword(password, salt: encryptionSalt)
-            let hmacKey = V3.keyForPassword(password, salt: hmacSalt)
+            let encryptionKey = V3.keyForPassword(password: password, salt: encryptionSalt)
+            let hmacKey = V3.keyForPassword(password: password, salt: hmacSalt)
 
             // TODO: This chained-+ is very slow to compile in Swift 2b5 (http://www.openradar.me/21842206)
             // let header = [V3.version, UInt8(1)] + encryptionSalt + hmacSalt + iv
@@ -381,7 +381,7 @@ public extension RNCryptor {
             } else {
                 result = data
             }
-            hmac.updateWithData(result)
+            hmac.updateWithData(data: result)
             return result
         }
     }
@@ -431,7 +431,7 @@ public extension RNCryptor {
         /// password is incorrect or ciphertext is in the wrong format.
         /// - throws `Error`
         public func decryptData(data: NSData) throws -> NSData {
-            return try oneshot(data)
+            return try oneshot(data: data)
         }
 
         /// Updates cryptor with data and returns encrypted data.
@@ -440,7 +440,7 @@ public extension RNCryptor {
         /// - returns: Processed data. May be empty.
         public func updateWithData(data: NSData) throws -> NSData {
             if let e = decryptorEngine {
-                return e.updateWithData(data)
+                return e.updateWithData(data: data)
             }
 
             buffer.append(data as Data)
@@ -448,11 +448,11 @@ public extension RNCryptor {
                 return NSData()
             }
 
-            let e = try createEngineWithCredential(credential, header: buffer.bytesView[0..<requiredHeaderSize])
+            let e = try createEngineWithCredential(credential: credential, header: buffer.bytesView[0..<requiredHeaderSize])
             decryptorEngine = e
             let body = buffer.bytesView[requiredHeaderSize..<buffer.length]
             buffer.length = 0
-            return e.updateWithData(body)
+            return e.updateWithData(data: body)
         }
 
         /// Returns trailing data and invalidates the cryptor.
@@ -479,7 +479,7 @@ public extension RNCryptor {
         private func createEngineWithCredential(credential: Credential, header: NSData) throws -> DecryptorEngineV3 {
             switch credential {
             case let .Password(password):
-                return try createEngineWithPassword(password, header: header)
+                return try createEngineWithPassword(password: password, header: header)
             case let .Keys(encryptionKey, hmacKey):
                 return try createEngineWithKeys(encryptionKey: encryptionKey, hmacKey: hmacKey, header: header)
             }
@@ -489,7 +489,7 @@ public extension RNCryptor {
             assert(password != "")
             precondition(header.length == V3.passwordHeaderSize)
 
-            guard DecryptorV3.canDecrypt(header) else {
+            guard DecryptorV3.canDecrypt(preamble: header) else {
                 throw RNCryptorError.UnknownHeader
             }
 
@@ -501,8 +501,8 @@ public extension RNCryptor {
             let hmacSalt = header.bytesView[10...17]
             let iv = header.bytesView[18...33]
 
-            let encryptionKey = V3.keyForPassword(password, salt: encryptionSalt)
-            let hmacKey = V3.keyForPassword(password, salt: hmacSalt)
+            let encryptionKey = V3.keyForPassword(password: password, salt: encryptionSalt)
+            let hmacKey = V3.keyForPassword(password: password, salt: hmacSalt)
 
             return DecryptorEngineV3(encryptionKey: encryptionKey, hmacKey: hmacKey, iv: iv, header: header)
         }
@@ -512,7 +512,7 @@ public extension RNCryptor {
             precondition(encryptionKey.length == V3.keySize)
             precondition(hmacKey.length == V3.keySize)
 
-            guard DecryptorV3.canDecrypt(header) else {
+            guard DecryptorV3.canDecrypt(preamble: header) else {
                 throw RNCryptorError.UnknownHeader
             }
 
@@ -536,7 +536,7 @@ internal final class Engine {
     private var buffer = NSMutableData()
 
     init(operation: CryptorOperation, key: NSData, iv: NSData) {
-        var cryptorOut: CCCryptorRef = nil
+        var cryptorOut: CCCryptorRef? = nil
         let result = CCCryptorCreate(
             operation.rawValue,
             CCAlgorithm(kCCAlgorithmAES128), CCOptions(kCCOptionPKCS7Padding),
@@ -565,7 +565,7 @@ internal final class Engine {
     }
 
     func updateWithData(data: NSData) -> NSData {
-        let outputLength = sizeBufferForDataOfLength(data.length)
+        let outputLength = sizeBufferForDataOfLength(length: data.length)
         var dataOutMoved: Int = 0
 
         let result = CCCryptorUpdate(
@@ -582,7 +582,7 @@ internal final class Engine {
     }
 
     func finalData() -> NSData {
-        let outputLength = sizeBufferForDataOfLength(0)
+        let outputLength = sizeBufferForDataOfLength(length: 0)
         var dataOutMoved: Int = 0
 
         let result = CCCryptorFinal(
@@ -620,14 +620,14 @@ private final class DecryptorEngineV3 {
         precondition(iv.length == V3.ivSize)
 
         hmac = HMACV3(key: hmacKey)
-        hmac.updateWithData(header)
+        hmac.updateWithData(data: header)
         engine = Engine(operation: .Decrypt, key: encryptionKey, iv: iv)
     }
 
     func updateWithData(data: NSData) -> NSData {
-        let overflow = buffer.updateWithData(data)
-        hmac.updateWithData(overflow)
-        return engine.updateWithData(overflow)
+        let overflow = buffer.updateWithData(data: data)
+        hmac.updateWithData(data: overflow)
+        return engine.updateWithData(data: overflow)
     }
 
     func finalData() throws -> NSData {
@@ -697,12 +697,12 @@ internal final class OverflowingBuffer {
     
     func updateWithData(data: NSData) -> NSData {
         if data.length >= capacity {
-            return sendAllArray(data)
+            return sendAllArray(data: data)
         } else if buffer.length + data.length <= capacity {
             buffer.append(data as Data)
             return NSData()
         } else {
-            return sendSomeArray(data)
+            return sendSomeArray(data: data)
         }
     }
 

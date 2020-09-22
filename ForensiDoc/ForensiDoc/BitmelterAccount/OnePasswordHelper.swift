@@ -9,11 +9,11 @@
 import Foundation
 
 class OnePasswordHelper {
-    class func Set1PasswordButton(_ button: UIButton!) {
+     func Set1PasswordButton(_ button: UIButton!) {
         button?.isHidden = !OnePasswordExtension.shared().isAppExtensionAvailable()
     }
     
-    class func ChangeLogin(_ viewController: UIViewController, username: String, oldPassword: String, changedPassword: UITextField!, confirmChangedPassword: UITextField!, errorAlert: ((NSError) -> Void)?) {
+     func ChangeLogin(_ viewController: UIViewController, username: String, oldPassword: String, changedPassword: UITextField!, confirmChangedPassword: UITextField!, errorAlert: ((NSError) -> Void)?) {
         
         let loginDetails: [String: String?] =
         [
@@ -45,10 +45,9 @@ class OnePasswordHelper {
                 changedPassword?.text = np
                 confirmChangedPassword?.text = np
             }
-        } as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void
+        }
     }
-    
-    class func FindLogin(_ viewController: UIViewController, username: UITextField!, password: UITextField!, errorAlert: ((NSError) -> Void)?){
+     func FindLogin(_ viewController: UIViewController, username: UITextField!, password: UITextField!, errorAlert: ((NSError) -> Void)?){
         OnePasswordExtension.shared().findLogin(forURLString: kOnePasswordStoreLoginUrl, for: viewController, sender: viewController) { (loginDict: [AnyHashable: Any]!, error: NSError!) -> Void in
             if loginDict == nil {
                 if let e = error {
@@ -68,10 +67,10 @@ class OnePasswordHelper {
             if let p = storedPassword {
                 password?.text = p
             }
-        } as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void
+        }
     }
     
-    class func SaveLogin(_ viewController: UIViewController, username: UITextField!, password: UITextField!, passwordAgain: UITextField!, errorAlert: ((NSError) -> Void)?){
+     func SaveLogin(_ viewController: UIViewController, username: UITextField!, password: UITextField!, passwordAgain: UITextField!, errorAlert: ((NSError) -> Void)?){
         let newLoginDetails : [ String : String?] =
         [
             AppExtensionTitleKey : kOnePasswordTitleKey,
@@ -87,7 +86,7 @@ class OnePasswordHelper {
             AppExtensionGeneratedPasswordMaxLengthKey: 50
         ]
         
-        OnePasswordExtension.shared().storeLogin(forURLString: kOnePasswordStoreLoginUrl, loginDetails: newLoginDetails, passwordGenerationOptions: passwordGenerationOptions, for: viewController, sender: viewController) { (loginDict: [AnyHashable: Any]!, error: NSError!) -> Void in
+        OnePasswordExtension.shared().storeLogin(forURLString: kOnePasswordStoreLoginUrl, loginDetails: newLoginDetails, passwordGenerationOptions: passwordGenerationOptions, for: viewController, sender: viewController) { (loginDict: [AnyHashable: Any]?, error: NSError!) -> Void in
             if loginDict == nil {
                 if let e = error {
                     if e.code != Int(AppExtensionErrorCodeCancelledByUser) {
@@ -107,6 +106,6 @@ class OnePasswordHelper {
                 password?.text = p
                 passwordAgain?.text = p
             }
-        } as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void as! ([AnyHashable : Any]?, Error?) -> Void
+        }
     }
 }

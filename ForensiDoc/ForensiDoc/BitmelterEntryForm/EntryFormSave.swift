@@ -22,7 +22,7 @@ open class EntryFormSave: NSObject, NSSecureCoding {
     
     open func encode(with aCoder: NSCoder) {
         if let ef = _ef {
-            let rawJson = ef.toJSON().rawString(String.Encoding.utf8, options: JSONSerialization.WritingOptions.prettyPrinted)
+            let rawJson = ef.toJSON().rawString(String.Encoding.utf8.rawValue, options: JSONSerialization.WritingOptions.prettyPrinted)
             aCoder.encode(rawJson, forKey: jsonDataKey)
         }
     }

@@ -18,7 +18,7 @@ class NetworkingManager {
     
     func login(_ email: String, password: String, callback: @escaping (Result<LoginResponse>) -> ()) -> URLSessionTask {
         let data = ["email" : email, "password" : password]
-        let loginRequest = ConnectionManager.sharedInstance.beginLoginRequest(data)
+        let loginRequest = ConnectionManager.sharedInstance.beginLoginRequest(data as [String : AnyObject])
         let task = performRequest(loginRequest, callback: { (baseResponse: Result<LoginResponse>) -> () in
             callback(baseResponse)
         })
@@ -33,7 +33,7 @@ class NetworkingManager {
         
         let data = ["email" : email, "password" : password, "password_confirmation": password, "name" : name]
         
-        let registerRequest = ConnectionManager.sharedInstance.beginRegisterRequest(data)
+        let registerRequest = ConnectionManager.sharedInstance.beginRegisterRequest(data as [String : AnyObject])
         let task = performRequest(registerRequest, callback: { (baseResponse: Result<BaseResponse>) -> () in
             callback(baseResponse)
         })
@@ -43,7 +43,7 @@ class NetworkingManager {
     func requestPasswordReset(_ email: String, callback: @escaping (Result<BaseResponse>) -> ()) -> URLSessionTask {
         let data = ["email" : email]
         
-        let beginPasswordResetRequest = ConnectionManager.sharedInstance.beginRequestPasswordReset(data)
+        let beginPasswordResetRequest = ConnectionManager.sharedInstance.beginRequestPasswordReset(data as [String : AnyObject])
         let task = performRequest(beginPasswordResetRequest, callback: { (baseResponse: Result<BaseResponse>) -> () in
             callback(baseResponse)
         })
@@ -52,7 +52,7 @@ class NetworkingManager {
     
     func resetPassword(_ email: String, newPassword: String, resetCode: String, callback: @escaping (Result<BaseResponse>) -> ()) -> URLSessionTask {
         let data = ["email": email, "new_password": newPassword, "code": resetCode]
-        let passwordResetRequest = ConnectionManager.sharedInstance.beginPasswordReset(data)
+        let passwordResetRequest = ConnectionManager.sharedInstance.beginPasswordReset(data as [String : AnyObject])
         let task = performRequest(passwordResetRequest, callback: { (baseResponse: Result<BaseResponse>) -> () in
             callback(baseResponse)
         })
@@ -70,7 +70,7 @@ class NetworkingManager {
     
     func sendNewActivationCode(_ email: String, callback: @escaping (Result<BaseResponse>) -> ()) -> URLSessionTask {
         let data = ["email": email]
-        let sendNewActivationCodeRequest = ConnectionManager.sharedInstance.beginSendNewActivationCode(data)
+        let sendNewActivationCodeRequest = ConnectionManager.sharedInstance.beginSendNewActivationCode(data as [String : AnyObject])
         let task = performRequest(sendNewActivationCodeRequest, callback: { (baseResponse: Result<BaseResponse>) -> () in
             callback(baseResponse)
         })
@@ -79,7 +79,7 @@ class NetworkingManager {
     
     func changeAccountDetails(_ currentEmail: String, newEmail: String, firstName: String, lastName: String, callback: @escaping (Result<BaseResponse>) -> ()) -> URLSessionTask {
         let data = ["email": currentEmail, "new_email": newEmail, "first_name": firstName, "last_name": lastName]
-        let changeAccountDetailsRequest = ConnectionManager.sharedInstance.beginAccountDetailChangeRequest(data)
+        let changeAccountDetailsRequest = ConnectionManager.sharedInstance.beginAccountDetailChangeRequest(data as [String : AnyObject])
         let task = performRequest(changeAccountDetailsRequest, callback: { (baseResponse: Result<BaseResponse>) -> () in
             callback(baseResponse)
         })

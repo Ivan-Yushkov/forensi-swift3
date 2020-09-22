@@ -16,10 +16,10 @@ class EncryptJsonForSubmit {
         let password = entryForm.EncryptionPassword
         
         let json = entryForm.toReportJSON()
-        if let jsonString = json.rawString(String.Encoding.utf8, options:
+        if let jsonString = json.rawString(String.Encoding.utf8.rawValue, options:
             JSONSerialization.WritingOptions.prettyPrinted) {
             if let jsonData = jsonString.data(using: String.Encoding.utf8) {
-                let ciphertext = RNCryptor.encryptData(jsonData, password: password)
+                let ciphertext = RNCryptor.encryptData(data: jsonData as NSData, password: password)
                 let data = ciphertext.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
                 
                 // Data should look like this
@@ -53,12 +53,12 @@ class EncryptJsonForSubmit {
                 /*
                 let data = try RNCryptor.decryptData(cc, password: "enter password from json")
                 */
-                let data = try RNCryptor.decryptData(cc, password: entryForm.EncryptionPassword)
+                let data = try RNCryptor.decryptData(data: cc as NSData, password: entryForm.EncryptionPassword)
                 DebugLog.DLog("Decrypting form id \(entryForm.uuid) data.")
-                if let loaded = NSString(data: data, encoding: String.Encoding.utf8) {
+                if let loaded = NSString(data: data as Data, encoding: String.Encoding.utf8.rawValue) {
                     DebugLog.DLog("Decrypting form id \(entryForm.uuid) loaded.")
                     if let base64Decoded = Data(base64Encoded: loaded as String, options:   NSData.Base64DecodingOptions(rawValue: 0))
-                        .map({ NSString(data: $0, encoding: String.Encoding.utf8) }) {
+                        .map({ NSString(data: $0, encoding: String.Encoding.utf8.rawValue) }) {
                         DebugLog.DLog("Decrypting form id \(entryForm.uuid) base64Decoded.")
                         if let decodedReportContent = base64Decoded as? String {
                             DebugLog.DLog("Decrypting form id \(entryForm.uuid) decodedReportContent. All OK.")
@@ -70,15 +70,15 @@ class EncryptJsonForSubmit {
             } else {
                 DebugLog.DLog("Unable to create NSData \(content)")
             }
-        } catch RNCryptorError.hmacMismatch {
+        } catch RNCryptorError.HMACMismatch {
           DebugLog.DLog("RNCryptorError.HMACMismatch")
-        } catch RNCryptorError.invalidCredentialType {
+        } catch RNCryptorError.InvalidCredentialType {
           DebugLog.DLog("RNCryptorError.InvalidCredentialType")
-        } catch RNCryptorError.memoryFailure {
+        } catch RNCryptorError.MemoryFailure {
           DebugLog.DLog("RNCryptorError.MemoryFailure")
-        } catch RNCryptorError.messageTooShort {
+        } catch RNCryptorError.MessageTooShort {
           DebugLog.DLog("RNCryptorError.MessageTooShort")
-        } catch RNCryptorError.unknownHeader {
+        } catch RNCryptorError.UnknownHeader {
           DebugLog.DLog("RNCryptorError.UnknownHeader")
         } catch {
             DebugLog.DLog("Unable to decrypt. Unknown error \(content)")

@@ -112,7 +112,7 @@ class EntryFormDetailsViewController: BaseViewController, EntryFormDetailFactory
     
     func runActionForEntryFormWithGeneratedReport(_ entryForm: EntryForm) {
         if let reportNSURL = entryForm.GeneratedReportNSURL(), MFMailComposeViewController.canSendMail() {
-            if let fileName = reportNSURL.lastPathComponent {
+             let fileName = reportNSURL.lastPathComponent 
                 let mailComposer = MFMailComposeViewController()
                 mailComposer.mailComposeDelegate = self
                 
@@ -124,7 +124,7 @@ class EntryFormDetailsViewController: BaseViewController, EntryFormDetailFactory
                     mailComposer.addAttachmentData(fileData, mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", fileName: fileName)
                     self.present(mailComposer, animated: true, completion: nil)
                 }
-            }
+            
         }
     }
     
@@ -135,7 +135,7 @@ class EntryFormDetailsViewController: BaseViewController, EntryFormDetailFactory
     fileprivate func addNewEditEntryForm(_ entryForm: EntryForm?, isAddingNew: Bool) {
         if let ef = entryForm {
             if isAddingNew {
-                if let rawJson = ef.toJSON().rawString(String.Encoding.utf8, options: JSONSerialization.WritingOptions.prettyPrinted) {
+                if let rawJson = ef.toJSON().rawString(String.Encoding.utf8.rawValue, options: JSONSerialization.WritingOptions.prettyPrinted) {
                     let newEF = EntryForm(jsonSpec: rawJson, doNotCheckForHiddenFields: false)
                     if newEF.EnsureSavedInFolderSet() {
                         newEF.EnsureHiddenGroupsSet()

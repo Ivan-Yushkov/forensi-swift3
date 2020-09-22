@@ -130,7 +130,7 @@ open class BaseViewController : UIViewController, UINavigationControllerDelegate
             if baseResponse.error {
                 self.displayErrorAlert(baseResponse)
             } else {
-                successfullCallback(value: baseResponse)
+                successfullCallback(baseResponse)
             }
         }
     }

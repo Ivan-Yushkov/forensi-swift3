@@ -244,8 +244,9 @@ public struct JSON {
 }
 
 // MARK: - CollectionType, SequenceType, Indexable
-extension JSON : Collection, Sequence, Indexable {
-    
+//extension JSON : Collection, Sequence, Indexable {
+extension JSON : Collection, Sequence {
+
     public var startIndex: JSON.Index {
         switch self.type {
         case .array:
