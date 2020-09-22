@@ -4,7 +4,7 @@
 
 import Foundation
 
-typealias _JSON = AnyObject
+typealias _JSON = Any
 typealias JSONDictionary = Dictionary<String, _JSON>
 typealias JSONArray = Array<_JSON>
 

@@ -70,8 +70,8 @@ public extension RNCryptorType {
     ///
     /// - throws: `Error`
     private func oneshot(data: NSData) throws -> NSData {
-        let result = NSMutableData(data: try updateWithData(data: data))
-        result.appendData(try finalData())
+        let result = NSMutableData(data: try updateWithData(data: data) as Data)
+        result.append(try finalData() as Data)
         return result
     }
 }
@@ -157,7 +157,7 @@ public final class RNCryptor: NSObject {
         /// Simplified, generic interface to `RNCryptorType`. Takes a data,
         /// returns a processed data, and invalidates the cryptor.
         public func encryptData(data: NSData) -> NSData {
-            return encryptor.encryptData(data)
+            return encryptor.encryptData(data: data)
         }
     }
 
@@ -192,7 +192,7 @@ public final class RNCryptor: NSObject {
         /// - returns: Processed data. May be empty.
         public func updateWithData(data: NSData) throws -> NSData {
             if let d = decryptor {
-                return try d.updateWithData(data)
+                return try d.updateWithData(data: data)
             }
 
             buffer.append(data as Data)
@@ -201,10 +201,10 @@ public final class RNCryptor: NSObject {
             (toCheck, decryptors) = decryptors.splitPassFail{ self.buffer.length >= $0.preambleSize }
 
             for decryptorType in toCheck {
-                if decryptorType.canDecrypt(buffer.bytesView[0..<decryptorType.preambleSize]) {
+                if decryptorType.canDecrypt(preamble: buffer.bytesView[0..<decryptorType.preambleSize]) {
                     let d = decryptorType.init(password: password)
                     decryptor = d
-                    let result = try d.updateWithData(buffer)
+                    let result = try d.updateWithData(data: buffer)
                     buffer.length = 0
                     return result
                 }
@@ -292,7 +292,7 @@ public extension RNCryptor {
         public convenience init(password: String) {
             self.init(
                 password: password,
-                encryptionSalt: RNCryptor.randomDataOfLength(V3.saltSize),
+                encryptionSalt: RNCryptor.randomDataOfLength(length: V3.saltSize),
                 hmacSalt: RNCryptor.randomDataOfLength(V3.saltSize),
                 iv: RNCryptor.randomDataOfLength(V3.ivSize))
         }
@@ -312,7 +312,7 @@ public extension RNCryptor {
         ///     - encryptionKey: AES-256 key. Must be exactly FormatV3.keySize (kCCKeySizeAES256, 32 bytes)
         ///     - hmacKey: HMAC key. Must be exactly FormatV3.keySize (kCCKeySizeAES256, 32 bytes)
         public convenience init(encryptionKey: NSData, hmacKey: NSData) {
-            self.init(encryptionKey: encryptionKey, hmacKey: hmacKey, iv: RNCryptor.randomDataOfLength(V3.ivSize))
+            self.init(encryptionKey: encryptionKey, hmacKey: hmacKey, iv: RNCryptor.randomDataOfLength(length: V3.ivSize))
         }
 
         /// Takes a data, returns a processed data, and invalidates the cryptor.
