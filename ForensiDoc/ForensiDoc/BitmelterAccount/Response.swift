@@ -73,7 +73,7 @@ func parseResult<A: JSONDecodable>(_ data: Data!, urlResponse: URLResponse!, err
     let responseResult: Result<Response> = Result(error, Response(data: data, urlResponse: urlResponse))
     return
         responseResult
-            >>> parseResponse
-            >>> decodeJSON
-            >>> decodeObject
+//            >>> parseResponse
+//            >>> decodeJSON
+//            >>> decodeObject
 }

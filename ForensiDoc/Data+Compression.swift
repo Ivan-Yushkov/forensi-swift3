@@ -91,7 +91,7 @@ public enum GzipError: Error {
     
     fileprivate init(code: Int32, msg: UnsafePointer<CChar>)
     {
-        let message =  String(cString: msg) ?? "Unknown error"
+        let message =  String(cString: msg) 
         
         switch code {
         case Z_STREAM_ERROR:

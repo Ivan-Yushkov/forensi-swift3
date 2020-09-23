@@ -9,11 +9,13 @@
 import Foundation
 
 class OnePasswordHelper {
-     func Set1PasswordButton(_ button: UIButton!) {
-        button?.isHidden = !OnePasswordExtension.shared().isAppExtensionAvailable()
+    
+    
+    class func Set1PasswordButton(_ button: UIButton) {
+        button.isHidden = !OnePasswordExtension.shared().isAppExtensionAvailable()
     }
     
-     func ChangeLogin(_ viewController: UIViewController, username: String, oldPassword: String, changedPassword: UITextField!, confirmChangedPassword: UITextField!, errorAlert: ((NSError) -> Void)?) {
+     class func ChangeLogin(_ viewController: UIViewController, username: String, oldPassword: String, changedPassword: UITextField!, confirmChangedPassword: UITextField!, errorAlert: ((NSError) -> Void)?) {
         
         let loginDetails: [String: String?] =
         [
@@ -45,9 +47,9 @@ class OnePasswordHelper {
                 changedPassword?.text = np
                 confirmChangedPassword?.text = np
             }
-        }
+        } as! ([AnyHashable : Any]?, Error?) -> Void
     }
-     func FindLogin(_ viewController: UIViewController, username: UITextField!, password: UITextField!, errorAlert: ((NSError) -> Void)?){
+   class func FindLogin(_ viewController: UIViewController, username: UITextField!, password: UITextField!, errorAlert: ((NSError) -> Void)?){
         OnePasswordExtension.shared().findLogin(forURLString: kOnePasswordStoreLoginUrl, for: viewController, sender: viewController) { (loginDict: [AnyHashable: Any]!, error: NSError!) -> Void in
             if loginDict == nil {
                 if let e = error {
@@ -67,10 +69,10 @@ class OnePasswordHelper {
             if let p = storedPassword {
                 password?.text = p
             }
-        }
+        } 
     }
     
-     func SaveLogin(_ viewController: UIViewController, username: UITextField!, password: UITextField!, passwordAgain: UITextField!, errorAlert: ((NSError) -> Void)?){
+    class func SaveLogin(_ viewController: UIViewController, username: UITextField!, password: UITextField!, passwordAgain: UITextField!, errorAlert: ((NSError) -> Void)?){
         let newLoginDetails : [ String : String?] =
         [
             AppExtensionTitleKey : kOnePasswordTitleKey,

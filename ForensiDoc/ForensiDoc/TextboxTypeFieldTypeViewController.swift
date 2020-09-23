@@ -36,7 +36,7 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
                 if f.placeHolder.characters.count > 0 {
                     self.textField.placeholder = f.placeHolder
                 }
-                self.textField.keyboardType = .
+                self.textField.keyboardType = UIKeyboardType.numberPad
                 self.textField.text = f.nonFormattedSelectedValue()
                 self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
             } else if let f = MiscHelpers.CastEntryFormField(ef, Float.self) {
