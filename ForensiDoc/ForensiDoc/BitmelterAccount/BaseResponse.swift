@@ -27,6 +27,12 @@ public struct BaseResponse: JSONDecodable, BaseResponseable {
        //     let message = json["message"]  >>> JSONString  {
        //     return BaseResponse.create(error, message: message)
        // }
+        
+        if let js = JSONObject(json),
+            let error = js["error"] >>> JSONBool,
+            let message = js["message"] >>> JSONString{
+            return BaseResponse.create(error, message: message)
+        }
         return .none
     }
 }
