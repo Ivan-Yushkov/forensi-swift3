@@ -23,10 +23,10 @@ public struct BaseResponse: JSONDecodable, BaseResponseable {
     }
     
     static func decode(_ json: _JSON) -> BaseResponse? {
-        if let error = json["error"] >>> JSONBool,
-            let message = json["message"]  >>> JSONString  {
-            return BaseResponse.create(error, message: message)
-        }
+       // if let error = json["error"] >>> JSONBool,
+       //     let message = json["message"]  >>> JSONString  {
+       //     return BaseResponse.create(error, message: message)
+       // }
         return .none
     }
 }

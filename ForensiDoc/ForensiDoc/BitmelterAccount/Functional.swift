@@ -4,9 +4,27 @@
 
 import Foundation
 
-infix operator >>> { associativity left precedence 150 }
-infix operator <^> { associativity left } // Functor's fmap (usually <$>)
-infix operator <*> { associativity left } // Applicative's apply
+//infix operator >>> { associativity left precedence 150 }
+//infix operator <^> { associativity left } // Functor's fmap (usually <$>)
+//infix operator <*> { associativity left } // Applicative's apply
+
+precedencegroup MultiplicationPrecedence {
+    associativity: left
+    higherThan: AdditionPrecedence
+}
+
+precedencegroup AdditionPrecedence {
+    associativity: left
+}
+
+precedencegroup SomePrecedence {
+    associativity: left
+    //higherThan: Comparative
+    //lowerThan: Additive
+}
+infix operator >>> : SomePrecedence
+infix operator <^> : AdditionPrecedence
+infix operator <*> : MultiplicationPrecedence
 
 func >>><A, B>(a: A?, f: (A) -> B?) -> B? {
     if let x = a {

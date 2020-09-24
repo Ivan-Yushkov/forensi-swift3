@@ -1,4 +1,4 @@
-
+/*
 
 //  RNCryptor.swift
 //
@@ -1571,7 +1571,6 @@ private func isEqualInConsistentTime(trusted: Data, untrusted: Data) -> Bool {
     
     return result == 0
 }
-*/
 
 
-
+*/*/
