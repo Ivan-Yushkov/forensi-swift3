@@ -181,7 +181,7 @@ open class VideoRecordingViewController: BaseViewController, AVCaptureFileOutput
             
             let dHours = floor(dTotalSeconds / 3600);
             let dMinutes = floor(dTotalSeconds.truncatingRemainder(dividingBy: 3600) / 60);
-            let dSeconds = floor((dTotalSeconds % 3600).truncatingRemainder(dividingBy: 60));
+            let dSeconds = floor((dTotalSeconds.truncatingRemainder(dividingBy: 3600)).truncatingRemainder(dividingBy: 60));
             DispatchQueue.main.async(execute: {
                 if dHours > 0 {
                     let displayedTimer = String(format: "%02.0f:%02.0f:%02.0f", dHours,dMinutes, dSeconds)
