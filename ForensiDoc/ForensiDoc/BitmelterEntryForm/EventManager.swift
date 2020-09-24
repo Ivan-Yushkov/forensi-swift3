@@ -11,7 +11,7 @@ open class EventManager {
     // Create a new event listener, not expecting information from the trigger
     // + eventName: Matching trigger eventNames will cause this listener to fire
     // + action: The block of code you want executed when the event triggers
-    func listenTo(_ eventName:String, action:(()->())) {
+    func listenTo(_ eventName:String, action: @escaping (()->())) {
         let newListener = EventListenerAction(callback: action);
         addListener(eventName, newEventListener: newListener);
     }
@@ -19,7 +19,7 @@ open class EventManager {
     // Create a new event listener, expecting information from the trigger
     // + eventName: Matching trigger eventNames will cause this listener to fire
     // + action: The block of code you want executed when the event triggers
-    func listenTo(_ eventName:String, action:((Any?)->())) {
+    func listenTo(_ eventName:String, action:@escaping ((Any?)->())) {
         let newListener = EventListenerAction(callback: action);
         addListener(eventName, newEventListener: newListener);
     }
@@ -81,7 +81,7 @@ class EventListenerAction {
         self.actionExpectsInfo = nil;
     }
     
-    init(callback:@escaping ((Any?) -> ())) {
+    init(_ callback:@escaping ((Any?) -> ())) {
         self.actionExpectsInfo = callback;
         self.action = nil;
     }
