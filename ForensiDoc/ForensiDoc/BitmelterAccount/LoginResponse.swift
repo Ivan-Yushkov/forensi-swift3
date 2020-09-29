@@ -21,9 +21,11 @@ public struct LoginResponse : JSONDecodable, BaseResponseable {
     
     static func decode(_ json: _JSON) -> LoginResponse? {
         //TODO:When there is a key missing (like in this case it was token) then initialization of object stops whereas it should skip and initialize missing to default one
-        if let error = json["error"] >>> JSONBool,
-            let message = json["message"]  >>> JSONString {
-            return LoginResponse.create(error, message: message, token: JSONString(json["token"], defValue: ""))
+        
+        if let js = JSONObject(json),
+            let error = js["error"] >>> JSONBool,
+            let message = js["message"]  >>> JSONString {
+            return LoginResponse.create(error, message: message, token: JSONString(js["token"], defValue: ""))
         }
         return .none
     }
