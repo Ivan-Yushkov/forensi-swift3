@@ -30,7 +30,7 @@ internal class ForensiDocEntryFormRepository : EntryFormRepository{
     }
     
     func DeleteEntryForm(_ form: EntryForm) {
-        form.DeleteItSelf()
+        _ = form.DeleteItSelf()
     }
     
     func LoadSavedFormForFormId(_ formId: Int) -> [EntryForm] {

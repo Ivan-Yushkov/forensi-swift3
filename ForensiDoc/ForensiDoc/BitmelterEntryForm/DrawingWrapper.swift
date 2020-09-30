@@ -114,7 +114,7 @@ open class DrawingWrapper {
             }
             
             debugPrint(i)
-            debugPrint(lastElementWithLowerIndex)
+            debugPrint(lastElementWithLowerIndex as Any)
             if !isDeleted && i.index >  drawnElement.index {
                 break
             }

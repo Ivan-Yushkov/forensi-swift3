@@ -254,7 +254,7 @@ open class DrawingViewController: UIViewController, DrawingWrapperCapable {
         
         let drawingBelowDrawing = drawingWrapper.drawingBelowDrawing(drawnElement)
         
-        debugPrint(drawingBelowDrawing)
+        debugPrint(drawingBelowDrawing as Any)
         
         if let belowDrawing = drawingBelowDrawing {
             let e = self.view.subviews.filter{ ($0 as? UIImageView)?.tag == belowDrawing.index }

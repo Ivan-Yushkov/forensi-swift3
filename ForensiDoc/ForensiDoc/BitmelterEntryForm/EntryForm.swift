@@ -156,8 +156,9 @@ open class EntryForm: JSONConvertible {
             let document = documents[0]
             let fileList = listFilesFromDocumentsFolder(self.SavedInFolder)
             for file in fileList {
-                let u = URL(fileURLWithPath: document).URLByAppendingPathComponent(self.SavedInFolder).URLByAppendingPathComponent(file)
-                if let fileExtension = u.pathExtension, fileExtension.caseInsensitiveCompare("docx") == .OrderedSame {
+                let u = URL(fileURLWithPath: document).appendingPathComponent(self.SavedInFolder).appendingPathComponent(file)
+                let fileExtension = u.pathExtension
+                if fileExtension.caseInsensitiveCompare("docx") == .orderedSame {
                     return u
                 }
             }
@@ -172,21 +173,21 @@ open class EntryForm: JSONConvertible {
             let document = documents[0]
             let fileList = listFilesFromDocumentsFolder(self.SavedInFolder)
             for file in fileList {
-                let u = URL(fileURLWithPath: document).URLByAppendingPathComponent(self.SavedInFolder).URLByAppendingPathComponent(file)
+                let u = URL(fileURLWithPath: document).appendingPathComponent(self.SavedInFolder).appendingPathComponent(file)
                 do{
-                    try fileManager.removeItemAtURL(u)
+                    try fileManager.removeItem(at: u)
                 }catch{
                     return false
                 }
             }
             //Delete empty folder
-            if let path = URL.fileURLWithPath(document).URLByAppendingPathComponent(self.SavedInFolder).path {
+            let path = URL(fileURLWithPath: document).appendingPathComponent(self.SavedInFolder).path
                 do{
-                    try fileManager.removeItemAtPath(path)
+                    try fileManager.removeItem(atPath: path)
                 }catch{
                     return false
                 }
-            }
+        
         }
         return true
     }
@@ -199,11 +200,11 @@ open class EntryForm: JSONConvertible {
             let error = reportJson["error"].boolValue
             if !error && filename.characters.count > 0 && reportDataBase64.characters.count > 0 {
                 let documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-                let u = URL(fileURLWithPath: documents).URLByAppendingPathComponent(self.SavedInFolder,isDirectory: true).URLByAppendingPathComponent(filename)
+                let u = URL(fileURLWithPath: documents).appendingPathComponent(self.SavedInFolder,isDirectory: true).appendingPathComponent(filename)
                 if let data = Data(base64Encoded: reportDataBase64, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters) {
                     do{
                         DeleteExistingReportIfExists()
-                        try data.writeToURL(u, options: NSData.WritingOptions.DataWritingAtomic)
+                        try data.write(to: u, options: .atomic)//data.write(u, options: .atomic)
                     }catch {
                         //TODO:Do something about error
                     }
@@ -219,10 +220,11 @@ open class EntryForm: JSONConvertible {
             let fileManager:FileManager = FileManager.default
             let fileList = listFilesFromDocumentsFolder(self.SavedInFolder)
             for file in fileList {
-                let u = URL(fileURLWithPath: document).URLByAppendingPathComponent(self.SavedInFolder).URLByAppendingPathComponent(file)
-                if let fileExtension = u.pathExtension, fileExtension.caseInsensitiveCompare("docx") == .OrderedSame {
+                let u = URL(fileURLWithPath: document).appendingPathComponent(self.SavedInFolder).appendingPathComponent(file)
+                 let fileExtension = u.pathExtension
+                 if fileExtension.caseInsensitiveCompare("docx") == .orderedSame {
                     do{
-                        try fileManager.removeItemAtURL(u)
+                        try fileManager.removeItem(at: u)
                     }catch {
                         
                     }
@@ -236,8 +238,9 @@ open class EntryForm: JSONConvertible {
         if dirs.count > 0 {
             var dir = dirs[0]
             if let folder = inFolder {
-                let path = URL.fileURLWithPath(dir).URLByAppendingPathComponent(folder).path
-                dir = path!
+                let path = URL(fileURLWithPath: dir).appendingPathComponent(folder).path
+                
+                dir = path
             }
             let fileList: [AnyObject]?
             do {
@@ -499,30 +502,30 @@ open class EntryForm: JSONConvertible {
             if let sEF = MiscHelpers.CastEntryFormField(setting, String.self) {
                 if let sValue = EntryFormSettingsHelper.GetEntryFormSettingValue(FormId, key: sEF.id, String.self) {
                     var sValueDict = [String: AnyObject]()
-                    sValueDict["value"] = sValue
+                    sValueDict["value"] = sValue as AnyObject
                     sValueDict["type"] = "String" as AnyObject
-                    settingsPart[sEF.id] = sValueDict
+                    settingsPart[sEF.id] = sValueDict as AnyObject
                 }
             } else if let sEF = MiscHelpers.CastEntryFormField(setting, Int.self) {
                 if let sValue = EntryFormSettingsHelper.GetEntryFormSettingValue(FormId, key: sEF.id, Int.self) {
                     var sValueDict = [String: AnyObject]()
-                    sValueDict["value"] = sValue
+                    sValueDict["value"] = sValue as AnyObject
                     sValueDict["type"] = "Int" as AnyObject
-                    settingsPart[sEF.id] = sValueDict
+                    settingsPart[sEF.id] = sValueDict as AnyObject
                 }
             } else if let sEF = MiscHelpers.CastEntryFormField(setting, Double.self) {
                 if let sValue = EntryFormSettingsHelper.GetEntryFormSettingValue(FormId, key: sEF.id, Double.self) {
                     var sValueDict = [String: AnyObject]()
-                    sValueDict["value"] = sValue
+                    sValueDict["value"] = sValue as AnyObject
                     sValueDict["type"] = "Double" as AnyObject
-                    settingsPart[sEF.id] = sValueDict
+                    settingsPart[sEF.id] = sValueDict as AnyObject
                 }
             } else if let sEF = MiscHelpers.CastEntryFormField(setting, Float.self) {
                 if let sValue = EntryFormSettingsHelper.GetEntryFormSettingValue(FormId, key: sEF.id, Float.self) {
                     var sValueDict = [String: AnyObject]()
-                    sValueDict["value"] = sValue
+                    sValueDict["value"] = sValue as AnyObject
                     sValueDict["type"] = "Float" as AnyObject
-                    settingsPart[sEF.id] = sValueDict
+                    settingsPart[sEF.id] = sValueDict as AnyObject
                 }
             }
         }

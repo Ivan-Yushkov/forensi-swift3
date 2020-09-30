@@ -58,8 +58,10 @@ class NewRadioCheckboxOtherViewController: BaseViewController, UITextFieldDelega
     func endEditing(_ sender: AnyObject) {
         textFieldShouldReturn(self.otherValue)
     }
+
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+//ADD PRIVATE
+    private func textFieldShouldReturn(_ textField: UITextField) {//-> Bool {
         if let ef = _entryField, let textField = textField.text {
             var addedOtherValue = false
             if let f = MiscHelpers.CastEntryFormField(ef, Int.self) {
@@ -90,7 +92,7 @@ class NewRadioCheckboxOtherViewController: BaseViewController, UITextFieldDelega
             }
             
         }
-        return false
+      //  return false
     }
 }
 

@@ -135,6 +135,7 @@ class EntryFormDetailsViewController: BaseViewController, EntryFormDetailFactory
     fileprivate func addNewEditEntryForm(_ entryForm: EntryForm?, isAddingNew: Bool) {
         if let ef = entryForm {
             if isAddingNew {
+                
                 if let rawJson = ef.toJSON().rawString(String.Encoding.utf8.rawValue, options: JSONSerialization.WritingOptions.prettyPrinted) {
                     let newEF = EntryForm(jsonSpec: rawJson, doNotCheckForHiddenFields: false)
                     if newEF.EnsureSavedInFolderSet() {

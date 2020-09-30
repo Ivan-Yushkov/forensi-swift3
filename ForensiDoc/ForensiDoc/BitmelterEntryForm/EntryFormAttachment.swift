@@ -70,7 +70,7 @@ open class EntryFormAttachment: JSONConvertible {
         get {
             let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             //TODO:This can fail as we unwrap explicitly
-            let fileURL = documentsURL.URLByAppendingPathComponent(self.entryForm.SavedInFolder, isDirectory: true).URLByAppendingPathComponent(self.SavedAsFileName)
+            let fileURL = documentsURL.appendingPathComponent(self.entryForm.SavedInFolder, isDirectory: true).appendingPathComponent(self.SavedAsFileName)
             return fileURL
         }
     }
@@ -132,11 +132,13 @@ open class EntryFormAttachment: JSONConvertible {
     
     open func toReportDictionary() -> [String : AnyObject] {
         var ret = [String: AnyObject]()
-        if let fileName = self.NSURLFile.lastPathComponent {
-            ret["filename"] = fileName
-        } else {
-            ret["filename"] = "" as AnyObject
-        }
+        let fileName = self.NSURLFile.lastPathComponent
+        ret["filename"] = fileName as AnyObject
+//        if let fileName = self.NSURLFile.lastPathComponent {
+//            ret["filename"] = fileName
+//        } else {
+//            ret["filename"] = "" as AnyObject
+//        }
         
         ret["name"] = self.Name as AnyObject
         
@@ -147,7 +149,7 @@ open class EntryFormAttachment: JSONConvertible {
                     let newImg = ImageUtilities.ImageWithImage(img, scaledToMaxWidth: ImageUtilities.DEFAULT_WIDTH, maxHeight: ImageUtilities.DEFAULT_HEIGHT)
                     if let imgData = UIImageJPEGRepresentation(newImg, 0.8) {
                         let base64 = imgData.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
-                        ret["value"] = base64
+                        ret["value"] = base64 as AnyObject
                     }
                 }
             } else {

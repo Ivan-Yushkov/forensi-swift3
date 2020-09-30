@@ -30,13 +30,15 @@
 import Foundation
 import zlib
 
-private let CHUNK_SIZE: Int = 2 ^ 14
-private let STREAM_SIZE: Int32 = Int32(MemoryLayout<z_stream>.size)
+//private let CHUNK_SIZE: Int = 2 ^ 14
+//private let STREAM_SIZE: Int32 = Int32(MemoryLayout<z_stream>.size)
 
 
 /**
  Errors on gzipping/gunzipping based on the zlib error codes.
  */
+
+/*
 public enum GzipError: Error {
     // cf. http://www.zlib.net/manual.html
     
@@ -240,3 +242,4 @@ public extension Data
         )
     }
 }
+ */

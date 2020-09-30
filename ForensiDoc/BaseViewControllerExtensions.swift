@@ -17,14 +17,14 @@ extension BaseViewController: UIImagePickerControllerDelegate, DrawingViewContro
         static var entryField = "entryField"
     }
     
-    public override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    open override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
         if ViewsHelpers.IsiPad() {
             return [.landscapeLeft,.landscapeRight]
         }
         return [.portrait, .portraitUpsideDown]
     }
     
-    public override var shouldAutorotate : Bool {
+    open override var shouldAutorotate : Bool {
         return true
     }
     
@@ -354,7 +354,7 @@ extension BaseViewController: UIImagePickerControllerDelegate, DrawingViewContro
                             //Copy from videoUrl to attachment.NSURLFile
                             do{
                                 try FileManager.default.copyItem(at: videoUrl, to: attachment.NSURLFile)
-                                action.AddAttachmentAction(attachment: attachment, attachmentsViewer: self.attachmentsSelectorView)
+                                action.AddAttachmentAction(attachment, self.attachmentsSelectorView)
                                 picker.dismiss(animated: true, completion: .none)
                             }catch{
                                 AlertHelper.DisplayAlert(picker, title: NSLocalizedString("Error", comment: "Error dialog title"), messages: [NSLocalizedString("There was an error saving video to app storage!", comment: "Error displayed when there is a problem while saving svaed video to local path form storage")], callback: {() -> Void in
@@ -382,7 +382,7 @@ extension BaseViewController: UIImagePickerControllerDelegate, DrawingViewContro
                             if let action = self.addAttachmentAction, let ef = self.entryForm {
                                 let attachment = EntryFormAttachment(image: image, entryForm: ef)
                                 attachment.Name = name
-                                action.AddAttachmentAction(attachment: attachment, attachmentsViewer: self.attachmentsSelectorView)
+                                action.AddAttachmentAction(attachment, self.attachmentsSelectorView)
                             }
                         }
                     })

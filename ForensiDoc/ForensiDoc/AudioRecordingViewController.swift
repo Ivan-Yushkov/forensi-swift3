@@ -221,7 +221,7 @@ open class AudioRecordingViewController: BaseViewController {
     
     
     func routeChange(_ notification:Notification) {
-        print("routeChange \(notification.userInfo)")
+        print("routeChange \(String(describing: notification.userInfo))")
         
         if let userInfo = notification.userInfo {
             //print("userInfo \(userInfo)")
