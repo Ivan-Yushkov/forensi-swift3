@@ -16,8 +16,10 @@ class EncryptJsonForSubmit {
       //  let password = entryForm.EncryptionPassword
         
         let json = entryForm.toReportJSON()
-        if let jsonString = json.rawString(String.Encoding.utf8.rawValue, options:
-            JSONSerialization.WritingOptions.prettyPrinted) {
+//        if let jsonString = json.rawString(String.Encoding.utf8.rawValue, options:
+//            JSONSerialization.WritingOptions.prettyPrinted) {
+            
+            if let jsonString = json.rawString(.utf8, options: .prettyPrinted) {
             //if let jsonData = jsonString.data(using: String.Encoding.utf8) {
              //   let ciphertext = RNCryptor.encryptData(data: jsonData as NSData, password: password)
              //   let data = ciphertext.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))

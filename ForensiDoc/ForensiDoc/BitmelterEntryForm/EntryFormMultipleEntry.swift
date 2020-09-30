@@ -93,7 +93,7 @@ open class EntryFormMultipleEntry: JSONConvertible, Validable {
         
         ret["required"] = self.required as AnyObject
         
-        ret["fields"] = MiscHelpers.GetFieldsForJSON(self.fields, useReportDictionary: false)
+        ret["fields"] = MiscHelpers.GetFieldsForJSON(self.fields, useReportDictionary: false) as AnyObject
         
         return ret
     }
@@ -111,8 +111,8 @@ open class EntryFormMultipleEntry: JSONConvertible, Validable {
                     if let arr = f["value"] as? [AnyObject] {
                         for el in arr {
                             if var elDict = el as? [String: AnyObject] {
-                                elDict["value_number"] = cnt
-                                values.append(elDict)
+                                elDict["value_number"] = cnt as AnyObject
+                                values.append(elDict as AnyObject)
                             }
                         }
                     }

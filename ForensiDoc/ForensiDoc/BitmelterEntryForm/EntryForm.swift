@@ -314,12 +314,19 @@ open class EntryForm: JSONConvertible {
             let folderName = format.string(from: Date())
             
             let fileManager = FileManager.default
-            let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
-            let documentsDirectory: AnyObject = paths[0] as AnyObject
-            let dataPath = documentsDirectory.appendingPathComponent(folderName)
-            if !fileManager.fileExists(atPath: dataPath) {
+           // let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+            
+            guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first  else { return false }
+            
+                
+           // guard let thePath = paths.first else { return false }
+           // let documentsDirectory = URL(fileURLWithPath: thePath)
+           // let documentsDirectory: AnyObject = paths[0] as AnyObject
+           
+            let dataPath = documentDirectoryUrl.appendingPathComponent(folderName)
+            if !fileManager.fileExists(atPath: dataPath.path) {
                 do {
-                    try FileManager.default.createDirectory(atPath: dataPath, withIntermediateDirectories: false, attributes: nil)
+                    try FileManager.default.createDirectory(atPath: dataPath.path, withIntermediateDirectories: false, attributes: nil)
                     self.SavedInFolder = folderName
                     return true
                 } catch let error as NSError {

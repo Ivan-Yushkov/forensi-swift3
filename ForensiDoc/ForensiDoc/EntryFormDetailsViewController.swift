@@ -136,7 +136,7 @@ class EntryFormDetailsViewController: BaseViewController, EntryFormDetailFactory
         if let ef = entryForm {
             if isAddingNew {
                 
-                if let rawJson = ef.toJSON().rawString(String.Encoding.utf8.rawValue, options: JSONSerialization.WritingOptions.prettyPrinted) {
+                if let rawJson = ef.toJSON().rawString(.utf8, options: .prettyPrinted) {
                     let newEF = EntryForm(jsonSpec: rawJson, doNotCheckForHiddenFields: false)
                     if newEF.EnsureSavedInFolderSet() {
                         newEF.EnsureHiddenGroupsSet()
