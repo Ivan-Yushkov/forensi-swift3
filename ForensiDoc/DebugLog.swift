@@ -6,7 +6,8 @@ import Foundation
 
 extension String {
     func appendLineToURL(_ fileURL: URL) throws {
-        try self + "\n".appendToURL(fileURL)
+        //try self + "\n".appendToURL(fileURL)
+        try self.appendToURL(fileURL)
     }
     
     func appendToURL(_ fileURL: URL) throws {
