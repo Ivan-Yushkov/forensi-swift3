@@ -133,10 +133,11 @@ class EntryFormDetailsViewController: BaseViewController, EntryFormDetailFactory
     }
     
     fileprivate func addNewEditEntryForm(_ entryForm: EntryForm?, isAddingNew: Bool) {
-        if let ef = entryForm {
+        if let entryForm = entryForm {
             if isAddingNew {
                 
-                if let rawJson = ef.toJSON().rawString(.utf8, options: .prettyPrinted) {
+                if let rawJson = entryForm.toJSON().rawString(.utf8, options: .prettyPrinted) {
+                    ///
                     let newEF = EntryForm(jsonSpec: rawJson, doNotCheckForHiddenFields: false)
                     if newEF.EnsureSavedInFolderSet() {
                         newEF.EnsureHiddenGroupsSet()
@@ -151,7 +152,7 @@ class EntryFormDetailsViewController: BaseViewController, EntryFormDetailFactory
                 }
             } else {
                 let newEntryForm: NewEntryFormViewController = NewEntryFormViewController(nibName:"NewEntryFormView", bundle: .none)
-                newEntryForm.entryForm = ef
+                newEntryForm.entryForm = entryForm
                 
                 DispatchQueue.main.async(execute: {
                     self.navigationController?.pushViewController(newEntryForm, animated: true)
