@@ -149,17 +149,37 @@ open class MiscHelpers {
             }
             let dd = EntryForm.LoadEntryFormAttachmentSpec(allowedAttachmentsSpec, eventManager: eventManager)
             f.attachmentsSpec = dd
+            
+            //MARK: fix2020
+            
             if let v = values {
                 for value in v {
-                    if let valueTitle = value["title"].string, let valueValue = value["value"].int, T.self is Int.Type {
-                        f.addValue(valueValue, title: valueTitle)
-                    } else if let valueTitle = value["title"].string, let valueValue = value["value"].float, T.self is Float.Type {
-                        f.addValue(valueValue, title: valueTitle)
-                    } else if let valueTitle = value["title"].string, let valueValue = value["value"].string, T.self is String.Type {
-                        f.addValue(valueValue, title: valueTitle)
-                    } else if let valueTitle = value["title"].string, let valueValue = value["value"].double, T.self is Double.Type {
-                        f.addValue(valueValue, title: valueTitle)
+                    if let valueTitle = value["title"].string {
+                        if let valueValue = value["value"].int, T.self is Int.Type {
+                           _ = f.addValue(valueValue, title: valueTitle)
+                        }
+                        if let valueValue = value["value"].float, T.self is Float.Type {
+                            _ = f.addValue(valueValue, title: valueTitle)
+                        }
+                        if let valueValue = value["value"].string, T.self is String.Type {
+                            _ = f.addValue(valueValue, title: valueTitle)
+                        }
+                        if let valueValue = value["value"].double, T.self is Double.Type {
+                            _ = f.addValue(valueValue, title: valueTitle)
+                        }
+                        
                     }
+                    
+                    
+//                    if let valueTitle = value["title"].string, let valueValue = value["value"].int, T.self is Int.Type {
+//                        f.addValue(valueValue, title: valueTitle)
+//                    } else if let valueTitle = value["title"].string, let valueValue = value["value"].float, T.self is Float.Type {
+//                        f.addValue(valueValue, title: valueTitle)
+//                    } else if let valueTitle = value["title"].string, let valueValue = value["value"].string, T.self is String.Type {
+//                        f.addValue(valueValue, title: valueTitle)
+//                    } else if let valueTitle = value["title"].string, let valueValue = value["value"].double, T.self is Double.Type {
+//                        f.addValue(valueValue, title: valueTitle)
+//                    }
                 }
             }
             if let atts = attachments {

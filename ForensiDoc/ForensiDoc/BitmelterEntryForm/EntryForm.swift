@@ -314,6 +314,7 @@ open class EntryForm: JSONConvertible {
             let folderName = format.string(from: Date())
             
             let fileManager = FileManager.default
+//MARK: fix2020
            // let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
             
             guard let documentDirectoryUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first  else { return false }

@@ -63,7 +63,9 @@ func parseResponse(_ response: Response) -> Result<Data> {
 
 func performRequest<A: JSONDecodable>(_ request: URLRequest, callback: @escaping (Result<A>) -> ()) -> URLSessionTask {
     let task = URLSession.shared.dataTask(with: request, completionHandler: { data, urlResponse, error in
-        callback(parseResult(data, urlResponse: urlResponse, error: error as! NSError))
+        //MARK: fix2020
+        //callback(parseResult(data, urlResponse: urlResponse, error: error as? NSError))
+        callback(parseResult(data, urlResponse: urlResponse, error: error as NSError?))
     }) 
     task.resume()
     return task

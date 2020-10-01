@@ -82,19 +82,22 @@ open class EntryFormAddNewFactory: NSObject, UITableViewDataSource, UITableViewD
                 }
             }
         }
-        
-        var eff: Any? = .none
+//MARK: fix2020
+        //var eff: Any? = .none
+        var eff: Any?
         var cellIdentifierSuffix = ""
         if !self.isOnAttachmentsRow(indexPath) {
             eff = fields()[indexPath.row]
-            if let e = MiscHelpers.CastEntryFormField(eff, Int.self) {
+            if eff != nil {
+            if let e = MiscHelpers.CastEntryFormField(eff!, Int.self) {
                 cellIdentifierSuffix = e.id
-            } else if let e = MiscHelpers.CastEntryFormField(eff, Double.self) {
+            } else if let e = MiscHelpers.CastEntryFormField(eff!, Double.self) {
                 cellIdentifierSuffix = e.id
-            } else if let e = MiscHelpers.CastEntryFormField(eff, Float.self) {
+            } else if let e = MiscHelpers.CastEntryFormField(eff!, Float.self) {
                 cellIdentifierSuffix = e.id
-            } else if let e = MiscHelpers.CastEntryFormField(eff, String.self) {
+            } else if let e = MiscHelpers.CastEntryFormField(eff!, String.self) {
                 cellIdentifierSuffix = e.id
+            }
             }
         }
         

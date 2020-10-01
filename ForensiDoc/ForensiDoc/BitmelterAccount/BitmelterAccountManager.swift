@@ -18,11 +18,12 @@ open class BitmelterAccountManager {
     var _onSuccessfullAccountActivation: (() -> Void)? = .none
     var _onSuccessfullPasswordReset: (() -> Void)? = .none
     var _delegate: BitmelterAccountManagerProtocol? = .none
-    
-    class open func startSharedInstance(_ delegate: BitmelterAccountManagerProtocol?) -> BitmelterAccountManager {
+ 
+    //MARK: fix2020
+    class open func startSharedInstance(_ delegate: BitmelterAccountManagerProtocol?) {//-> BitmelterAccountManager {
         let instance = Singleton.instance
         instance._delegate = delegate
-        return instance
+       // return instance
     }
     
     class open var sharedInstance: BitmelterAccountManager {

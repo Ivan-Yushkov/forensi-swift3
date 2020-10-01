@@ -333,7 +333,7 @@ open class DateTimeBaseEntryField<TBaseType: Equatable>: EntryFormBaseFieldType<
             return DateFormatter.Style.medium
         }
     }
-    
+   //MARK: fix2020
     open override func addValue<V>(_ value: V, title: String) -> Bool {
         self.values.removeAll(keepingCapacity: true)
         let ret = super.addValue(value, title: title)
@@ -524,21 +524,23 @@ open class CalculatedEntryField<TBaseType: Equatable>: EntryFormBaseFieldType<TB
     override open func type() -> String {
         return EntryFormFieldType.Calculated.rawValue
     }
-    
+ //MARK: fix2020
     override open func displaySelectedValue() -> String {
         let value = super.displaySelectedValue()
         if self.resultDisplayShouldBeJSEvaluated {
             if self.canCalculate {
-                let context = JSContext()
+                if let context = JSContext() {
                 let script = value
-                context?.evaluateScript(script)
-                let displayResult: JSValue = context!.evaluateScript("formatDisplayResult()")
+              //  context?.evaluateScript(script)
+                context.evaluateScript(script)
+                let displayResult: JSValue = context.evaluateScript("formatDisplayResult()")
                 if let s = displayResult.toString() {
                     if s == "undefined" {
                         return "n/a"
                     }
                     return s
                 }
+            }
             }
             return "n/a"
         }

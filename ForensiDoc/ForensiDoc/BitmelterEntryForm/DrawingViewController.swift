@@ -131,7 +131,8 @@ open class DrawingViewController: UIViewController, DrawingWrapperCapable {
         }
         drawingWrapper.reset();
     }
-    
+ 
+//MARK: fix2020
     func removeLastDrawnElement(_ sender: AnyObject){
         if drawingWrapper.hasDrawings() {
             if let last = drawingWrapper.getLastElement() {
@@ -139,7 +140,9 @@ open class DrawingViewController: UIViewController, DrawingWrapperCapable {
                     drawingWrapper.redrowElement(last)
                     redrawDrawnElement(last, drawOnMainImage: false)
                 }else{
-                    drawingWrapper.removeLast()
+                    //fix2020
+                    //drawingWrapper.removeLast()
+                   _ = drawingWrapper.removeLast()
                     removeDrawnElement(last)
                 }
             }

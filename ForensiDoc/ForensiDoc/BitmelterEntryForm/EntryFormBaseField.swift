@@ -74,6 +74,7 @@ public protocol EntryFormFieldContainer {
     var values: [(T,String)] { get set }
     func addFieldComments(_ value: String)
     func nonFormattedSelectedValue() -> String
+    
     func addValue<T>(_ value: T, title: String) -> Bool
     func addAttachment(_ attachment: EntryFormAttachment)
     func deleteAttachment(_ attachment: EntryFormAttachment)
@@ -362,7 +363,8 @@ open class EntryFormBaseFieldType<TBaseType: Equatable>: EntryFormFieldContainer
     open func addFieldComments(_ value: String) {
         self.fieldComments?.value = value
     }
-    
+
+   
     open func addValue<V>(_ value: V, title: String) -> Bool{
         if let v = convertToValue(value, title: title) {
             _values.append(v)
@@ -370,6 +372,14 @@ open class EntryFormBaseFieldType<TBaseType: Equatable>: EntryFormFieldContainer
         }
         return false
     }
+    
+//    open func addValue<V>(_ value: V, title: String) -> Bool{
+//        if let v = convertToValue(value, title: title) {
+//            _values.append(v)
+//            return true
+//        }
+//        return false
+//    }
     
     open func toReportJSON() -> JSON {
         return toJSON()

@@ -126,10 +126,10 @@ class NewEntryFormViewController: BaseViewController, EntryFormAddNewFactoryProt
             f.shouldRefresh()
         }
     }
-    
+ //MARK: fix2020
     fileprivate func saveForm(_ entryForm: EntryForm) {
         let repo = ForensiDocEntryFormRepository()
-        repo.SaveEntryForm(entryForm)
+        _ = repo.SaveEntryForm(entryForm)
     }
     
     func getTableView(_ entryFormField: Any) -> UITableViewCell? {

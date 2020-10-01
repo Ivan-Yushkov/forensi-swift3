@@ -53,6 +53,7 @@ class EncryptJsonForSubmit {
             DebugLog.DLog("Decrypting form id \(entryForm.uuid) with password \(entryForm.EncryptionPassword).")
             
             return content
+//MARK: fix2020
 /*            if let cc = Data(base64Encoded: content, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters) {
                 DebugLog.DLog("Decrypting form id \(entryForm.uuid) cc.")
                 /*
@@ -76,10 +77,11 @@ class EncryptJsonForSubmit {
                 DebugLog.DLog("Unable to create NSData \(content)")
             }
 */
-        } catch  let error{
-            print("DecryptContentForEntryForm \(error)")
-            print(error.localizedDescription)
         }
+//        catch  let error{
+//            print("DecryptContentForEntryForm \(error)")
+//            print(error.localizedDescription)
+//        }
  /*       } catch RNCryptorError.HMACMismatch {
           DebugLog.DLog("RNCryptorError.HMACMismatch")
         } catch RNCryptorError.InvalidCredentialType {
@@ -94,8 +96,8 @@ class EncryptJsonForSubmit {
             DebugLog.DLog("Unable to decrypt. Unknown error \(content)")
         }
  */
-        DebugLog.DLog("Unable to Decrypt returning .None")
+    //    DebugLog.DLog("Unable to Decrypt returning .None")
     
-        return .none
+    //    return .none
     }
 }

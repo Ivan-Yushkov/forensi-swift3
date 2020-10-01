@@ -37,9 +37,11 @@ class DateTimeFieldTypeViewController: BaseViewController, UITextViewDelegate {
             }
         }
     }
-    
+    //MARK: fix2020
+   
     func addAttachment(_ attachment: EntryFormAttachment, attachmentsViewer: AttachmentsSelectorView?) {
-        ViewsHelpers.HandleAttachments(_entryField, attachment: attachment, attachmentsViewer: attachmentsViewer)
+        //ViewsHelpers.HandleAttachments(_entryField, attachment: attachment, attachmentsViewer: attachmentsViewer)
+        _ = ViewsHelpers.HandleAttachments(_entryField, attachment: attachment, attachmentsViewer: attachmentsViewer)
     }
     
     internal func textViewDidEndEditing(_ textView: UITextView) {
