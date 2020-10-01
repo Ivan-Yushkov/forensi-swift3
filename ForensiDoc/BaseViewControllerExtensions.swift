@@ -222,7 +222,9 @@ extension BaseViewController: UIImagePickerControllerDelegate, DrawingViewContro
         } else if let ef = self.entryForm {
             //Here adding drawing to the entry form itself
             let empty: Any? = .none
-            let emptyFormField = MiscHelpers.CastEntryFormField(empty, Double.self)
+            
+            //MARK: fix2020
+            let emptyFormField = MiscHelpers.CastEntryFormField(empty as Any, Double.self)
             self.initializeDrawing(ef, entryFormField: emptyFormField)
         }
     }

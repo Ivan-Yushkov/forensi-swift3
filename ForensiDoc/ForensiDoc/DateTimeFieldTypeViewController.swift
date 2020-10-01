@@ -63,7 +63,7 @@ class DateTimeFieldTypeViewController: BaseViewController, UITextViewDelegate {
             if let f = MiscHelpers.CastEntryFormField(ef, Double.self) {
                 if let b = f as? DateTimeBaseEntryField<Double> {
                     let timeInterval = self.datePicker.date.timeIntervalSince1970
-                    b.addValue(timeInterval, title: "")
+                    _ = b.addValue(timeInterval, title: "")
                     self.doneEditing?.EntryFormFieldDoneEditingDelegate?.handleEditedForm(eForm, entryFormField: f)
                 }
             }

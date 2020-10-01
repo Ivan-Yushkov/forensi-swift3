@@ -617,8 +617,12 @@ open class CalculatedEntryField<TBaseType: Equatable>: EntryFormBaseFieldType<TB
         
         var af = Array<[String: AnyObject]>()
         for f in self.allFields {
-            if f.1 is AnyObject {
-                let ao = f.1 as AnyObject
+  //          let v = f.value
+  //          let k = f.key
+            
+  //        if f.1 is AnyObject {
+ //MARK: fix2020
+            if let ao = f.1 as AnyObject? {
                 var d = [String: AnyObject]()
                 let field = f.0
                 let value = ao

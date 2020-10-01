@@ -75,16 +75,17 @@ extension MultipleEntryViewController: UITableViewDataSource {
             cell.accessoryType = .disclosureIndicator
         }
     }
-    
+//MARK: fix2020
     fileprivate func getOwnCell() -> MultipleEntryViewCell? {
-        if let bundle: Bundle = Bundle.main {
-            let objects = bundle.loadNibNamed("MultipleEntryViewCell", owner: self, options: nil)
-            if objects?.count > 0 {
-                if let c = objects![0] as? MultipleEntryViewCell {
+       // if let bundle: Bundle = Bundle.main {
+            if let objects = Bundle.main.loadNibNamed("MultipleEntryViewCell", owner: self, options: nil) {
+           // let objects = bundle.loadNibNamed("MultipleEntryViewCell", owner: self, options: nil)
+           // if objects.count > 0 {
+                if let c = objects.first as? MultipleEntryViewCell {
                     return c
                 }
-            }
+            //}
         }
-        return .none
+        return nil
     }
 }

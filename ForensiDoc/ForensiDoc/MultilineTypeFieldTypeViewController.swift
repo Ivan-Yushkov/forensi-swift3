@@ -82,9 +82,9 @@ class MultilineTypeFieldTypeViewController: BaseViewController, UITextViewDelega
             alpha: CGFloat(1.0)
         )
     }
-    
+ //MARK: fix2020
     func addAttachment(_ attachment: EntryFormAttachment, attachmentsViewer: AttachmentsSelectorView?) {
-        ViewsHelpers.HandleAttachments(_entryField, attachment: attachment, attachmentsViewer: attachmentsViewer)
+        _ = ViewsHelpers.HandleAttachments(_entryField, attachment: attachment, attachmentsViewer: attachmentsViewer)
     }
     
     func addDoneButton(_ addNextKey: Bool) {
@@ -146,7 +146,7 @@ class MultilineTypeFieldTypeViewController: BaseViewController, UITextViewDelega
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        processTextViewToEntryField(textView)
+        _ = processTextViewToEntryField(textView)
     }
     
     internal func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
