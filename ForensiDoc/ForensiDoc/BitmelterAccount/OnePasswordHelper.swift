@@ -46,7 +46,7 @@ class OnePasswordHelper {
             AppExtensionGeneratedPasswordMaxLengthKey: 50
         ]
   
-       
+ //MARK: fix2020      
         OnePasswordExtension.shared().changePasswordForLogin(forURLString: kOnePasswordStoreLoginUrl, loginDetails: loginDetails, passwordGenerationOptions: passwordGenerationOptions, for: viewController, sender: viewController) { (loginDict, error)  in
             if loginDict == nil {
                 if let error = error as NSError? {
@@ -102,6 +102,7 @@ class OnePasswordHelper {
             AppExtensionGeneratedPasswordMinLengthKey : 6,
             AppExtensionGeneratedPasswordMaxLengthKey: 50
         ]
+        //MARK: fix2020
 //        OnePasswordExtension.shared().storeLogin(forURLString: <#T##String!#>, loginDetails: <#T##[AnyHashable : Any]!#>, passwordGenerationOptions: <#T##[AnyHashable : Any]!#>, for: <#T##UIViewController!#>, sender: <#T##Any!#>, completion: <#T##(([AnyHashable : Any]?, Error?) -> Void)!##(([AnyHashable : Any]?, Error?) -> Void)!##([AnyHashable : Any]?, Error?) -> Void#>)
 //        
         OnePasswordExtension.shared().storeLogin(forURLString: kOnePasswordStoreLoginUrl, loginDetails: newLoginDetails, passwordGenerationOptions: passwordGenerationOptions, for: viewController, sender: viewController) { (loginDict, error) -> Void in

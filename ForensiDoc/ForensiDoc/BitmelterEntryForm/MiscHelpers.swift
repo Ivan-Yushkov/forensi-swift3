@@ -246,7 +246,7 @@ open class MiscHelpers {
         let calculate = f.cnt == allFieldsCnt
         
         var retValue: NSNumber? = .none
-        
+//TODO: find solution
         hack_try {
             if calculate {
                 let expression = NSExpression(format: f.calculateFormula)
