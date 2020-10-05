@@ -11,7 +11,7 @@ import Foundation
 extension BaseViewController {
     func processEmailLogic(_ email: String) -> [String] {
         var errorMessages = [String]()
-        if email.characters.count == 0 {
+        if email.count == 0 {
             errorMessages.append(kEmailCannotBeEmpty)
         }else if !email.isValidEmail(){
             errorMessages.append(kInvalidEmail)
@@ -26,11 +26,11 @@ extension BaseViewController {
             errorMessages.append(kPasswordsAreNotTheSame)
         }
         
-        if password.characters.count == 0 {
+        if password.count == 0 {
             errorMessages.append(kPasswordCannotBeEmpty)
         }
         
-        if confirmPassword.characters.count == 0 {
+        if confirmPassword.count == 0 {
             errorMessages.append(kConfirmationPasswordCannotBeEmpty)
         }
         

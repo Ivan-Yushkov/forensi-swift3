@@ -65,11 +65,11 @@ open class HelperData: NSObject, NSSecureCoding {
     }
     
     open func hasResetPasswordCode() -> Bool {
-        return self.resetPasswordCode.characters.count > 0
+        return self.resetPasswordCode.count > 0
     }
     
     open func hasAccountActivationCode() -> Bool {
-        return self.accountActivationCode.characters.count > 0
+        return self.accountActivationCode.count > 0
     }
     
     public class var supportsSecureCoding : Bool {

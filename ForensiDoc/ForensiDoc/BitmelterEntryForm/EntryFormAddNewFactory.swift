@@ -234,7 +234,7 @@ open class EntryFormAddNewFactory: NSObject, UITableViewDataSource, UITableViewD
                             alreadyCalculated = f.canCalculate
                             calculationBasedOnMultipleFields = f.CalculationBasedOnMultipleFields()
                         }
-                        if fieldNames.characters.count > 0 {
+                        if fieldNames.count > 0 {
                             var message = ""
                             if alreadyCalculated {
                                 message = NSLocalizedString("This field has been calculated based on\n \(fieldNames) \(calculationBasedOnMultipleFields ? "fields" : "field").", comment: "Message to popup when showing info on calculated field that has alrady been calculated.")

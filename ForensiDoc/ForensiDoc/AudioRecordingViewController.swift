@@ -43,7 +43,7 @@ open class AudioRecordingViewController: BaseViewController {
         self.dismiss(animated: true, completion: .none)
     }
     
-    func updateAudioMeter(_ timer:Timer) {
+    @objc func updateAudioMeter(_ timer:Timer) {
         if recorder.isRecording {
             let min = Int(recorder.currentTime / 60)
             let sec = Int(recorder.currentTime.truncatingRemainder(dividingBy: 60))
@@ -211,16 +211,16 @@ open class AudioRecordingViewController: BaseViewController {
             object:nil)
     }
     
-    func background(_ notification:Notification) {
+    @objc func background(_ notification:Notification) {
         print("background")
     }
     
-    func foreground(_ notification:Notification) {
+    @objc func foreground(_ notification:Notification) {
         print("foreground")
     }
     
     
-    func routeChange(_ notification:Notification) {
+    @objc func routeChange(_ notification:Notification) {
         print("routeChange \(String(describing: notification.userInfo))")
         
         if let userInfo = notification.userInfo {

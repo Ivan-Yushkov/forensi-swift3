@@ -31,13 +31,13 @@ open class LoginViewController: BaseViewController {
         var errorMessages:[String] = Array<String>()
         
         if let emailAddress = self.emailAddress.text, let password = self.password.text {
-            if emailAddress.characters.count  == 0 {
+            if emailAddress.count  == 0 {
                 errorMessages.append(kEmailCannotBeEmpty)
             }else if emailAddress.isValidEmail() {
                 errorMessages.append(kInvalidEmail)
             }
             
-            if password.characters.count == 0 {
+            if password.count == 0 {
                 errorMessages.append(kPasswordCannotBeEmpty)
             }
             
@@ -67,7 +67,7 @@ open class LoginViewController: BaseViewController {
     @IBAction func remindPassword(_ sender: AnyObject){
         if let emailAddress = self.emailAddress.text {
             
-            if emailAddress.characters.count == 0 {
+            if emailAddress.count == 0 {
                 displayErrorAlert(kErrorTitle, messages: [kEmailCannotBeEmpty])
             } else if !emailAddress.isValidEmail() {
                 displayErrorAlert(kErrorTitle, messages: [kInvalidEmail, kPleaseEnterAValidEmailAddress])

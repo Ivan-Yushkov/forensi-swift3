@@ -46,7 +46,7 @@ class NewEntryFormViewController: BaseViewController, EntryFormAddNewFactoryProt
         }
     }
     
-    dynamic func entryFormAttachmentAdded(_ notification: Notification) {
+    @objc dynamic func entryFormAttachmentAdded(_ notification: Notification) {
         if let f = _factory {
             f.shouldRefresh()
         }

@@ -57,7 +57,7 @@ open class EntryFormSettingsHelper {
         if let efs = GetEntryFormSetting(entryFormId, key: key, String.self) {
             var stringValue: String = ""
             for s in efs {
-                if stringValue.characters.count > 0 {
+                if stringValue.count > 0 {
                     stringValue += "\n"
                 }
                 stringValue = stringValue + s.0

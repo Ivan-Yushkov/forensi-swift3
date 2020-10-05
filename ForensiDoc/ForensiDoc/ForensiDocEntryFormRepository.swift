@@ -83,7 +83,7 @@ internal class ForensiDocEntryFormRepository : EntryFormRepository{
     
     func SaveEntryForm(_ form: EntryForm) -> Bool {
         NSLog("Will save entry form to -> %@", form.SavedInFolder)
-        if form.SavedInFolder.characters.count > 0 {
+        if form.SavedInFolder.count > 0 {
             let efs = EntryFormSave(entryForm: form)
             let data = NSKeyedArchiver.archivedData(withRootObject: efs)
             let saveFileName = "\(form.uuid)-\(form.FormId).ef"

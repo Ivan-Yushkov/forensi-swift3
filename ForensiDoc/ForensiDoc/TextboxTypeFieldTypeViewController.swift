@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+//MARK: fix2020
 class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet var fieldTitle: UILabel!
     @IBOutlet var textField: UITextField!
@@ -29,11 +29,11 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
         if let ef = _entryField {
             if let f = MiscHelpers.CastEntryFormField(ef, Int.self) {
                 self.title = f.title
-                if f.allowedCharacters.characters.count > 0 {
+                if f.allowedCharacters.count > 0 {
                     self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                 }
                 self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
-                if f.placeHolder.characters.count > 0 {
+                if f.placeHolder.count > 0 {
                     self.textField.placeholder = f.placeHolder
                 }
                 self.textField.keyboardType = UIKeyboardType.numberPad
@@ -41,11 +41,11 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
                 self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
             } else if let f = MiscHelpers.CastEntryFormField(ef, Float.self) {
                 self.title = f.title
-                if f.allowedCharacters.characters.count > 0 {
+                if f.allowedCharacters.count > 0 {
                     self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                 }
                 self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
-                if f.placeHolder.characters.count > 0 {
+                if f.placeHolder.count > 0 {
                     self.textField.placeholder = f.placeHolder
                 }
                 self.textField.keyboardType = UIKeyboardType.numberPad
@@ -53,11 +53,11 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
                 self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
             } else if let f = MiscHelpers.CastEntryFormField(ef, Double.self) {
                 self.title = f.title
-                if f.allowedCharacters.characters.count > 0 {
+                if f.allowedCharacters.count > 0 {
                     self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                 }
                 self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
-                if f.placeHolder.characters.count > 0 {
+                if f.placeHolder.count > 0 {
                     self.textField.placeholder = f.placeHolder
                 }
                 self.textField.keyboardType = UIKeyboardType.numberPad
@@ -65,11 +65,11 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
                 self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
             } else if let f = MiscHelpers.CastEntryFormField(ef, String.self) {
                 self.title = f.title
-                if f.allowedCharacters.characters.count > 0 {
+                if f.allowedCharacters.count > 0 {
                     self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                 }
                 self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
-                if f.placeHolder.characters.count > 0 {
+                if f.placeHolder.count > 0 {
                     self.textField.placeholder = f.placeHolder
                 }
                 self.textField.keyboardType = UIKeyboardType.default
@@ -102,11 +102,11 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
     
     internal func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if let cs = self._characterSet {
-            let characters = Array(string.characters)
+            let characters = Array(string)
             for c in characters {
                 let range = String(c).rangeOfCharacter(from: cs)
                 if range == .none {
-                    if self._allowedCharactersErrorMessage.characters.count > 0 {
+                    if self._allowedCharactersErrorMessage.count > 0 {
                         AlertHelper.DisplayAlert(self, title: NSLocalizedString("Invalid character", comment: "Title of the dialog when invalid character pressed."), messages: [self._allowedCharactersErrorMessage], callback: .none)
                     }
                     return false
@@ -117,8 +117,8 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
         return true
     }
     
-    func doneEditingAndReturn() {
-        if let doneEditingWrapper = self.doneEditing, let textField = self.textField.text, textField.characters.count == 0 {
+    @objc func doneEditingAndReturn() {
+        if let doneEditingWrapper = self.doneEditing, let textField = self.textField.text, textField.count == 0 {
             if let allowEmptyData = doneEditingWrapper.EntryFormFieldDoneEditingDelegate?.allowEmptyData(), allowEmptyData == false {
                 AlertHelper.DisplayAlert(self, title: NSLocalizedString("Error", comment: "Error title dialog when entered empty data"), messages: [NSLocalizedString("You cannot leave that field empty if you want to save it.", comment: "Error message on error dialog when entered no data.")], callback: .none)
                 return
@@ -127,7 +127,7 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
 
         var addedValue = false
         if let ef = _entryField, let textField = self.textField.text {
-            let emptyValue = textField.characters.count == 0
+            let emptyValue = textField.count == 0
             if let f = MiscHelpers.CastEntryFormField(ef, Int.self) {
                 addedValue = f.addValue(textField, title: textField)
                 if addedValue && f.values.count > 0 {

@@ -20,8 +20,9 @@ open class EventManager {
     // + eventName: Matching trigger eventNames will cause this listener to fire
     // + action: The block of code you want executed when the event triggers
     func listenTo(_ eventName:String, action:@escaping ((Any?)->())) {
-        let newListener = EventListenerAction(callback: action);
-        addListener(eventName, newEventListener: newListener);
+        let newListener = EventListenerAction(action)
+        
+        addListener(eventName, newEventListener: newListener)
     }
     
     internal func addListener(_ eventName:String, newEventListener:EventListenerAction) {

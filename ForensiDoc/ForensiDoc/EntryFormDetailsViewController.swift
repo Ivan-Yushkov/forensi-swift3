@@ -34,7 +34,7 @@ class EntryFormDetailsViewController: BaseViewController, EntryFormDetailFactory
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let bundleIdentifier = Bundle.main.bundleIdentifier, bundleIdentifier.characters.count > 0 {
+        if let bundleIdentifier = Bundle.main.bundleIdentifier, bundleIdentifier.count > 0 {
             let sessionConfiguration = URLSessionConfiguration.background(withIdentifier: bundleIdentifier)
             sessionConfiguration.httpMaximumConnectionsPerHost = 5
             
@@ -67,12 +67,12 @@ class EntryFormDetailsViewController: BaseViewController, EntryFormDetailFactory
         _entryFormFactory?.reload()
     }
         
-    func settingsButtonTapped(_ sender: AnyObject) {
+    @objc func settingsButtonTapped(_ sender: AnyObject) {
         let settingsViewController: SettingsViewController? = nil
         self.navigateToView(settingsViewController)
     }
     
-    func newReportTapped(_ sender: AnyObject) {
+    @objc func newReportTapped(_ sender: AnyObject) {
         addNewEditEntryForm(entryForm, isAddingNew: true)
     }
     

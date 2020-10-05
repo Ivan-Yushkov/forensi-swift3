@@ -21,18 +21,18 @@ extension SettingsViewController: EntryFormFieldDoneEditing, MFMailComposeViewCo
         }
     }
     
-    func editAccountDetailsTapped(_ sender: AnyObject?) {
+    @objc func editAccountDetailsTapped(_ sender: AnyObject?) {
         let accountDetailsViewController: AccountDetailsViewController? = nil
         self.navigateToView(accountDetailsViewController)
     }
     
-    func changePasswordTapped(_ sender: AnyObject?) {
+    @objc func changePasswordTapped(_ sender: AnyObject?) {
         AlertHelper.DisplayConfirmationDialog(self, title: "Confirm", messages: ["Do you want to change your password?"], okCallback: { () -> Void in
             
             }, cancelCallback: nil)
     }
     
-    func signOutTapped(_ sender: AnyObject?) {
+    @objc func signOutTapped(_ sender: AnyObject?) {
         AlertHelper.DisplayConfirmationDialog(self, title: "Confirm", messages: ["Do you want to sign out?"], okCallback: { () -> Void in
             
             }, cancelCallback: nil)
@@ -281,7 +281,7 @@ extension SettingsViewController: EntryFormFieldDoneEditing, MFMailComposeViewCo
         return c
     }
     
-    func handleSwitchChange(_ s: UISwitch?) {
+    @objc func handleSwitchChange(_ s: UISwitch?) {
         if let _switch = s {
             if let formWrapper = _switch.formInfo {
                 if let selectedForm = formWrapper.SelectedEntryForm, let selectedGroup = formWrapper.SelectedGroupId {

@@ -90,7 +90,7 @@ public protocol EntryFormFieldContainer {
 public extension EntryFormFieldContainer {
     public func formatWithResultDisplay(_ value: String) -> String {
         var newValue = value
-        if self.resultFormat.characters.count > 0 {
+        if self.resultFormat.count > 0 {
             //This means the field is numeric
             if self.baseType == .Int {
                 if let v = value.toInt() {
@@ -107,7 +107,7 @@ public extension EntryFormFieldContainer {
                 }
             }
         }
-        if self.resultDisplay.characters.count > 0 {
+        if self.resultDisplay.count > 0 {
                 return self.resultDisplay.replacingOccurrences(of: "{result}", with: newValue)
         }
         return value

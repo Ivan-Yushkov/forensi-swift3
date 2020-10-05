@@ -28,7 +28,7 @@ class MainViewController: BaseViewController, EntryFormFactoryProtocol, UITableV
         self.mainTbl.delegate = _entryFormFactory
     }
     
-    func settingsButtonTapped(_ sender: AnyObject) {
+    @objc func settingsButtonTapped(_ sender: AnyObject) {
         let settingsViewController: SettingsViewController? = nil
         self.navigateToView(settingsViewController)
     }

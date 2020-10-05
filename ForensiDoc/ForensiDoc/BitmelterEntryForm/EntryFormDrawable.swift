@@ -48,7 +48,7 @@ open class EntryFormDrawable: JSONConvertible, Validable {
                 let imgName = backgroundImg["img"].stringValue
                 let formula = backgroundImg["formula"].stringValue
                 
-                if title.characters.count > 0 && imgName.characters.count > 0 {
+                if title.count > 0 && imgName.count > 0 {
                     let imgWithTitle = EntryFormImageWithTitle(title: title, imageName: imgName, formula: formula)
                     imgWithTitle.eventManager = eventManager
                     backgroundImages.append(imgWithTitle)

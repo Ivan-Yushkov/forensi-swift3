@@ -168,30 +168,30 @@ open class User: NSObject, NSSecureCoding {
     }
     
     open func isUsingPasscode() -> Bool{
-        return self.passCode.characters.count > 0
+        return self.passCode.count > 0
     }
     
     open func isLoggedOn() -> Bool {
         return
-            self.logonToken.characters.count > 0 ||
+            self.logonToken.count > 0 ||
                     self.localUserOnly
     }
     
     open func isRegisteredButNotActivated() -> Bool {
         return
-            self.userName.characters.count > 0 &&
+            self.userName.count > 0 &&
                 !self.activated
     }
     
     open func isRegisteredAndActivated() -> Bool {
         return
-            self.userName.characters.count > 0 &&
+            self.userName.count > 0 &&
             !self.isRegisteredButNotActivated()
     }
     
     open func hasCreatedPasscode() -> Bool {
         return
-            self.passCode.characters.count > 0 ||
+            self.passCode.count > 0 ||
             self.usingTouchId
     }
     

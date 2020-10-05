@@ -46,16 +46,16 @@ open class VideoRecordingViewController: BaseViewController, AVCaptureFileOutput
         
         if !happenOnce {
             happenOnce = true
-            captureSession.sessionPreset = AVCaptureSessionPresetHigh
+            captureSession.sessionPreset = AVCaptureSession.Preset.high
             
             let devices = AVCaptureDevice.devices()
             
             // Loop through all the capture devices on this phone
-            for device in devices! {
+            for device in devices {
                 // Make sure this particular device supports video
-                if ((device as AnyObject).hasMediaType(AVMediaTypeVideo)) {
+                if ((device as AnyObject).hasMediaType(AVMediaType.video)) {
                     // Finally check the position and confirm we've got the back camera
-                    if((device as AnyObject).position == AVCaptureDevicePosition.back) {
+                    if((device as AnyObject).position == AVCaptureDevice.Position.back) {
                         captureDevice = device as? AVCaptureDevice
                         if captureDevice != nil {
                             print("Capture device found")
@@ -77,7 +77,7 @@ open class VideoRecordingViewController: BaseViewController, AVCaptureFileOutput
         if let device = captureDevice {
             do {
                 try device.lockForConfiguration()
-                device.setFocusModeLockedWithLensPosition(focusValue, completionHandler: { (time) -> Void in
+                device.setFocusModeLocked(lensPosition: focusValue, completionHandler: { (time) -> Void in
                     //
                 })
                 
@@ -86,7 +86,7 @@ open class VideoRecordingViewController: BaseViewController, AVCaptureFileOutput
                 let maxISO = device.activeFormat.maxISO
                 let clampedISO = isoValue * (maxISO - minISO) + minISO
                 
-                device.setExposureModeCustomWithDuration(AVCaptureExposureDurationCurrent, iso: clampedISO, completionHandler: { (time) -> Void in
+                device.setExposureModeCustom(duration: AVCaptureDevice.currentExposureDuration, iso: clampedISO, completionHandler: { (time) -> Void in
                     //
                 })
                 
@@ -144,11 +144,11 @@ open class VideoRecordingViewController: BaseViewController, AVCaptureFileOutput
         configureDevice()
         
         do {
-            try captureSession.addInput(AVCaptureDeviceInput(device: captureDevice))
-            
-            if let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession) {
+            try captureSession.addInput(AVCaptureDeviceInput(device: captureDevice!))
+            //MARK: fix2020
+             let previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
                 let bounds: CGRect = self.view.frame;
-                previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+                previewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill;
                 previewLayer.bounds=bounds;
                 previewLayer.position=CGPoint(x: bounds.midX, y: bounds.midY);
                 self.view.layer.addSublayer(previewLayer)
@@ -160,22 +160,22 @@ open class VideoRecordingViewController: BaseViewController, AVCaptureFileOutput
                 self.stopButton.isHidden = false
                 self.startButton.isHidden = true
                 captureSession.startRunning()
-            }
+            
         } catch _ {
             
         }
         
     }
     
-    open func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
+    open func fileOutput(_ captureOutput: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
         
     }
     
-    open func capture(_ captureOutput: AVCaptureFileOutput!, didStartRecordingToOutputFileAt fileURL: URL!, fromConnections connections: [Any]!) {
+    open func fileOutput(_ captureOutput: AVCaptureFileOutput, didStartRecordingTo fileURL: URL, from connections: [AVCaptureConnection]) {
         
     }
     
-    func updateVideoMeter(_ timer:Timer) {
+    @objc func updateVideoMeter(_ timer:Timer) {
         if let videoFile = self.videoFileOutput {
             let dTotalSeconds: Float64  = CMTimeGetSeconds(videoFile.recordedDuration);
             
@@ -241,7 +241,7 @@ open class VideoRecordingViewController: BaseViewController, AVCaptureFileOutput
                 
                 let filePath = videoAtt.NSURLFile
                 
-                videoFile.startRecording(toOutputFileURL: filePath as URL!, recordingDelegate: recordingDelegate)
+                videoFile.startRecording(to: filePath as URL!, recordingDelegate: recordingDelegate!)
                 self.meterTimer = Timer.scheduledTimer(timeInterval: 0.1,
                                                                          target:self,
                                                                          selector:#selector(VideoRecordingViewController.updateVideoMeter(_:)),
@@ -258,7 +258,7 @@ open class VideoRecordingViewController: BaseViewController, AVCaptureFileOutput
         self.meterTimer?.invalidate()
         AlertHelper.InputDialog(self, title: NSLocalizedString("Recording name", comment: "Recording name title message of dialog to ask for title"), okButtonTitle: kSave, cancelButtonTitle: kDiscard, message: [NSLocalizedString("Please enter name for the recording", comment: "Message on recording name title dialog")], placeholder: NSLocalizedString("Recording name", comment: "Recording name title placeholder on dialog"), okCallback: { (data) -> Void in
             if let name = data {
-                if name.characters.count == 0 {
+                if name.count == 0 {
                     AlertHelper.DisplayAlert(self, title: kErrorTitle, messages: [NSLocalizedString("Name is required!", comment: "Error message when saving video and no name entered")], callback: {
                         self.doneAndSaveButtonTapped(sender)
                     })

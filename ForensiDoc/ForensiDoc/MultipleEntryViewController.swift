@@ -29,7 +29,7 @@ class MultipleEntryViewController: BaseViewController, EntryFormFieldDoneEditing
         self.navigationItem.setRightBarButton(addNewEntryButton, animated: true)
     }
     
-    func addNewEntryButtonTapped(_ sender: AnyObject) {
+    @objc func addNewEntryButtonTapped(_ sender: AnyObject) {
         if let eField = self._entryField, let ef = self.entryForm {
             if let baseType = eField.baseType, let fieldType = eField.fieldType {
                 switch baseType {

@@ -55,7 +55,7 @@ class NewRadioCheckboxOtherViewController: BaseViewController, UITextFieldDelega
         self.otherValue.inputAccessoryView = keyboardToolbar
     }
     
-    func endEditing(_ sender: AnyObject) {
+    @objc func endEditing(_ sender: AnyObject) {
         textFieldShouldReturn(self.otherValue)
     }
 

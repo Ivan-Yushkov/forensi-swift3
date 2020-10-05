@@ -39,13 +39,13 @@ open class ActivateAccountViewController: BaseViewController {
     
     func prepopulateAccountActivationCode() {
         let activationCode = DataManager.sharedInstance.helperData().accountActivationCode
-        if activationCode.characters.count > 0 {
+        if activationCode.count > 0 {
             DataManager.sharedInstance.helperData().accountActivationCode = ""
             self.activationCode.text = activationCode
         }
         
         if let activationCode = self.activationCode.text {
-            if activationCode.characters.count > 0 {
+            if activationCode.count > 0 {
                 self.activateAccountTapped(self)
             }
         }
@@ -53,7 +53,7 @@ open class ActivateAccountViewController: BaseViewController {
     
     @IBAction func activateAccountTapped(_ sender: AnyObject) {
         if let activationCode = self.activationCode.text {
-            if activationCode.characters.count == 0 {
+            if activationCode.count == 0 {
                 self.displayErrorAlert(kErrorTitle, messages: [kPleaseEnterActivationCode])
             } else {
                 var task: URLSessionTask? = nil

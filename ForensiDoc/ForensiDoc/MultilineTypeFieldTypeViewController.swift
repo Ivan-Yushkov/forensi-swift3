@@ -104,7 +104,7 @@ class MultilineTypeFieldTypeViewController: BaseViewController, UITextViewDelega
         self.textView.inputAccessoryView = keyboardToolbar
     }
     
-    func endEditing(_ sender: AnyObject) {
+    @objc func endEditing(_ sender: AnyObject) {
         if let doneEditingWrapper = self.doneEditing, self.textView.text.characters.count == 0 {
             if let allowEmptyData = doneEditingWrapper.EntryFormFieldDoneEditingDelegate?.allowEmptyData(), allowEmptyData == false {
                 AlertHelper.DisplayAlert(self, title: NSLocalizedString("Error", comment: "Error title dialog when entered empty data"), messages: [NSLocalizedString("You cannot leave that field empty if you want to save it.", comment: "Error message on error dialog when entered no data.")], callback: .none)
@@ -141,7 +141,7 @@ class MultilineTypeFieldTypeViewController: BaseViewController, UITextViewDelega
         }
     }
     
-    func nextLine(_ sender: AnyObject) {
+    @objc func nextLine(_ sender: AnyObject) {
         self.textView.text = self.textView.text + "\n"
     }
     

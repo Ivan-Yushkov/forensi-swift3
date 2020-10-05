@@ -27,7 +27,7 @@ open class ImageAndDrawingViewerViewController: BaseViewController {
         self.customNavigationBar.topItem?.rightBarButtonItem = doneBtn
     }
        
-    func doneTapped(_ sender: AnyObject) {
+    @objc func doneTapped(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: .none)
     }
 }

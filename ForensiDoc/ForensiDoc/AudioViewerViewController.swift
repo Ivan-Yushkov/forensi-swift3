@@ -39,7 +39,7 @@ open class AudioViewerViewController: BaseViewController, AVAudioPlayerDelegate 
         }
     }
     
-    func doneTapped(_ sender: AnyObject) {
+    @objc func doneTapped(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: .none)
     }
     

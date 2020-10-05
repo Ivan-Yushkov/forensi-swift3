@@ -77,7 +77,7 @@ class RadioCheckboxTypeFieldTypeViewController: BaseViewController, EntryFormMul
         
     }
     
-    func selectValueAndReturn() {
+    @objc func selectValueAndReturn() {
         if let factory = _factory {
             factory.SelectValue()
         }

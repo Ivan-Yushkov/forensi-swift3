@@ -251,7 +251,7 @@ open class TextboxEntryField<TBaseType: Equatable> : EntryFormBaseFieldType<TBas
     
     open override func displaySelectedValue() -> String {
         let v = self.nonFormattedSelectedValue()
-        if v.characters.count > 0 {
+        if v.count > 0 {
             return self.formatWithResultDisplay(v)
         }
         return ""
@@ -275,7 +275,7 @@ open class TextboxEntryField<TBaseType: Equatable> : EntryFormBaseFieldType<TBas
                         }
                     } else if TBaseType.self is String.Type {
                         if let v = self.selectedValues![0].0 as? String {
-                            return v.characters.count > 0
+                            return v.count > 0
                         }
                     }
                 }
@@ -299,7 +299,7 @@ open class MultilineEntryField<TBaseType: Equatable> : EntryFormBaseFieldType<TB
     open override func nonFormattedSelectedValue() -> String {
         var a: String = ""
         for i in 0 ..< self.values.count {
-            if a.characters.count > 0 {
+            if a.count > 0 {
                 a = a + ", "
             }
             let v = self.values[i]
@@ -310,7 +310,7 @@ open class MultilineEntryField<TBaseType: Equatable> : EntryFormBaseFieldType<TB
     
     open override func displaySelectedValue() -> String {
         let v = self.nonFormattedSelectedValue()
-        if v.characters.count > 0 {
+        if v.count > 0 {
             return self.formatWithResultDisplay(v)
         }
         return ""
@@ -492,11 +492,11 @@ open class CalculatedEntryField<TBaseType: Equatable>: EntryFormBaseFieldType<TB
         var ret = ""
         for (idx, field) in self.allFields.enumerated() {
             if idx + 1 == numberOfFields {
-                if ret.characters.count > 0 {
+                if ret.count > 0 {
                     ret = ret + " and "
                 }
             } else {
-                if ret.characters.count > 0 {
+                if ret.count > 0 {
                     ret = ret + ", "
                 }
             }
@@ -651,7 +651,7 @@ open class LocationEntryField<TBaseType: Equatable>: EntryFormBaseFieldType<TBas
     open override func nonFormattedSelectedValue() -> String {
         var a: String = ""
         for i in 0 ..< self.values.count {
-            if a.characters.count > 0 {
+            if a.count > 0 {
                 a = a + ", "
             }
             let v = self.values[i]
@@ -662,7 +662,7 @@ open class LocationEntryField<TBaseType: Equatable>: EntryFormBaseFieldType<TBas
     
     open override func displaySelectedValue() -> String {
         let v = self.nonFormattedSelectedValue()
-        if v.characters.count > 0 {
+        if v.count > 0 {
             return self.formatWithResultDisplay(v)
         }
         return ""

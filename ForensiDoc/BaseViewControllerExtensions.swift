@@ -344,7 +344,7 @@ extension BaseViewController: UIImagePickerControllerDelegate, DrawingViewContro
     fileprivate func HandleSavedVideo(_ picker: UIImagePickerController, videoUrl: URL) {
         AlertHelper.InputDialog(picker, title: NSLocalizedString("Name", comment: "Drawing or attachment title message of dialog to ask for title"), okButtonTitle: kSave, cancelButtonTitle: kDiscard, message: [NSLocalizedString("Please enter name", comment: "Message on attachment title dialog")], placeholder: NSLocalizedString("Name", comment: "Attachment title placeholder on dialog"), okCallback: { (data) -> Void in
             if let name = data {
-                if name.characters.count == 0 {
+                if name.count == 0 {
                     AlertHelper.DisplayAlert(picker, title: NSLocalizedString("Error", comment: "Error dialog title"), messages: [NSLocalizedString("Name is required!", comment: "Error message when user does not enter name for photo attachment")], callback: {() -> Void in
                         self.HandleSavedVideo(picker, videoUrl: videoUrl)
                     })
@@ -374,7 +374,7 @@ extension BaseViewController: UIImagePickerControllerDelegate, DrawingViewContro
     fileprivate func HandleSaveImg(_ picker: UIImagePickerController, image: UIImage) {
         AlertHelper.InputDialog(picker, title: NSLocalizedString("Name", comment: "Drawing or attachment title message of dialog to ask for title"), okButtonTitle: kSave, cancelButtonTitle: kDiscard, message: [NSLocalizedString("Please enter name", comment: "Message on attachment title dialog")], placeholder: NSLocalizedString("Name", comment: "Attachment title placeholder on dialog"), okCallback: { (data) -> Void in
             if let name = data {
-                if name.characters.count == 0 {
+                if name.count == 0 {
                     AlertHelper.DisplayAlert(picker, title: NSLocalizedString("Error", comment: "Error dialog title"), messages: [NSLocalizedString("Name is required!", comment: "Error message when user does not enter name for photo attachment")], callback: {() -> Void in
                         self.HandleSaveImg(picker, image: image)
                     })

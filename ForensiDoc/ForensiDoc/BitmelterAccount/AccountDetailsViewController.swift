@@ -24,7 +24,7 @@ open class AccountDetailsViewController: BaseViewController {
         self.lastName.text = user.lastName
     }
     
-    func saveButtonTapped(_ sender: AnyObject) {
+    @objc func saveButtonTapped(_ sender: AnyObject) {
         var errorMessages:[String] = Array<String>()
         
         if let newEmail = self.newEmail.text {

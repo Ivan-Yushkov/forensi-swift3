@@ -45,7 +45,7 @@ open class PasswordResetViewController: BaseViewController {
     
     func prepopulatePasswordResetCode() {
         let resetPasswordCode = DataManager.sharedInstance.helperData().resetPasswordCode
-        if resetPasswordCode.characters.count > 0 {
+        if resetPasswordCode.count > 0 {
             DataManager.sharedInstance.helperData().resetPasswordCode = ""
             self.passwordResetCode.text = resetPasswordCode
         }
@@ -61,7 +61,7 @@ open class PasswordResetViewController: BaseViewController {
         
         if let passwordResetCode = self.passwordResetCode.text, let password = self.password.text, let confirmPassword = self.confirmPassword.text {
             
-            if passwordResetCode.characters.count < 1 {
+            if passwordResetCode.count < 1 {
                 errorMessages.append(kPasswordResetCodeCannotBeEmpty)
             }
             

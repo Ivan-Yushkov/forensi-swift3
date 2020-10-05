@@ -70,7 +70,7 @@ class DateTimeFieldTypeViewController: BaseViewController, UITextViewDelegate {
         }
     }
     
-    func HandleEnteredDateAndReturn() {
+    @objc func HandleEnteredDateAndReturn() {
         HandleEnteredDate()
         if ViewsHelpers.IsiPad() {
             if let svc = self.splitViewController {

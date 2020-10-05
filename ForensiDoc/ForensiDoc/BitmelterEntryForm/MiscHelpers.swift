@@ -79,11 +79,11 @@ open class MiscHelpers {
         
         var field = ""
         
-        for c in formula.characters {
+        for c in formula {
             
             if c == "{"{
                 
-                if(isOpened && field.characters.count > 0) {
+                if(isOpened && field.count > 0) {
                     field = ""
                 }
                 isOpened = true;
@@ -91,7 +91,7 @@ open class MiscHelpers {
             
             if c == "}" && isOpened {
                 isOpened = false;
-                if field.characters.count > 0 {
+                if field.count > 0 {
                     ret.append(field)
                     field = ""
                 }
@@ -295,7 +295,7 @@ open class MiscHelpers {
                 } else if let value = v as? Double {
                     calculateFormula = calculateFormula.replacingOccurrences(of: formulaPattern, with: String(value))
                     cnt += 1
-                } else if let value = v as? String, value.characters.count > 0 {
+                } else if let value = v as? String, value.count > 0 {
                     calculateFormula = calculateFormula.replacingOccurrences(of: formulaPattern, with: String(value))
                     cnt += 1
                 } else if let value = v as? NSString, value.length > 0 {

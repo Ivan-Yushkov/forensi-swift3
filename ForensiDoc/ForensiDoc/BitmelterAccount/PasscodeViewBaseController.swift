@@ -65,10 +65,10 @@ open class PasscodeViewBaseController: BaseViewController {
         }
     }
     
-    func passCodeValueChanged(_ sender: AnyObject) {
+    @objc func passCodeValueChanged(_ sender: AnyObject) {
         if let t = self.passCodeValue?.text {
-            togleImage(t.characters.count,imageName: "PasscodeSet")
-            if doingFirstPassCode && t.characters.count == passCodeLength {
+            togleImage(t.count,imageName: "PasscodeSet")
+            if doingFirstPassCode && t.count == passCodeLength {
                 firstPassCode = t
                 self.passCodeValue?.text = ""
                 if isSettingUpPasscode {
@@ -89,12 +89,12 @@ open class PasscodeViewBaseController: BaseViewController {
                         })
                     }
                 }
-            } else if t.characters.count == passCodeLength {
+            } else if t.count == passCodeLength {
                 secondPassCode = t
             }
         }
         
-        if isSettingUpPasscode && firstPassCode.characters.count == passCodeLength && secondPassCode.characters.count == passCodeLength {
+        if isSettingUpPasscode && firstPassCode.count == passCodeLength && secondPassCode.count == passCodeLength {
             doingFirstPassCode = true
             self.passCodeValue?.text = ""
             if firstPassCode == secondPassCode {
