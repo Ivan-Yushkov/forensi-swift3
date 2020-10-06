@@ -13,7 +13,7 @@ extension EntryFormDetailsViewController: URLSessionDelegate {
             content = ""
         }
         AlertHelper.CloseDialog(self.AlertProgress) {
-            if content.characters.count > 0 {
+            if content.count > 0 {
                 if let ef = self._entryFormFactory?.GetEntryFormForDownloadTask(downloadTask.taskIdentifier) {
                     if let reportContent = EncryptJsonForSubmit.DecryptContentForEntryForm(ef, content: content) {
                         self._entryFormFactory?.finishedGeneratingReport(downloadTask.taskIdentifier, reportContent: reportContent)

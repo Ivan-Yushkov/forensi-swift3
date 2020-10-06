@@ -90,7 +90,7 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
             let paddingView = UIView.init(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
             
             self.textField.leftView = paddingView;
-            self.textField.leftViewMode = UITextFieldViewMode.always
+            self.textField.leftViewMode = UITextField.ViewMode.always
             
             self.textField.becomeFirstResponder()
         }

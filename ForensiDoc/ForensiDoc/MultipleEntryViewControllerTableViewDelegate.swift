@@ -37,8 +37,8 @@ extension MultipleEntryViewController: UITableViewDelegate {
         return true
     }
     
-    internal func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    internal func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             if let ef = self._entryField {
                 var deleted = false
                 let field = ef.fields[indexPath.row]
@@ -54,7 +54,7 @@ extension MultipleEntryViewController: UITableViewDelegate {
                 
                 if deleted {
                     tableView.beginUpdates()
-                    tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+                    tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
                     tableView.endUpdates()
                 } else {
                     //TODO:Popup error message

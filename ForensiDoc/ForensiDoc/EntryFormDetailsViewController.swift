@@ -45,11 +45,11 @@ class EntryFormDetailsViewController: BaseViewController, EntryFormDetailFactory
         
         if isMainView {
             self.title = kDialogTitleForensiDoc
-            let settingsButton = UIBarButtonItem(image: UIImage(named: "Btn-Settings"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(EntryFormDetailsViewController.settingsButtonTapped(_:)))
+            let settingsButton = UIBarButtonItem(image: UIImage(named: "Btn-Settings"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(EntryFormDetailsViewController.settingsButtonTapped(_:)))
             self.navigationItem.setLeftBarButton(settingsButton, animated: true)
         }
         
-        let newReportButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(EntryFormDetailsViewController.newReportTapped(_:)))
+        let newReportButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(EntryFormDetailsViewController.newReportTapped(_:)))
         self.navigationItem.setRightBarButton(newReportButton, animated: true)
         
         var entryFormId = 0

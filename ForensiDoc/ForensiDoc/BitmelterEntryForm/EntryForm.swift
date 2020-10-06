@@ -6,7 +6,7 @@ import Foundation
 
 
 open class EntryForm: JSONConvertible {
-    open static let ATTACHMENT_ADDED_NOTIFICATION = "ATTACHMENT_ADDED_NOTIFICATION"
+    public static let ATTACHMENT_ADDED_NOTIFICATION = "ATTACHMENT_ADDED_NOTIFICATION"
     
     fileprivate var _fields: [Any] = []
     fileprivate var _hiddenGroups = [String]()
@@ -198,7 +198,7 @@ open class EntryForm: JSONConvertible {
             let filename = reportJson["filename"].stringValue
             let reportDataBase64 = reportJson["data"].stringValue
             let error = reportJson["error"].boolValue
-            if !error && filename.characters.count > 0 && reportDataBase64.characters.count > 0 {
+            if !error && filename.count > 0 && reportDataBase64.count > 0 {
                 let documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
                 let u = URL(fileURLWithPath: documents).appendingPathComponent(self.SavedInFolder,isDirectory: true).appendingPathComponent(filename)
                 if let data = Data(base64Encoded: reportDataBase64, options: NSData.Base64DecodingOptions.ignoreUnknownCharacters) {
@@ -304,11 +304,11 @@ open class EntryForm: JSONConvertible {
     }
     
     open func EnsureSavedInFolderSet() -> Bool {
-        if self._encryptionPassword.characters.count == 0 {
+        if self._encryptionPassword.count == 0 {
             self._encryptionPassword = MiscHelpers.RandomStringWithLength(36)
         }
         
-        if self.SavedInFolder.characters.count == 0 {
+        if self.SavedInFolder.count == 0 {
             let format = DateFormatter()
             format.dateFormat="yyyy-MM-dd-HH-mm-ss"
             let folderName = format.string(from: Date())
@@ -347,7 +347,7 @@ open class EntryForm: JSONConvertible {
     
     open var SavedAsTitle: String {
         get {
-            if _savedAsTitle.characters.count > 0 {
+            if _savedAsTitle.count > 0 {
                 return _savedAsTitle
             }
             return NSLocalizedString("Untitled case", comment: "Title on the report when we cannot make the title based on data provided")
@@ -356,7 +356,7 @@ open class EntryForm: JSONConvertible {
     
     open var SavedAsSubtitle: String {
         get {
-            if _savedAsSubTitle.characters.count > 0 {
+            if _savedAsSubTitle.count > 0 {
                 return _savedAsSubTitle
             }
             return NSLocalizedString("Please fill in all the required fields", comment: "Message on the subtitle of the report if not all required fields are populated")
@@ -365,7 +365,7 @@ open class EntryForm: JSONConvertible {
     
     open var SavedAsExtraInformation: String {
         get {
-            if _savedAsExtraDetails.characters.count > 0 {
+            if _savedAsExtraDetails.count > 0 {
                 return _savedAsExtraDetails
             }
             return ""
@@ -380,7 +380,7 @@ open class EntryForm: JSONConvertible {
     
     open var uuid: String {
         get {
-            if _saveUUID.characters.count > 0 {
+            if _saveUUID.count > 0 {
                 return _saveUUID
             }
             let uuid = UUID().uuidString
@@ -411,7 +411,7 @@ open class EntryForm: JSONConvertible {
     }
     
     open func DeleteAttachment(_ attachment: EntryFormAttachment) {
-        if let idx = _attachments.index(where: {$0.SavedAsFileName == attachment.SavedAsFileName}) {
+        if let idx = _attachments.firstIndex(where: {$0.SavedAsFileName == attachment.SavedAsFileName}) {
             attachment.clear()
             _attachments.remove(at: idx)
         }

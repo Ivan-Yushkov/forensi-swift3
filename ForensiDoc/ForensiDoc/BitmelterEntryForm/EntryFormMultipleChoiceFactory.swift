@@ -239,7 +239,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
                 ret += 1
             }
             
-            if _displayLabel.characters.count > 0 {
+            if _displayLabel.count > 0 {
                 ret = ret + 1
             }
             
@@ -361,7 +361,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
     
     func styleCell<T>(_ cell: RadioCheckboxViewCell, indexPath: IndexPath, f: EntryFormBaseFieldType<T>) {
         var s: String = ""
-        cell.accessoryType = UITableViewCellAccessoryType.none
+        cell.accessoryType = UITableViewCell.AccessoryType.none
         let valuesCnt = f.values.count
         let r = isUsingDisplayLabel() ? indexPath.row - 1 : indexPath.row
         
@@ -381,7 +381,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
             let isOnLastCellRow = valuesCnt == r + 1
             
             if isRadioOrCheckboxWithOther && MiscHelpers.HasAddedOtherValue(_entryField) && isOnLastCellRow {
-                cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
+                cell.accessoryType = UITableViewCell.AccessoryType.detailDisclosureButton
             }
             
             if isRadioOrCheckboxWithOther && !f.displaySelectedValue().isEmpty {
@@ -461,7 +461,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
                     tv.reloadData()
                 } else {
                     tv.beginUpdates()
-                    tv.reloadRows(at: [indexPath], with: UITableViewRowAnimation.none)
+                    tv.reloadRows(at: [indexPath], with: UITableView.RowAnimation.none)
                     tv.endUpdates()
                 }
             }
@@ -469,7 +469,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
     }
     
     func isUsingDisplayLabel() -> Bool {
-        return self._displayLabel.characters.count > 0
+        return self._displayLabel.count > 0
     }
     
     open func commentsHaveChnaged(_ newComments: String) {

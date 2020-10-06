@@ -22,10 +22,10 @@ public protocol DrawingViewControllerDelegate {
 
 open class DrawingViewController: UIViewController, DrawingWrapperCapable {
     
-    open let kBlackColorButton = 0;
-    open let kGreyColorButton = 1;
-    open let kRedColorButton = 2;
-    open let kBlueColorButton = 3;
+    public let kBlackColorButton = 0;
+    public let kGreyColorButton = 1;
+    public let kRedColorButton = 2;
+    public let kBlueColorButton = 3;
     
 
     @IBOutlet open var mainImage: UIImageView!
@@ -40,7 +40,7 @@ open class DrawingViewController: UIViewController, DrawingWrapperCapable {
     var brush: CGFloat = 2;
     var opacity: CGFloat = 1.0;
     var lastDrawPoints : Array<CGPoint>;
-    open let drawingWrapper : DrawingWrapper;
+    public let drawingWrapper : DrawingWrapper;
     var drawMode: DrawMode
     open var delegate: DrawingViewControllerDelegate?
     
@@ -68,7 +68,7 @@ open class DrawingViewController: UIViewController, DrawingWrapperCapable {
         drawingWrapper.setDelegate(self)
     }
     
-    func colorButtonPressed(_ sender: AnyObject){
+    @objc func colorButtonPressed(_ sender: AnyObject){
         drawMode = DrawMode.drawing
         let uiBarButton = sender as? UIBarButtonItem;
         
@@ -93,10 +93,10 @@ open class DrawingViewController: UIViewController, DrawingWrapperCapable {
         }
     }
     
-    func doneButtonPressed(_ sender: AnyObject) {
+    @objc func doneButtonPressed(_ sender: AnyObject) {
         AlertHelper.InputDialog(self, title: NSLocalizedString("Name", comment: "Drawing or attachment title message of dialog to ask for title"), okButtonTitle: kSave, cancelButtonTitle: kDiscard, message: [NSLocalizedString("Please enter name", comment: "Message on attachment title dialog")], placeholder: NSLocalizedString("Name", comment: "Attachment title placeholder on dialog"), okCallback: { (data) -> Void in
             if let name = data {
-                if name.characters.count == 0 {
+                if name.count == 0 {
                     AlertHelper.DisplayAlert(self, title: kErrorTitle, messages: [NSLocalizedString("Name is required!", comment: "Name is required message on error dialog")], callback: { 
                         self.doneButtonPressed(sender)
                     })
@@ -111,20 +111,18 @@ open class DrawingViewController: UIViewController, DrawingWrapperCapable {
                 self.cancleButtonPressed(sender)
         })
     }
-    
-    func cancleButtonPressed(_ sender: AnyObject) {
+    @objc func cancleButtonPressed(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: .none)
     }
     
-    func eraseButtonPressed(_ sender: AnyObject){
+    @objc func eraseButtonPressed(_ sender: AnyObject){
         if drawMode == DrawMode.drawing {
             drawMode = DrawMode.erasor
         }else{
             drawMode = DrawMode.drawing
         }
     }
-    
-    func resetButtonPressed(_ sender: AnyObject){
+    @objc func resetButtonPressed(_ sender: AnyObject){
         mainImage.image = nil;
         for drawnElement in drawingWrapper.drawHistory {
             self.removeDrawnElement(drawnElement)
@@ -132,8 +130,8 @@ open class DrawingViewController: UIViewController, DrawingWrapperCapable {
         drawingWrapper.reset();
     }
  
-//MARK: fix2020
-    func removeLastDrawnElement(_ sender: AnyObject){
+    //MARK: fix202
+    @objc func removeLastDrawnElement(_ sender: AnyObject){
         if drawingWrapper.hasDrawings() {
             if let last = drawingWrapper.getLastElement() {
                 if last.deleted {
@@ -279,7 +277,7 @@ open class DrawingViewController: UIViewController, DrawingWrapperCapable {
         if let img = self.mainImage.image {
             //TODO:We could configure the width and height in json settings
             let newImg = ImageUtilities.ImageWithImage(img, scaledToMaxWidth: ImageUtilities.DEFAULT_WIDTH, maxHeight: ImageUtilities.DEFAULT_HEIGHT)
-            if let imgData = UIImageJPEGRepresentation(newImg, 0.8) {
+            if let imgData = newImg.jpegData(compressionQuality: 0.8) {
                 return UIImage(data: imgData)
             }
         }

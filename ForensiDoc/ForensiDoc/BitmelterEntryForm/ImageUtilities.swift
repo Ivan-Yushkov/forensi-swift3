@@ -5,8 +5,8 @@
 import Foundation
 
 open class ImageUtilities {
-    open static let DEFAULT_HEIGHT:CGFloat = 225;
-    open static let DEFAULT_WIDTH:CGFloat = 300;
+    public static let DEFAULT_HEIGHT:CGFloat = 225;
+    public static let DEFAULT_WIDTH:CGFloat = 300;
     
     open class func ImageWithImage(_ image: UIImage, scaledToSize:CGSize) -> UIImage {
         if UIScreen.main.responds(to: #selector(NSDecimalNumberBehaviors.scale)) {

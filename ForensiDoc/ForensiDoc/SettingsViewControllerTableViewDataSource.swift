@@ -213,12 +213,12 @@ extension SettingsViewController: EntryFormFieldDoneEditing, MFMailComposeViewCo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var c: UITableViewCell
-        var accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+        var accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) {
             c = cell
         } else {
-            c = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: cellIdentifier)
+            c = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: cellIdentifier)
         }
         
         var title = "Title"
@@ -268,13 +268,13 @@ extension SettingsViewController: EntryFormFieldDoneEditing, MFMailComposeViewCo
                     wrapper.SelectedEntryForm = onlyOneEntryForm
                     wrapper.SelectedGroupId = group.Id
                     s.formInfo = wrapper
-                    s.addTarget(self, action: #selector(SettingsViewController.handleSwitchChange(_:)), for: UIControlEvents.touchUpInside)
+                    s.addTarget(self, action: #selector(SettingsViewController.handleSwitchChange(_:)), for: UIControl.Event.touchUpInside)
                     c.accessoryView = s
                 }
             }
         }
         
-        c.selectionStyle = UITableViewCellSelectionStyle.blue
+        c.selectionStyle = UITableViewCell.SelectionStyle.blue
         c.textLabel?.text = title
         c.accessoryType = accessoryType
         

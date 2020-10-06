@@ -21,7 +21,7 @@ open class CommentsViewCell: UITableViewCell, UITextViewDelegate {
         
         // And this is fucking horrible
         
-        self.commentsTextView.textContainerInset = UIEdgeInsetsMake(15, 10, 0, 0)
+        self.commentsTextView.textContainerInset = UIEdgeInsets.init(top: 15, left: 10, bottom: 0, right: 0)
     }
     
     open func textViewDidChange(_ textView: UITextView) {

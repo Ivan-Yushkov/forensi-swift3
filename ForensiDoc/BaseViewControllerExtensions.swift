@@ -294,7 +294,7 @@ extension BaseViewController: UIImagePickerControllerDelegate, DrawingViewContro
         }
     }
     
-    fileprivate func startTakeOrAddPhoto(_ source: UIImagePickerControllerSourceType) {
+    fileprivate func startTakeOrAddPhoto(_ source: UIImagePickerController.SourceType) {
         if UIImagePickerController.isSourceTypeAvailable(source) {
             if let imgPicker = self.imagePicker {
                 presentImagePicker(imgPicker, source: source)
@@ -307,7 +307,7 @@ extension BaseViewController: UIImagePickerControllerDelegate, DrawingViewContro
         }
     }
     
-    fileprivate func presentImagePicker(_ imagePicker: UIImagePickerController, source: UIImagePickerControllerSourceType) {
+    fileprivate func presentImagePicker(_ imagePicker: UIImagePickerController, source: UIImagePickerController.SourceType) {
         imagePicker.delegate = self
         imagePicker.sourceType = source
         if source == .savedPhotosAlbum {
@@ -317,14 +317,17 @@ extension BaseViewController: UIImagePickerControllerDelegate, DrawingViewContro
         present(imagePicker, animated: true, completion: nil)
     }
     
-    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+// Local variable inserted by Swift 4.2 migrator.
+let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
+
         if let imgPicker = self.imagePicker {
-            if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            if let image = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.originalImage)] as? UIImage {
                 HandleSaveImg(imgPicker, image: image)
-            } else if let mediaType = info[UIImagePickerControllerMediaType] as? String {
+            } else if let mediaType = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.mediaType)] as? String {
                 var closePickerWithError = false
                 if mediaType == kUTTypeMovie as String || mediaType == kUTTypeVideo as String {
-                    if let videoUrl = info[UIImagePickerControllerMediaURL] as? URL {
+                    if let videoUrl = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.mediaURL)] as? URL {
                         HandleSavedVideo(imgPicker, videoUrl: videoUrl)
                     } else {
                         closePickerWithError = true
@@ -397,3 +400,13 @@ extension BaseViewController: UIImagePickerControllerDelegate, DrawingViewContro
 
 
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKeyDictionary(_ input: [UIImagePickerController.InfoKey: Any]) -> [String: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map {key, value in (key.rawValue, value)})
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey) -> String {
+	return input.rawValue
+}

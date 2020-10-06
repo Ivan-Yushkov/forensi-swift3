@@ -65,12 +65,12 @@ open class EntryFormFactory : NSObject, UITableViewDataSource, UITableViewDelega
         if let cDeque = tableView.dequeueReusableCell(withIdentifier: _textCellIdentifier) {
             c = cDeque
         } else {
-            c = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: _textCellIdentifier)
+            c = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: _textCellIdentifier)
         }
         
         if let ret = c {
             ret.textLabel?.text = ef.Title
-            ret.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            ret.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
             return ret
         }
         

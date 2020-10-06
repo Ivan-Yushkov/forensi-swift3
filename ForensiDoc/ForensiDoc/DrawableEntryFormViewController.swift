@@ -64,11 +64,11 @@ open class DrawableEntryFormViewController: DrawingViewController
     
     @IBAction func selectBackgroundImage(_ sender: AnyObject) {
         if let efd = _entryFormDrawable, efd.backgroundImages.count > 0 {
-            let backgroundImgSelector = UIAlertController(title: .none, message: .none, preferredStyle: UIAlertControllerStyle.actionSheet)
+            let backgroundImgSelector = UIAlertController(title: .none, message: .none, preferredStyle: UIAlertController.Style.actionSheet)
             
             for backgroundImg in efd.backgroundImages {
                 if backgroundImg.CanDisplay {
-                    let action = UIAlertAction(title: backgroundImg.title, style: UIAlertActionStyle.destructive, handler: { (alertAction) -> Void in
+                    let action = UIAlertAction(title: backgroundImg.title, style: UIAlertAction.Style.destructive, handler: { (alertAction) -> Void in
                         
                         if let pathUrl = Bundle.main.url(forResource: backgroundImg.imageName, withExtension: .none) {
                             if let data = try? Data(contentsOf: pathUrl) {
@@ -82,7 +82,7 @@ open class DrawableEntryFormViewController: DrawingViewController
                 }
             }
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: .none)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: .none)
             
             backgroundImgSelector.addAction(cancelAction)
             
@@ -121,22 +121,22 @@ open class DrawableEntryFormViewController: DrawingViewController
         var buttons = [UIBarButtonItem]()
         
         var lastGroupSelected = -1
-        let btnFlexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        let btnFlexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
         
         if let efd = self.entryFormDrawable {
             self.drawingViewTitle = efd.title
             if efd.colorSettingsEnabled {
-                let btnBlackColor = UIBarButtonItem(image: UIImage(named: "Pencil-Black")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(DrawingViewController.colorButtonPressed(_:)))
+                let btnBlackColor = UIBarButtonItem(image: UIImage(named: "Pencil-Black")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(DrawingViewController.colorButtonPressed(_:)))
                 btnBlackColor.tag = self.kBlackColorButton
                 
-                let btnGreyColor = UIBarButtonItem(image: UIImage(named: "Pencil-Grey")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(DrawingViewController.colorButtonPressed(_:)))
+                let btnGreyColor = UIBarButtonItem(image: UIImage(named: "Pencil-Grey")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(DrawingViewController.colorButtonPressed(_:)))
                 btnGreyColor.tag = self.kGreyColorButton
                 
                 
-                let btnRedColor = UIBarButtonItem(image: UIImage(named: "Pencil-Red")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(DrawingViewController.colorButtonPressed(_:)))
+                let btnRedColor = UIBarButtonItem(image: UIImage(named: "Pencil-Red")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(DrawingViewController.colorButtonPressed(_:)))
                 btnRedColor.tag = self.kRedColorButton
                 
-                let btnBlueColor = UIBarButtonItem(image: UIImage(named: "Pencil-Blue")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(DrawingViewController.colorButtonPressed(_:)))
+                let btnBlueColor = UIBarButtonItem(image: UIImage(named: "Pencil-Blue")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(DrawingViewController.colorButtonPressed(_:)))
                 btnBlueColor.tag = kBlueColorButton
                 
                 buttons.append(btnBlackColor)
@@ -147,7 +147,7 @@ open class DrawableEntryFormViewController: DrawingViewController
             }
             
             if efd.eraserEnabled {
-                let btnEraser = UIBarButtonItem(image: UIImage(named: "Eraser")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(DrawingViewController.eraseButtonPressed(_:)))
+                let btnEraser = UIBarButtonItem(image: UIImage(named: "Eraser")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(DrawingViewController.eraseButtonPressed(_:)))
                 if lastGroupSelected != efd.eraserGroup {
                     buttons.append(btnFlexibleSpace)
                 }
@@ -156,7 +156,7 @@ open class DrawableEntryFormViewController: DrawingViewController
             }
             
             if efd.undoEnabled {
-                let btnRemoveLastDrawnElement = UIBarButtonItem(image: UIImage(named: "Step-Back")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(DrawingViewController.removeLastDrawnElement(_:)))
+                let btnRemoveLastDrawnElement = UIBarButtonItem(image: UIImage(named: "Step-Back")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(DrawingViewController.removeLastDrawnElement(_:)))
                 if lastGroupSelected != efd.undoGroup {
                     buttons.append(btnFlexibleSpace)
                 }
@@ -165,7 +165,7 @@ open class DrawableEntryFormViewController: DrawingViewController
             }
             
             if efd.backgroundImages.count > 0 {
-                selectBackgroundImageBtn = UIBarButtonItem(image: UIImage(named: "Body-Templates")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(DrawableEntryFormViewController.selectBackgroundImage(_:)))
+                selectBackgroundImageBtn = UIBarButtonItem(image: UIImage(named: "Body-Templates")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(DrawableEntryFormViewController.selectBackgroundImage(_:)))
                 if lastGroupSelected != efd.backgroundImagesGroup {
                     buttons.append(btnFlexibleSpace)
                 }
@@ -174,7 +174,7 @@ open class DrawableEntryFormViewController: DrawingViewController
             }
             
             if efd.resetEnabled {
-                let btnResetDrawing = UIBarButtonItem(image: UIImage(named: "Reset-Drawing")?.withRenderingMode(UIImageRenderingMode.alwaysOriginal), style: UIBarButtonItemStyle.plain, target: self, action: #selector(DrawingViewController.resetButtonPressed(_:)))
+                let btnResetDrawing = UIBarButtonItem(image: UIImage(named: "Reset-Drawing")?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), style: UIBarButtonItem.Style.plain, target: self, action: #selector(DrawingViewController.resetButtonPressed(_:)))
                 if lastGroupSelected != efd.resetGroup {
                     buttons.append(btnFlexibleSpace)
                 }
@@ -186,18 +186,18 @@ open class DrawableEntryFormViewController: DrawingViewController
                 buttons.append(btnFlexibleSpace)
             }
             
-            let btnDoneDrawing = UIBarButtonItem(title: NSLocalizedString("Done", comment: "Done Drawing"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(DrawingViewController.doneButtonPressed(_:)))
+            let btnDoneDrawing = UIBarButtonItem(title: NSLocalizedString("Done", comment: "Done Drawing"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(DrawingViewController.doneButtonPressed(_:)))
             
             self.customNavigationBar.topItem?.rightBarButtonItem = btnDoneDrawing
             
             self.drawingToolbar.setItems(buttons, animated: true)
         }
         
-        let btnCancelDrawing = UIBarButtonItem(title: NSLocalizedString("Cancel", comment: "Cancel Drawing"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(DrawingViewController.cancleButtonPressed(_:)))
+        let btnCancelDrawing = UIBarButtonItem(title: NSLocalizedString("Cancel", comment: "Cancel Drawing"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(DrawingViewController.cancleButtonPressed(_:)))
         
         self.customNavigationBar.topItem?.leftBarButtonItem = btnCancelDrawing
         
-        if self.drawingViewTitle.characters.count == 0 {
+        if self.drawingViewTitle.count == 0 {
             self.customNavigationBar.topItem?.title = NSLocalizedString("Custom drawing", comment: "Title on drawing view when variable of EntryFormDrawable not set")
         } else {
             self.customNavigationBar.topItem?.title = self.drawingViewTitle

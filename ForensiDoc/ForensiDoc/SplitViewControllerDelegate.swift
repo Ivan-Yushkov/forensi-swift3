@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 open class SplitViewControllerDelegate: NSObject, UISplitViewControllerDelegate{
-    open func splitViewController(_ svc: UISplitViewController, willChangeTo displayMode: UISplitViewControllerDisplayMode) {
+    open func splitViewController(_ svc: UISplitViewController, willChangeTo displayMode: UISplitViewController.DisplayMode) {
         print("1")
     }
     
-    open func targetDisplayModeForAction(in svc: UISplitViewController) -> UISplitViewControllerDisplayMode {
+    open func targetDisplayModeForAction(in svc: UISplitViewController) -> UISplitViewController.DisplayMode {
         print("2")
         return .automatic
     }

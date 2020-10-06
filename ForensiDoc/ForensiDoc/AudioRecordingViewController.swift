@@ -105,7 +105,7 @@ open class AudioRecordingViewController: BaseViewController {
         if let ef = self.entryForm, let att = self.audioAttachment {
             AlertHelper.InputDialog(self, title: NSLocalizedString("Title", comment: "Title on the dialog to save audio"), okButtonTitle: kSave, cancelButtonTitle: kDiscard, message: [NSLocalizedString("Please enter title for the recording.", comment: "Message asking to enter recording title.")], placeholder: NSLocalizedString("Recordind title", comment: "Placeholder for the dialog on the recording audio"), okCallback: { (data) in
                 if let title = data {
-                    if title.characters.count == 0 {
+                    if title.count == 0 {
                         AlertHelper.DisplayAlert(self, title: kErrorTitle, messages: [NSLocalizedString("Name is required!", comment: "Name is required message when saving audio and name is empty")], callback: { 
                             self.doneAndSaveTapped(sender)
                         })
@@ -180,7 +180,7 @@ open class AudioRecordingViewController: BaseViewController {
     func setSessionPlayAndRecord() {
         let session = AVAudioSession.sharedInstance()
         do {
-            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
+            try session.setCategory(AVAudioSession.Category(rawValue: convertFromAVAudioSessionCategory(AVAudioSession.Category.playAndRecord)))
         } catch let error as NSError {
             print("could not set session category")
             print(error.localizedDescription)
@@ -197,17 +197,17 @@ open class AudioRecordingViewController: BaseViewController {
         
         NotificationCenter.default.addObserver(self,
             selector:#selector(AudioRecordingViewController.background(_:)),
-            name:NSNotification.Name.UIApplicationWillResignActive,
+            name:UIApplication.willResignActiveNotification,
             object:nil)
         
         NotificationCenter.default.addObserver(self,
             selector:#selector(AudioRecordingViewController.foreground(_:)),
-            name:NSNotification.Name.UIApplicationWillEnterForeground,
+            name:UIApplication.willEnterForegroundNotification,
             object:nil)
         
         NotificationCenter.default.addObserver(self,
             selector:#selector(AudioRecordingViewController.routeChange(_:)),
-            name:NSNotification.Name.AVAudioSessionRouteChange,
+            name:AVAudioSession.routeChangeNotification,
             object:nil)
     }
     
@@ -227,7 +227,7 @@ open class AudioRecordingViewController: BaseViewController {
             //print("userInfo \(userInfo)")
             if let reason = userInfo[AVAudioSessionRouteChangeReasonKey] as? UInt {
                 //print("reason \(reason)")
-                switch AVAudioSessionRouteChangeReason(rawValue: reason)! {
+                switch AVAudioSession.RouteChangeReason(rawValue: reason)! {
                 case AVAudioSessionRouteChangeReason.newDeviceAvailable:
                     print("NewDeviceAvailable")
                     print("did you plug in headphones?")
@@ -259,7 +259,7 @@ open class AudioRecordingViewController: BaseViewController {
         let currentRoute = AVAudioSession.sharedInstance().currentRoute
         if currentRoute.outputs.count > 0 {
             for description in currentRoute.outputs {
-                if description.portType == AVAudioSessionPortHeadphones {
+                if convertFromAVAudioSessionPort(description.portType) == convertFromAVAudioSessionPort(AVAudioSession.Port.headphones) {
                     print("headphones are plugged in")
                     break
                 } else {
@@ -283,4 +283,14 @@ extension AudioRecordingViewController : AVAudioRecorderDelegate {
             }
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionPort(_ input: AVAudioSession.Port) -> String {
+	return input.rawValue
 }

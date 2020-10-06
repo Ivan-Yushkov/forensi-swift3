@@ -63,7 +63,7 @@ open class AttachmentsViewerViewController: BaseViewController, UITableViewDeleg
                 break
             }
             
-            ret.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+            ret.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
             
             return ret
         }
@@ -88,14 +88,14 @@ open class AttachmentsViewerViewController: BaseViewController, UITableViewDeleg
         return 64.0;
     }
     
-    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             let attachment = attachments[indexPath.row]
-            if let idx = self.attachments.index(where: {$0.SavedAsFileName == attachment.SavedAsFileName}) {
+            if let idx = self.attachments.firstIndex(where: {$0.SavedAsFileName == attachment.SavedAsFileName}) {
                 self.AttachmentDeleted?(attachment)
                 self.attachments.remove(at: idx)
                 tableView.beginUpdates()
-                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+                tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
                 tableView.endUpdates()
             }
         }

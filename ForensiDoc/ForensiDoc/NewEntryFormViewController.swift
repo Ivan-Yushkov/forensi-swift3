@@ -81,7 +81,7 @@ class NewEntryFormViewController: BaseViewController, EntryFormAddNewFactoryProt
                 if ef.canAddAttachments() {
                     let previous = vc[vc.count - 2]
                     if !(previous is NewEntryFormViewController) {
-                        _addAttachmentsButton = UIBarButtonItem(image: UIImage(named: "Btn-Attachment"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(NewEntryFormViewController.addAttachmentsButtonTapped(_:)))
+                        _addAttachmentsButton = UIBarButtonItem(image: UIImage(named: "Btn-Attachment"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(NewEntryFormViewController.addAttachmentsButtonTapped(_:)))
                         self.attachmentsSpec = ef.AttachmentsSpec
                         self.navigationItem.setRightBarButton(_addAttachmentsButton, animated: true)
                     }

@@ -43,7 +43,7 @@ open class EntryFormAddNewFactory: NSObject, UITableViewDataSource, UITableViewD
     
     open func shouldRefresh(){
         if let li = self.lastIndex, let tbl = _tableView {
-            tbl.reloadRows(at: [li], with: UITableViewRowAnimation.automatic)
+            tbl.reloadRows(at: [li], with: UITableView.RowAnimation.automatic)
             //Check for calculated fields
             var cnt = 0
             for field in fields() {
@@ -109,7 +109,7 @@ open class EntryFormAddNewFactory: NSObject, UITableViewDataSource, UITableViewD
         if let cDeque = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) {
             c = cDeque
         } else {
-            c = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: cellIdentifier)
+            c = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: cellIdentifier)
         }
         
         if let ret = c {
@@ -181,7 +181,7 @@ open class EntryFormAddNewFactory: NSObject, UITableViewDataSource, UITableViewD
             }
             
             if !isCalculated {
-                ret.accessoryType = UITableViewCellAccessoryType.disclosureIndicator
+                ret.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
             } else {
                 ret.textLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)
             }

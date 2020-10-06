@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var splitViewControllerDelegate = SplitViewControllerDelegate()
     var backgroundTransferCompletionHandler: (() -> Void)?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         BitmelterAccountManager.startSharedInstance(BitmelterAccountManagerDelegate())
         let bitmelterAccountManager = BitmelterAccountManager.sharedInstance
@@ -109,7 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             } else {
                 rootController = UINavigationController(rootViewController: mainNavController.viewController)
             }
-            self.setupRootViewController(rootController, animated: true, transition: UIViewAnimationOptions.transitionFlipFromLeft)
+            self.setupRootViewController(rootController, animated: true, transition: UIView.AnimationOptions.transitionFlipFromLeft)
         })
     }
     
@@ -124,7 +124,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 rootController = UINavigationController(rootViewController: welcomeNavController.viewController)
             }
             
-            self.setupRootViewController(rootController, animated: true, transition: UIViewAnimationOptions.transitionFlipFromRight)
+            self.setupRootViewController(rootController, animated: true, transition: UIView.AnimationOptions.transitionFlipFromRight)
         })
     }
     
@@ -213,7 +213,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return splitController
     }
     
-    func setupRootViewController(_ newRootViewController: UIViewController?, animated: Bool, transition: UIViewAnimationOptions) {
+    func setupRootViewController(_ newRootViewController: UIViewController?, animated: Bool, transition: UIView.AnimationOptions) {
         if let window = self.window, let rootVC = newRootViewController {
             
             window.rootViewController = rootVC

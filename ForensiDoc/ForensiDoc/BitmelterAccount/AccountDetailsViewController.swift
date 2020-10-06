@@ -12,7 +12,7 @@ open class AccountDetailsViewController: BaseViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         self.title = kDialogTitleEditAccount
-        let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: self, action: #selector(AccountDetailsViewController.saveButtonTapped(_:)))
+        let saveButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: self, action: #selector(AccountDetailsViewController.saveButtonTapped(_:)))
         self.navigationItem.setRightBarButton(saveButton, animated: true)
     }
     

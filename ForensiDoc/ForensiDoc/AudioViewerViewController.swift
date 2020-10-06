@@ -19,7 +19,7 @@ open class AudioViewerViewController: BaseViewController, AVAudioPlayerDelegate 
     override open func viewDidLoad() {
         super.viewDidLoad()
         self.customNavigationBar.topItem?.title = self.AudioTitle
-        let doneBtn = UIBarButtonItem(title: NSLocalizedString("Done", comment: "Done button on attachments viewer"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(doneTapped(_:)))
+        let doneBtn = UIBarButtonItem(title: NSLocalizedString("Done", comment: "Done button on attachments viewer"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(doneTapped(_:)))
         self.customNavigationBar.topItem?.rightBarButtonItem = doneBtn
     }
     

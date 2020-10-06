@@ -220,7 +220,7 @@ open class EntryFormBaseFieldType<TBaseType: Equatable>: EntryFormFieldContainer
     }
     
     open func deleteAttachment(_ attachment: EntryFormAttachment) {
-        if let idx = self.attachments.index(where: {$0.SavedAsFileName == attachment.SavedAsFileName}) {
+        if let idx = self.attachments.firstIndex(where: {$0.SavedAsFileName == attachment.SavedAsFileName}) {
             attachment.clear()
             self.attachments.remove(at: idx)
         }

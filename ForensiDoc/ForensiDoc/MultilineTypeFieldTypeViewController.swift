@@ -29,7 +29,7 @@ class MultilineTypeFieldTypeViewController: BaseViewController, UITextViewDelega
             var addNextKey = true
             if let f = MiscHelpers.CastEntryFormField(ef, Int.self) {
                 self.title = f.title
-                if f.allowedCharacters.characters.count > 0 {
+                if f.allowedCharacters.count > 0 {
                     self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                 }
                 self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
@@ -38,7 +38,7 @@ class MultilineTypeFieldTypeViewController: BaseViewController, UITextViewDelega
                 self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
             } else if let f = MiscHelpers.CastEntryFormField(ef, Float.self) {
                 self.title = f.title
-                if f.allowedCharacters.characters.count > 0 {
+                if f.allowedCharacters.count > 0 {
                     self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                 }
                 self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
@@ -47,7 +47,7 @@ class MultilineTypeFieldTypeViewController: BaseViewController, UITextViewDelega
                 self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
             } else if let f = MiscHelpers.CastEntryFormField(ef, Double.self) {
                 self.title = f.title
-                if f.allowedCharacters.characters.count > 0 {
+                if f.allowedCharacters.count > 0 {
                     self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                 }
                 self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
@@ -56,7 +56,7 @@ class MultilineTypeFieldTypeViewController: BaseViewController, UITextViewDelega
                 self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
             } else if let f = MiscHelpers.CastEntryFormField(ef, String.self) {
                 self.title = f.title
-                if f.allowedCharacters.characters.count > 0 {
+                if f.allowedCharacters.count > 0 {
                     self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                 }
                 self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
@@ -95,7 +95,7 @@ class MultilineTypeFieldTypeViewController: BaseViewController, UITextViewDelega
         let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done,
             target: self, action: #selector(MultilineTypeFieldTypeViewController.endEditing(_:)))
         if addNextKey {
-            let nextBarButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.plain, target: nil, action: #selector(MultilineTypeFieldTypeViewController.nextLine(_:)))
+            let nextBarButton = UIBarButtonItem(title: "Next", style: UIBarButtonItem.Style.plain, target: nil, action: #selector(MultilineTypeFieldTypeViewController.nextLine(_:)))
             keyboardToolbar.items = [nextBarButton, flexBarButton, doneBarButton]
         } else {
             keyboardToolbar.items = [flexBarButton, doneBarButton]
@@ -105,7 +105,7 @@ class MultilineTypeFieldTypeViewController: BaseViewController, UITextViewDelega
     }
     
     @objc func endEditing(_ sender: AnyObject) {
-        if let doneEditingWrapper = self.doneEditing, self.textView.text.characters.count == 0 {
+        if let doneEditingWrapper = self.doneEditing, self.textView.text.count == 0 {
             if let allowEmptyData = doneEditingWrapper.EntryFormFieldDoneEditingDelegate?.allowEmptyData(), allowEmptyData == false {
                 AlertHelper.DisplayAlert(self, title: NSLocalizedString("Error", comment: "Error title dialog when entered empty data"), messages: [NSLocalizedString("You cannot leave that field empty if you want to save it.", comment: "Error message on error dialog when entered no data.")], callback: .none)
                 return
@@ -151,11 +151,11 @@ class MultilineTypeFieldTypeViewController: BaseViewController, UITextViewDelega
     
     internal func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         if let cs = self._characterSet {
-            let characters = Array(text.characters)
+            let characters = Array(text)
             for c in characters {
                 let range = String(c).rangeOfCharacter(from: cs)
                 if range == .none {
-                    if self._allowedCharactersErrorMessage.characters.count > 0 {
+                    if self._allowedCharactersErrorMessage.count > 0 {
                         AlertHelper.DisplayAlert(self, title: NSLocalizedString("Invalid character", comment: "Title of the dialog when invalid character pressed."), messages: [self._allowedCharactersErrorMessage], callback: .none)
                     }
                     return false

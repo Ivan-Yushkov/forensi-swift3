@@ -72,7 +72,7 @@ open class ViewsHelpers {
         
         // And this is fucking horrible
         
-        textView.textContainerInset = UIEdgeInsetsMake(15, 10, 0, 0)
+        textView.textContainerInset = UIEdgeInsets.init(top: 15, left: 10, bottom: 0, right: 0)
         
         if makeFirstResponder {
             textView.becomeFirstResponder()
@@ -80,7 +80,7 @@ open class ViewsHelpers {
     }
     
     open class func GetDoneButton(_ selector: Selector, target: AnyObject?) -> UIBarButtonItem {
-        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.save, target: target, action: selector)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.save, target: target, action: selector)
         return doneButton
     }
 
@@ -146,49 +146,49 @@ open class ViewsHelpers {
             return .none
         }
         
-        let alert = UIAlertController(title: .none, message: .none, preferredStyle: UIAlertControllerStyle.actionSheet)
+        let alert = UIAlertController(title: .none, message: .none, preferredStyle: UIAlertController.Style.actionSheet)
         
         if entryFormAttachmentSpec.AllowedAudio {
-            let action = UIAlertAction(title: NSLocalizedString("Add Audio", comment: "Attachment Add Audio button"), style: UIAlertActionStyle.destructive, handler: { (alertAction) -> Void in
+            let action = UIAlertAction(title: NSLocalizedString("Add Audio", comment: "Attachment Add Audio button"), style: UIAlertAction.Style.destructive, handler: { (alertAction) -> Void in
                 audioAction()
             })
             alert.addAction(action)
         }
         
         if entryFormAttachmentSpec.AllowedImages {
-            let actionPhoto = UIAlertAction(title: NSLocalizedString("Add Photo", comment: "Attachment Add Photo button"), style: UIAlertActionStyle.destructive, handler: { (alertAction) -> Void in
+            let actionPhoto = UIAlertAction(title: NSLocalizedString("Add Photo", comment: "Attachment Add Photo button"), style: UIAlertAction.Style.destructive, handler: { (alertAction) -> Void in
                 imagePhotoAction()
             })
             alert.addAction(actionPhoto)
             
-            let actionSavedPhoto = UIAlertAction(title: NSLocalizedString("Add Saved Photo", comment: "Attachment Add Saved Photo button"), style: UIAlertActionStyle.destructive, handler: { (alertAction) -> Void in
+            let actionSavedPhoto = UIAlertAction(title: NSLocalizedString("Add Saved Photo", comment: "Attachment Add Saved Photo button"), style: UIAlertAction.Style.destructive, handler: { (alertAction) -> Void in
                 imageSavePhotoAction()
             })
             alert.addAction(actionSavedPhoto)
         }
         
         if entryFormAttachmentSpec.AllowedVideo {
-            let action = UIAlertAction(title: NSLocalizedString("Add Video", comment: "Attachment Add Video button"), style: UIAlertActionStyle.destructive, handler: { (alertAction) -> Void in
+            let action = UIAlertAction(title: NSLocalizedString("Add Video", comment: "Attachment Add Video button"), style: UIAlertAction.Style.destructive, handler: { (alertAction) -> Void in
                 videoAction()
             })
             alert.addAction(action)
         }
         
         if entryFormAttachmentSpec.AllowedSavedVideo {
-            let action = UIAlertAction(title: NSLocalizedString("Add Saved Video", comment: "Attachment Add Saved Video button"), style: UIAlertActionStyle.destructive, handler: { (alertAction) -> Void in
+            let action = UIAlertAction(title: NSLocalizedString("Add Saved Video", comment: "Attachment Add Saved Video button"), style: UIAlertAction.Style.destructive, handler: { (alertAction) -> Void in
                 savedVideoAction()
             })
             alert.addAction(action)
         }
         
         if entryFormAttachmentSpec.AllowedEntryFormDrawingsSpec.Allowed {
-            let action = UIAlertAction(title: NSLocalizedString("Add Drawing", comment: "Attachment Add Drawing button"), style: UIAlertActionStyle.destructive, handler: { (alertAction) -> Void in
+            let action = UIAlertAction(title: NSLocalizedString("Add Drawing", comment: "Attachment Add Drawing button"), style: UIAlertAction.Style.destructive, handler: { (alertAction) -> Void in
                 drawingAction()
             })
             alert.addAction(action)
         }
         
-        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Standard Cancel button"), style: UIAlertActionStyle.cancel, handler: .none)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Standard Cancel button"), style: UIAlertAction.Style.cancel, handler: .none)
         
         alert.addAction(cancelAction)
 

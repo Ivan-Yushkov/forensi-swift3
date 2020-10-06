@@ -14,12 +14,12 @@ open class EntryFormDrawable: JSONConvertible, Validable {
     open var eraserEnabled: Bool = true
     open var undoEnabled: Bool = true
     open var resetEnabled: Bool = true
-    open let colorSettingsGroup = 1
-    open let eraserGroup = 2
-    open let undoGroup = 2
-    open let backgroundImagesGroup = 3
-    open let resetGroup = 4
-    open let doneGroup = 4
+    public let colorSettingsGroup = 1
+    public let eraserGroup = 2
+    public let undoGroup = 2
+    public let backgroundImagesGroup = 3
+    public let resetGroup = 4
+    public let doneGroup = 4
     open var backgroundImages: [EntryFormImageWithTitle] = [EntryFormImageWithTitle]()
     
     public init(jsonSpec: JSON, eventManager: EventManager?) {
@@ -80,7 +80,7 @@ open class EntryFormDrawable: JSONConvertible, Validable {
     }
     
     open func setFinalImage(_ image: UIImage) {
-        if let imageData = UIImageJPEGRepresentation(image, 1.0) {
+        if let imageData = image.jpegData(compressionQuality: 1.0) {
             self._finalImageBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
         }
     }

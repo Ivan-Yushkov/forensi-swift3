@@ -152,11 +152,11 @@ open class VideoRecordingViewController: BaseViewController, AVCaptureFileOutput
                 previewLayer.bounds=bounds;
                 previewLayer.position=CGPoint(x: bounds.midX, y: bounds.midY);
                 self.view.layer.addSublayer(previewLayer)
-                self.view.bringSubview(toFront: self.stopButton)
-                self.view.bringSubview(toFront: self.startButton)
-                self.view.bringSubview(toFront: self.doneAndSaveButton)
-                self.view.bringSubview(toFront: self.cancelButton)
-                self.view.bringSubview(toFront: self.timerLabel)
+                self.view.bringSubviewToFront(self.stopButton)
+                self.view.bringSubviewToFront(self.startButton)
+                self.view.bringSubviewToFront(self.doneAndSaveButton)
+                self.view.bringSubviewToFront(self.cancelButton)
+                self.view.bringSubviewToFront(self.timerLabel)
                 self.stopButton.isHidden = false
                 self.startButton.isHidden = true
                 captureSession.startRunning()
@@ -241,7 +241,7 @@ open class VideoRecordingViewController: BaseViewController, AVCaptureFileOutput
                 
                 let filePath = videoAtt.NSURLFile
                 
-                videoFile.startRecording(to: filePath as URL!, recordingDelegate: recordingDelegate!)
+                videoFile.startRecording(to: filePath, recordingDelegate: recordingDelegate!)
                 self.meterTimer = Timer.scheduledTimer(timeInterval: 0.1,
                                                                          target:self,
                                                                          selector:#selector(VideoRecordingViewController.updateVideoMeter(_:)),

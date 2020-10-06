@@ -15,7 +15,7 @@ open class DrawingWrapper {
     var index: Int
     var currentIndex: Int
     var delegate: DrawingWrapperCapable? = .none
-    open let minIndex = 1000000
+    public let minIndex = 1000000
     
     init(){
         self.drawHistory = Array<DrawnElement>()

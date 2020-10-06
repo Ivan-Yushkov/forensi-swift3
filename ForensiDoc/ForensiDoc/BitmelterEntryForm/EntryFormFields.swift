@@ -372,13 +372,13 @@ open class DateTimeBaseEntryField<TBaseType: Equatable>: EntryFormBaseFieldType<
         }
     }
     
-    open func getDatePickerMode() -> UIDatePickerMode? {
+    open func getDatePickerMode() -> UIDatePicker.Mode? {
         if self.fieldType == .Date {
-            return UIDatePickerMode.date
+            return UIDatePicker.Mode.date
         } else if self.fieldType == .Time {
-            return UIDatePickerMode.time
+            return UIDatePicker.Mode.time
         } else if self.fieldType == .DateAndTime {
-            return UIDatePickerMode.dateAndTime
+            return UIDatePicker.Mode.dateAndTime
         }
         return .none
     }

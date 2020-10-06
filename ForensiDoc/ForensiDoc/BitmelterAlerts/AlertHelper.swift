@@ -32,8 +32,8 @@ open class AlertHelper {
     
     class open func InputDialog(_ viewController: UIViewController, title: String, okButtonTitle: String, cancelButtonTitle: String, message: [String], placeholder: String, okCallback: @escaping ((_ data: String?) -> Void), cancelCallback: (() -> Void)?) {
         let m = formatMessagesToString(message)
-        let alert = UIAlertController(title: title, message: m, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: okButtonTitle, style: UIAlertActionStyle.default) { (alertAction: UIAlertAction) -> Void in
+        let alert = UIAlertController(title: title, message: m, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: okButtonTitle, style: UIAlertAction.Style.default) { (alertAction: UIAlertAction) -> Void in
             if let textField = alert.textFields?.first {
                 okCallback(textField.text)
             } else {
@@ -41,12 +41,12 @@ open class AlertHelper {
             }
             return
             })
-        alert.addAction(UIAlertAction(title: cancelButtonTitle, style: UIAlertActionStyle.cancel){ (alertAction: UIAlertAction) -> Void in
+        alert.addAction(UIAlertAction(title: cancelButtonTitle, style: UIAlertAction.Style.cancel){ (alertAction: UIAlertAction) -> Void in
             cancelCallback?()
             return
             })
         alert.addTextField(configurationHandler: {(textField: UITextField!) in
-            if placeholder.characters.count > 0 {
+            if placeholder.count > 0 {
                 textField.placeholder = placeholder
             }
             textField.isSecureTextEntry = false
@@ -71,7 +71,7 @@ open class AlertHelper {
     fileprivate class func formatMessagesToString(_ messages: [String]) -> String {
         var message:String = ""
         for m in messages {
-            if message.characters.count > 0 {
+            if message.count > 0 {
                 message += "\n"
             }
             message += m
@@ -85,9 +85,9 @@ open class AlertHelper {
         DispatchQueue.main.async(execute: {
             var a: AnyObject? = nil
             if let _: AnyClass = NSClassFromString("UIAlertController") {
-                let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+                let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
                 if let okCallback = callback {
-                    let ok = UIAlertAction(title: buttonTitle, style: UIAlertActionStyle.default) { (alertAction: UIAlertAction) -> Void in
+                    let ok = UIAlertAction(title: buttonTitle, style: UIAlertAction.Style.default) { (alertAction: UIAlertAction) -> Void in
                         okCallback()
                         return
                     }
@@ -95,7 +95,7 @@ open class AlertHelper {
                 }
                 
                 if let cCallback = cancelCallback {
-                    let cancel = UIAlertAction(title: cancelButtonTitle, style: UIAlertActionStyle.cancel, handler: { (alertAction: UIAlertAction) -> Void in
+                    let cancel = UIAlertAction(title: cancelButtonTitle, style: UIAlertAction.Style.cancel, handler: { (alertAction: UIAlertAction) -> Void in
                         cCallback()
                     })
                     alert.addAction(cancel)
@@ -104,13 +104,13 @@ open class AlertHelper {
                 if addSpinner {
                     let customVC = UIViewController()
                     
-                    let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+                    let spinner = UIActivityIndicatorView(style: .gray)
                     spinner.startAnimating()
                     customVC.view.addSubview(spinner)
                     
-                    customVC.view.addConstraint(NSLayoutConstraint(item: spinner, attribute: NSLayoutAttribute.centerX, relatedBy: NSLayoutRelation.equal, toItem: customVC.view, attribute: NSLayoutAttribute.centerX, multiplier: 1.0, constant: 0.0))
+                    customVC.view.addConstraint(NSLayoutConstraint(item: spinner, attribute: NSLayoutConstraint.Attribute.centerX, relatedBy: NSLayoutConstraint.Relation.equal, toItem: customVC.view, attribute: NSLayoutConstraint.Attribute.centerX, multiplier: 1.0, constant: 0.0))
                     
-                    customVC.view.addConstraint(NSLayoutConstraint(item: spinner, attribute: NSLayoutAttribute.centerY, relatedBy: NSLayoutRelation.equal, toItem: customVC.view, attribute: NSLayoutAttribute.centerY, multiplier: 1.0, constant: 0.0))
+                    customVC.view.addConstraint(NSLayoutConstraint(item: spinner, attribute: NSLayoutConstraint.Attribute.centerY, relatedBy: NSLayoutConstraint.Relation.equal, toItem: customVC.view, attribute: NSLayoutConstraint.Attribute.centerY, multiplier: 1.0, constant: 0.0))
                     
                     alert.setValue(customVC, forKey: "contentViewController")
                     

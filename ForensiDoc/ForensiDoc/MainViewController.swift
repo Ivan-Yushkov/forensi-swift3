@@ -17,7 +17,7 @@ class MainViewController: BaseViewController, EntryFormFactoryProtocol, UITableV
         super.viewDidLoad()
         self.title = kDialogTitleForensiDoc
         
-        let settingsButton = UIBarButtonItem(image: UIImage(named: "Btn-Settings"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(MainViewController.settingsButtonTapped(_:)))
+        let settingsButton = UIBarButtonItem(image: UIImage(named: "Btn-Settings"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(MainViewController.settingsButtonTapped(_:)))
         
         self.navigationItem.setLeftBarButton(settingsButton, animated: true)
         

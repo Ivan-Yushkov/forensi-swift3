@@ -20,7 +20,7 @@ open class EntryFormImageWithTitle {
     
     open var eventManager: EventManager? {
         didSet {
-            if self.formula.characters.count > 0 {
+            if self.formula.count > 0 {
                 self.canDisplay = false
                 let extractedFields = MiscHelpers.ExtractFieldsFromFormula(formula)
                 for extractedField in extractedFields {

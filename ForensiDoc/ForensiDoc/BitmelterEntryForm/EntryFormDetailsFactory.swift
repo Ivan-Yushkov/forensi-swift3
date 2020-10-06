@@ -184,13 +184,13 @@ open class EntryFormDetailsFactory : NSObject, UITableViewDataSource, UITableVie
         return true
     }
     
-    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCellEditingStyle.delete {
+    open func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
             let entryForm = _entryForms[indexPath.row]
             _repository.DeleteEntryForm(entryForm)
             _entryForms = _repository.LoadSavedFormForFormId(_formId)
             tableView.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.fade)
+            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.fade)
             tableView.endUpdates()
         }
     }

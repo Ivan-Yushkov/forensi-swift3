@@ -34,7 +34,7 @@ open class PasscodeViewBaseController: BaseViewController {
         self.touchIdView?.isHidden =
             !isSettingUpPasscode ||
             !TouchIdHelper.CanUseTouchId()
-        self.passCodeValue?.addTarget(self, action: #selector(PasscodeViewBaseController.passCodeValueChanged(_:)), for: UIControlEvents.editingChanged)
+        self.passCodeValue?.addTarget(self, action: #selector(PasscodeViewBaseController.passCodeValueChanged(_:)), for: UIControl.Event.editingChanged)
         if let spc = self.splitViewController {
             spc.preferredDisplayMode = .primaryHidden
         }

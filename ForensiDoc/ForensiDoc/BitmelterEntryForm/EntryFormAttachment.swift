@@ -56,14 +56,14 @@ open class EntryFormAttachment: JSONConvertible {
         self.entryForm = entryForm
         self.AttachmentType = attachmentType
         self.SavedAsFileName = self.makeFileName()
-        try? UIImageJPEGRepresentation(image,1.0)?.write(to: self.NSURLFile, options: [.atomic])
+        ((try? image.jpegData(compressionQuality: 1.0)?.write(to: self.NSURLFile, options: [.atomic])) as ()??)
     }
     
     public init(image: UIImage, entryForm: EntryForm){
         self.entryForm = entryForm
         self.AttachmentType = .image
         self.SavedAsFileName = self.makeFileName()
-        try? UIImageJPEGRepresentation(image,1.0)?.write(to: self.NSURLFile, options: [.atomic])
+        ((try? image.jpegData(compressionQuality: 1.0)?.write(to: self.NSURLFile, options: [.atomic])) as ()??)
     }
     
     open var NSURLFile: URL {
@@ -147,7 +147,7 @@ open class EntryFormAttachment: JSONConvertible {
             if let data = try? Data(contentsOf: self.NSURLFile) {
                 if let img = UIImage(data: data) {
                     let newImg = ImageUtilities.ImageWithImage(img, scaledToMaxWidth: ImageUtilities.DEFAULT_WIDTH, maxHeight: ImageUtilities.DEFAULT_HEIGHT)
-                    if let imgData = UIImageJPEGRepresentation(newImg, 0.8) {
+                    if let imgData = newImg.jpegData(compressionQuality: 0.8) {
                         let base64 = imgData.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
                         ret["value"] = base64 as AnyObject
                     }

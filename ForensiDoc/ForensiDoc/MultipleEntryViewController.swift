@@ -25,7 +25,7 @@ class MultipleEntryViewController: BaseViewController, EntryFormFieldDoneEditing
         if let ef = self._entryField {
            self.title = ef.title
         }
-        let addNewEntryButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(MultipleEntryViewController.addNewEntryButtonTapped(_:)))
+        let addNewEntryButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(MultipleEntryViewController.addNewEntryButtonTapped(_:)))
         self.navigationItem.setRightBarButton(addNewEntryButton, animated: true)
     }
     

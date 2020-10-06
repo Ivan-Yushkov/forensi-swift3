@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7B1E55BA1C8461D300A07946 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E55B91C8461D300A07946 /* RNCryptor.swift */; };
 		7B23E8861C99994700CECB08 /* PasscodeView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B23E8851C99994700CECB08 /* PasscodeView_iPad.xib */; };
+		84682655252C585200955C23 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84682654252C585200955C23 /* CoreServices.framework */; };
 		84768E76252494B0000CDE89 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84768E75252494B0000CDE89 /* SwiftyJSON.swift */; };
 		FE052C9D1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE052C9C1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift */; };
 		FE052C9F1C67CC3200EDC5F9 /* GenerateReportHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE052C9E1C67CC3200EDC5F9 /* GenerateReportHelper.swift */; };
@@ -226,6 +227,7 @@
 		7B1E55B81C8461D300A07946 /* RNCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptor.h; sourceTree = "<group>"; };
 		7B1E55B91C8461D300A07946 /* RNCryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
 		7B23E8851C99994700CECB08 /* PasscodeView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasscodeView_iPad.xib; sourceTree = "<group>"; };
+		84682654252C585200955C23 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		84768E75252494B0000CDE89 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		FE052C9C1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryFormDetailsViewControllerNSURLSessionDelegate.swift; sourceTree = "<group>"; };
 		FE052C9E1C67CC3200EDC5F9 /* GenerateReportHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateReportHelper.swift; sourceTree = "<group>"; };
@@ -448,6 +450,7 @@
 				FE88B7F91F6F2BAF00B76D34 /* libz.tbd in Frameworks */,
 				FE8A27451D46C86A009EC63E /* CoreLocation.framework in Frameworks */,
 				FEE78BFC1CB7130400245ABF /* JavaScriptCore.framework in Frameworks */,
+				84682655252C585200955C23 /* CoreServices.framework in Frameworks */,
 				FE74E5CE1C6ABD3F00310D37 /* MessageUI.framework in Frameworks */,
 				FE4E7B1A1C3DC620009F18F1 /* AVFoundation.framework in Frameworks */,
 				FE7156D11A2E5E640021BCE4 /* CoreFoundation.framework in Frameworks */,
@@ -474,6 +477,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84682653252C585200955C23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84682654252C585200955C23 /* CoreServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FE1B87731A6F15A7004A3C94 /* EditAccountDetails */ = {
 			isa = PBXGroup;
 			children = (
@@ -828,6 +839,7 @@
 				FE8F29DC1A09754500B3F2F9 /* ForensiDoc */,
 				FE8F29F21A09754500B3F2F9 /* ForensiDocTests */,
 				FE8F29DB1A09754500B3F2F9 /* Products */,
+				84682653252C585200955C23 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1143,13 +1155,13 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Bitmelter Ltd.";
 				TargetAttributes = {
 					FE8F29D91A09754500B3F2F9 = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = YFE4KS8YKE;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1160;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1455,12 +1467,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1511,12 +1525,14 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1568,7 +1584,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "ForensiDoc/ForensiDoc-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "";
 			};
 			name = Debug;
@@ -1592,7 +1608,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ForensiDoc/ForensiDoc-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "";
 			};
 			name = Release;

@@ -33,7 +33,7 @@ open class PasscodeViewController: PasscodeViewBaseController {
     }
     
     open class func GetPasscodeViewController(_ viewName: String) -> PasscodeViewController{
-        let nibName = viewName.characters.count > 0 ? viewName : "PasscodeView"
+        let nibName = viewName.count > 0 ? viewName : "PasscodeView"
         return PasscodeViewController(nibName:nibName, bundle:nil)
     }
     
