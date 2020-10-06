@@ -47,7 +47,7 @@ class OnePasswordHelper {
         ]
   
  //MARK: fix2020      
-        OnePasswordExtension.shared().changePasswordForLogin(forURLString: kOnePasswordStoreLoginUrl, loginDetails: loginDetails, passwordGenerationOptions: passwordGenerationOptions, for: viewController, sender: viewController) { (loginDict, error)  in
+        OnePasswordExtension.shared().changePasswordForLogin(forURLString: kOnePasswordStoreLoginUrl, loginDetails: loginDetails as [AnyHashable : Any], passwordGenerationOptions: passwordGenerationOptions, for: viewController, sender: viewController) { (loginDict, error)  in
             if loginDict == nil {
                 if let error = error as NSError? {
                     if error.code != Int(AppExtensionErrorCodeCancelledByUser) {
@@ -105,7 +105,7 @@ class OnePasswordHelper {
         //MARK: fix2020
 //        OnePasswordExtension.shared().storeLogin(forURLString: <#T##String!#>, loginDetails: <#T##[AnyHashable : Any]!#>, passwordGenerationOptions: <#T##[AnyHashable : Any]!#>, for: <#T##UIViewController!#>, sender: <#T##Any!#>, completion: <#T##(([AnyHashable : Any]?, Error?) -> Void)!##(([AnyHashable : Any]?, Error?) -> Void)!##([AnyHashable : Any]?, Error?) -> Void#>)
 //        
-        OnePasswordExtension.shared().storeLogin(forURLString: kOnePasswordStoreLoginUrl, loginDetails: newLoginDetails, passwordGenerationOptions: passwordGenerationOptions, for: viewController, sender: viewController) { (loginDict, error) -> Void in
+        OnePasswordExtension.shared().storeLogin(forURLString: kOnePasswordStoreLoginUrl, loginDetails: newLoginDetails as [AnyHashable : Any], passwordGenerationOptions: passwordGenerationOptions, for: viewController, sender: viewController) { (loginDict, error) -> Void in
             if loginDict == nil {
                 if let error = error as NSError? {
                     if error.code != Int(AppExtensionErrorCodeCancelledByUser) {

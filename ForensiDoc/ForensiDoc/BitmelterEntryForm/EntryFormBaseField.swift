@@ -88,7 +88,7 @@ public protocol EntryFormFieldContainer {
 }
 
 public extension EntryFormFieldContainer {
-    public func formatWithResultDisplay(_ value: String) -> String {
+     func formatWithResultDisplay(_ value: String) -> String {
         var newValue = value
         if self.resultFormat.count > 0 {
             //This means the field is numeric

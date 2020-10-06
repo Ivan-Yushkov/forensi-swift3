@@ -10,7 +10,7 @@
 
 #import "TryCatchFinally.h"
 
-void tryCatchFinally(void(^tryBlock)(), void(^catchBlock)(NSException *e), void(^finallyBlock)()) {
+void tryCatchFinally(void(^tryBlock)(void), void(^catchBlock)(NSException *e), void(^finallyBlock)(void)) {
     @try {
         tryBlock();
     }

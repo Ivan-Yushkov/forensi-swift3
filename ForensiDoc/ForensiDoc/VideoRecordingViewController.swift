@@ -56,7 +56,9 @@ open class VideoRecordingViewController: BaseViewController, AVCaptureFileOutput
                 if ((device as AnyObject).hasMediaType(AVMediaType.video)) {
                     // Finally check the position and confirm we've got the back camera
                     if((device as AnyObject).position == AVCaptureDevice.Position.back) {
-                        captureDevice = device as? AVCaptureDevice
+                         //MARK: fix2020
+                     //   captureDevice = device as? AVCaptureDevice
+                        captureDevice = device
                         if captureDevice != nil {
                             print("Capture device found")
                             beginSession()
@@ -233,9 +235,11 @@ open class VideoRecordingViewController: BaseViewController, AVCaptureFileOutput
             
             if let videoFile = self.videoFileOutput {
                 for output in self.captureSession.outputs {
-                    if let captureOutput = output as? AVCaptureOutput {
-                        self.captureSession.removeOutput(captureOutput)
-                    }
+                    //MARK: fix2020
+                   // if let captureOutput = output as? AVCaptureOutput {
+                   //     self.captureSession.removeOutput(captureOutput)
+                   // }
+                    self.captureSession.removeOutput(output)
                 }
                 self.captureSession.addOutput(videoFile)
                 

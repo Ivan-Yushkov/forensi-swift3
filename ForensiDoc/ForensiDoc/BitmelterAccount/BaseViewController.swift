@@ -95,14 +95,18 @@ open class BaseViewController : UIViewController, UINavigationControllerDelegate
         let range = name.range(of: ".", options: .backwards)
         var viewName:String?
         if let range = range {
-            viewName = name.substring(from: range.upperBound)
+            //MARK: fix2020
+           // viewName = name.substring(from: range.upperBound)
+            viewName = String(name[range.upperBound])
         } else {
             viewName = name
         }
         
         let controllerRange = viewName?.range(of: "Controller", options: .backwards)
         if let controllerRange = controllerRange {
-            viewName = viewName?.substring(to: controllerRange.lowerBound)
+             //MARK: fix2020
+            //viewName = viewName?.substring(to: controllerRange.lowerBound)
+            viewName = String(name[controllerRange.lowerBound])
         }
         
         let newView = T(nibName: viewName, bundle: nil)

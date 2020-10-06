@@ -249,6 +249,8 @@ open class AudioRecordingViewController: BaseViewController {
                 case AVAudioSessionRouteChangeReason.routeConfigurationChange:
                     print("RouteConfigurationChange")
                     
+                @unknown default:
+                    fatalError("Fatal Error in switch AVAudioSession.RouteChangeReason(rawValue: reason) -> unknown case")
                 }
             }
         }
