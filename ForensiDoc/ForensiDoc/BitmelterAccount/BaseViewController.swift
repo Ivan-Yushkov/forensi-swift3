@@ -92,23 +92,23 @@ open class BaseViewController : UIViewController, UINavigationControllerDelegate
     open func navigateToView<T: UIViewController>(_ type: T?){
         
         let name: String = NSStringFromClass(T.self)
-        let range = name.range(of: ".", options: .backwards)
         var viewName:String?
-        if let range = range {
+        if let range = name.range(of: ".", options: .backwards) {
             //MARK: fix2020
            // viewName = name.substring(from: range.upperBound)
-            viewName = String(name[range.upperBound])
+            
+            viewName = String(name[range.upperBound...])
+            
         } else {
             viewName = name
         }
-        
-        let controllerRange = viewName?.range(of: "Controller", options: .backwards)
-        if let controllerRange = controllerRange {
+             
+        if viewName != nil, let controllerRange = viewName!.range(of: "Controller", options: .backwards) {
              //MARK: fix2020
-            //viewName = viewName?.substring(to: controllerRange.lowerBound)
-            viewName = String(name[controllerRange.lowerBound])
+            //viewName = viewName!.substring(to: controllerRange.lowerBound)
+            viewName = String(viewName![..<controllerRange.lowerBound])
         }
-        
+       
         let newView = T(nibName: viewName, bundle: nil)
         DispatchQueue.main.async(execute: {
             self.navigationController?.pushViewController(newView, animated: true)

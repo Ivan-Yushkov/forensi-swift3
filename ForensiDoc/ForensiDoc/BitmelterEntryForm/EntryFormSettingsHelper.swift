@@ -97,7 +97,8 @@ open class EntryFormSettingsHelper {
                 if let rawValue = existingSettings[key] as? String {
                     if let dataFromString = rawValue.data(using: String.Encoding.utf8, allowLossyConversion: false) {
                         var ret = [(T, String)]()
-                        let json = JSON(data: dataFromString)
+                        //MARK: fix2020
+                        if let json = try? JSON(data: dataFromString) {
                         for arrayValue in json.arrayValue {
                             let title = arrayValue["title"].stringValue
                             if T.self is Int.Type {
@@ -129,6 +130,7 @@ open class EntryFormSettingsHelper {
                         }
                         
                         return ret
+                        }
                     }
                 }
             }

@@ -40,8 +40,11 @@ open class EntryForm: JSONConvertible {
     public init(jsonSpec: String, doNotCheckForHiddenFields: Bool) {
         SavedInFolder = ""
         _downloadReportInfo = EntryFormReportDownloadInfo()
-        if let dataFromString = jsonSpec.data(using: String.Encoding.utf8, allowLossyConversion: false) {
-            let json = JSON(data: dataFromString)
+        
+        //MARK: fix2020
+        
+        if let dataFromString = jsonSpec.data(using: String.Encoding.utf8, allowLossyConversion: false),
+            let json = try? JSON(data: dataFromString) {
             _title = json["title"].stringValue
             _formId = json["formid"].intValue
             _saveUUID = json["save_uuid"].stringValue
@@ -193,8 +196,8 @@ open class EntryForm: JSONConvertible {
     }
     
     open func SaveDownloadedReportResponse(_ reportResponseContent: String) {
-        if let dataFromString = reportResponseContent.data(using: String.Encoding.utf8, allowLossyConversion: false) {
-            let reportJson = JSON(data: dataFromString)
+        //MARK: fix2020
+        if let dataFromString = reportResponseContent.data(using: String.Encoding.utf8, allowLossyConversion: false), let reportJson = try? JSON(data: dataFromString) {
             let filename = reportJson["filename"].stringValue
             let reportDataBase64 = reportJson["data"].stringValue
             let error = reportJson["error"].boolValue

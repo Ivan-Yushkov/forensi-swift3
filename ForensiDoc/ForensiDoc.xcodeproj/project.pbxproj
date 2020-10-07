@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7B1E55BA1C8461D300A07946 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E55B91C8461D300A07946 /* RNCryptor.swift */; };
+		7B1E55BA1C8461D300A07946 /* RNCryptorOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E55B91C8461D300A07946 /* RNCryptorOLD.swift */; };
 		7B23E8861C99994700CECB08 /* PasscodeView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B23E8851C99994700CECB08 /* PasscodeView_iPad.xib */; };
+		8424E409252DB2FA00A660F8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424E408252DB2FA00A660F8 /* SwiftyJSON.swift */; };
+		8424E40B252DE4F800A660F8 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424E40A252DE4F800A660F8 /* RNCryptor.swift */; };
 		84682655252C585200955C23 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84682654252C585200955C23 /* CoreServices.framework */; };
-		84768E76252494B0000CDE89 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84768E75252494B0000CDE89 /* SwiftyJSON.swift */; };
+		84768E76252494B0000CDE89 /* SwiftyJSON4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84768E75252494B0000CDE89 /* SwiftyJSON4.swift */; };
 		FE052C9D1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE052C9C1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift */; };
 		FE052C9F1C67CC3200EDC5F9 /* GenerateReportHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE052C9E1C67CC3200EDC5F9 /* GenerateReportHelper.swift */; };
 		FE093C961C7E789300C77AA0 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE093C951C7E789300C77AA0 /* UINavigationControllerExtension.swift */; };
@@ -225,10 +227,12 @@
 
 /* Begin PBXFileReference section */
 		7B1E55B81C8461D300A07946 /* RNCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptor.h; sourceTree = "<group>"; };
-		7B1E55B91C8461D300A07946 /* RNCryptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
+		7B1E55B91C8461D300A07946 /* RNCryptorOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCryptorOLD.swift; sourceTree = "<group>"; };
 		7B23E8851C99994700CECB08 /* PasscodeView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasscodeView_iPad.xib; sourceTree = "<group>"; };
+		8424E408252DB2FA00A660F8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		8424E40A252DE4F800A660F8 /* RNCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
 		84682654252C585200955C23 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
-		84768E75252494B0000CDE89 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		84768E75252494B0000CDE89 /* SwiftyJSON4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON4.swift; sourceTree = "<group>"; };
 		FE052C9C1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryFormDetailsViewControllerNSURLSessionDelegate.swift; sourceTree = "<group>"; };
 		FE052C9E1C67CC3200EDC5F9 /* GenerateReportHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateReportHelper.swift; sourceTree = "<group>"; };
 		FE093C951C7E789300C77AA0 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
@@ -785,7 +789,8 @@
 				FE80365D1C8371780060B153 /* MiscHelpers.swift */,
 				FE80365E1C8371780060B153 /* NumericConversions.swift */,
 				FE8036631C8371780060B153 /* SwiftyJSONold.swift */,
-				84768E75252494B0000CDE89 /* SwiftyJSON.swift */,
+				84768E75252494B0000CDE89 /* SwiftyJSON4.swift */,
+				8424E408252DB2FA00A660F8 /* SwiftyJSON.swift */,
 				FE7B9E1A1C8CB96800BCF741 /* EntryFormFieldComments.swift */,
 			);
 			path = BitmelterEntryForm;
@@ -883,7 +888,8 @@
 				FE66D13D1D4579E400774B7D /* Settings.bundle */,
 				FEE78BFB1CB7130400245ABF /* JavaScriptCore.framework */,
 				7B1E55B81C8461D300A07946 /* RNCryptor.h */,
-				7B1E55B91C8461D300A07946 /* RNCryptor.swift */,
+				7B1E55B91C8461D300A07946 /* RNCryptorOLD.swift */,
+				8424E40A252DE4F800A660F8 /* RNCryptor.swift */,
 				FE74E5CD1C6ABD3F00310D37 /* MessageUI.framework */,
 				FE4E7B191C3DC620009F18F1 /* AVFoundation.framework */,
 				FE8F29DE1A09754500B3F2F9 /* Info.plist */,
@@ -1332,7 +1338,7 @@
 				FE8036861C8371780060B153 /* SavedEntryFormCell.swift in Sources */,
 				FE8036211C836EFB0060B153 /* DataManagerExtensions.swift in Sources */,
 				FE8036191C836EFB0060B153 /* AccountDetailsViewController.swift in Sources */,
-				7B1E55BA1C8461D300A07946 /* RNCryptor.swift in Sources */,
+				7B1E55BA1C8461D300A07946 /* RNCryptorOLD.swift in Sources */,
 				FE80366D1C8371780060B153 /* EntryFormAttachmentSpec.swift in Sources */,
 				FECB5F781A6C90C50081B46F /* NavigationControllerDelegate.swift in Sources */,
 				FE8036731C8371780060B153 /* EntryFormFields.swift in Sources */,
@@ -1346,6 +1352,7 @@
 				FE4A8E611C4C4B5C009559AD /* SplitViewControllerDelegate.swift in Sources */,
 				FE8036301C836EFB0060B153 /* Response.swift in Sources */,
 				FE2986641CEE7C9A00A002F2 /* TryCatchFinally.swift in Sources */,
+				8424E40B252DE4F800A660F8 /* RNCryptor.swift in Sources */,
 				FE80367A1C8371780060B153 /* EntryFormSave.swift in Sources */,
 				FE80361C1C836EFB0060B153 /* BaseViewController.swift in Sources */,
 				FE2774701C8CD92800D38182 /* AttachmentsViewerViewController.swift in Sources */,
@@ -1360,6 +1367,7 @@
 				FE3086811B27B1B4007BD9D8 /* NewEntryFormViewController.swift in Sources */,
 				FE8036881C8371780060B153 /* SwiftyJSONold.swift in Sources */,
 				FE80362B1C836EFB0060B153 /* PasscodeViewBaseController.swift in Sources */,
+				8424E409252DB2FA00A660F8 /* SwiftyJSON.swift in Sources */,
 				FE8036201C836EFB0060B153 /* DataManager.swift in Sources */,
 				FEBFAAE41D07868D00059C85 /* AudioViewerViewController.swift in Sources */,
 				FE80366C1C8371780060B153 /* EntryFormAttachment.swift in Sources */,
@@ -1390,7 +1398,7 @@
 				FE6EC0311B9517B8003D26F7 /* DrawableEntryFormViewController.swift in Sources */,
 				FE8036651C8371780060B153 /* DrawingShapes.swift in Sources */,
 				FE8036761C8371780060B153 /* EntryFormMultipleChoiceFactory.swift in Sources */,
-				84768E76252494B0000CDE89 /* SwiftyJSON.swift in Sources */,
+				84768E76252494B0000CDE89 /* SwiftyJSON4.swift in Sources */,
 				FE4BDD311C62D5D700038D1B /* DebugLog.swift in Sources */,
 				FE80367D1C8371780060B153 /* ImageEntryFormCell.swift in Sources */,
 				FE4E7B1D1C3DC6A9009F18F1 /* AudioRecordingViewController.swift in Sources */,

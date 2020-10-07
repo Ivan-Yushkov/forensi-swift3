@@ -27,14 +27,14 @@ open class SavedEntryFormCell: UITableViewCell {
     
     
     @IBAction func generateRportTapped(_ sender: AnyObject) {
-        if let d = delegate, let ef = entryForm {
-            d.generateReportForEntryForm(ef)
+        if let delegate = delegate, let entryForm = entryForm {
+            delegate.generateReportForEntryForm(entryForm)
         }
     }
     
     @IBAction func actionReportBtnTapped(_ sender: AnyObject) {
-        if let d = delegate, let ef = entryForm {
-            d.runActionForEntryFormWithGeneratedReport(ef)
+        if let delegate = delegate, let entryForm = entryForm {
+            delegate.runActionForEntryFormWithGeneratedReport(entryForm)
         }
     }
     

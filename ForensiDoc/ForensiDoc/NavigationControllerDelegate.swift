@@ -15,7 +15,7 @@ class NavigationControllerDelegate:NSObject, UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         counter += 1
-        NSLog("wilShowViewController %@ %d", viewController.description, counter)
+        NSLog("willShowViewController %@ %d", viewController.description, counter)
     }
     
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
