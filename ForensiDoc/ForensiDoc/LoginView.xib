@@ -20,31 +20,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cxw-p0-nA6" userLabel="Email address">
-                    <rect key="frame" x="8" y="75" width="298" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cxw-p0-nA6" userLabel="Email address">
+                    <rect key="frame" x="20" y="90" width="339" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgK-Jx-MOg" userLabel="Password">
-                    <rect key="frame" x="8" y="125" width="298" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XgK-Jx-MOg" userLabel="Password">
+                    <rect key="frame" x="20" y="144" width="339" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="715-Rf-gD3">
-                    <rect key="frame" x="8" y="177" width="47" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Sign in">
-                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="login:" destination="-1" eventType="touchUpInside" id="2dz-gm-2Kd"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gS-c3-ddM">
-                    <rect key="frame" x="8" y="242" width="145" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4gS-c3-ddM">
+                    <rect key="frame" x="20" y="248" width="143" height="30"/>
                     <state key="normal" title="Reset your password">
                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -52,9 +39,8 @@
                         <action selector="remindPassword:" destination="-1" eventType="touchUpInside" id="kXn-aS-0ul"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clx-ub-HN6" userLabel="1Password Button">
-                    <rect key="frame" x="327" y="125" width="27" height="27"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clx-ub-HN6" userLabel="1Password Button">
+                    <rect key="frame" x="367" y="147.5" width="27" height="27"/>
                     <state key="normal" image="onepassword-button">
                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
@@ -62,8 +48,31 @@
                         <action selector="onePasswordGetDataTapped:" destination="-1" eventType="touchUpInside" id="LvN-J3-hGw"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="715-Rf-gD3">
+                    <rect key="frame" x="20" y="198" width="47" height="30"/>
+                    <state key="normal" title="Sign in">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="login:" destination="-1" eventType="touchUpInside" id="2dz-gm-2Kd"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="clx-ub-HN6" secondAttribute="trailing" constant="20" id="4ba-bV-HNl"/>
+                <constraint firstItem="4gS-c3-ddM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="9X5-S0-awD"/>
+                <constraint firstItem="clx-ub-HN6" firstAttribute="centerY" secondItem="XgK-Jx-MOg" secondAttribute="centerY" id="9hP-rQ-OAR"/>
+                <constraint firstItem="715-Rf-gD3" firstAttribute="top" secondItem="XgK-Jx-MOg" secondAttribute="bottom" constant="20" id="NUH-wj-yyZ"/>
+                <constraint firstItem="XgK-Jx-MOg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="QB2-ew-wFs"/>
+                <constraint firstItem="Cxw-p0-nA6" firstAttribute="width" secondItem="XgK-Jx-MOg" secondAttribute="width" id="T57-Vv-1DJ"/>
+                <constraint firstItem="clx-ub-HN6" firstAttribute="leading" secondItem="XgK-Jx-MOg" secondAttribute="trailing" constant="8" id="YI6-Hx-SZ1"/>
+                <constraint firstItem="Cxw-p0-nA6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="90" id="aRK-PI-gVd"/>
+                <constraint firstItem="4gS-c3-ddM" firstAttribute="top" secondItem="715-Rf-gD3" secondAttribute="bottom" constant="20" id="pNT-XT-znP"/>
+                <constraint firstItem="XgK-Jx-MOg" firstAttribute="top" secondItem="Cxw-p0-nA6" secondAttribute="bottom" constant="20" id="qLI-Gq-imk"/>
+                <constraint firstItem="715-Rf-gD3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="srX-Ee-aYN"/>
+                <constraint firstItem="Cxw-p0-nA6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="xrb-2L-FgZ"/>
+            </constraints>
             <point key="canvasLocation" x="34" y="54"/>
         </view>
     </objects>

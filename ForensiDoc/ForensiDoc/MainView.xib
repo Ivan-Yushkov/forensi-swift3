@@ -18,13 +18,18 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bKd-FN-MDS">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bKd-FN-MDS">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="bKd-FN-MDS" secondAttribute="bottom" id="1Nk-jW-bwL"/>
+                <constraint firstAttribute="trailing" secondItem="bKd-FN-MDS" secondAttribute="trailing" id="Bfk-EG-smv"/>
+                <constraint firstItem="bKd-FN-MDS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="JBI-IN-bPc"/>
+                <constraint firstItem="bKd-FN-MDS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="g93-Nh-wjI"/>
+            </constraints>
             <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="373.91304347826087" y="354.24107142857139"/>
         </view>
