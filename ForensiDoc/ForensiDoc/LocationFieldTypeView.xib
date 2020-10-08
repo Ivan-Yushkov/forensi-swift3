@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LocationFieldTypeViewController" customModule="ForensiDoc" customModuleProvider="target">
@@ -14,19 +17,19 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Awi-ij-0DP" userLabel="Attachments view" customClass="AttachmentsSelectorView" customModule="ForensiDoc" customModuleProvider="target">
-                    <rect key="frame" x="8" y="8" width="584" height="45"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="8" y="45" width="398" height="45"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="45" id="Kix-rl-swg"/>
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="r1a-92-BuX">
-                    <rect key="frame" x="8" y="61" width="584" height="100"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <rect key="frame" x="8" y="98" width="398" height="100"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="XDv-cp-E3H"/>
                     </constraints>
@@ -34,7 +37,7 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kAC-dF-0YO">
-                    <rect key="frame" x="234" y="178" width="132" height="34"/>
+                    <rect key="frame" x="141" y="215" width="132" height="34"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="34" id="C6T-2n-AXj"/>
                         <constraint firstAttribute="width" constant="132" id="LOE-Kg-kNf"/>
@@ -45,11 +48,11 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="r1a-92-BuX" firstAttribute="top" secondItem="Awi-ij-0DP" secondAttribute="bottom" constant="8" id="1jd-WN-kAP"/>
                 <constraint firstItem="Awi-ij-0DP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="3wR-uR-RFE"/>
-                <constraint firstItem="Awi-ij-0DP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="GwZ-w2-GHe"/>
+                <constraint firstItem="Awi-ij-0DP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="45" id="GwZ-w2-GHe"/>
                 <constraint firstItem="r1a-92-BuX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="UAV-mQ-mIM"/>
                 <constraint firstItem="kAC-dF-0YO" firstAttribute="centerX" secondItem="r1a-92-BuX" secondAttribute="centerX" id="e8M-zb-Lec"/>
                 <constraint firstItem="kAC-dF-0YO" firstAttribute="top" secondItem="r1a-92-BuX" secondAttribute="bottom" constant="17" id="gNb-fK-E7v"/>
