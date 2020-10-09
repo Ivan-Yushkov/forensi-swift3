@@ -62,7 +62,7 @@ open class ViewsHelpers {
     }
     
     open class func FormatTextView(_ textView: UITextView, makeFirstResponder: Bool) {
-        textView.returnKeyType = UIReturnKeyType.next
+        textView.returnKeyType = .next
         // Would be nice to add this from fucking interface builder
         
         textView.layer.borderWidth = 1.0

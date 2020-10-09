@@ -14,8 +14,8 @@ public protocol SavedEntryFormCellShouldGenerateReportDelegate {
 }
 
 open class SavedEntryFormCell: UITableViewCell {
-    fileprivate var delegate: SavedEntryFormCellShouldGenerateReportDelegate? = .none
-    fileprivate var entryForm: EntryForm? = .none
+    fileprivate var delegate: SavedEntryFormCellShouldGenerateReportDelegate?
+    fileprivate var entryForm: EntryForm?
     
     
     @IBOutlet var reportTitle: UILabel!

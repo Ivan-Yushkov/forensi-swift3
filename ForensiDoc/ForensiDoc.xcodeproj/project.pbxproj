@@ -12,6 +12,7 @@
 		8424E409252DB2FA00A660F8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424E408252DB2FA00A660F8 /* SwiftyJSON.swift */; };
 		8424E40B252DE4F800A660F8 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424E40A252DE4F800A660F8 /* RNCryptor.swift */; };
 		84682655252C585200955C23 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84682654252C585200955C23 /* CoreServices.framework */; };
+		846BB1BD2530799900AFA90C /* Data+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BB1BC2530799900AFA90C /* Data+Compression.swift */; };
 		84768E76252494B0000CDE89 /* SwiftyJSON4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84768E75252494B0000CDE89 /* SwiftyJSON4.swift */; };
 		FE052C9D1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE052C9C1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift */; };
 		FE052C9F1C67CC3200EDC5F9 /* GenerateReportHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE052C9E1C67CC3200EDC5F9 /* GenerateReportHelper.swift */; };
@@ -155,7 +156,7 @@
 		FE82CF311E2C399E00A240A3 /* About.html in Resources */ = {isa = PBXBuildFile; fileRef = FE82CF301E2C399E00A240A3 /* About.html */; };
 		FE87D5B71C3B291B00586D16 /* ViewsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87D5B61C3B291B00586D16 /* ViewsHelpers.swift */; };
 		FE87D5BB1C3B3B3200586D16 /* BaseViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87D5BA1C3B3B3200586D16 /* BaseViewControllerExtensions.swift */; };
-		FE88B7F51F6F28EE00B76D34 /* Data+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE88B7F41F6F28EE00B76D34 /* Data+Compression.swift */; };
+		FE88B7F51F6F28EE00B76D34 /* Data+CompressionOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE88B7F41F6F28EE00B76D34 /* Data+CompressionOLD.swift */; };
 		FE88B7F91F6F2BAF00B76D34 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FE88B7F81F6F2BAE00B76D34 /* libz.tbd */; };
 		FE8A27451D46C86A009EC63E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8A27441D46C86A009EC63E /* CoreLocation.framework */; };
 		FE8F29E01A09754500B3F2F9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8F29DF1A09754500B3F2F9 /* AppDelegate.swift */; };
@@ -232,6 +233,7 @@
 		8424E408252DB2FA00A660F8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		8424E40A252DE4F800A660F8 /* RNCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
 		84682654252C585200955C23 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		846BB1BC2530799900AFA90C /* Data+Compression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Compression.swift"; sourceTree = "<group>"; };
 		84768E75252494B0000CDE89 /* SwiftyJSON4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON4.swift; sourceTree = "<group>"; };
 		FE052C9C1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryFormDetailsViewControllerNSURLSessionDelegate.swift; sourceTree = "<group>"; };
 		FE052C9E1C67CC3200EDC5F9 /* GenerateReportHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateReportHelper.swift; sourceTree = "<group>"; };
@@ -382,7 +384,7 @@
 		FE82CF301E2C399E00A240A3 /* About.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = About.html; sourceTree = "<group>"; };
 		FE87D5B61C3B291B00586D16 /* ViewsHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewsHelpers.swift; sourceTree = "<group>"; };
 		FE87D5BA1C3B3B3200586D16 /* BaseViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewControllerExtensions.swift; sourceTree = "<group>"; };
-		FE88B7F41F6F28EE00B76D34 /* Data+Compression.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Compression.swift"; sourceTree = "<group>"; };
+		FE88B7F41F6F28EE00B76D34 /* Data+CompressionOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+CompressionOLD.swift"; sourceTree = "<group>"; };
 		FE88B7F71F6F2B0A00B76D34 /* include.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = include.h; sourceTree = "<group>"; };
 		FE88B7F81F6F2BAE00B76D34 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		FE88B7FA1F6F2BD300B76D34 /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
@@ -823,7 +825,8 @@
 				FE2986601CEE7BF400A002F2 /* TryCatchFinally.h */,
 				FE2986611CEE7C2400A002F2 /* TryCatchFinally.m */,
 				FE2986631CEE7C9A00A002F2 /* TryCatchFinally.swift */,
-				FE88B7F41F6F28EE00B76D34 /* Data+Compression.swift */,
+				FE88B7F41F6F28EE00B76D34 /* Data+CompressionOLD.swift */,
+				846BB1BC2530799900AFA90C /* Data+Compression.swift */,
 			);
 			name = Helpers;
 			path = ..;
@@ -1381,6 +1384,7 @@
 				FE80367B1C8371780060B153 /* EntryFormSettingsHelper.swift in Sources */,
 				FE7156DD1A2E70AE0021BCE4 /* Globals.swift in Sources */,
 				FE8036281C836EFB0060B153 /* NetworkingManager.swift in Sources */,
+				846BB1BD2530799900AFA90C /* Data+Compression.swift in Sources */,
 				FE8036791C8371780060B153 /* EntryFormRepository.swift in Sources */,
 				FE4BDD3B1C62E06600038D1B /* EncryptJsonForSubmit.swift in Sources */,
 				FE87D5BB1C3B3B3200586D16 /* BaseViewControllerExtensions.swift in Sources */,
@@ -1424,7 +1428,7 @@
 				FE8036361C836EFB0060B153 /* ViewType.swift in Sources */,
 				FE3012A31C4E66DC00670AC6 /* UISplitViewControllerExtension.swift in Sources */,
 				FE8F29E01A09754500B3F2F9 /* AppDelegate.swift in Sources */,
-				FE88B7F51F6F28EE00B76D34 /* Data+Compression.swift in Sources */,
+				FE88B7F51F6F28EE00B76D34 /* Data+CompressionOLD.swift in Sources */,
 				FE8036771C8371780060B153 /* EntryFormMultipleEntry.swift in Sources */,
 				FE093C961C7E789300C77AA0 /* UINavigationControllerExtension.swift in Sources */,
 				FE8036291C836EFB0060B153 /* OnePasswordExtension.m in Sources */,

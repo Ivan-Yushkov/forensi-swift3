@@ -13,11 +13,11 @@ struct Singleton {
 }
 
 open class BitmelterAccountManager {
-    var _onSuccessfullLogon: (() -> Void)? = .none
-    var _onSuccessfullPasscode: (() -> Void)? = .none
-    var _onSuccessfullAccountActivation: (() -> Void)? = .none
-    var _onSuccessfullPasswordReset: (() -> Void)? = .none
-    var _delegate: BitmelterAccountManagerProtocol? = .none
+    var _onSuccessfullLogon: (() -> Void)?
+    var _onSuccessfullPasscode: (() -> Void)?
+    var _onSuccessfullAccountActivation: (() -> Void)?
+    var _onSuccessfullPasswordReset: (() -> Void)?
+    var _delegate: BitmelterAccountManagerProtocol?
  
     //MARK: fix2020
     class open func startSharedInstance(_ delegate: BitmelterAccountManagerProtocol?) {//-> BitmelterAccountManager {

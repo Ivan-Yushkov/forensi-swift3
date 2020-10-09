@@ -16,11 +16,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aro-pk-AlN">
-                        <rect key="frame" x="139" y="-1" width="43" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aro-pk-AlN">
+                        <rect key="frame" x="138.5" y="0.5" width="43" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43" id="1jh-kp-Afz"/>
+                            <constraint firstAttribute="width" constant="43" id="JiV-NE-mlg"/>
+                        </constraints>
                     </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="aro-pk-AlN" firstAttribute="centerX" secondItem="tLb-QK-YdK" secondAttribute="centerX" id="HFW-ag-auw"/>
+                    <constraint firstItem="aro-pk-AlN" firstAttribute="centerY" secondItem="tLb-QK-YdK" secondAttribute="centerY" id="ke2-gS-9fd"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="attachedImage" destination="aro-pk-AlN" id="yn9-ly-pdP"/>

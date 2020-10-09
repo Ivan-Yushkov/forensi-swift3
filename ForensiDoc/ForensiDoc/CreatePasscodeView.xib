@@ -31,9 +31,12 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ded-IB-lCc">
                     <rect key="frame" x="0.0" y="90" width="414" height="128"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fV6-hi-CHh">
-                            <rect key="frame" x="58" y="5" width="299" height="59"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" enabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fV6-hi-CHh">
+                            <rect key="frame" x="57.5" y="5" width="299" height="59"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="299" id="FiQ-Or-5py"/>
+                                <constraint firstAttribute="height" constant="59" id="oMF-CZ-Zha"/>
+                            </constraints>
                             <attributedString key="attributedText">
                                 <fragment content="To start using Forensidoc you will have to setup a passcode to protect the data on this device.">
                                     <attributes>
@@ -45,7 +48,7 @@
                             </attributedString>
                             <nil key="highlightedColor"/>
                         </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KRC-Ex-p9u">
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KRC-Ex-p9u">
                             <rect key="frame" x="151" y="72" width="112" height="22"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PasscodeNotSet" translatesAutoresizingMaskIntoConstraints="NO" id="ytS-MN-b0C" userLabel="Img1">
@@ -65,6 +68,10 @@
                     </subviews>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstItem="KRC-Ex-p9u" firstAttribute="top" secondItem="fV6-hi-CHh" secondAttribute="bottom" constant="8" id="H0N-N8-FJa"/>
+                        <constraint firstItem="fV6-hi-CHh" firstAttribute="top" secondItem="Ded-IB-lCc" secondAttribute="top" constant="5" id="Wo9-se-0u6"/>
+                        <constraint firstItem="fV6-hi-CHh" firstAttribute="centerX" secondItem="Ded-IB-lCc" secondAttribute="centerX" id="kjR-bF-8M6"/>
+                        <constraint firstItem="KRC-Ex-p9u" firstAttribute="centerX" secondItem="Ded-IB-lCc" secondAttribute="centerX" id="qmd-BE-hOA"/>
                         <constraint firstAttribute="height" constant="128" id="uHd-EN-Dd8"/>
                     </constraints>
                 </view>

@@ -9,6 +9,7 @@
 import Foundation
 import MessageUI
 
+
 extension SettingsViewController: EntryFormFieldDoneEditing, MFMailComposeViewControllerDelegate {
     var actions: [[Selector]] {
         get {
@@ -61,8 +62,8 @@ extension SettingsViewController: EntryFormFieldDoneEditing, MFMailComposeViewCo
                         }
                     }
                 }
-              
-             /*
+//MARK:ZIP fix2020
+//need tests
                 for entryForm in allEntryForms {
                     let uuidString = UUID().uuidString
                     let uuidFileName = "\(uuidString)-post.txt"
@@ -70,16 +71,17 @@ extension SettingsViewController: EntryFormFieldDoneEditing, MFMailComposeViewCo
                     if let entryFormData = entryForm.postData.data(using: String.Encoding.utf8), let entryFormSaveData =  entryForm.jsonSave.data(using: String.Encoding.utf8) {
                         let base64Data = entryFormSaveData.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
                         if let base64Data = base64Data.data(using: String.Encoding.utf8) {
-                           // let gZippedEntryFormData = try! entryFormData.gzippedData()
-                           // let gZippedBase64Data = try! base64Data.gzippedData()
-                           // mailComposer.addAttachmentData(gZippedEntryFormData, mimeType: "text/plain", fileName: uuidFileName)
+//-test->
+                            let gZippedEntryFormData = try! entryFormData.gzipped()
+                            let gZippedBase64Data = try! base64Data.gzipped()
+//-->
+                            mailComposer.addAttachmentData(gZippedEntryFormData, mimeType: "text/plain", fileName: uuidFileName)
                            
-                           // mailComposer.addAttachmentData(gZippedBase64Data, mimeType: "text/plain", fileName: uuidFileNameSave)
-                           
+                            mailComposer.addAttachmentData(gZippedBase64Data, mimeType: "text/plain", fileName: uuidFileNameSave)
                         }
                     }
                 }
-                */
+                
                 DebugLog.DLog("End of preparing debug data")
                 self.present(mailComposer, animated: true, completion: nil)
             } else {

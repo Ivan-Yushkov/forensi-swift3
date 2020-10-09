@@ -16,22 +16,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UwN-29-4qQ" userLabel="On">
-                        <rect key="frame" x="18" y="5" width="34" height="34"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UwN-29-4qQ" userLabel="On">
+                        <rect key="frame" x="16" y="5" width="34" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="34" id="X3e-xC-9ab"/>
+                            <constraint firstAttribute="height" constant="34" id="ziX-gN-ghL"/>
+                        </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOa-Sh-2uS" userLabel="Option title">
-                        <rect key="frame" x="60" y="11" width="252" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOa-Sh-2uS" userLabel="Option title">
+                        <rect key="frame" x="58" y="11.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EgT-to-1CA" userLabel="Off">
-                        <rect key="frame" x="18" y="5" width="34" height="34"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EgT-to-1CA" userLabel="Off">
+                        <rect key="frame" x="16" y="5" width="34" height="34"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="34" id="8qa-FU-8bi"/>
+                            <constraint firstAttribute="height" constant="34" id="lZj-hl-FQ9"/>
+                        </constraints>
                     </imageView>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="EgT-to-1CA" firstAttribute="centerY" secondItem="WHR-un-9lX" secondAttribute="centerY" id="K1S-G2-nBv"/>
+                    <constraint firstItem="EgT-to-1CA" firstAttribute="leading" secondItem="WHR-un-9lX" secondAttribute="leading" constant="16" id="PS3-ly-Biz"/>
+                    <constraint firstItem="NOa-Sh-2uS" firstAttribute="leading" secondItem="UwN-29-4qQ" secondAttribute="trailing" constant="8" id="mFA-k0-S4x"/>
+                    <constraint firstItem="NOa-Sh-2uS" firstAttribute="centerY" secondItem="WHR-un-9lX" secondAttribute="centerY" id="sfZ-xD-dDH"/>
+                    <constraint firstItem="UwN-29-4qQ" firstAttribute="centerY" secondItem="WHR-un-9lX" secondAttribute="centerY" id="ub8-tA-Y1u"/>
+                    <constraint firstItem="UwN-29-4qQ" firstAttribute="leading" secondItem="WHR-un-9lX" secondAttribute="leading" constant="16" id="xkU-Zo-hlT"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="off" destination="EgT-to-1CA" id="gu1-9m-dhS"/>
