@@ -86,22 +86,25 @@ class MultilineTypeFieldTypeViewController: BaseViewController, UITextViewDelega
     func addAttachment(_ attachment: EntryFormAttachment, attachmentsViewer: AttachmentsSelectorView?) {
         _ = ViewsHelpers.HandleAttachments(_entryField, attachment: attachment, attachmentsViewer: attachmentsViewer)
     }
-    
+
+//MARK: fix2020
+//TODO: Done button breaks constraints, find solution!
     func addDoneButton(_ addNextKey: Bool) {
-        let keyboardToolbar = UIToolbar()
-        keyboardToolbar.sizeToFit()
-        let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
-            target: nil, action: nil)
-        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done,
-            target: self, action: #selector(MultilineTypeFieldTypeViewController.endEditing(_:)))
-        if addNextKey {
-            let nextBarButton = UIBarButtonItem(title: "Next", style: UIBarButtonItem.Style.plain, target: nil, action: #selector(MultilineTypeFieldTypeViewController.nextLine(_:)))
-            keyboardToolbar.items = [nextBarButton, flexBarButton, doneBarButton]
-        } else {
-            keyboardToolbar.items = [flexBarButton, doneBarButton]
-        }
-        
-        self.textView.inputAccessoryView = keyboardToolbar
+//        let keyboardToolbar = UIToolbar()
+//        keyboardToolbar.sizeToFit()
+//       let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+//        let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done,
+//            target: self, action: #selector(MultilineTypeFieldTypeViewController.endEditing(_:)))
+//        if addNextKey {
+//            let nextBarButton = UIBarButtonItem(title: "Next", style: UIBarButtonItem.Style.plain, target: nil, action: #selector(MultilineTypeFieldTypeViewController.nextLine(_:)))
+//            keyboardToolbar.items = [nextBarButton, flexBarButton, doneBarButton]
+//
+//        } else {
+//            keyboardToolbar.items = [flexBarButton, doneBarButton]
+//
+//        }
+//
+//        self.textView.inputAccessoryView = keyboardToolbar
     }
     
     @objc func endEditing(_ sender: AnyObject) {
