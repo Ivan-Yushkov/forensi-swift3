@@ -74,7 +74,7 @@
                    "fields": [
                               {
                               "id": "reference",
-                              "title": "Report Reference",
+                              "title": "Report Identification Reference ",
                               "type": "Textbox",
                               "basetype": "String",
                               "placeholder": "Reference must contain alphanumeric _ and -",
@@ -1920,7 +1920,7 @@
                               },
                               {
                               "id": "peak_flow",
-                              "title": "Peak Expiratory Flow Rate",
+                              "title": "Peak Expiratory Flow Rate (L/min)",
                               "type": "Textbox",
                               "basetype": "Int",
                               "comment": {
@@ -1929,7 +1929,7 @@
                               },
                               {
                               "id": "blood_glucose",
-                              "title": "Blood Glucose",
+                              "title": "Blood Glucose (mmol/L)",
                               "type": "Textbox",
                               "basetype": "Float",
                               "result_format": ".1",

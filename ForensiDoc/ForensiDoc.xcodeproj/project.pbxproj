@@ -11,6 +11,7 @@
 		7B23E8861C99994700CECB08 /* PasscodeView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B23E8851C99994700CECB08 /* PasscodeView_iPad.xib */; };
 		8424E409252DB2FA00A660F8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424E408252DB2FA00A660F8 /* SwiftyJSON.swift */; };
 		8424E40B252DE4F800A660F8 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424E40A252DE4F800A660F8 /* RNCryptor.swift */; };
+		844E4DBF2535D2BB001C0D46 /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E4DBE2535D2BB001C0D46 /* PickerTextField.swift */; };
 		84682655252C585200955C23 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84682654252C585200955C23 /* CoreServices.framework */; };
 		846BB1BD2530799900AFA90C /* Data+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BB1BC2530799900AFA90C /* Data+Compression.swift */; };
 		84768E76252494B0000CDE89 /* SwiftyJSON4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84768E75252494B0000CDE89 /* SwiftyJSON4.swift */; };
@@ -232,6 +233,7 @@
 		7B23E8851C99994700CECB08 /* PasscodeView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasscodeView_iPad.xib; sourceTree = "<group>"; };
 		8424E408252DB2FA00A660F8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		8424E40A252DE4F800A660F8 /* RNCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
+		844E4DBE2535D2BB001C0D46 /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
 		84682654252C585200955C23 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		846BB1BC2530799900AFA90C /* Data+Compression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Compression.swift"; sourceTree = "<group>"; };
 		84768E75252494B0000CDE89 /* SwiftyJSON4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON4.swift; sourceTree = "<group>"; };
@@ -581,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				FE2C31351B30DBB100191CB1 /* TextboxTypeFieldTypeViewController.swift */,
+				844E4DBE2535D2BB001C0D46 /* PickerTextField.swift */,
 				FE2C313B1B30DE4A00191CB1 /* TextboxTypeFieldTypeView.xib */,
 			);
 			name = Textbox;
@@ -1404,6 +1407,7 @@
 				FE8036761C8371780060B153 /* EntryFormMultipleChoiceFactory.swift in Sources */,
 				84768E76252494B0000CDE89 /* SwiftyJSON4.swift in Sources */,
 				FE4BDD311C62D5D700038D1B /* DebugLog.swift in Sources */,
+				844E4DBF2535D2BB001C0D46 /* PickerTextField.swift in Sources */,
 				FE80367D1C8371780060B153 /* ImageEntryFormCell.swift in Sources */,
 				FE4E7B1D1C3DC6A9009F18F1 /* AudioRecordingViewController.swift in Sources */,
 				FEB9CFB91BF0152F00267BFB /* BitmelterAccountManagerDelegate.swift in Sources */,

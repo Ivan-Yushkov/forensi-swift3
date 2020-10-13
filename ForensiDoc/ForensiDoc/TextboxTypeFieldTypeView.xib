@@ -21,14 +21,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ThO-Ow-cX9" userLabel="Attachments view" customClass="AttachmentsSelectorView" customModule="ForensiDoc" customModuleProvider="target">
-                    <rect key="frame" x="20" y="8" width="374" height="45"/>
+                    <rect key="frame" x="20" y="10" width="374" height="50"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="45" id="mVh-1e-jD7"/>
+                        <constraint firstAttribute="height" constant="50" id="mVh-1e-jD7"/>
                     </constraints>
                 </view>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cB8-7U-Qdc">
-                    <rect key="frame" x="20" y="61" width="374" height="50"/>
+                    <rect key="frame" x="20" y="70" width="374" height="50"/>
                     <color key="backgroundColor" red="0.98997461795806885" green="0.99016475677490234" blue="0.98994266986846924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="1eV-Rs-Fpo"/>
@@ -42,11 +42,11 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="cB8-7U-Qdc" firstAttribute="top" secondItem="ThO-Ow-cX9" secondAttribute="bottom" constant="8" id="6nf-DZ-o9e"/>
+                <constraint firstItem="cB8-7U-Qdc" firstAttribute="top" secondItem="ThO-Ow-cX9" secondAttribute="bottom" constant="10" id="6nf-DZ-o9e"/>
                 <constraint firstItem="cB8-7U-Qdc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="P07-My-MpQ"/>
                 <constraint firstAttribute="trailing" secondItem="ThO-Ow-cX9" secondAttribute="trailing" constant="20" id="UWE-Np-KyU"/>
                 <constraint firstItem="ThO-Ow-cX9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="VwR-cr-Lmu"/>
-                <constraint firstItem="ThO-Ow-cX9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="bhs-0k-Szi"/>
+                <constraint firstItem="ThO-Ow-cX9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="bhs-0k-Szi"/>
                 <constraint firstAttribute="trailing" secondItem="cB8-7U-Qdc" secondAttribute="trailing" constant="20" id="tlA-fK-kz8"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>

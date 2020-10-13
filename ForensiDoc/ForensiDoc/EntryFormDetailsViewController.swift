@@ -49,6 +49,7 @@ class EntryFormDetailsViewController: BaseViewController, EntryFormDetailFactory
             self.navigationItem.setLeftBarButton(settingsButton, animated: true)
         }
         
+        //MARK: add report
         let newReportButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(EntryFormDetailsViewController.newReportTapped(_:)))
         self.navigationItem.setRightBarButton(newReportButton, animated: true)
         

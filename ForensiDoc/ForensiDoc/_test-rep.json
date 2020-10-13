@@ -9,7 +9,7 @@
         "id" : "report_details",
         "fields" : [
           {
-            "title" : "Report Reference",
+            "title" : "Report Identification Reference",
             "required" : true,
             "for_multifield" : false,
             "values" : [
@@ -4750,7 +4750,7 @@
             "result_display_should_be_js_evaluated" : false
           },
           {
-            "title" : "Peak Expiratory Flow Rate",
+            "title" : "Peak Expiratory Flow Rate (L/min)",
             "required" : false,
             "for_multifield" : false,
             "display_label" : "",
@@ -4809,7 +4809,7 @@
             "result_display_should_be_js_evaluated" : false
           },
           {
-            "title" : "Blood Glucose",
+            "title" : "Blood Glucose (mmol/L)",
             "required" : false,
             "for_multifield" : false,
             "display_label" : "",
