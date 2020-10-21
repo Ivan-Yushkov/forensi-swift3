@@ -18,9 +18,13 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
     var _characterSet:CharacterSet?
     var _allowedCharactersErrorMessage = ""
     
-    let pickerTextField = PickerTextField()
-    let pickerView = UIPickerView()
-    var pickerData: [Int] = []
+    // let pickerTextField = PickerTextField()
+    var pickerViewInt: UIPickerView!
+    var pickerViewDouble: UIPickerView!
+    var pickerDataInt: [Int] = []
+    var pickerDataDouble: [Int] = Array(0...9)
+    var valueType: String = ""
+    var numberOfComponents: Int = 1
     
     var _entryField: Any?
     func setEntryField<T: EntryFormFieldContainer>(_ entryField: T) {
@@ -37,12 +41,17 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
             if let f = MiscHelpers.CastEntryFormField(ef, Int.self) {
                 self.title = f.title
                 
+                //titles which call picker view
                 if title != nil, title! == "Systolic Blood Pressure" || title! == "Diastolic Blood Pressure" {
-                    print("Diastolic / Systolic Blood Pressure")
+                    setupPickerData(withRangeIn: 0...250)
+                    valueType = "mm Hg"
+                    if title! == "Systolic Blood Pressure" {
+                        setupPickerView(withDefaultRow: 120)
+                    }
+                    if title! == "Diastolic Blood Pressure" {
+                        setupPickerView(withDefaultRow: 80)
+                    }
                     
-                    setupPickerData()
-                    setupPickerView()
-
                     if f.allowedCharacters.count > 0 {
                         self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                     }
@@ -52,12 +61,12 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
                         self.textField.placeholder = f.placeHolder
                     }
                     
-                   // self.textField.keyboardType = .numberPad
+                    // self.textField.keyboardType = .numberPad
                     textField.text = f.nonFormattedSelectedValue()
                     self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
                     
                 } else {
-                    
+                    //other titles call textField with numberpad
                     if f.allowedCharacters.count > 0 {
                         self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                     }
@@ -70,8 +79,30 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
                     self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
                 }
             } else
-                if let f = MiscHelpers.CastEntryFormField(ef, Float.self) {
-                    self.title = f.title
+            //float type of textField
+            if let f = MiscHelpers.CastEntryFormField(ef, Float.self) {
+                self.title = f.title
+                
+                //titles which call picker view
+                if title != nil, title!.contains("Blood Glucose") {
+                    valueType = "mmol/L"
+                    numberOfComponents = 2
+                    setupPickerData(withRangeIn: 0...35)
+                    setupPickerView(withDefaultRow: 6)
+                    
+                    if f.allowedCharacters.count > 0 {
+                        self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
+                    }
+                    self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
+                    if f.placeHolder.count > 0 {
+                        self.textField.placeholder = f.placeHolder
+                    }
+                    //self.textField.keyboardType = UIKeyboardType.numberPad
+                    self.textField.text = f.nonFormattedSelectedValue()
+                    self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
+                    
+                } else {
+                    //titles which call textField
                     if f.allowedCharacters.count > 0 {
                         self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                     }
@@ -82,34 +113,51 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
                     self.textField.keyboardType = UIKeyboardType.numberPad
                     self.textField.text = f.nonFormattedSelectedValue()
                     self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
-                    
-                } else
-                    if let f = MiscHelpers.CastEntryFormField(ef, Double.self) {
-                        self.title = f.title
-                        if f.allowedCharacters.count > 0 {
-                            self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
-                        }
-                        self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
-                        if f.placeHolder.count > 0 {
-                            self.textField.placeholder = f.placeHolder
-                        }
-                        self.textField.keyboardType = UIKeyboardType.numberPad
-                        self.textField.text = f.nonFormattedSelectedValue()
-                        self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
-                        
-                    } else
-                        if let f = MiscHelpers.CastEntryFormField(ef, String.self) {
-                            self.title = f.title
-                            if f.allowedCharacters.count > 0 {
-                                self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
-                            }
-                            self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
-                            if f.placeHolder.count > 0 {
-                                self.textField.placeholder = f.placeHolder
-                            }
-                            self.textField.keyboardType = UIKeyboardType.default
-                            self.textField.text = f.nonFormattedSelectedValue()
-                            self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
+                }
+            } else
+            if let f = MiscHelpers.CastEntryFormField(ef, Double.self) {
+                self.title = f.title
+                
+                if title != nil, title!.contains("Temperature") {
+                    valueType = "C˚"
+                    numberOfComponents = 2
+                    setupPickerData(withRangeIn: 34...40)
+                    setupPickerView(withDefaultRow: 3)
+                    if f.allowedCharacters.count > 0 {
+                        self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
+                    }
+                    self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
+                    if f.placeHolder.count > 0 {
+                        self.textField.placeholder = f.placeHolder
+                    }
+                    //self.textField.keyboardType = UIKeyboardType.numberPad
+                    self.textField.text = f.nonFormattedSelectedValue()
+                    self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
+                } else {
+                    if f.allowedCharacters.count > 0 {
+                        self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
+                    }
+                    self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
+                    if f.placeHolder.count > 0 {
+                        self.textField.placeholder = f.placeHolder
+                    }
+                    self.textField.keyboardType = UIKeyboardType.numberPad
+                    self.textField.text = f.nonFormattedSelectedValue()
+                    self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
+                }
+            } else
+            if let f = MiscHelpers.CastEntryFormField(ef, String.self) {
+                self.title = f.title
+                if f.allowedCharacters.count > 0 {
+                    self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
+                }
+                self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
+                if f.placeHolder.count > 0 {
+                    self.textField.placeholder = f.placeHolder
+                }
+                self.textField.keyboardType = UIKeyboardType.default
+                self.textField.text = f.nonFormattedSelectedValue()
+                self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
             }
             
             
@@ -156,9 +204,16 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
     
     @objc func doneEditingAndReturn() {
         
-        let selectedRow = pickerView.selectedRow(inComponent: 0)
-         print("selectedRow: \(selectedRow)")
-        textField.text = (pickerData.count > 0) ? "\(pickerData[selectedRow])" : ""
+        let selectedFirstRow = pickerViewInt.selectedRow(inComponent: 0)
+        var selectedSecondRow: Int = 0
+        var text: String = ""
+        text = (pickerDataInt.count > 0) ? "\(pickerDataInt[selectedFirstRow])" : ""
+        if numberOfComponents == 2, pickerDataDouble.count > 0 {
+            selectedSecondRow = pickerViewInt.selectedRow(inComponent: 1)
+            text = text + ".\(pickerDataDouble[selectedSecondRow])"
+        }
+        
+        textField.text = text
         
         if let doneEditingWrapper = self.doneEditing, let textField = self.textField.text, textField.count == 0 {
             if let allowEmptyData = doneEditingWrapper.EntryFormFieldDoneEditingDelegate?.allowEmptyData(), allowEmptyData == false {
@@ -229,30 +284,45 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
 }
 extension TextboxTypeFieldTypeViewController : UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
+        numberOfComponents
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        pickerData.count
+        
+        if component == 1 { return pickerDataDouble.count
+        } else {
+         return pickerDataInt.count }
     }
     
-    func setupPickerData() {
-        
-        if pickerData.count == 0 {
-        for i in 0...250 {
-            pickerData.append(i)
-        }
-        }
-        
+    private func setupPickerData(withRangeIn range: ClosedRange<Int>) {
+        //validate(in: range)
+        pickerDataInt = Array(range)
     }
     
-    func setupPickerView() {
-        
-        pickerView.delegate = self
-        pickerView.dataSource = self
-        pickerView.selectRow(80, inComponent: 0, animated: false)
-        let selectedRow = pickerView.selectedRow(inComponent: 0)
-        textField.text = "\(pickerData[selectedRow])"
+    //   private func validate<R>(in range: R) where R: RangeExpression {//, R.Bound == Int {
+    //        let r = R.Bound.self
+    //        if r is Int.Type {
+    //            print("!!!!!!!!!!!!!!!!!")
+    //        }
+    //    }
+    //
+    //    func setupPickerDataGeneric<T: Comparable>(withRangeIn range: ClosedRange<T>) {
+    //
+    //    }
+    
+    private func setupPickerView(withDefaultRow value: Int) {
+        pickerViewInt = UIPickerView()
+        pickerViewInt.delegate = self
+        pickerViewInt.dataSource = self
+        pickerViewInt.selectRow(value, inComponent: 0, animated: false)
+        let selectedFirstRow = pickerViewInt.selectedRow(inComponent: 0)
+        if numberOfComponents == 2 {
+            pickerViewInt.selectRow(0, inComponent: 1, animated: false)
+            let selectedSecondRow = pickerViewInt.selectedRow(inComponent: 1)
+            textField.text = "\(pickerDataInt[selectedFirstRow]).\(pickerDataDouble[selectedSecondRow])"
+        } else {
+            textField.text = "\(pickerDataInt[selectedFirstRow]) \(valueType)"
+        }
         
         let toolBar = UIToolbar(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 44.0)))
         let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneEditingAndReturn))
@@ -260,24 +330,31 @@ extension TextboxTypeFieldTypeViewController : UIPickerViewDelegate, UIPickerVie
         toolBar.setItems([space, button], animated: true)
         
         textField.inputAccessoryView = toolBar
-        textField.inputView = pickerView
+        textField.inputView = pickerViewInt
     }
-    
-//    @objc func action() {
-//
-//        let selectedRow = pickerView.selectedRow(inComponent: 0)
-//         print("selectedRow: \(selectedRow)")
-//        textField.text = (pickerData.count > 0) ? "\(pickerData[selectedRow])" : ""
-//
-//    }
     
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(pickerData[row]) mm Hg"
+        if component == 1 {
+         return "\(pickerDataDouble[row])"
+        } else {
+        return "\(pickerDataInt[row]) \(valueType)"
+        }
     }
-
+    
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("didSelectRow \(row)")
-        textField.text = "\(pickerData[row])"
+        if numberOfComponents == 2 {
+        if component == 0 {
+        let selectedSecondRow = pickerViewInt.selectedRow(inComponent: 1)
+        textField.text = "\(pickerDataInt[row]).\(pickerDataDouble[selectedSecondRow])"
+        } else {
+            let selectedFirstRow = pickerViewInt.selectedRow(inComponent: 0)
+            textField.text = "\(pickerDataInt[selectedFirstRow]).\(pickerDataDouble[row])"
+        }
+        } else {
+        
+            textField.text = "\(pickerDataInt[row])"
+        }
+        //  }
     }
-
+    
 }

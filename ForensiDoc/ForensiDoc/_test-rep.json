@@ -4640,7 +4640,7 @@
             "result_display_should_be_js_evaluated" : false
           },
           {
-            "title" : "Temperature",
+            "title" : "Temperature C˚",
             "required" : false,
             "for_multifield" : false,
             "display_label" : "",

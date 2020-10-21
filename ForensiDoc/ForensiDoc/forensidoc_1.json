@@ -1905,7 +1905,7 @@
                               },
                               {
                               "id": "temperature",
-                              "title": "Temperature",
+                              "title": "Temperature C˚",
                               "type": "Textbox",
                               "basetype": "Double",
                               "result_format": ".1",
