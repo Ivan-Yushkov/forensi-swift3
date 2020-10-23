@@ -146,6 +146,9 @@
                               "title": "Interpreter",
                               "type": "Radio",
                               "basetype": "String",
+                              "comment": {
+                              "required": false
+                              },
                               "values": [
                                          {
                                          "title": "Yes",

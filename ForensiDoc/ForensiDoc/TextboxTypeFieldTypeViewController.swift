@@ -148,6 +148,15 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
             } else
             if let f = MiscHelpers.CastEntryFormField(ef, String.self) {
                 self.title = f.title
+                
+                if title != nil, title!.contains("Respiratory") {
+                    print(title!)
+                    if title!.contains("Respiratory") {
+                        setupPickerData(withRangeIn: 1...40)
+                        setupPickerView(withDefaultRow: 15)                        
+                        valueType = ""
+                    }
+                }
                 if f.allowedCharacters.count > 0 {
                     self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                 }
@@ -203,7 +212,7 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
     }
     
     @objc func doneEditingAndReturn() {
-        
+        if pickerViewInt != nil {
         let selectedFirstRow = pickerViewInt.selectedRow(inComponent: 0)
         var selectedSecondRow: Int = 0
         var text: String = ""
@@ -214,7 +223,7 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
         }
         
         textField.text = text
-        
+    }
         if let doneEditingWrapper = self.doneEditing, let textField = self.textField.text, textField.count == 0 {
             if let allowEmptyData = doneEditingWrapper.EntryFormFieldDoneEditingDelegate?.allowEmptyData(), allowEmptyData == false {
                 AlertHelper.DisplayAlert(self, title: NSLocalizedString("Error", comment: "Error title dialog when entered empty data"), messages: [NSLocalizedString("You cannot leave that field empty if you want to save it.", comment: "Error message on error dialog when entered no data.")], callback: .none)

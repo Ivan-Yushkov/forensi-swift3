@@ -268,7 +268,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
     
     open func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         //TODO:This part will be called only after having added Other value and now we want to change it
-        NSLog("ddddddd")
+        NSLog("TODO:This part will be called only after having added Other value and now we want to change it")
     }
     //Cell Setup
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
