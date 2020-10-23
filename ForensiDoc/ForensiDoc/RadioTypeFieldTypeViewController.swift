@@ -10,7 +10,7 @@ import Foundation
 
 
 class RadioCheckboxTypeFieldTypeViewController: BaseViewController, EntryFormMultipleChoiceDelegate, UITextViewDelegate {
-    fileprivate var _factory: EntryFormMultipleChoiceFactory? = .none
+    fileprivate var _factory: EntryFormMultipleChoiceFactory?
     @IBOutlet var mainTbl: UITableView!
     
     override func viewDidLoad() {
@@ -35,8 +35,11 @@ class RadioCheckboxTypeFieldTypeViewController: BaseViewController, EntryFormMul
                     self.title = f.title
                     self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,
                         numberOfAttachments: f.attachments.count)
+                    
                 } else if let f = MiscHelpers.CastEntryFormField(entryField, String.self) {
                     self.title = f.title
+                    //Orientated in Time
+                    //TODO : add field
                     self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
                 }
             }
@@ -77,6 +80,7 @@ class RadioCheckboxTypeFieldTypeViewController: BaseViewController, EntryFormMul
         
     }
     
+    //Save Button action
     @objc func selectValueAndReturn() {
         if let factory = _factory {
             factory.SelectValue()
@@ -86,6 +90,7 @@ class RadioCheckboxTypeFieldTypeViewController: BaseViewController, EntryFormMul
                 self.doneEditing?.EntryFormFieldDoneEditingDelegate?.handleEditedForm(eForm, entryFormField: f)
             } else if let f = MiscHelpers.CastEntryFormField(ef, Float.self) {
                 self.doneEditing?.EntryFormFieldDoneEditingDelegate?.handleEditedForm(eForm, entryFormField: f)
+                //return for radio button selected
             } else if let f = MiscHelpers.CastEntryFormField(ef, String.self) {
                 self.doneEditing?.EntryFormFieldDoneEditingDelegate?.handleEditedForm(eForm, entryFormField: f)
             } else if let f = MiscHelpers.CastEntryFormField(ef, Int.self) {

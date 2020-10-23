@@ -1716,6 +1716,9 @@
                               "title": "Orientated in Time",
                               "type": "Radio",
                               "basetype": "String",
+                              "comment": {
+                              "required": false
+                              },
                               "values": [
                                          {
                                          "title": "Yes",
@@ -1732,6 +1735,9 @@
                               "title": "Orientated in Location",
                               "type": "Radio",
                               "basetype": "String",
+                              "comment": {
+                              "required": false
+                              },
                               "values": [
                                          {
                                          "title": "Yes",
@@ -1792,7 +1798,7 @@
                               {
                               "id": "respiratory_system",
                               "title": "Respiratory System",
-                              "type": "Radio",
+                              "type": "Textbox",
                               "basetype": "String",
                               "comment": {
                               "required": false

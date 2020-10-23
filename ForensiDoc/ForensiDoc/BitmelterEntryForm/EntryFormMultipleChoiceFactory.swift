@@ -96,7 +96,8 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
         
         let nibDisplayLabel = UINib(nibName: "DisplayLabelViewCell", bundle: bundle)
         tableView.register(nibDisplayLabel, forCellReuseIdentifier: _displayLabelCellIdentifier)
-    }
+        
+    }//end Init
     
     fileprivate func initCellStatesDictionary<T>(_ f: EntryFormBaseFieldType<T>) {
         self._isRadioType = MiscHelpers.IsRadio(f)
@@ -184,6 +185,10 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
                 self._sectionImages = 1
                 ret = 2
             }
+            
+            //if  radio b with comment textfield
+            //_sectionComments gets 1 or sectionImages + 1
+            // return 2 sections or more in case of images
             if let _ = f.fieldComments {
                 self._sectionComments = self._sectionImages > -1 ? self._sectionImages + 1 : 1
                 ret = ret + 1
@@ -213,6 +218,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
         return 44
     }
     
+    // numberOfRowsInSection
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         var ret = 0
         if section == self._sectionPleaseSelectOrTitle {
@@ -264,7 +270,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
         //TODO:This part will be called only after having added Other value and now we want to change it
         NSLog("ddddddd")
     }
-    
+    //Cell Setup
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         if indexPath.section == self._sectionPleaseSelectOrTitle {
             if isUsingDisplayLabel() && indexPath.row == 0 {
@@ -359,6 +365,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
         return UITableViewCell()
     }
     
+    //Cell Style
     func styleCell<T>(_ cell: RadioCheckboxViewCell, indexPath: IndexPath, f: EntryFormBaseFieldType<T>) {
         var s: String = ""
         cell.accessoryType = UITableViewCell.AccessoryType.none
@@ -392,7 +399,9 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
         cell.setImagesAsRadio(MiscHelpers.IsRadio(f))
     }
     
+    //didSelect
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        print("\(self) \(indexPath.row)")
         if indexPath.section == self._sectionPleaseSelectOrTitle {
             if isUsingDisplayLabel() && indexPath.row == 0 {
                 return
@@ -403,9 +412,12 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
                 selectUnselectValueForIndexPath(indexPath, f: f)
             } else if let f = MiscHelpers.CastEntryFormField(_entryField, Double.self) {
                 selectUnselectValueForIndexPath(indexPath, f: f)
+                //case yes/no radio buttons
             } else if let f = MiscHelpers.CastEntryFormField(_entryField, String.self) {
                 selectUnselectValueForIndexPath(indexPath, f: f)
             }
+            let selection = _cellsState[indexPath.row]
+            print(selection as Any)
         }
     }
     
@@ -435,6 +447,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
         }
     }
     
+    //populate cell state _cellsState
     func selectUnselectValueForIndexPath<T>(_ indexPath: IndexPath, f: EntryFormBaseFieldType<T>) {
         self.lastIndex = indexPath
         let r = isUsingDisplayLabel() ? indexPath.row - 1 : indexPath.row
