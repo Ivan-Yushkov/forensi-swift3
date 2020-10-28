@@ -152,7 +152,7 @@ open class EntryFormDetailsFactory : NSObject, UITableViewDataSource, UITableVie
             }
         }
         
-        var c: SavedEntryFormCell? = .none
+        var c: SavedEntryFormCell?
         
         //TODO:Register cell in the constructor I guess
         if let cDeque = tableView.dequeueReusableCell(withIdentifier: _textCellIdentifier) as? SavedEntryFormCell {

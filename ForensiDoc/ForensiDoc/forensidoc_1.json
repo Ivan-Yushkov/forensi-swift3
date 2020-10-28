@@ -144,7 +144,7 @@
                               {
                               "id": "interpreter",
                               "title": "Interpreter",
-                              "type": "Radio",
+                              "type": "Textbox",
                               "basetype": "String",
                               "comment": {
                               "required": false
@@ -473,7 +473,7 @@
                               {
                               "id": "first_language",
                               "title": "First Language",
-                              "type": "RadioWithOther",
+                              "type": "Textbox",
                               "basetype": "String",
                               "values": [
                                          {
