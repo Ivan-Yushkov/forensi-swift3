@@ -15,6 +15,7 @@
 		84682655252C585200955C23 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84682654252C585200955C23 /* CoreServices.framework */; };
 		846BB1BD2530799900AFA90C /* Data+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BB1BC2530799900AFA90C /* Data+Compression.swift */; };
 		84768E76252494B0000CDE89 /* SwiftyJSON4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84768E75252494B0000CDE89 /* SwiftyJSON4.swift */; };
+		84A13F04254AC8F200A038EC /* CarPlan.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A13F03254AC8F100A038EC /* CarPlan.png */; };
 		FE052C9D1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE052C9C1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift */; };
 		FE052C9F1C67CC3200EDC5F9 /* GenerateReportHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE052C9E1C67CC3200EDC5F9 /* GenerateReportHelper.swift */; };
 		FE093C961C7E789300C77AA0 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE093C951C7E789300C77AA0 /* UINavigationControllerExtension.swift */; };
@@ -237,6 +238,7 @@
 		84682654252C585200955C23 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		846BB1BC2530799900AFA90C /* Data+Compression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Compression.swift"; sourceTree = "<group>"; };
 		84768E75252494B0000CDE89 /* SwiftyJSON4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON4.swift; sourceTree = "<group>"; };
+		84A13F03254AC8F100A038EC /* CarPlan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CarPlan.png; sourceTree = "<group>"; };
 		FE052C9C1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryFormDetailsViewControllerNSURLSessionDelegate.swift; sourceTree = "<group>"; };
 		FE052C9E1C67CC3200EDC5F9 /* GenerateReportHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateReportHelper.swift; sourceTree = "<group>"; };
 		FE093C951C7E789300C77AA0 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
@@ -518,6 +520,7 @@
 				FE5DCE651FD962A9001BB51A /* FD Head Right Side.jpg */,
 				FE5DCE661FD962A9001BB51A /* FD Male  Anterior.jpg */,
 				FEFFAFD61FD1A41200ECCA07 /* CarPlan.jpg */,
+				84A13F03254AC8F100A038EC /* CarPlan.png */,
 				FE802A521C6B927C00F382C3 /* forensidoc_1.json */,
 				FEA72A201BD13D2F00608ED9 /* Bottom Feet.png */,
 				FEA72A231BD13D2F00608ED9 /* Hands Palm.png */,
@@ -1261,6 +1264,7 @@
 				FEE78BF81CB5C5B800245ABF /* DisplayLabelViewCell.xib in Resources */,
 				FE412D8F1B24F9180089B0D3 /* EntryFormDetailsView.xib in Resources */,
 				FEE615AF1A1AC30700E1F307 /* LoginView.xib in Resources */,
+				84A13F04254AC8F200A038EC /* CarPlan.png in Resources */,
 				FE5DCE6D1FD962A9001BB51A /* FD Hand Palm Left.jpg in Resources */,
 				FEBFAAE21D07867C00059C85 /* AudioViewerView.xib in Resources */,
 				FEFCF0DA1B654F5F0046EF02 /* MultilineTypeFieldTypeView.xib in Resources */,

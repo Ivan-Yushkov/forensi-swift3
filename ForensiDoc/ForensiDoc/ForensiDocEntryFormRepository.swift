@@ -84,8 +84,19 @@ internal class ForensiDocEntryFormRepository : EntryFormRepository{
     func SaveEntryForm(_ form: EntryForm) -> Bool {
         NSLog("Will save entry form to -> %@", form.SavedInFolder)
         if form.SavedInFolder.count > 0 {
+            //let df = DateFormatter()
+            //form.reportDate = df.string(from: Date())
+            //form.reportDate = "12/3/45"
             let efs = EntryFormSave(entryForm: form)
+            
+            do {
+            let newData = try NSKeyedArchiver.archivedData(withRootObject: efs, requiringSecureCoding: false)
+                
+            } catch {
+                print(error.localizedDescription)
+            }
             let data = NSKeyedArchiver.archivedData(withRootObject: efs)
+            
             let saveFileName = "\(form.uuid)-\(form.FormId).ef"
             let documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
             

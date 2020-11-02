@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,13 +16,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vg7-RW-27u">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vg7-RW-27u">
                         <rect key="frame" x="21" y="16" width="283" height="15"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6J-OW-6GP">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6J-OW-6GP">
                         <rect key="frame" x="21" y="39" width="283" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="CLf-h8-2vZ"/>
@@ -31,7 +31,7 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P38-Fg-eUJ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P38-Fg-eUJ">
                         <rect key="frame" x="21" y="65" width="162" height="16"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="NEO-UL-1Ew"/>
@@ -64,11 +64,18 @@
                             <action selector="generateRportTapped:" destination="FTI-xG-ojZ" eventType="touchUpInside" id="dJv-49-vBZ"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="U1 291020" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kg-ge-VgU">
+                        <rect key="frame" x="21" y="89" width="68" height="15.666666666666671"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" cyan="0.0" magenta="0.93999999999999995" yellow="1" black="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="atp-15-Zzr" firstAttribute="bottom" secondItem="BXy-FJ-XKy" secondAttribute="bottomMargin" id="2mq-ce-TI3"/>
                     <constraint firstItem="Vg7-RW-27u" firstAttribute="trailing" secondItem="BXy-FJ-XKy" secondAttribute="trailingMargin" id="5Xu-5R-xL0"/>
                     <constraint firstItem="Vg7-RW-27u" firstAttribute="leading" secondItem="BXy-FJ-XKy" secondAttribute="leadingMargin" constant="5" id="5eN-LS-OLL"/>
+                    <constraint firstItem="9kg-ge-VgU" firstAttribute="leading" secondItem="BXy-FJ-XKy" secondAttribute="leadingMargin" constant="5" id="6io-wx-4Eb"/>
                     <constraint firstItem="WEA-Y0-wSs" firstAttribute="baseline" secondItem="atp-15-Zzr" secondAttribute="baseline" id="KdV-0H-Qci"/>
                     <constraint firstItem="atp-15-Zzr" firstAttribute="top" secondItem="WEA-Y0-wSs" secondAttribute="top" id="Mqo-Vd-xFv"/>
                     <constraint firstItem="J6J-OW-6GP" firstAttribute="leading" secondItem="P38-Fg-eUJ" secondAttribute="leading" id="TPV-Hm-l39"/>
@@ -82,11 +89,13 @@
                     <constraint firstItem="Vg7-RW-27u" firstAttribute="leading" secondItem="J6J-OW-6GP" secondAttribute="leading" id="r61-Xn-4fx"/>
                     <constraint firstItem="P38-Fg-eUJ" firstAttribute="top" secondItem="J6J-OW-6GP" secondAttribute="bottom" constant="8" symbolic="YES" id="rlE-cL-yN0"/>
                     <constraint firstItem="Vg7-RW-27u" firstAttribute="top" secondItem="BXy-FJ-XKy" secondAttribute="topMargin" constant="5" id="ruE-Ln-2ba"/>
+                    <constraint firstItem="9kg-ge-VgU" firstAttribute="top" secondItem="P38-Fg-eUJ" secondAttribute="bottom" constant="8" symbolic="YES" id="ubq-NL-gXU"/>
                     <constraint firstItem="WEA-Y0-wSs" firstAttribute="top" secondItem="J6J-OW-6GP" secondAttribute="bottom" constant="6" id="wTf-We-tF3"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="actionReportBtn" destination="atp-15-Zzr" id="9uy-Ve-9op"/>
+                <outlet property="dateLabel" destination="9kg-ge-VgU" id="NSi-8p-csV"/>
                 <outlet property="generateReportBtn" destination="WEA-Y0-wSs" id="wc5-K8-8qU"/>
                 <outlet property="reportExtraInformation" destination="P38-Fg-eUJ" id="FUG-h5-PDt"/>
                 <outlet property="reportSubtitle" destination="J6J-OW-6GP" id="2X0-ov-YDs"/>

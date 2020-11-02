@@ -31,6 +31,7 @@ open class EntryForm: JSONConvertible {
     fileprivate var allSubtitleFields:[String:Any?] = [String:Any?]()
     fileprivate var allExtraInformationFields:[String:Any?] = [String:Any?]()
     fileprivate var _downloadReportInfo: EntryFormReportDownloadInfo
+    fileprivate var _reportDate = "default"
     
     fileprivate init() {
         SavedInFolder = ""
@@ -47,6 +48,9 @@ open class EntryForm: JSONConvertible {
             let json = try? JSON(data: dataFromString) {
             _title = json["title"].stringValue
             _formId = json["formid"].intValue
+            
+            _reportDate = json["reportDate"].stringValue
+            
             _saveUUID = json["save_uuid"].stringValue
             _reportTemplate = json["report_template"].stringValue
             SavedInFolder = json["saved_in_folder"].stringValue
@@ -306,6 +310,8 @@ open class EntryForm: JSONConvertible {
         self._saveUUID = UUID().uuidString
     }
     
+    
+    //create folder and date
     open func EnsureSavedInFolderSet() -> Bool {
         if self._encryptionPassword.count == 0 {
             self._encryptionPassword = MiscHelpers.RandomStringWithLength(36)
@@ -315,6 +321,10 @@ open class EntryForm: JSONConvertible {
             let format = DateFormatter()
             format.dateFormat="yyyy-MM-dd-HH-mm-ss"
             let folderName = format.string(from: Date())
+//MARK: Set the report date
+            let df = DateFormatter()
+            df.dateFormat = "ddMMyyyy"
+            reportDate = "U1 " + df.string(from: Date())
             
             let fileManager = FileManager.default
 //MARK: fix2020
@@ -345,6 +355,17 @@ open class EntryForm: JSONConvertible {
     open var Title: String {
         get {
             return _title
+        }
+    }
+    
+    open var reportDate: String {
+        get {
+//            let f = DateFormatter()
+//            f.dateStyle = .short
+            return _reportDate//f.string(from: _reportDate)
+        }
+        set {
+            _reportDate = newValue
         }
     }
     
@@ -613,6 +634,7 @@ open class EntryForm: JSONConvertible {
         ret["report_template"] = self._reportTemplate as AnyObject
         ret["saved_as_title"] = self._savedAsTitle as AnyObject
         ret["saved_in_folder"] = self.SavedInFolder as AnyObject
+        ret["reportDate"] = self._reportDate as AnyObject
         ret["save_display_title_pattern"] = self._saveDisplayTitlePattern as AnyObject
         ret["save_display_subtitle_pattern"] = self._save_display_subtitle_pattern as AnyObject
         ret["save_display_extra_details_pattern"] = self._save_display_extra_details_pattern as AnyObject

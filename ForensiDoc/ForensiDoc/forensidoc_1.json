@@ -1668,6 +1668,7 @@
                                                    "title": "Head Multi",
                                                    "img": "Head Multi.png"
                                                    }
+                                        
                                                    ],
                               "drawing_settings": {
                               "color_settings": true,
@@ -2037,6 +2038,10 @@
                                                    {
                                                    "title": "Head Multi",
                                                    "img": "Head Multi.png"
+                                                   },
+                                                   {
+                                                   "title": "Car Plan",
+                                                   "img": "CarPlan.png"
                                                    }
                                                    ],
                               "drawing_settings": {

@@ -16,7 +16,7 @@ open class EntryFormSave: NSObject, NSSecureCoding {
     
     open var ef: EntryForm? {
         get {
-            return self._ef;
+            return self._ef
         }
     }
     

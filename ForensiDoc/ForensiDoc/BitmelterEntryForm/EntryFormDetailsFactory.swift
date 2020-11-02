@@ -145,26 +145,27 @@ open class EntryFormDetailsFactory : NSObject, UITableViewDataSource, UITableVie
     }
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let ef = _entryForms[indexPath.row]
+        let entryForm = _entryForms[indexPath.row]
+        
         if let d = _delegate {
-            if let c = d.getTableView(ef) {
-                return c
+            if let cell = d.getTableView(entryForm) {
+                return cell
             }
         }
         
-        var c: SavedEntryFormCell?
+        var cell: SavedEntryFormCell?
         
         //TODO:Register cell in the constructor I guess
         if let cDeque = tableView.dequeueReusableCell(withIdentifier: _textCellIdentifier) as? SavedEntryFormCell {
-            c = cDeque
+            cell = cDeque
         } else {
-            c = getOwnCell()
+            cell = getOwnCell()
         }
         
-        c?.contentView.isUserInteractionEnabled = true
+        cell?.contentView.isUserInteractionEnabled = true
         
-        if let ret = c {
-            c?.setSavedEntryFormCell(self, entryForm: ef)
+        if let ret = cell {
+            cell?.setSavedEntryFormCell(self, entryForm: entryForm)
             //ret.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             return ret
         }

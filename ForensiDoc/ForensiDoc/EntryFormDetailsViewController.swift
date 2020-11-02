@@ -6,11 +6,11 @@ import Foundation
 import MessageUI
 
 class EntryFormDetailsViewController: BaseViewController, EntryFormDetailFactoryProtocol, MFMailComposeViewControllerDelegate {
-    var _entryFormFactory: EntryFormDetailsFactory? = .none
-    fileprivate var _entryForm: EntryForm? = .none
+    var _entryFormFactory: EntryFormDetailsFactory?
+    fileprivate var _entryForm: EntryForm?
     fileprivate var _isMainView: Bool = false
     fileprivate var session: Foundation.URLSession?
-    fileprivate var _alert: AnyObject? = .none
+    fileprivate var _alert: AnyObject?
     
     @IBOutlet var mainTbl: UITableView!
     

@@ -25,6 +25,7 @@ open class SavedEntryFormCell: UITableViewCell {
     @IBOutlet var generateReportBtn: UIButton!
     @IBOutlet var actionReportBtn: UIButton!
     
+    @IBOutlet weak var dateLabel: UILabel!
     
     @IBAction func generateRportTapped(_ sender: AnyObject) {
         if let delegate = delegate, let entryForm = entryForm {
@@ -40,6 +41,7 @@ open class SavedEntryFormCell: UITableViewCell {
     
     open func setSavedEntryFormCell(_ delegate: SavedEntryFormCellShouldGenerateReportDelegate, entryForm: EntryForm) {
         self.delegate = delegate
+        self.dateLabel.text = entryForm.reportDate
         self.entryForm = entryForm
         self.reportTitle.text =  entryForm.SavedAsTitle
         self.reportSubtitle.text = entryForm.SavedAsSubtitle
