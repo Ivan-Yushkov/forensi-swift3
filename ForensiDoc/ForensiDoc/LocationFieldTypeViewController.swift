@@ -3,6 +3,7 @@
 //  ForensiDoc
 
 import Foundation
+import what3words
 import CoreLocation
 
 class LocationFieldTypeViewController: BaseViewController, CLLocationManagerDelegate {
@@ -38,6 +39,9 @@ class LocationFieldTypeViewController: BaseViewController, CLLocationManagerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        W3wGeocoder.setup(with: "N9X72HJK")
+        
         let doneButton: UIBarButtonItem? = ViewsHelpers.GetDoneButton(#selector(LocationFieldTypeViewController.endEditing(_:)), target: self)
         
         if let ef = _entryField {
@@ -171,10 +175,20 @@ class LocationFieldTypeViewController: BaseViewController, CLLocationManagerDele
         if let myAddressDictionary: [AnyHashable: Any] = placemark.addressDictionary, let myAddressStrings = myAddressDictionary["FormattedAddressLines"]
         {
             let displayAddress = (myAddressStrings as AnyObject).componentsJoined(by: "\n")
+            
             let lon = location.coordinate.longitude
             let lat = location.coordinate.latitude
-            self.textView.text = displayAddress + "\n" + "Lon: \(lon)\n" + "Lat: \(lat)\n"
-            
+            let output = displayAddress + "\n" + "Lon: \(lon)\n" + "Lat: \(lat)\n"
+            self.textView.text = output
+            W3wGeocoder.shared.convertTo3wa(coordinates: location.coordinate) { [weak self] (place, error) in
+                guard let place = place else { return }
+                print(place.words)
+                
+                DispatchQueue.main.async {
+                    self?.textView.text = output + "\(place.words)\n" + "\(place.map)"
+                }
+                
+            }
         } else {
             AlertHelper.DisplayAlert(self, title: NSLocalizedString("Error", comment: "Error dialog title"), messages: [NSLocalizedString("Unable to get get current address", comment: "Error message displayed when trying to use reverse geocoder to get address and could not format it")], callback: .none)
         }
