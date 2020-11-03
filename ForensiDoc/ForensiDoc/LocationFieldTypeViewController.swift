@@ -58,7 +58,7 @@ class LocationFieldTypeViewController: BaseViewController, CLLocationManagerDele
         
         // Would be nice to add this from fucking interface builder
         ViewsHelpers.FormatTextView(self.textView, makeFirstResponder: false)
-        self.automaticallyAdjustsScrollViewInsets = false
+        //self.automaticallyAdjustsScrollViewInsets = false
         if let ef = self._entryField {
             if let f = MiscHelpers.CastEntryFormField(ef, String.self) {
                 let displayAddress = f.displaySelectedValue().replacingOccurrences(of: ",", with: "\n")
@@ -151,7 +151,7 @@ class LocationFieldTypeViewController: BaseViewController, CLLocationManagerDele
                 }
                 
                 if let address = placemarks?.first, address.addressDictionary != nil {
-                    self.displayLocationInfo(address)
+                    self.displayLocationInfo(address, location)
                 } else {
                     
                 }
@@ -165,13 +165,16 @@ class LocationFieldTypeViewController: BaseViewController, CLLocationManagerDele
         AlertHelper.DisplayAlert(self, title: NSLocalizedString("Error", comment: "Error dialog title"), messages: [error.localizedDescription], callback: .none)
     }
     
-    func displayLocationInfo(_ placemark: CLPlacemark) {
+    func displayLocationInfo(_ placemark: CLPlacemark, _ location: CLLocation) {
         CloseCurrentProgress()
         locationManager.stopUpdatingLocation()
         if let myAddressDictionary: [AnyHashable: Any] = placemark.addressDictionary, let myAddressStrings = myAddressDictionary["FormattedAddressLines"]
         {
             let displayAddress = (myAddressStrings as AnyObject).componentsJoined(by: "\n")
-            self.textView.text = displayAddress
+            let lon = location.coordinate.longitude
+            let lat = location.coordinate.latitude
+            self.textView.text = displayAddress + "\n" + "Lon: \(lon)\n" + "Lat: \(lat)\n"
+            
         } else {
             AlertHelper.DisplayAlert(self, title: NSLocalizedString("Error", comment: "Error dialog title"), messages: [NSLocalizedString("Unable to get get current address", comment: "Error message displayed when trying to use reverse geocoder to get address and could not format it")], callback: .none)
         }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		356E632A88FB348CDE3E6C63 /* Pods_ForensiDoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BCB31754DEF2A2F2EC7667 /* Pods_ForensiDoc.framework */; };
 		7B1E55BA1C8461D300A07946 /* RNCryptorOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E55B91C8461D300A07946 /* RNCryptorOLD.swift */; };
 		7B23E8861C99994700CECB08 /* PasscodeView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B23E8851C99994700CECB08 /* PasscodeView_iPad.xib */; };
 		8424E409252DB2FA00A660F8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424E408252DB2FA00A660F8 /* SwiftyJSON.swift */; };
@@ -16,6 +17,7 @@
 		846BB1BD2530799900AFA90C /* Data+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BB1BC2530799900AFA90C /* Data+Compression.swift */; };
 		84768E76252494B0000CDE89 /* SwiftyJSON4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84768E75252494B0000CDE89 /* SwiftyJSON4.swift */; };
 		84A13F04254AC8F200A038EC /* CarPlan.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A13F03254AC8F100A038EC /* CarPlan.png */; };
+		D23782E7D1C1B3DAA9206935 /* Pods_ForensiDocTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CAEDB185895DDB24A0EF898 /* Pods_ForensiDocTests.framework */; };
 		FE052C9D1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE052C9C1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift */; };
 		FE052C9F1C67CC3200EDC5F9 /* GenerateReportHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE052C9E1C67CC3200EDC5F9 /* GenerateReportHelper.swift */; };
 		FE093C961C7E789300C77AA0 /* UINavigationControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE093C951C7E789300C77AA0 /* UINavigationControllerExtension.swift */; };
@@ -86,7 +88,7 @@
 		FE74E5CE1C6ABD3F00310D37 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE74E5CD1C6ABD3F00310D37 /* MessageUI.framework */; };
 		FE7B9E1B1C8CB96800BCF741 /* EntryFormFieldComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7B9E1A1C8CB96800BCF741 /* EntryFormFieldComments.swift */; };
 		FE802A531C6B927C00F382C3 /* forensidoc_1.json in Resources */ = {isa = PBXBuildFile; fileRef = FE802A521C6B927C00F382C3 /* forensidoc_1.json */; };
-		FE8035F31C836CCB0060B153 /* (null) in Resources */ = {isa = PBXBuildFile; };
+		FE8035F31C836CCB0060B153 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
 		FE8036181C836EFB0060B153 /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE8035F61C836EFB0060B153 /* 1Password.xcassets */; };
 		FE8036191C836EFB0060B153 /* AccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8035F71C836EFB0060B153 /* AccountDetailsViewController.swift */; };
 		FE80361A1C836EFB0060B153 /* ActivateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8035F81C836EFB0060B153 /* ActivateAccountViewController.swift */; };
@@ -229,6 +231,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26BCB31754DEF2A2F2EC7667 /* Pods_ForensiDoc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForensiDoc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B30DC672BB7CDA3ECBBA028 /* Pods-ForensiDoc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForensiDoc.debug.xcconfig"; path = "Target Support Files/Pods-ForensiDoc/Pods-ForensiDoc.debug.xcconfig"; sourceTree = "<group>"; };
+		4CAEDB185895DDB24A0EF898 /* Pods_ForensiDocTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ForensiDocTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1E55B81C8461D300A07946 /* RNCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptor.h; sourceTree = "<group>"; };
 		7B1E55B91C8461D300A07946 /* RNCryptorOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCryptorOLD.swift; sourceTree = "<group>"; };
 		7B23E8851C99994700CECB08 /* PasscodeView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasscodeView_iPad.xib; sourceTree = "<group>"; };
@@ -239,6 +244,9 @@
 		846BB1BC2530799900AFA90C /* Data+Compression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Compression.swift"; sourceTree = "<group>"; };
 		84768E75252494B0000CDE89 /* SwiftyJSON4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON4.swift; sourceTree = "<group>"; };
 		84A13F03254AC8F100A038EC /* CarPlan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CarPlan.png; sourceTree = "<group>"; };
+		BBED0AFB2DB583F550F2B74B /* Pods-ForensiDoc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForensiDoc.release.xcconfig"; path = "Target Support Files/Pods-ForensiDoc/Pods-ForensiDoc.release.xcconfig"; sourceTree = "<group>"; };
+		D8D728D9F6D152852A219BE3 /* Pods-ForensiDocTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForensiDocTests.release.xcconfig"; path = "Target Support Files/Pods-ForensiDocTests/Pods-ForensiDocTests.release.xcconfig"; sourceTree = "<group>"; };
+		E3B38C8AB6371C826CFEC50E /* Pods-ForensiDocTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForensiDocTests.debug.xcconfig"; path = "Target Support Files/Pods-ForensiDocTests/Pods-ForensiDocTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE052C9C1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryFormDetailsViewControllerNSURLSessionDelegate.swift; sourceTree = "<group>"; };
 		FE052C9E1C67CC3200EDC5F9 /* GenerateReportHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenerateReportHelper.swift; sourceTree = "<group>"; };
 		FE093C951C7E789300C77AA0 /* UINavigationControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationControllerExtension.swift; sourceTree = "<group>"; };
@@ -467,6 +475,7 @@
 				FE7156CE1A2E5E3A0021BCE4 /* MobileCoreServices.framework in Frameworks */,
 				FE7156D01A2E5E440021BCE4 /* WebKit.framework in Frameworks */,
 				FE36C8EB1A2D2AA1009B89C6 /* LocalAuthentication.framework in Frameworks */,
+				356E632A88FB348CDE3E6C63 /* Pods_ForensiDoc.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,16 +490,31 @@
 				FEE78C141CB72A2700245ABF /* CoreFoundation.framework in Frameworks */,
 				FEE78C131CB72A1100245ABF /* AVFoundation.framework in Frameworks */,
 				FEE78C121CB72A0200245ABF /* JavaScriptCore.framework in Frameworks */,
+				D23782E7D1C1B3DAA9206935 /* Pods_ForensiDocTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		686F111BD72D4E1EFEFA4E25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B30DC672BB7CDA3ECBBA028 /* Pods-ForensiDoc.debug.xcconfig */,
+				BBED0AFB2DB583F550F2B74B /* Pods-ForensiDoc.release.xcconfig */,
+				E3B38C8AB6371C826CFEC50E /* Pods-ForensiDocTests.debug.xcconfig */,
+				D8D728D9F6D152852A219BE3 /* Pods-ForensiDocTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		84682653252C585200955C23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				84682654252C585200955C23 /* CoreServices.framework */,
+				26BCB31754DEF2A2F2EC7667 /* Pods_ForensiDoc.framework */,
+				4CAEDB185895DDB24A0EF898 /* Pods_ForensiDocTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -854,6 +878,7 @@
 				FE8F29F21A09754500B3F2F9 /* ForensiDocTests */,
 				FE8F29DB1A09754500B3F2F9 /* Products */,
 				84682653252C585200955C23 /* Frameworks */,
+				686F111BD72D4E1EFEFA4E25 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1130,10 +1155,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE8F29F91A09754500B3F2F9 /* Build configuration list for PBXNativeTarget "ForensiDoc" */;
 			buildPhases = (
+				6D63AB82514BAC36573A6015 /* [CP] Check Pods Manifest.lock */,
 				FE8F29D61A09754500B3F2F9 /* Sources */,
 				FE8F29D71A09754500B3F2F9 /* Frameworks */,
 				FE8F29D81A09754500B3F2F9 /* Resources */,
 				FEFC10851C6CBFEF0096DDE3 /* Increment Build Number */,
+				BD90FC3919A9A64205212C95 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1148,6 +1175,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE8F29FC1A09754500B3F2F9 /* Build configuration list for PBXNativeTarget "ForensiDocTests" */;
 			buildPhases = (
+				FAF312FF648B9836053C2C91 /* [CP] Check Pods Manifest.lock */,
 				FE8F29EB1A09754500B3F2F9 /* Sources */,
 				FE8F29EC1A09754500B3F2F9 /* Frameworks */,
 				FE8F29ED1A09754500B3F2F9 /* Resources */,
@@ -1278,7 +1306,7 @@
 				FEA72A2B1BD13D2F00608ED9 /* Head Multi.png in Resources */,
 				FE36C8E71A2D29E8009B89C6 /* CreatePasscodeView.xib in Resources */,
 				FE8036811C8371780060B153 /* Media.xcassets in Resources */,
-				FE8035F31C836CCB0060B153 /* (null) in Resources */,
+				FE8035F31C836CCB0060B153 /* BuildFile in Resources */,
 				FE8036181C836EFB0060B153 /* 1Password.xcassets in Resources */,
 				FE4A8E631C4C5DE6009559AD /* CreatePasscodeView_iPad.xib in Resources */,
 				FE6EC0331B951802003D26F7 /* DrawableEntryFormView.xib in Resources */,
@@ -1302,6 +1330,68 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6D63AB82514BAC36573A6015 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ForensiDoc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD90FC3919A9A64205212C95 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ForensiDoc/Pods-ForensiDoc-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/what3words/what3words.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/what3words.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ForensiDoc/Pods-ForensiDoc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAF312FF648B9836053C2C91 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ForensiDocTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FEFC10851C6CBFEF0096DDE3 /* Increment Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1586,6 +1676,7 @@
 		};
 		FE8F29FA1A09754500B3F2F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B30DC672BB7CDA3ECBBA028 /* Pods-ForensiDoc.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1604,7 +1695,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ForensiDoc/ForensiDoc-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "";
 			};
@@ -1612,6 +1703,7 @@
 		};
 		FE8F29FB1A09754500B3F2F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBED0AFB2DB583F550F2B74B /* Pods-ForensiDoc.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1628,7 +1720,7 @@
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ForensiDoc/ForensiDoc-Bridging-Header.h";
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "";
 			};
@@ -1636,6 +1728,7 @@
 		};
 		FE8F29FD1A09754500B3F2F9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3B38C8AB6371C826CFEC50E /* Pods-ForensiDocTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -1655,6 +1748,7 @@
 		};
 		FE8F29FE1A09754500B3F2F9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8D728D9F6D152852A219BE3 /* Pods-ForensiDocTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";

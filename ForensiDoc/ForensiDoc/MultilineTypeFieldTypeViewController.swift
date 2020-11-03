@@ -69,7 +69,8 @@ class MultilineTypeFieldTypeViewController: BaseViewController, UITextViewDelega
             
             addDoneButton(addNextKey)
             
-            self.automaticallyAdjustsScrollViewInsets = false
+            //self.automaticallyAdjustsScrollViewInsets = false
+            
             ViewsHelpers.FormatTextView(self.textView, makeFirstResponder: true)
         }
     }
