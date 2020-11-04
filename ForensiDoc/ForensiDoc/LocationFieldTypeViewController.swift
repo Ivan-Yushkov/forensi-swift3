@@ -3,6 +3,7 @@
 //  ForensiDoc
 
 import Foundation
+import what3words
 import CoreLocation
 
 class LocationFieldTypeViewController: BaseViewController, CLLocationManagerDelegate {
@@ -38,6 +39,9 @@ class LocationFieldTypeViewController: BaseViewController, CLLocationManagerDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        W3wGeocoder.setup(with: "N9X72HJK")
+        
         let doneButton: UIBarButtonItem? = ViewsHelpers.GetDoneButton(#selector(LocationFieldTypeViewController.endEditing(_:)), target: self)
         
         if let ef = _entryField {
@@ -58,7 +62,7 @@ class LocationFieldTypeViewController: BaseViewController, CLLocationManagerDele
         
         // Would be nice to add this from fucking interface builder
         ViewsHelpers.FormatTextView(self.textView, makeFirstResponder: false)
-        self.automaticallyAdjustsScrollViewInsets = false
+        //self.automaticallyAdjustsScrollViewInsets = false
         if let ef = self._entryField {
             if let f = MiscHelpers.CastEntryFormField(ef, String.self) {
                 let displayAddress = f.displaySelectedValue().replacingOccurrences(of: ",", with: "\n")
@@ -150,7 +154,7 @@ class LocationFieldTypeViewController: BaseViewController, CLLocationManagerDele
                     return
                 }
                 
-                if let address = placemarks?.first, address.addressDictionary != nil {
+                if let address = placemarks?.first {
                     self.displayLocationInfo(address)
                 } else {
                     
@@ -166,12 +170,30 @@ class LocationFieldTypeViewController: BaseViewController, CLLocationManagerDele
     }
     
     func displayLocationInfo(_ placemark: CLPlacemark) {
+        guard let location = placemark.location else { return }
         CloseCurrentProgress()
         locationManager.stopUpdatingLocation()
-        if let myAddressDictionary: [AnyHashable: Any] = placemark.addressDictionary, let myAddressStrings = myAddressDictionary["FormattedAddressLines"]
+       if let area = placemark.administrativeArea,
+        let country = placemark.country,
+        let city = placemark.locality,
+        let name = placemark.name,
+        let postCode = placemark.postalCode,
+        let street = placemark.thoroughfare
         {
-            let displayAddress = (myAddressStrings as AnyObject).componentsJoined(by: "\n")
-            self.textView.text = displayAddress
+            let displayAddress = area + "\n" + country + "\n" + city + "\n" + name + "\n" + street + "\n" + postCode + "\n"
+            let lon = location.coordinate.longitude
+            let lat = location.coordinate.latitude
+            let output = displayAddress + "\n" + "Lon: \(lon)\n" + "Lat: \(lat)\n"
+            self.textView.text = output
+            W3wGeocoder.shared.convertTo3wa(coordinates: location.coordinate) { [weak self] (place, error) in
+                guard let place = place else { return }
+                print(place.words)
+                
+                DispatchQueue.main.async {
+                    self?.textView.text = output + "\(place.words)\n" + "\(place.map)"
+                }
+                
+            }
         } else {
             AlertHelper.DisplayAlert(self, title: NSLocalizedString("Error", comment: "Error dialog title"), messages: [NSLocalizedString("Unable to get get current address", comment: "Error message displayed when trying to use reverse geocoder to get address and could not format it")], callback: .none)
         }
