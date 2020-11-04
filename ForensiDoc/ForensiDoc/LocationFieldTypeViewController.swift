@@ -154,8 +154,8 @@ class LocationFieldTypeViewController: BaseViewController, CLLocationManagerDele
                     return
                 }
                 
-                if let address = placemarks?.first, address.addressDictionary != nil {
-                    self.displayLocationInfo(address, location)
+                if let address = placemarks?.first {
+                    self.displayLocationInfo(address)
                 } else {
                     
                 }
@@ -169,13 +169,18 @@ class LocationFieldTypeViewController: BaseViewController, CLLocationManagerDele
         AlertHelper.DisplayAlert(self, title: NSLocalizedString("Error", comment: "Error dialog title"), messages: [error.localizedDescription], callback: .none)
     }
     
-    func displayLocationInfo(_ placemark: CLPlacemark, _ location: CLLocation) {
+    func displayLocationInfo(_ placemark: CLPlacemark) {
+        guard let location = placemark.location else { return }
         CloseCurrentProgress()
         locationManager.stopUpdatingLocation()
-        if let myAddressDictionary: [AnyHashable: Any] = placemark.addressDictionary, let myAddressStrings = myAddressDictionary["FormattedAddressLines"]
+       if let area = placemark.administrativeArea,
+        let country = placemark.country,
+        let city = placemark.locality,
+        let name = placemark.name,
+        let postCode = placemark.postalCode,
+        let street = placemark.thoroughfare
         {
-            let displayAddress = (myAddressStrings as AnyObject).componentsJoined(by: "\n")
-            
+            let displayAddress = area + "\n" + country + "\n" + city + "\n" + name + "\n" + street + "\n" + postCode + "\n"
             let lon = location.coordinate.longitude
             let lat = location.coordinate.latitude
             let output = displayAddress + "\n" + "Lon: \(lon)\n" + "Lat: \(lat)\n"
