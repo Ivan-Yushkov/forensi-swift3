@@ -88,7 +88,7 @@
 		FE74E5CE1C6ABD3F00310D37 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE74E5CD1C6ABD3F00310D37 /* MessageUI.framework */; };
 		FE7B9E1B1C8CB96800BCF741 /* EntryFormFieldComments.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7B9E1A1C8CB96800BCF741 /* EntryFormFieldComments.swift */; };
 		FE802A531C6B927C00F382C3 /* forensidoc_1.json in Resources */ = {isa = PBXBuildFile; fileRef = FE802A521C6B927C00F382C3 /* forensidoc_1.json */; };
-		FE8035F31C836CCB0060B153 /* BuildFile in Resources */ = {isa = PBXBuildFile; };
+		FE8035F31C836CCB0060B153 /* (null) in Resources */ = {isa = PBXBuildFile; };
 		FE8036181C836EFB0060B153 /* 1Password.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE8035F61C836EFB0060B153 /* 1Password.xcassets */; };
 		FE8036191C836EFB0060B153 /* AccountDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8035F71C836EFB0060B153 /* AccountDetailsViewController.swift */; };
 		FE80361A1C836EFB0060B153 /* ActivateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8035F81C836EFB0060B153 /* ActivateAccountViewController.swift */; };
@@ -505,7 +505,6 @@
 				E3B38C8AB6371C826CFEC50E /* Pods-ForensiDocTests.debug.xcconfig */,
 				D8D728D9F6D152852A219BE3 /* Pods-ForensiDocTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -1203,7 +1202,7 @@
 				TargetAttributes = {
 					FE8F29D91A09754500B3F2F9 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = YFE4KS8YKE;
+						DevelopmentTeam = WZ6RX2T84D;
 						LastSwiftMigration = 1160;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1306,7 +1305,7 @@
 				FEA72A2B1BD13D2F00608ED9 /* Head Multi.png in Resources */,
 				FE36C8E71A2D29E8009B89C6 /* CreatePasscodeView.xib in Resources */,
 				FE8036811C8371780060B153 /* Media.xcassets in Resources */,
-				FE8035F31C836CCB0060B153 /* BuildFile in Resources */,
+				FE8035F31C836CCB0060B153 /* (null) in Resources */,
 				FE8036181C836EFB0060B153 /* 1Password.xcassets in Resources */,
 				FE4A8E631C4C5DE6009559AD /* CreatePasscodeView_iPad.xib in Resources */,
 				FE6EC0331B951802003D26F7 /* DrawableEntryFormView.xib in Resources */,
@@ -1681,10 +1680,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_MODULES_AUTOLINK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "";
-				DEVELOPMENT_TEAM = YFE4KS8YKE;
+				DEVELOPMENT_TEAM = WZ6RX2T84D;
 				INFOPLIST_FILE = ForensiDoc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1708,10 +1708,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_MODULES_AUTOLINK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "";
-				DEVELOPMENT_TEAM = YFE4KS8YKE;
+				DEVELOPMENT_TEAM = WZ6RX2T84D;
 				INFOPLIST_FILE = ForensiDoc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
