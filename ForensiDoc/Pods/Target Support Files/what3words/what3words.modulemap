@@ -1,0 +1,6 @@
+framework module what3words {
+  umbrella header "what3words-umbrella.h"
+
+  export *
+  module * { export * }
+}

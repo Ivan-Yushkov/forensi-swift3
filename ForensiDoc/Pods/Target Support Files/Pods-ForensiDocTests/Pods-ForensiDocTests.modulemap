@@ -1,0 +1,6 @@
+framework module Pods_ForensiDocTests {
+  umbrella header "Pods-ForensiDocTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

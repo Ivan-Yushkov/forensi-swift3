@@ -1,0 +1,6 @@
+framework module Pods_ForensiDoc {
+  umbrella header "Pods-ForensiDoc-umbrella.h"
+
+  export *
+  module * { export * }
+}
