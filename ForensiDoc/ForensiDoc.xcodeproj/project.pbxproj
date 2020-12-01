@@ -16,7 +16,6 @@
 		84682655252C585200955C23 /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84682654252C585200955C23 /* CoreServices.framework */; };
 		846BB1BD2530799900AFA90C /* Data+Compression.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846BB1BC2530799900AFA90C /* Data+Compression.swift */; };
 		84768E76252494B0000CDE89 /* SwiftyJSON4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84768E75252494B0000CDE89 /* SwiftyJSON4.swift */; };
-		84A13F04254AC8F200A038EC /* CarPlan.png in Resources */ = {isa = PBXBuildFile; fileRef = 84A13F03254AC8F100A038EC /* CarPlan.png */; };
 		D23782E7D1C1B3DAA9206935 /* Pods_ForensiDocTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CAEDB185895DDB24A0EF898 /* Pods_ForensiDocTests.framework */; };
 		FE052C9D1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE052C9C1C67C3EC00EDC5F9 /* EntryFormDetailsViewControllerNSURLSessionDelegate.swift */; };
 		FE052C9F1C67CC3200EDC5F9 /* GenerateReportHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE052C9E1C67CC3200EDC5F9 /* GenerateReportHelper.swift */; };
@@ -243,7 +242,6 @@
 		84682654252C585200955C23 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		846BB1BC2530799900AFA90C /* Data+Compression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Compression.swift"; sourceTree = "<group>"; };
 		84768E75252494B0000CDE89 /* SwiftyJSON4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON4.swift; sourceTree = "<group>"; };
-		84A13F03254AC8F100A038EC /* CarPlan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CarPlan.png; sourceTree = "<group>"; };
 		BBED0AFB2DB583F550F2B74B /* Pods-ForensiDoc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForensiDoc.release.xcconfig"; path = "Target Support Files/Pods-ForensiDoc/Pods-ForensiDoc.release.xcconfig"; sourceTree = "<group>"; };
 		D8D728D9F6D152852A219BE3 /* Pods-ForensiDocTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForensiDocTests.release.xcconfig"; path = "Target Support Files/Pods-ForensiDocTests/Pods-ForensiDocTests.release.xcconfig"; sourceTree = "<group>"; };
 		E3B38C8AB6371C826CFEC50E /* Pods-ForensiDocTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ForensiDocTests.debug.xcconfig"; path = "Target Support Files/Pods-ForensiDocTests/Pods-ForensiDocTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -543,7 +541,6 @@
 				FE5DCE651FD962A9001BB51A /* FD Head Right Side.jpg */,
 				FE5DCE661FD962A9001BB51A /* FD Male  Anterior.jpg */,
 				FEFFAFD61FD1A41200ECCA07 /* CarPlan.jpg */,
-				84A13F03254AC8F100A038EC /* CarPlan.png */,
 				FE802A521C6B927C00F382C3 /* forensidoc_1.json */,
 				FEA72A201BD13D2F00608ED9 /* Bottom Feet.png */,
 				FEA72A231BD13D2F00608ED9 /* Hands Palm.png */,
@@ -1204,7 +1201,7 @@
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = WZ6RX2T84D;
 						LastSwiftMigration = 1160;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 0;
@@ -1291,7 +1288,6 @@
 				FEE78BF81CB5C5B800245ABF /* DisplayLabelViewCell.xib in Resources */,
 				FE412D8F1B24F9180089B0D3 /* EntryFormDetailsView.xib in Resources */,
 				FEE615AF1A1AC30700E1F307 /* LoginView.xib in Resources */,
-				84A13F04254AC8F200A038EC /* CarPlan.png in Resources */,
 				FE5DCE6D1FD962A9001BB51A /* FD Hand Palm Left.jpg in Resources */,
 				FEBFAAE21D07867C00059C85 /* AudioViewerView.xib in Resources */,
 				FEFCF0DA1B654F5F0046EF02 /* MultilineTypeFieldTypeView.xib in Resources */,
@@ -1680,19 +1676,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_MODULES_AUTOLINK = NO;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "";
 				DEVELOPMENT_TEAM = WZ6RX2T84D;
 				INFOPLIST_FILE = ForensiDoc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jasonpaynejames.forensidoc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evgenyezub.forensidoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "ForensiDoc Dev Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "ForensiDoc/ForensiDoc-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1708,18 +1704,18 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_MODULES_AUTOLINK = NO;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "";
 				DEVELOPMENT_TEAM = WZ6RX2T84D;
 				INFOPLIST_FILE = ForensiDoc/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jasonpaynejames.forensidoc;
+				PRODUCT_BUNDLE_IDENTIFIER = com.evgenyezub.forensidoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "ForensiDoc Dev Profile";
 				SWIFT_OBJC_BRIDGING_HEADER = "ForensiDoc/ForensiDoc-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
