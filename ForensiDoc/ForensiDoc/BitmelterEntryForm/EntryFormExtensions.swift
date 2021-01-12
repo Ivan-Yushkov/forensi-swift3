@@ -10,6 +10,13 @@ extension JSON {
         let fieldType = self["type"].stringValue
         if !fieldType.isEmpty && fieldType.caseInsensitiveCompare("MultipleEntry") == .orderedSame {
             let multipleEntryField = EntryFormMultipleEntry(jsonSpec: self, eventManager: eventManager, entryForm: entryForm, checkHiddenGroups: checkHiddenGroups)
+            if checkHiddenGroups {
+                if !EntryFormSettingsHelper.IsGroupHidden(entryForm.FormId, groupName: multipleEntryField.Id) {
+                    return multipleEntryField
+                } else {
+                    return .none
+                }
+            }
             return multipleEntryField
         } else if !groupField.isEmpty {
             let entryFormGroup = EntryFormGroup(jsonSpec: self, eventManager: eventManager, entryForm: entryForm, checkHiddenGroups: checkHiddenGroups)

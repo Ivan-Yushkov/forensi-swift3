@@ -4,13 +4,13 @@
 
 import Foundation
 
-open class EntryFormGroup: JSONConvertible, Validable {
+open class EntryFormGroup: EntryBaseFormGroup, JSONConvertible, Validable {
+    
     fileprivate var _id: String = ""
     fileprivate var _fields: [Any] = []
     fileprivate var _title: String = ""
     
-    
-    fileprivate init() {
+    public override init() {
     }
 
     public init(jsonSpec: JSON, eventManager: EventManager, entryForm: EntryForm, checkHiddenGroups: Bool) {
@@ -20,24 +20,6 @@ open class EntryFormGroup: JSONConvertible, Validable {
             if let formField = field.ExtractFormField(eventManager, entryForm: entryForm, checkHiddenGroups: checkHiddenGroups) {
                 _fields.append(formField)
             }
-        }
-    }
-    
-    open var title: String {
-        get {
-            return _title
-        }
-    }
-    
-    open var fields: [Any] {
-        get {
-            return _fields
-        }
-    }
-    
-    open var Id: String {
-        get {
-            return _id
         }
     }
     
@@ -118,6 +100,24 @@ open class EntryFormGroup: JSONConvertible, Validable {
             }
         }
         return fields
+    }
+    
+    open override var title: String {
+        get {
+            return _title
+        }
+    }
+    
+    open override var fields: [Any] {
+        get {
+            return _fields
+        }
+    }
+    
+    open override var Id: String {
+        get {
+            return _id
+        }
     }
 
 }

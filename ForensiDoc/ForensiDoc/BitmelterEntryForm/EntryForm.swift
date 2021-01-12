@@ -26,7 +26,7 @@ open class EntryForm: JSONConvertible {
     fileprivate let _eventsManager = EventManager()
     fileprivate var _attachmentSpec = EntryFormAttachmentSpec()
     fileprivate var _attachments = [EntryFormAttachment]()
-    fileprivate var _firstLevelEntryFormGroups = [EntryFormGroup]()
+    fileprivate var _firstLevelEntryFormGroups = [EntryBaseFormGroup]()
     fileprivate var allTitleFields:[String:Any?] = [String:Any?]()
     fileprivate var allSubtitleFields:[String:Any?] = [String:Any?]()
     fileprivate var allExtraInformationFields:[String:Any?] = [String:Any?]()
@@ -122,6 +122,12 @@ open class EntryForm: JSONConvertible {
                             let entryFormGroup = formField as! EntryFormGroup
                             if EntryFormSettingsHelper.IsGroupHidden(_formId, groupName: entryFormGroup.Id) {
                                 _hiddenGroups.append(entryFormGroup.Id)
+                            }
+                        }
+                        if formField is EntryFormMultipleEntry {
+                            let entryFormMultipleEntry = formField as! EntryFormMultipleEntry
+                            if EntryFormSettingsHelper.IsGroupHidden(_formId, groupName: entryFormMultipleEntry.Id) {
+                                _hiddenGroups.append(entryFormMultipleEntry.Id)
                             }
                         }
                     }
@@ -447,12 +453,18 @@ open class EntryForm: JSONConvertible {
         }
     }
     
-    lazy open var FirstLevelGroups: [EntryFormGroup] = {
+    lazy open var FirstLevelGroups: [EntryBaseFormGroup] = {
         if self._firstLevelEntryFormGroups.count == 0 {
             for field in self._fields {
                 if field is EntryFormGroup {
                     let entryFormGroup = field as! EntryFormGroup
                     self._firstLevelEntryFormGroups.append(entryFormGroup)
+                }
+                if field is EntryFormMultipleEntry {
+                    let entryFormGroup = field as! EntryFormMultipleEntry
+                    if !entryFormGroup.group.isEmpty {
+                        self._firstLevelEntryFormGroups.append(entryFormGroup)
+                    }
                 }
             }
         }

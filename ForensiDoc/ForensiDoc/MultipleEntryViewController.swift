@@ -64,7 +64,7 @@ class MultipleEntryViewController: BaseViewController, EntryFormFieldDoneEditing
     
     func handleEditedForm<T: EntryFormFieldContainer>(_ entryForm: EntryForm, entryFormField: T) {
         if let ef = self._entryField {
-            ef.fields.append(entryFormField)
+            ef.addField(field: entryFormField)
             self.entriesTable.reloadData()
             if ViewsHelpers.IsiPad() {
                 if let svc = self.splitViewController {

@@ -4,22 +4,26 @@
 
 import Foundation
 
-open class EntryFormMultipleEntry: JSONConvertible, Validable {
+open class EntryFormMultipleEntry: EntryBaseFormGroup, JSONConvertible, Validable {
     open var attachmentsSpec: EntryFormAttachmentSpec?
-    open var fields: [Any] = []
-    open var title: String = ""
+   
     fileprivate var _id: String = ""
+    fileprivate var _fields: [Any] = []
+    fileprivate var _title: String = ""
+    fileprivate var _group: String = ""
+    
     open var required: Bool = false
     open var baseType: EntryFormFieldBaseType?
     open var fieldType: EntryFormFieldType?
     
     
-    fileprivate init() {
+    fileprivate override init() {
     }
     
     public init(jsonSpec: JSON, eventManager: EventManager, entryForm: EntryForm, checkHiddenGroups: Bool) {
-        title = jsonSpec["title"].stringValue
+        _title = jsonSpec["title"].stringValue
         _id = jsonSpec["id"].stringValue
+        _group = jsonSpec["group"].stringValue
         
         let eType = jsonSpec["entry_type"].stringValue
         if let fType = EntryFormFieldType(rawValue: eType) {
@@ -33,7 +37,7 @@ open class EntryFormMultipleEntry: JSONConvertible, Validable {
         required = jsonSpec["required"].boolValue
         for field in jsonSpec["fields"].arrayValue {
             if let formField = field.ExtractFormField(eventManager, entryForm: entryForm, checkHiddenGroups: checkHiddenGroups) {
-                fields.append(formField)
+                _fields.append(formField)
             }
         }
         
@@ -56,7 +60,7 @@ open class EntryFormMultipleEntry: JSONConvertible, Validable {
             for att in entryFormBaseFieldType.attachments {
                 entryFormBaseFieldType.deleteAttachment(att)
             }
-            fields.remove(at: idx)
+            _fields.remove(at: idx)
             return true
         }
         
@@ -136,5 +140,34 @@ open class EntryFormMultipleEntry: JSONConvertible, Validable {
     open func allRequiredAreValid() -> Bool {
         return true
     }
+    
+    open func addField(field: Any) {
+        self._fields.append(field)
+    }
+    
+    open override var title: String {
+        get {
+            return _title
+        }
+    }
+    
+    open override var fields: [Any] {
+        get {
+            return _fields
+        }
+    }
+    
+    open override var Id: String {
+        get {
+            return _id
+        }
+    }
+    
+    open override var group: String {
+        get {
+            return _group
+        }
+    }
+
 
 }
