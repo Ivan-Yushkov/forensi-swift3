@@ -56,7 +56,7 @@
                 "backgroundimages": [
                     {
                         "title": "Car",
-                        "img": "CarPlan.jpg"
+                        "img": "N-Car-Map.jpg"
                     }
                 ],
                 "drawing_settings": {
@@ -1617,6 +1617,10 @@
                                         "img": "N-Bottom Feet.jpg"
                                     },
                                     {
+                                        "title": "Hands Adult",
+                                        "img": "N-FD Hands Adult.jpg"
+                                    },
+                                    {
                                         "title": "Female Anterior",
                                         "img": "N-FD Female Anterior.jpg"
                                     },
@@ -1629,44 +1633,44 @@
                                         "img": "N-FD Female Right.jpg"
                                     },
                                     {
-                                        "title": "Hands Adult",
-                                        "img": "N-FD Hands Adult.jpg"
-                                    },
-                                    {
-                                        "title": "Head Left Right Sides",
-                                        "img": "N-FD Head Left Right Sides.jpg"
-                                    },
-                                    {
-                                        "title": " Male Anterior",
-                                        "img": "N-FD Male Anterior.jpg"
-                                    },
-                                    {
-                                        "title": "FD Male Left",
-                                        "img": "N-FD Male Left.jpg"
+                                        "title": "Male Anterior",
+                                        "img": "N-MALE BODY ANTERIOR.jpg"
                                     },
                                     {
                                         "title": "Male Posterior",
                                         "img": "N-FD Male Posterior.jpg"
                                     },
                                     {
-                                        "title": "FD Male Right",
-                                        "img": "N-FD Male Right.jpg"
+                                        "title": "FD Male Left",
+                                        "img": "N-MALE BODY LEFT.jpg"
                                     },
                                     {
-                                        "title": "Female Genitalia",
-                                        "img": "N-FEMALE GENITALIA.jpg"
+                                        "title": "FD Male Right",
+                                        "img": "N-MALE BODY RIGHT.jpg"
+                                    },
+                                    {
+                                        "title": "Head Left Right Sides",
+                                        "img": "N-HEAD RIGHT & LEFT.jpg"
                                     },
                                     {
                                         "title": "Head Multi",
                                         "img": "N-Head Multi.jpg"
                                     },
                                     {
-                                        "title": "Larynx",
-                                        "img": "N-LARYNX.jpg"
+                                        "title": "Head Anterior Posterior Vertex",
+                                        "img": "N-HEAD ANTERIOR POSTERIOR VERTEX.jpg"
+                                    },
+                                    {
+                                        "title": "Female Genitalia",
+                                        "img": "N-FEMALE GENITALIA.jpg"
                                     },
                                     {
                                         "title": "Male Genitalia",
                                         "img": "N-MALE GENITALIA CIRCUMCISED.jpg"
+                                    },
+                                    {
+                                        "title": "Larynx",
+                                        "img": "N-LARYNX.jpg"
                                     },
                                     {
                                         "title": "NECK & AXILLA",
@@ -2008,6 +2012,10 @@
                                         "img": "N-Bottom Feet.jpg"
                                     },
                                     {
+                                        "title": "Hands Adult",
+                                        "img": "N-FD Hands Adult.jpg"
+                                    },
+                                    {
                                         "title": "Female Anterior",
                                         "img": "N-FD Female Anterior.jpg"
                                     },
@@ -2020,44 +2028,44 @@
                                         "img": "N-FD Female Right.jpg"
                                     },
                                     {
-                                        "title": "Hands Adult",
-                                        "img": "N-FD Hands Adult.jpg"
-                                    },
-                                    {
-                                        "title": "Head Left Right Sides",
-                                        "img": "N-FD Head Left Right Sides.jpg"
-                                    },
-                                    {
-                                        "title": " Male Anterior",
-                                        "img": "N-FD Male Anterior.jpg"
-                                    },
-                                    {
-                                        "title": "FD Male Left",
-                                        "img": "N-FD Male Left.jpg"
+                                        "title": "Male Anterior",
+                                        "img": "N-MALE BODY ANTERIOR.jpg"
                                     },
                                     {
                                         "title": "Male Posterior",
                                         "img": "N-FD Male Posterior.jpg"
                                     },
                                     {
-                                        "title": "FD Male Right",
-                                        "img": "N-FD Male Right.jpg"
+                                        "title": "FD Male Left",
+                                        "img": "N-MALE BODY LEFT.jpg"
                                     },
                                     {
-                                        "title": "Female Genitalia",
-                                        "img": "N-FEMALE GENITALIA.jpg"
+                                        "title": "FD Male Right",
+                                        "img": "N-MALE BODY RIGHT.jpg"
+                                    },
+                                    {
+                                        "title": "Head Left Right Sides",
+                                        "img": "N-HEAD RIGHT & LEFT.jpg"
                                     },
                                     {
                                         "title": "Head Multi",
                                         "img": "N-Head Multi.jpg"
                                     },
                                     {
-                                        "title": "Larynx",
-                                        "img": "N-LARYNX.jpg"
+                                        "title": "Head Anterior Posterior Vertex",
+                                        "img": "N-HEAD ANTERIOR POSTERIOR VERTEX.jpg"
+                                    },
+                                    {
+                                        "title": "Female Genitalia",
+                                        "img": "N-FEMALE GENITALIA.jpg"
                                     },
                                     {
                                         "title": "Male Genitalia",
                                         "img": "N-MALE GENITALIA CIRCUMCISED.jpg"
+                                    },
+                                    {
+                                        "title": "Larynx",
+                                        "img": "N-LARYNX.jpg"
                                     },
                                     {
                                         "title": "NECK & AXILLA",
@@ -2087,6 +2095,7 @@
                                         "title": "TYMPANIC MEMBRANE",
                                         "img": "N-TYMPANIC MEMBRANE.jpg"
                                     }
+                                    
                                 ],
                                 "drawing_settings": {
                                     "color_settings": true,
