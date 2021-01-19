@@ -40,6 +40,8 @@ class RadioCheckboxTypeFieldTypeViewController: BaseViewController, EntryFormMul
                     self.title = f.title
                     //Orientated in Time
                     //TODO : add field
+                    f.addFieldComments("addFieldComments")
+                    refreshFactoryData()
                     self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
                 }
             }

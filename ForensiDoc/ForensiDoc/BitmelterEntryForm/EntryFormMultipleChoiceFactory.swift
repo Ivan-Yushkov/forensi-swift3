@@ -47,6 +47,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
     fileprivate var _sectionPleaseSelectOrTitle = -1
     fileprivate var _sectionImages = -1
     fileprivate var _sectionComments = -1
+    fileprivate var _sectionSelector = -1
     fileprivate var _cellsState = [Int:Bool]()
     fileprivate var _isRadioType = false
     

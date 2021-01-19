@@ -17,13 +17,8 @@ class PickerTextField: UITextField, UIPickerViewDataSource {
     private let pickerView = UIPickerView()
     var pickerData: [Int] = [1,2,3,4,5]
     weak var updater: PickerTextFieldDelegate?
-  //  weak var updateResultsDelegate: StationsTextFieldDelegate?
-  //  let stations = DataCollector.shared.stations
-    
-    
+ 
     init() {
-        
-      //  pickerData = (stations != nil) ? stations!.stations : []
         super.init(frame: CGRect())
         
         let toolBar = UIToolbar(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 44.0)))
@@ -37,9 +32,6 @@ class PickerTextField: UITextField, UIPickerViewDataSource {
         pickerView.dataSource = self
         
         self.inputView = pickerView
-//        pickerView.selectRow(0, inComponent: 0, animated: false)
-//        pickerView.reloadAllComponents()
-       
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,27 +49,14 @@ class PickerTextField: UITextField, UIPickerViewDataSource {
             text = ""
         }
         self.updater?.updateWithSelection(string: text)
-      //  self.updateResultsDelegate?.updateWithSelection(string: text)
         self.text = text
         self.resignFirstResponder()
     }
-    
-//    //MARK: - Get Stations from DataCollector
-//    func updateStationsList() {
-//         self.pickerData.removeAll()
-//        if DataCollector.shared.stations != nil {
-//
-//            self.pickerData = DataCollector.shared.stations!.stations
-//
-//        }
-//        pickerView.reloadAllComponents()
-//    }
-    
 }
 
+// MARK: UIPickerView Delegation
 extension PickerTextField: UIPickerViewDelegate {
-    // MARK: UIPickerView Delegation
-
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -92,7 +71,6 @@ extension PickerTextField: UIPickerViewDelegate {
 
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print("didSelectRow \(row)")
-        //self.text = pickerData[row].name
     }
     
 }

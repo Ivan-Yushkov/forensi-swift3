@@ -32,6 +32,7 @@ open class EntryForm: JSONConvertible {
     fileprivate var allExtraInformationFields:[String:Any?] = [String:Any?]()
     fileprivate var _downloadReportInfo: EntryFormReportDownloadInfo
     fileprivate var _reportDate = "default"
+    fileprivate var foldersCount: Int = 0
     
     fileprivate init() {
         SavedInFolder = ""
@@ -168,6 +169,7 @@ open class EntryForm: JSONConvertible {
         if documents.count > 0 {
             let document = documents[0]
             let fileList = listFilesFromDocumentsFolder(self.SavedInFolder)
+            foldersCount = fileList.count
             for file in fileList {
                 let u = URL(fileURLWithPath: document).appendingPathComponent(self.SavedInFolder).appendingPathComponent(file)
                 let fileExtension = u.pathExtension
@@ -185,6 +187,7 @@ open class EntryForm: JSONConvertible {
             let fileManager:FileManager = FileManager.default
             let document = documents[0]
             let fileList = listFilesFromDocumentsFolder(self.SavedInFolder)
+            foldersCount = fileList.count
             for file in fileList {
                 let u = URL(fileURLWithPath: document).appendingPathComponent(self.SavedInFolder).appendingPathComponent(file)
                 do{
@@ -330,8 +333,12 @@ open class EntryForm: JSONConvertible {
 //MARK: Set the report date
             let df = DateFormatter()
             df.dateFormat = "ddMMyyyy"
-            reportDate = "U1 " + df.string(from: Date())
             
+            let fileList = listFilesFromDocumentsFolder(self.SavedInFolder)
+            foldersCount = fileList.count
+            
+            reportDate = "U\(foldersCount + 1) " + df.string(from: Date())
+            _savedAsTitle = reportDate
             let fileManager = FileManager.default
 //MARK: fix2020
            // let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
@@ -354,6 +361,8 @@ open class EntryForm: JSONConvertible {
                 }
             }
             return false
+        } else {
+           print(foldersCount)
         }
         return true
     }

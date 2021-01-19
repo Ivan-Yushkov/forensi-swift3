@@ -10,6 +10,9 @@
 		356E632A88FB348CDE3E6C63 /* Pods_ForensiDoc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26BCB31754DEF2A2F2EC7667 /* Pods_ForensiDoc.framework */; };
 		7B1E55BA1C8461D300A07946 /* RNCryptorOLD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1E55B91C8461D300A07946 /* RNCryptorOLD.swift */; };
 		7B23E8861C99994700CECB08 /* PasscodeView_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B23E8851C99994700CECB08 /* PasscodeView_iPad.xib */; };
+		8407E2A925B5C58C002B79F2 /* EntryBaseFormGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407E2A825B5C58C002B79F2 /* EntryBaseFormGroup.swift */; };
+		8407E2B425B5D181002B79F2 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407E2B325B5D181002B79F2 /* extensions.swift */; };
+		8407E2BD25B69679002B79F2 /* const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8407E2BC25B69679002B79F2 /* const.swift */; };
 		8424E409252DB2FA00A660F8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424E408252DB2FA00A660F8 /* SwiftyJSON.swift */; };
 		8424E40B252DE4F800A660F8 /* RNCryptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8424E40A252DE4F800A660F8 /* RNCryptor.swift */; };
 		844E4DBF2535D2BB001C0D46 /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E4DBE2535D2BB001C0D46 /* PickerTextField.swift */; };
@@ -63,19 +66,6 @@
 		FE4E7B1D1C3DC6A9009F18F1 /* AudioRecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4E7B1C1C3DC6A9009F18F1 /* AudioRecordingViewController.swift */; };
 		FE4E7B1F1C3DC705009F18F1 /* AudioRecordingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE4E7B1E1C3DC705009F18F1 /* AudioRecordingView.xib */; };
 		FE5DC7951A1BFD45005C5C04 /* RegisterForNewAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE5DC7941A1BFD45005C5C04 /* RegisterForNewAccountView.xib */; };
-		FE5DCE671FD962A9001BB51A /* FD Adult Left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5DCE5A1FD962A9001BB51A /* FD Adult Left.jpg */; };
-		FE5DCE681FD962A9001BB51A /* FD Adult Right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5DCE5B1FD962A9001BB51A /* FD Adult Right.jpg */; };
-		FE5DCE691FD962A9001BB51A /* FD Body Posterior.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5DCE5C1FD962A9001BB51A /* FD Body Posterior.jpg */; };
-		FE5DCE6A1FD962A9001BB51A /* FD Female Anterior.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5DCE5D1FD962A9001BB51A /* FD Female Anterior.jpg */; };
-		FE5DCE6B1FD962A9001BB51A /* FD Hand Dorsum Left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5DCE5E1FD962A9001BB51A /* FD Hand Dorsum Left.jpg */; };
-		FE5DCE6C1FD962A9001BB51A /* FD Hand Dorsum Right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5DCE5F1FD962A9001BB51A /* FD Hand Dorsum Right.jpg */; };
-		FE5DCE6D1FD962A9001BB51A /* FD Hand Palm Left.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5DCE601FD962A9001BB51A /* FD Hand Palm Left.jpg */; };
-		FE5DCE6E1FD962A9001BB51A /* FD Hand Palm Right.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5DCE611FD962A9001BB51A /* FD Hand Palm Right.jpg */; };
-		FE5DCE6F1FD962A9001BB51A /* FD Head Anterior.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5DCE621FD962A9001BB51A /* FD Head Anterior.jpg */; };
-		FE5DCE701FD962A9001BB51A /* FD Head Left Side.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5DCE631FD962A9001BB51A /* FD Head Left Side.jpg */; };
-		FE5DCE711FD962A9001BB51A /* FD Head Posterior.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5DCE641FD962A9001BB51A /* FD Head Posterior.jpg */; };
-		FE5DCE721FD962A9001BB51A /* FD Head Right Side.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5DCE651FD962A9001BB51A /* FD Head Right Side.jpg */; };
-		FE5DCE731FD962A9001BB51A /* FD Male  Anterior.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FE5DCE661FD962A9001BB51A /* FD Male  Anterior.jpg */; };
 		FE66D13E1D4579E400774B7D /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FE66D13D1D4579E400774B7D /* Settings.bundle */; };
 		FE6EC0311B9517B8003D26F7 /* DrawableEntryFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6EC0301B9517B8003D26F7 /* DrawableEntryFormViewController.swift */; };
 		FE6EC0331B951802003D26F7 /* DrawableEntryFormView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FE6EC0321B951802003D26F7 /* DrawableEntryFormView.xib */; };
@@ -174,9 +164,6 @@
 		FE9AC7C11C5EA74500AEDBF4 /* MultipleEntryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9AC7C01C5EA74500AEDBF4 /* MultipleEntryViewCell.swift */; };
 		FEA34C931B3B6C11004E8071 /* NewRadioCheckboxOtherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA34C921B3B6C11004E8071 /* NewRadioCheckboxOtherViewController.swift */; };
 		FEA34C951B3B6C4E004E8071 /* NewRadioCheckboxOtherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEA34C941B3B6C4E004E8071 /* NewRadioCheckboxOtherView.xib */; };
-		FEA72A271BD13D2F00608ED9 /* Bottom Feet.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA72A201BD13D2F00608ED9 /* Bottom Feet.png */; };
-		FEA72A2A1BD13D2F00608ED9 /* Hands Palm.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA72A231BD13D2F00608ED9 /* Hands Palm.png */; };
-		FEA72A2B1BD13D2F00608ED9 /* Head Multi.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA72A241BD13D2F00608ED9 /* Head Multi.png */; };
 		FEAA20651C55851100ED71EA /* VideoRecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEAA20641C55851100ED71EA /* VideoRecordingViewController.swift */; };
 		FEAA20671C55854600ED71EA /* VideoRecordingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEAA20661C55854600ED71EA /* VideoRecordingView.xib */; };
 		FEB490271B3237A700445F56 /* RadioCheckboxTypeFieldTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEB490261B3237A700445F56 /* RadioCheckboxTypeFieldTypeView.xib */; };
@@ -216,7 +203,6 @@
 		FEEF58801A6DDF7E002A4E5D /* SettingsViewControllerTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEEF587F1A6DDF7E002A4E5D /* SettingsViewControllerTableViewDataSource.swift */; };
 		FEF1FD951A228B26000A4912 /* ActivateAccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEF1FD941A228B26000A4912 /* ActivateAccountView.xib */; };
 		FEFCF0DA1B654F5F0046EF02 /* MultilineTypeFieldTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FEFCF0D91B654F5F0046EF02 /* MultilineTypeFieldTypeView.xib */; };
-		FEFFAFD71FD1A41200ECCA07 /* CarPlan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FEFFAFD61FD1A41200ECCA07 /* CarPlan.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -236,6 +222,9 @@
 		7B1E55B81C8461D300A07946 /* RNCryptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCryptor.h; sourceTree = "<group>"; };
 		7B1E55B91C8461D300A07946 /* RNCryptorOLD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNCryptorOLD.swift; sourceTree = "<group>"; };
 		7B23E8851C99994700CECB08 /* PasscodeView_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PasscodeView_iPad.xib; sourceTree = "<group>"; };
+		8407E2A825B5C58C002B79F2 /* EntryBaseFormGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryBaseFormGroup.swift; sourceTree = "<group>"; };
+		8407E2B325B5D181002B79F2 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		8407E2BC25B69679002B79F2 /* const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = const.swift; sourceTree = "<group>"; };
 		8424E408252DB2FA00A660F8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		8424E40A252DE4F800A660F8 /* RNCryptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RNCryptor.swift; sourceTree = "<group>"; };
 		844E4DBE2535D2BB001C0D46 /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
@@ -293,19 +282,6 @@
 		FE4E7B1C1C3DC6A9009F18F1 /* AudioRecordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecordingViewController.swift; sourceTree = "<group>"; };
 		FE4E7B1E1C3DC705009F18F1 /* AudioRecordingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AudioRecordingView.xib; sourceTree = "<group>"; };
 		FE5DC7941A1BFD45005C5C04 /* RegisterForNewAccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterForNewAccountView.xib; sourceTree = "<group>"; };
-		FE5DCE5A1FD962A9001BB51A /* FD Adult Left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FD Adult Left.jpg"; sourceTree = "<group>"; };
-		FE5DCE5B1FD962A9001BB51A /* FD Adult Right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FD Adult Right.jpg"; sourceTree = "<group>"; };
-		FE5DCE5C1FD962A9001BB51A /* FD Body Posterior.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FD Body Posterior.jpg"; sourceTree = "<group>"; };
-		FE5DCE5D1FD962A9001BB51A /* FD Female Anterior.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FD Female Anterior.jpg"; sourceTree = "<group>"; };
-		FE5DCE5E1FD962A9001BB51A /* FD Hand Dorsum Left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FD Hand Dorsum Left.jpg"; sourceTree = "<group>"; };
-		FE5DCE5F1FD962A9001BB51A /* FD Hand Dorsum Right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FD Hand Dorsum Right.jpg"; sourceTree = "<group>"; };
-		FE5DCE601FD962A9001BB51A /* FD Hand Palm Left.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FD Hand Palm Left.jpg"; sourceTree = "<group>"; };
-		FE5DCE611FD962A9001BB51A /* FD Hand Palm Right.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FD Hand Palm Right.jpg"; sourceTree = "<group>"; };
-		FE5DCE621FD962A9001BB51A /* FD Head Anterior.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FD Head Anterior.jpg"; sourceTree = "<group>"; };
-		FE5DCE631FD962A9001BB51A /* FD Head Left Side.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FD Head Left Side.jpg"; sourceTree = "<group>"; };
-		FE5DCE641FD962A9001BB51A /* FD Head Posterior.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FD Head Posterior.jpg"; sourceTree = "<group>"; };
-		FE5DCE651FD962A9001BB51A /* FD Head Right Side.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FD Head Right Side.jpg"; sourceTree = "<group>"; };
-		FE5DCE661FD962A9001BB51A /* FD Male  Anterior.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "FD Male  Anterior.jpg"; sourceTree = "<group>"; };
 		FE66D13D1D4579E400774B7D /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		FE6EC0301B9517B8003D26F7 /* DrawableEntryFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawableEntryFormViewController.swift; sourceTree = "<group>"; };
 		FE6EC0321B951802003D26F7 /* DrawableEntryFormView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawableEntryFormView.xib; sourceTree = "<group>"; };
@@ -421,9 +397,6 @@
 		FE9B22B71B58F64A004B6156 /* SampleOutputJSONForensiDoc.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SampleOutputJSONForensiDoc.json; sourceTree = "<group>"; };
 		FEA34C921B3B6C11004E8071 /* NewRadioCheckboxOtherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRadioCheckboxOtherViewController.swift; sourceTree = "<group>"; };
 		FEA34C941B3B6C4E004E8071 /* NewRadioCheckboxOtherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewRadioCheckboxOtherView.xib; sourceTree = "<group>"; };
-		FEA72A201BD13D2F00608ED9 /* Bottom Feet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bottom Feet.png"; sourceTree = "<group>"; };
-		FEA72A231BD13D2F00608ED9 /* Hands Palm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hands Palm.png"; sourceTree = "<group>"; };
-		FEA72A241BD13D2F00608ED9 /* Head Multi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Head Multi.png"; sourceTree = "<group>"; };
 		FEAA20641C55851100ED71EA /* VideoRecordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoRecordingViewController.swift; sourceTree = "<group>"; };
 		FEAA20661C55854600ED71EA /* VideoRecordingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoRecordingView.xib; sourceTree = "<group>"; };
 		FEB490261B3237A700445F56 /* RadioCheckboxTypeFieldTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RadioCheckboxTypeFieldTypeView.xib; sourceTree = "<group>"; };
@@ -455,7 +428,6 @@
 		FEF1FD941A228B26000A4912 /* ActivateAccountView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivateAccountView.xib; sourceTree = "<group>"; };
 		FEFAE77F1A27BC45008DB7D1 /* ForensiDoc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ForensiDoc-Bridging-Header.h"; sourceTree = "<group>"; };
 		FEFCF0D91B654F5F0046EF02 /* MultilineTypeFieldTypeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MultilineTypeFieldTypeView.xib; sourceTree = "<group>"; };
-		FEFFAFD61FD1A41200ECCA07 /* CarPlan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CarPlan.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -527,24 +499,7 @@
 		FE1B89471B000B1B004C7C25 /* EntryFormRepository */ = {
 			isa = PBXGroup;
 			children = (
-				FE5DCE5A1FD962A9001BB51A /* FD Adult Left.jpg */,
-				FE5DCE5B1FD962A9001BB51A /* FD Adult Right.jpg */,
-				FE5DCE5C1FD962A9001BB51A /* FD Body Posterior.jpg */,
-				FE5DCE5D1FD962A9001BB51A /* FD Female Anterior.jpg */,
-				FE5DCE5E1FD962A9001BB51A /* FD Hand Dorsum Left.jpg */,
-				FE5DCE5F1FD962A9001BB51A /* FD Hand Dorsum Right.jpg */,
-				FE5DCE601FD962A9001BB51A /* FD Hand Palm Left.jpg */,
-				FE5DCE611FD962A9001BB51A /* FD Hand Palm Right.jpg */,
-				FE5DCE621FD962A9001BB51A /* FD Head Anterior.jpg */,
-				FE5DCE631FD962A9001BB51A /* FD Head Left Side.jpg */,
-				FE5DCE641FD962A9001BB51A /* FD Head Posterior.jpg */,
-				FE5DCE651FD962A9001BB51A /* FD Head Right Side.jpg */,
-				FE5DCE661FD962A9001BB51A /* FD Male  Anterior.jpg */,
-				FEFFAFD61FD1A41200ECCA07 /* CarPlan.jpg */,
 				FE802A521C6B927C00F382C3 /* forensidoc_1.json */,
-				FEA72A201BD13D2F00608ED9 /* Bottom Feet.png */,
-				FEA72A231BD13D2F00608ED9 /* Hands Palm.png */,
-				FEA72A241BD13D2F00608ED9 /* Head Multi.png */,
 				FE1B89481B000B3E004C7C25 /* ForensiDocEntryFormRepository.swift */,
 				FE9B22B71B58F64A004B6156 /* SampleOutputJSONForensiDoc.json */,
 				FE8C5A381B8D12CC00FA498B /* SavedJSONSample */,
@@ -793,6 +748,7 @@
 				FE8036401C8371780060B153 /* DrawingViewController.swift */,
 				FE8036411C8371780060B153 /* DrawingWrapper.swift */,
 				FE8036421C8371780060B153 /* DrawnElement.swift */,
+				8407E2A825B5C58C002B79F2 /* EntryBaseFormGroup.swift */,
 				FE8036431C8371780060B153 /* EmptyFormRepository.swift */,
 				FE8036441C8371780060B153 /* EntryForm.swift */,
 				FE8036461C8371780060B153 /* EntryFormAttachment.swift */,
@@ -902,6 +858,8 @@
 				FE8F29E61A09754500B3F2F9 /* Images.xcassets */,
 				FE8F29DD1A09754500B3F2F9 /* Supporting Files */,
 				FE97F2251A1C07FF00FC5895 /* TestOfFunctions.playground */,
+				8407E2B325B5D181002B79F2 /* extensions.swift */,
+				8407E2BC25B69679002B79F2 /* const.swift */,
 			);
 			path = ForensiDoc;
 			sourceTree = "<group>";
@@ -1240,23 +1198,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE93E3991CB3331000E85842 /* CommentsViewCell.xib in Resources */,
-				FE5DCE681FD962A9001BB51A /* FD Adult Right.jpg in Resources */,
-				FE5DCE6C1FD962A9001BB51A /* FD Hand Dorsum Right.jpg in Resources */,
 				FE4BDD3C1C62E2B800038D1B /* public_key.der in Resources */,
 				FEC8DEFD1BAA1361009DBDE4 /* SampleOutputJSONForensiDoc.json in Resources */,
-				FE5DCE711FD962A9001BB51A /* FD Head Posterior.jpg in Resources */,
 				FEAA20671C55854600ED71EA /* VideoRecordingView.xib in Resources */,
 				FED7C7311C8CDEA30059C348 /* AttachmentsViewerView.xib in Resources */,
 				FEC8DEFE1BAA1361009DBDE4 /* SavedJSONSample in Resources */,
 				FED6B5481DBFEDEB004D69AA /* _test-post.txt in Resources */,
-				FE5DCE6F1FD962A9001BB51A /* FD Head Anterior.jpg in Resources */,
-				FE5DCE731FD962A9001BB51A /* FD Male  Anterior.jpg in Resources */,
 				FE2AC3CA1D3D89A20069FA5A /* AttachmentsSelectorView.xib in Resources */,
-				FE5DCE721FD962A9001BB51A /* FD Head Right Side.jpg in Resources */,
 				FE82CF2F1E2C35CB00A240A3 /* AboutView.xib in Resources */,
 				FE8036851C8371780060B153 /* RadioCheckboxViewCell.xib in Resources */,
 				FE3086831B27B21A007BD9D8 /* NewEntryFormView.xib in Resources */,
-				FE5DCE701FD962A9001BB51A /* FD Head Left Side.jpg in Resources */,
 				FED8867E1C5BBC1500EF3F4F /* MultipleEntryView.xib in Resources */,
 				FE5DC7951A1BFD45005C5C04 /* RegisterForNewAccountView.xib in Resources */,
 				FEE615B71A1ACC3300E1F307 /* MainWindow.xib in Resources */,
@@ -1269,16 +1220,10 @@
 				FEEF587D1A6DD4E0002A4E5D /* SettingsView.xib in Resources */,
 				FE33D21C1A1BF88700E09AF4 /* WelcomeView.xib in Resources */,
 				FEA34C951B3B6C4E004E8071 /* NewRadioCheckboxOtherView.xib in Resources */,
-				FE5DCE691FD962A9001BB51A /* FD Body Posterior.jpg in Resources */,
 				FE279BE11C02238D00F405EB /* PrivacyPolicyView.xib in Resources */,
 				FE47671D1C8382C20078B4E0 /* ImageEntryFormCell.xib in Resources */,
-				FEFFAFD71FD1A41200ECCA07 /* CarPlan.jpg in Resources */,
-				FEA72A271BD13D2F00608ED9 /* Bottom Feet.png in Resources */,
-				FE5DCE6E1FD962A9001BB51A /* FD Hand Palm Right.jpg in Resources */,
-				FE5DCE6A1FD962A9001BB51A /* FD Female Anterior.jpg in Resources */,
 				FE66D13E1D4579E400774B7D /* Settings.bundle in Resources */,
 				7B23E8861C99994700CECB08 /* PasscodeView_iPad.xib in Resources */,
-				FE5DCE671FD962A9001BB51A /* FD Adult Left.jpg in Resources */,
 				FE82CF311E2C399E00A240A3 /* About.html in Resources */,
 				FE97E4011A308F4D004731F3 /* PasscodeView.xib in Resources */,
 				FE8F29EA1A09754500B3F2F9 /* LaunchScreen.xib in Resources */,
@@ -1288,17 +1233,14 @@
 				FEE78BF81CB5C5B800245ABF /* DisplayLabelViewCell.xib in Resources */,
 				FE412D8F1B24F9180089B0D3 /* EntryFormDetailsView.xib in Resources */,
 				FEE615AF1A1AC30700E1F307 /* LoginView.xib in Resources */,
-				FE5DCE6D1FD962A9001BB51A /* FD Hand Palm Left.jpg in Resources */,
 				FEBFAAE21D07867C00059C85 /* AudioViewerView.xib in Resources */,
 				FEFCF0DA1B654F5F0046EF02 /* MultilineTypeFieldTypeView.xib in Resources */,
 				FE2C313C1B30DE4A00191CB1 /* TextboxTypeFieldTypeView.xib in Resources */,
-				FE5DCE6B1FD962A9001BB51A /* FD Hand Dorsum Left.jpg in Resources */,
 				FE9AC7BF1C5EA70C00AEDBF4 /* MultipleEntryViewCell.xib in Resources */,
 				FE3D9B171F714A2E00E0BA01 /* _test-rep.json in Resources */,
 				FED7C7351C8CE7CC0059C348 /* AttachmentsViewerCellView.xib in Resources */,
 				FEB9A8751D35A85700AC4E54 /* LocationFieldTypeView.xib in Resources */,
 				FE279BE61C026A3500F405EB /* DateTimeFieldTypeView.xib in Resources */,
-				FEA72A2B1BD13D2F00608ED9 /* Head Multi.png in Resources */,
 				FE36C8E71A2D29E8009B89C6 /* CreatePasscodeView.xib in Resources */,
 				FE8036811C8371780060B153 /* Media.xcassets in Resources */,
 				FE8035F31C836CCB0060B153 /* (null) in Resources */,
@@ -1306,7 +1248,6 @@
 				FE4A8E631C4C5DE6009559AD /* CreatePasscodeView_iPad.xib in Resources */,
 				FE6EC0331B951802003D26F7 /* DrawableEntryFormView.xib in Resources */,
 				FE8F29E71A09754500B3F2F9 /* Images.xcassets in Resources */,
-				FEA72A2A1BD13D2F00608ED9 /* Hands Palm.png in Resources */,
 				FE4A8E5F1C4C42CE009559AD /* PrivacyPolicyView_iPad.xib in Resources */,
 				FEDA27D61D0663130041FFF4 /* ImageAndDrawingViewerView.xib in Resources */,
 				FE802A531C6B927C00F382C3 /* forensidoc_1.json in Resources */,
@@ -1423,6 +1364,7 @@
 				FE1B89491B000B3E004C7C25 /* ForensiDocEntryFormRepository.swift in Sources */,
 				FE80366B1C8371780060B153 /* EntryFormAddNewFactory.swift in Sources */,
 				FEE2AFB31A26910100C451FE /* MainViewController.swift in Sources */,
+				8407E2BD25B69679002B79F2 /* const.swift in Sources */,
 				FEE78BFA1CB5C5CD00245ABF /* DisplayLabelViewCell.swift in Sources */,
 				FE9AC7BD1C5EA55800AEDBF4 /* MultipleEntryViewControllerTableViewDelegate.swift in Sources */,
 				FE8036321C836EFB0060B153 /* StringExtensions.swift in Sources */,
@@ -1443,6 +1385,7 @@
 				FE87D5B71C3B291B00586D16 /* ViewsHelpers.swift in Sources */,
 				FE80367C1C8371780060B153 /* EventManager.swift in Sources */,
 				FE8036711C8371780060B153 /* EntryFormExtensions.swift in Sources */,
+				8407E2B425B5D181002B79F2 /* extensions.swift in Sources */,
 				FE4A8E611C4C4B5C009559AD /* SplitViewControllerDelegate.swift in Sources */,
 				FE8036301C836EFB0060B153 /* Response.swift in Sources */,
 				FE2986641CEE7C9A00A002F2 /* TryCatchFinally.swift in Sources */,
@@ -1519,6 +1462,7 @@
 				FE80363B1C8370030060B153 /* AlertHelper.swift in Sources */,
 				FE8036361C836EFB0060B153 /* ViewType.swift in Sources */,
 				FE3012A31C4E66DC00670AC6 /* UISplitViewControllerExtension.swift in Sources */,
+				8407E2A925B5C58C002B79F2 /* EntryBaseFormGroup.swift in Sources */,
 				FE8F29E01A09754500B3F2F9 /* AppDelegate.swift in Sources */,
 				FE88B7F51F6F28EE00B76D34 /* Data+CompressionOLD.swift in Sources */,
 				FE8036771C8371780060B153 /* EntryFormMultipleEntry.swift in Sources */,

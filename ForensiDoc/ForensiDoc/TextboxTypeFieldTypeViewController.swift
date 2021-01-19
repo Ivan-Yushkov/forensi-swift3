@@ -18,202 +18,13 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
     var _characterSet:CharacterSet?
     var _allowedCharactersErrorMessage = ""
     
-    let languageArray: [String] = [
-        "Afar",
-        "Abkhaz",
-        "Avestan",
-        "Afrikaans",
-        "Akan",
-        "Amharic",
-        "Aragonese",
-        "Arabic",
-        "Assamese",
-        "Avaric",
-        "Aymara",
-        "Azerbaijani",
-        "South Azerbaijani",
-        "Bashkir",
-        "Belarusian",
-        "Bulgarian",
-        "Bihari",
-        "Bislama",
-        "Bambara",
-        "Bengali",
-        "Tibetan Standard",
-        "Breton",
-        "Bosnian",
-        "Catalan",
-        "Chechen",
-        "Chamorro",
-        "Corsican",
-        "Cree",
-        "Czech",
-        "Church Slavonic",
-        "Chuvash",
-        "Welsh",
-        "Danish",
-        "German",
-        "Divehi",
-        "Dzongkha",
-        "Ewe",
-        "Greek",
-        "English",
-        "Esperanto",
-        "Spanish",
-        "Estonian",
-        "Basque",
-        "Persian (Farsi)",
-        "Fula",
-        "Finnish",
-        "Fijian",
-        "Faroese",
-        "French",
-        "Western Frisian",
-        "Irish",
-        "Gaelic",
-        "Galician",
-        "Guaraní",
-        "Gujarati",
-        "Manx",
-        "Hausa",
-        "Hebrew (modern)",
-        "Hindi",
-        "Hiri Motu",
-        "Croatian",
-        "Haitian",
-        "Hungarian",
-        "Armenian",
-        "Herero",
-        "Interlingua",
-        "Indonesian",
-        "Interlingue",
-        "Igbo",
-        "Nuosu",
-        "Inupiaq",
-        "Ido",
-        "Icelandic",
-        "Italian",
-        "Inuktitut",
-        "Japanese",
-        "Javanese",
-        "Georgian",
-        "Kongo",
-        "Gikuyu",
-        "Kuanyama",
-        "Kazakh",
-        "Kalaallisut",
-        "Khmer",
-        "Kannada",
-        "Korean",
-        "Kanuri",
-        "Kashmiri",
-        "Kurdish",
-        "Komi",
-        "Cornish",
-        "Kyrgyz",
-        "Latin",
-        "Luxembourgish",
-        "Ganda",
-        "Limburgish",
-        "Lingala",
-        "Lao",
-        "Lithuanian",
-        "Luba-Katanga",
-        "Latvian",
-        "Malagasy",
-        "Marshallese",
-        "Māori",
-        "Macedonian",
-        "Malayalam",
-        "Mongolian",
-        "Marathi (Marāṭhī)",
-        "Malay",
-        "Maltese",
-        "Burmese",
-        "Nauru",
-        "Norwegian Bokmål",
-        "North Ndebele",
-        "Nepali",
-        "Ndonga",
-        "Dutch",
-        "Norwegian Nynorsk",
-        "Norwegian",
-        "South Ndebele",
-        "Navajo",
-        "Chichewa",
-        "Occitan",
-        "Ojibwe",
-        "Oromo",
-        "Oriya",
-        "Ossetian",
-        "Panjabi",
-        "Pāli",
-        "Polish",
-        "Pashto",
-        "Portuguese",
-        "Quechua",
-        "Romansh",
-        "Kirundi",
-        "Romanian",
-        "Russian",
-        "Kinyarwanda",
-        "Sanskrit (Saṁskṛta)",
-        "Sardinian",
-        "Sindhi",
-        "Northern Sami",
-        "Sango",
-        "Sinhala",
-        "Slovak",
-        "Slovene",
-        "Samoan",
-        "Shona",
-        "Somali",
-        "Albanian",
-        "Serbian",
-        "Swati",
-        "Southern Sotho",
-        "Sundanese",
-        "Swedish",
-        "Swahili",
-        "Tamil",
-        "Telugu",
-        "Tajik",
-        "Thai",
-        "Tigrinya",
-        "Turkmen",
-        "Tagalog",
-        "Tswana",
-        "Tonga (Tonga Islands)",
-        "Turkish",
-        "Tsonga",
-        "Tatar",
-        "Twi",
-        "Tahitian",
-        "Uyghur",
-        "Ukrainian",
-        "Urdu",
-        "Uzbek",
-        "Venda",
-        "Vietnamese",
-        "Volapük",
-        "Walloon",
-        "Wolof",
-        "Xhosa",
-        "Yiddish",
-        "Yoruba",
-        "Zhuang",
-        "Chinese",
-        "Zulu"
-    ]
-    
-    
     var pickerViewInt: UIPickerView!
     var pickerViewString: UIPickerView!
-    
-    //var pickerViewDouble: UIPickerView!
+        
     var pickerDataInt: [Int] = []
-    var pickerDataDouble: [Int] = Array(0...9)
+//    var pickerDataDouble: [Int] = Array(0...9)
     var valueType: String = ""
+    var decimal: Bool = false
     var numberOfComponents: Int = 1
     
     var _entryField: Any?
@@ -232,39 +43,51 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
                 self.title = f.title
                 
                 //titles which call picker view
-                
+                let text = f.nonFormattedSelectedValue()
+                textField.text = text
                 if f.id.contains("systolic"){
                     valueType = "mm Hg"
-                    setupPickerView(withRangeIn: 0...250, withDefaultRow: 120)
+                    if text.isEmpty {
+                        setupPickerView(withRangeIn: 0...250, withDefaultRow: 120)
+                    } else {
+                        if let value = Int(text) {
+                        setupPickerView(withRangeIn: 0...250, withDefaultRow: value)
+                        }
+                    }
                 }
                 if f.id.contains("diastolic") {
                     valueType = "mm Hg"
-                    setupPickerView(withRangeIn: 0...250, withDefaultRow: 80)
+                    if text.isEmpty {
+                        setupPickerView(withRangeIn: 0...250, withDefaultRow: 80)
+                    } else {
+                        if let value = Int(text) {
+                        setupPickerView(withRangeIn: 0...250, withDefaultRow: value)
+                        }
+                    }
                 }
-                
                 if f.allowedCharacters.count > 0 {
                     self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                 }
-                
                 self._allowedCharactersErrorMessage = f.allowedCharactersErrorMessage
                 if f.placeHolder.count > 0 {
                     self.textField.placeholder = f.placeHolder
                 }
-                
                 self.textField.keyboardType = .numberPad
-                textField.text = f.nonFormattedSelectedValue()
                 self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
                 
             } else
             //float type of textField
             if let f = MiscHelpers.CastEntryFormField(ef, Float.self) {
                 self.title = f.title
+                let text = f.nonFormattedSelectedValue()
+                textField.text = text
                 
                 //titles which call picker view
                 if f.id.contains("glucose") {
                     valueType = "mmol/L"
-                    numberOfComponents = 2
-                    setupPickerView(withRangeIn: 0...35, withDefaultRow: 6)
+                    numberOfComponents = 1
+                    decimal = true
+                    setupPickerView(withRangeIn: 0...350, withDefaultRow: 50)
                 }
                 if f.allowedCharacters.count > 0 {
                     self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
@@ -274,17 +97,19 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
                     self.textField.placeholder = f.placeHolder
                 }
                 self.textField.keyboardType = UIKeyboardType.numberPad
-                self.textField.text = f.nonFormattedSelectedValue()
                 self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
                 
             } else
             if let f = MiscHelpers.CastEntryFormField(ef, Double.self) {
                 self.title = f.title
+                let text = f.nonFormattedSelectedValue()
+                textField.text = text
                 
                 if f.id.contains("temperature") {
                     valueType = "C˚"
-                    numberOfComponents = 2
-                    setupPickerView(withRangeIn: 34...40, withDefaultRow: 3)
+                    numberOfComponents = 1
+                    decimal = true
+                    setupPickerView(withRangeIn: 340...400, withDefaultRow: 30)
                 }
                 if f.allowedCharacters.count > 0 {
                     self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
@@ -293,23 +118,35 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
                 if f.placeHolder.count > 0 {
                     self.textField.placeholder = f.placeHolder
                 }
-                //self.textField.keyboardType = UIKeyboardType.numberPad
-                self.textField.text = f.nonFormattedSelectedValue()
+                              
                 self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
                 
             } else
             if let f = MiscHelpers.CastEntryFormField(ef, String.self) {
                 self.title = f.title
+                let text = f.nonFormattedSelectedValue()
+                textField.text = text
                 
                 if f.id.contains("interpreter") || f.id.contains("language") {
-                    print(title!)
-                    setupPickerString()
+                    if text.isEmpty {
+                        setupPickerString(selectedRow: nil)
+                    } else {
+                        if let row = getRowFromString(lang: text) {
+                            setupPickerString(selectedRow: row)
+                        } else {
+                            setupPickerString(selectedRow: nil)
+                        }
+                    }
                 }
                 if f.id.contains("respiratory") {
-                    setupPickerView(withRangeIn: 1...40, withDefaultRow: 15)
-                    valueType = ""
+                    if text.isEmpty {
+                        setupPickerView(withRangeIn: 1...40, withDefaultRow: 15)
+                    } else {
+                        if let value = Int(text) {
+                            setupPickerView(withRangeIn: 1...40, withDefaultRow: value - 1)
+                        }
+                    }
                 }
-                
                 if f.allowedCharacters.count > 0 {
                     self._characterSet = CharacterSet(charactersIn: f.allowedCharacters)
                 }
@@ -318,10 +155,8 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
                     self.textField.placeholder = f.placeHolder
                 }
                 self.textField.keyboardType = UIKeyboardType.default
-                self.textField.text = f.nonFormattedSelectedValue()
                 self.checkIfCanAttachPhotos(f.attachmentsSpec, addAttachmentAction: EntryFormAttachmentAddAction(action: self.addAttachment),entryFormField: f, doneButton: doneButton, attachmentsHeightConstraint: self.attachmentsSelectorViewHeightConstraint,numberOfAttachments: f.attachments.count)
             }
-            
             
             
             // Would be nice to add this from fucking interface builder
@@ -367,14 +202,11 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
     @objc func doneEditingAndReturn() {
         if pickerViewInt != nil {
             let selectedFirstRow = pickerViewInt.selectedRow(inComponent: 0)
-            var selectedSecondRow: Int = 0
             var text: String = ""
             text = (pickerDataInt.count > 0) ? "\(pickerDataInt[selectedFirstRow])" : ""
-            if numberOfComponents == 2, pickerDataDouble.count > 0 {
-                selectedSecondRow = pickerViewInt.selectedRow(inComponent: 1)
-                text = text + ".\(pickerDataDouble[selectedSecondRow])"
+            if numberOfComponents == 1, decimal {
+                text = "\((Double(pickerDataInt[selectedFirstRow]) * 0.1).roundToDecimal(1))"
             }
-            
             textField.text = text
         }
         if let doneEditingWrapper = self.doneEditing, let textField = self.textField.text, textField.count == 0 {
@@ -454,11 +286,7 @@ extension TextboxTypeFieldTypeViewController : UIPickerViewDelegate, UIPickerVie
         if pickerView == pickerViewString {
             return languageArray.count
         } else {
-            if component == 1 {
-                return pickerDataDouble.count
-            } else {
                 return pickerDataInt.count }
-        }
     }
     
     //    private func setupPickerData(withRangeIn range: ClosedRange<Int>) {
@@ -478,20 +306,19 @@ extension TextboxTypeFieldTypeViewController : UIPickerViewDelegate, UIPickerVie
     //    }
     
     private func setupPickerView(withRangeIn range: ClosedRange<Int>, withDefaultRow value: Int) {
-        pickerDataInt = Array(range)
         
+        pickerDataInt = Array(range)
         pickerViewInt = UIPickerView()
         pickerViewInt.delegate = self
         pickerViewInt.dataSource = self
         pickerViewInt.selectRow(value, inComponent: 0, animated: false)
-        let selectedFirstRow = pickerViewInt.selectedRow(inComponent: 0)
-        if numberOfComponents == 2 {
-            pickerViewInt.selectRow(0, inComponent: 1, animated: false)
-            let selectedSecondRow = pickerViewInt.selectedRow(inComponent: 1)
-            textField.text = "\(pickerDataInt[selectedFirstRow]).\(pickerDataDouble[selectedSecondRow])"
-        } else {
-            textField.text = "\(pickerDataInt[selectedFirstRow]) \(valueType)"
-        }
+        
+        let selectedRow = pickerViewInt.selectedRow(inComponent: 0)
+            if decimal {
+                textField.text = "\((Double(pickerDataInt[selectedRow]) * 0.1).roundToDecimal(1))  \(valueType)"
+            } else {
+                textField.text = "\(pickerDataInt[selectedRow]) \(valueType)"
+            }
         
         let toolBar = UIToolbar(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 44.0)))
         let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneEditingAndReturn))
@@ -500,16 +327,22 @@ extension TextboxTypeFieldTypeViewController : UIPickerViewDelegate, UIPickerVie
         
         textField.inputAccessoryView = toolBar
         textField.inputView = pickerViewInt
+        textField.tintColor = .clear
     }
     
-    private func setupPickerString() {
+    private func setupPickerString(selectedRow: Int?) {
         
         pickerViewString = UIPickerView()
         pickerViewString.delegate = self
         pickerViewString.dataSource = self
-        pickerViewString.selectRow(0, inComponent: 0, animated: false)
-        //textField.text = "\(pickerDataInt[selectedFirstRow]) \(valueType)"
         
+        if selectedRow != nil {
+            pickerViewString.selectRow(selectedRow!, inComponent: 0, animated: false)
+        } else {
+            pickerViewString.selectRow(0, inComponent: 0, animated: false)
+        }
+        
+                
         let toolBar = UIToolbar(frame: CGRect(origin: .zero, size: CGSize(width: 100, height: 44.0)))
         let button = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneEditingAndReturn))
         let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -517,17 +350,26 @@ extension TextboxTypeFieldTypeViewController : UIPickerViewDelegate, UIPickerVie
         
         textField.inputAccessoryView = toolBar
         textField.inputView = pickerViewString
+        textField.tintColor = .clear
+    }
+    
+    private func getRowFromString(lang: String) -> Int? {
+        for (idx,text) in languageArray.enumerated() {
+            if text == lang {
+                return Int(idx)
+            }
+        }
+        return nil
     }
     
     func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == pickerViewString {
             return languageArray[row]
         } else {
-            if component == 1 {
-                return "\(pickerDataDouble[row])"
-            } else {
-                return "\(pickerDataInt[row]) \(valueType)"
+            if decimal {
+                return "\((Double(pickerDataInt[row]) * 0.1).roundToDecimal(1)) \(valueType)"
             }
+            return "\(pickerDataInt[row]) \(valueType)"
         }
     }
     
@@ -535,16 +377,10 @@ extension TextboxTypeFieldTypeViewController : UIPickerViewDelegate, UIPickerVie
         if pickerView == pickerViewString {
             textField.text = languageArray[row]
         } else {
-            if numberOfComponents == 2 {
-                if component == 0 {
-                    let selectedSecondRow = pickerViewInt.selectedRow(inComponent: 1)
-                    textField.text = "\(pickerDataInt[row]).\(pickerDataDouble[selectedSecondRow])"
-                } else {
-                    let selectedFirstRow = pickerViewInt.selectedRow(inComponent: 0)
-                    textField.text = "\(pickerDataInt[selectedFirstRow]).\(pickerDataDouble[row])"
-                }
+            if decimal {
+                textField.text = "\((Double(pickerDataInt[row]) * 0.1).roundToDecimal(1)) \(valueType)"
             } else {
-                textField.text = "\(pickerDataInt[row])"
+                textField.text = "\(pickerDataInt[row]) \(valueType)"
             }
         }
     }
