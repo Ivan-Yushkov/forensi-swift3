@@ -349,7 +349,7 @@ open class EntryFormBaseFieldType<TBaseType: Equatable>: EntryFormFieldContainer
     }
     
     open func isValueSelected(_ value: (TBaseType, String)) -> Bool {
-        if let sv = self.selectedValues {
+        if let sv = selectedValues {
             for i in 0..<sv.count {
                 let e = sv[i]
                 if e.0 == value.0 {

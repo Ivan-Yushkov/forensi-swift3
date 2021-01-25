@@ -136,6 +136,20 @@ open class EntryFormDetailsFactory : NSObject, UITableViewDataSource, UITableVie
         return .none
     }
     
+    private func sortEntryFormsArray(array: [EntryForm]) -> [EntryForm] {
+        let df = DateFormatter()
+        df.dateFormat = "yyyy-MM-dd-HH-mm-ss"
+        var sortedArray = [EntryForm]()
+        
+        sortedArray = array.sorted(by: {
+            let a = $0.SavedInFolder
+            let b = $1.SavedInFolder
+            return df.date(from: a) < df.date(from: b)
+        })
+        
+        return sortedArray
+    }
+    
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return _entryForms.count
     }
@@ -145,7 +159,9 @@ open class EntryFormDetailsFactory : NSObject, UITableViewDataSource, UITableVie
     }
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        let entryForm = _entryForms[indexPath.row]
+
+        let sorted = sortEntryFormsArray(array: _entryForms)
+        let entryForm = sorted[indexPath.row] //_entryForms[indexPath.row]
         
         if let d = _delegate {
             if let cell = d.getTableView(entryForm) {

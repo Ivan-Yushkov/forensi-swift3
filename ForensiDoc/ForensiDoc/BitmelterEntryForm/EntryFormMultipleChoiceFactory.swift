@@ -51,6 +51,21 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
     fileprivate var _cellsState = [Int:Bool]()
     fileprivate var _isRadioType = false
     
+    //if no selected ( cell 1 true) - show comments
+    fileprivate var displayComments = false {
+        didSet {
+            print(displayComments)
+            shouldRefresh()
+        }
+    }
+    
+    //check ID and orientatedEntryField
+    fileprivate var entryFieldID: String = ""
+    fileprivate var orientatedEntryField = false
+    //change this value only once we click the box
+    fileprivate var didChangeSelection = false
+        
+    
     public init(tableView: UITableView, entryForm: EntryForm, entryField: Any, delegate: EntryFormMultipleChoiceDelegate) {
         _entryForm = entryForm
         _entryField = entryField
@@ -69,6 +84,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
             _displayLabel = f.displayLabel
         } else if let f = MiscHelpers.CastEntryFormField(entryField, String.self) {
             _displayLabel = f.displayLabel
+            entryFieldID = f.id
         } else {
             _displayLabel = ""
         }
@@ -85,6 +101,8 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
             initCellStatesDictionary(f)
         }
         
+        checkCellStates()
+        
         let bundle = Bundle.main
         let nibRadioCheckBox = UINib(nibName: "RadioCheckboxViewCell", bundle: bundle)
         tableView.register(nibRadioCheckBox, forCellReuseIdentifier: _textCellIdentifier)
@@ -95,6 +113,10 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
         let nibComments = UINib(nibName: "CommentsViewCell", bundle: bundle)
         tableView.register(nibComments, forCellReuseIdentifier: _commentsCellIdentifier)
         
+        //TODO: add new cell with picker for lang
+//        let nibPicker = UINib(nibName: "PickerViewCell", bundle: bundle)
+//        tableView.register(nibComments, forCellReuseIdentifier: _commentsCellIdentifier)
+        
         let nibDisplayLabel = UINib(nibName: "DisplayLabelViewCell", bundle: bundle)
         tableView.register(nibDisplayLabel, forCellReuseIdentifier: _displayLabelCellIdentifier)
         
@@ -103,7 +125,16 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
     fileprivate func initCellStatesDictionary<T>(_ f: EntryFormBaseFieldType<T>) {
         self._isRadioType = MiscHelpers.IsRadio(f)
         for (idx,value) in f.values.enumerated() {
-            self._cellsState[idx] = f.isValueSelected(value)
+            _cellsState[idx] = f.isValueSelected(value)
+            
+        }
+    }
+    
+    fileprivate func checkCellStates() {
+        if let first = _cellsState[0], let second = _cellsState[1], second {
+            displayComments = true
+        } else {
+            displayComments = false
         }
     }
     
@@ -118,6 +149,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
     fileprivate func getCommentsCell() -> CommentsViewCell? {
         return _getOwnCell("CommentsViewCell", type: CommentsViewCell.self)
     }
+    //TODO: add picker cell
     
     fileprivate func getDisplayLabelCell() -> DisplayLabelViewCell? {
         return _getOwnCell("DisplayLabelViewCell", type: DisplayLabelViewCell.self)
@@ -153,46 +185,56 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
     
     open func numberOfSections(in tableView: UITableView) -> Int {
         var ret = 1
-        self._sectionPleaseSelectOrTitle = 0
+        _sectionPleaseSelectOrTitle = 0
         if let f = MiscHelpers.CastEntryFormField(_entryField, Int.self) {
             if f.attachmentsSpec.AllowsAttachments {
-                self._sectionImages = 1
+                _sectionImages = 1
                 ret = 2
             }
             if let _ = f.fieldComments {
-                self._sectionComments = self._sectionImages > -1 ? self._sectionImages + 1 : 1
+                _sectionComments = _sectionImages > -1 ? _sectionImages + 1 : 1
                 ret = ret + 1
             }
         } else if let f = MiscHelpers.CastEntryFormField(_entryField, Float.self) {
             if f.attachmentsSpec.AllowsAttachments {
-                self._sectionImages = 1
+                _sectionImages = 1
                 ret = 2
             }
             if let _ = f.fieldComments {
-                self._sectionComments = self._sectionImages > -1 ? self._sectionImages + 1 : 1
+                _sectionComments = _sectionImages > -1 ? _sectionImages + 1 : 1
                 ret = ret + 1
             }
         } else if let f = MiscHelpers.CastEntryFormField(_entryField, Double.self) {
             if f.attachmentsSpec.AllowsAttachments {
-                self._sectionImages = 1
+                _sectionImages = 1
                 ret = 2
             }
             if let _ = f.fieldComments {
-                self._sectionComments = self._sectionImages > -1 ? self._sectionImages + 1 : 1
+                _sectionComments = _sectionImages > -1 ? _sectionImages + 1 : 1
                 ret = ret + 1
             }
         } else if let f = MiscHelpers.CastEntryFormField(_entryField, String.self) {
             if f.attachmentsSpec.AllowsAttachments {
-                self._sectionImages = 1
+                _sectionImages = 1
                 ret = 2
             }
             
             //if  radio b with comment textfield
             //_sectionComments gets 1 or sectionImages + 1
             // return 2 sections or more in case of images
-            if let _ = f.fieldComments {
-                self._sectionComments = self._sectionImages > -1 ? self._sectionImages + 1 : 1
-                ret = ret + 1
+            
+            if let _ = f.fieldComments  {
+                if entryFieldID.contains("orientated") {
+                    orientatedEntryField = true
+                    if displayComments {
+                    _sectionComments = _sectionImages > -1 ? _sectionImages + 1 : 1
+                    ret = ret + 1
+                    }
+                } else {
+                    orientatedEntryField = false
+                    _sectionComments = _sectionImages > -1 ? _sectionImages + 1 : 1
+                    ret = ret + 1
+                }
             }
         }
         return ret
@@ -213,7 +255,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
         if isUsingDisplayLabel() && indexPath.section == self._sectionPleaseSelectOrTitle && indexPath.row == 0 {
             return 80
         }
-        if indexPath.section == self._sectionComments {
+        if indexPath.section == _sectionComments {
             return 160
         }
         return 44
@@ -260,7 +302,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
             } else if let f = MiscHelpers.CastEntryFormField(_entryField, String.self) {
                 ret = f.attachments.count
             }
-        } else if section == self._sectionComments {
+        } else if section == _sectionComments {
             return 1
         }
         
@@ -330,7 +372,7 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
                 
                 return cc
             }
-        } else if indexPath.section == self._sectionComments {
+        } else if indexPath.section == _sectionComments {
             var c:CommentsViewCell? = .none
             if let cDeque = tableView.dequeueReusableCell(withIdentifier: _commentsCellIdentifier) as? CommentsViewCell {
                 c = cDeque
@@ -354,7 +396,20 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
                     }
                 } else if let f = MiscHelpers.CastEntryFormField(_entryField, String.self) {
                     if let c = f.fieldComments?.value {
+                        //orientated entry field
+                        if displayComments, orientatedEntryField {
+                            if c.isEmpty {
+                                existingComments = ""
+                            } else {
+                                existingComments = c
+                            }
+                        } else {
+                            //for other entryFields
                         existingComments = c
+                        }
+                        if didChangeSelection {
+                            existingComments = ""
+                        }
                     }
                 }
                 cc.delegate = self
@@ -402,7 +457,6 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
     
     //didSelect
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        print("\(self) \(indexPath.row)")
         if indexPath.section == self._sectionPleaseSelectOrTitle {
             if isUsingDisplayLabel() && indexPath.row == 0 {
                 return
@@ -417,8 +471,20 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
             } else if let f = MiscHelpers.CastEntryFormField(_entryField, String.self) {
                 selectUnselectValueForIndexPath(indexPath, f: f)
             }
-            let selection = _cellsState[indexPath.row]
-            print(selection as Any)
+            if let selection = _cellsState[indexPath.row] {
+                if indexPath.row == 1 {
+                    displayComments = selection
+                    didChangeSelection = true
+                }
+                if indexPath.row == 0 {
+                    displayComments = !selection
+                    didChangeSelection = true
+                }
+            }
+            print("\(self) \(indexPath.row)")
+            
+            print(indexPath.section)
+            
         }
     }
     
@@ -459,10 +525,10 @@ open class EntryFormMultipleChoiceFactory: NSObject, UITableViewDataSource, UITa
             }
         } else {
             if let tv = _tableView {
-                if self._isRadioType {
-                    if let _ = self.lastIndex {
-                        for (_, el) in self._cellsState.enumerated() {
-                            self._cellsState[el.0] = r == el.0
+                if _isRadioType {
+                    if let _ = lastIndex {
+                        for (_, el) in _cellsState.enumerated() {
+                            _cellsState[el.0] = r == el.0
                         }
                     }
                 }

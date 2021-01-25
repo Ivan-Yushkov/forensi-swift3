@@ -187,6 +187,7 @@ open class EntryForm: JSONConvertible {
             let fileManager:FileManager = FileManager.default
             let document = documents[0]
             let fileList = listFilesFromDocumentsFolder(self.SavedInFolder)
+            //TODO: change name (U1 digit) by files with same date
             foldersCount = fileList.count
             for file in fileList {
                 let u = URL(fileURLWithPath: document).appendingPathComponent(self.SavedInFolder).appendingPathComponent(file)
@@ -336,9 +337,9 @@ open class EntryForm: JSONConvertible {
             
             let fileList = listFilesFromDocumentsFolder(self.SavedInFolder)
             foldersCount = fileList.count
-            
-            reportDate = "U\(foldersCount + 1) " + df.string(from: Date())
-            _savedAsTitle = reportDate
+            //TODO: set _savedAsTitle correctly, change U1
+            reportDate = df.string(from: Date())
+            _savedAsTitle = "U\(foldersCount + 1) " + reportDate
             let fileManager = FileManager.default
 //MARK: fix2020
            // let paths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)

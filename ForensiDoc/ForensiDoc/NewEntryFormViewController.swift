@@ -72,18 +72,18 @@ class NewEntryFormViewController: BaseViewController, EntryFormAddNewFactoryProt
             svc.preferredDisplayMode = .allVisible
         }
         
-        if let ef = self.entryForm {
+        if let ef = entryForm {
             NotificationCenter.default.addObserver(self, selector: #selector(NewEntryFormViewController.entryFormAttachmentAdded(_:)), name:NSNotification.Name(rawValue: EntryForm.ATTACHMENT_ADDED_NOTIFICATION), object: nil)
-            _factory = EntryFormAddNewFactory(entryForm: ef, subGroup: subGroup, tableView: self.mainTbl, delegate: self)
-            self.mainTbl.dataSource = _factory
-            self.mainTbl.delegate = _factory
-            if let vc = self.navigationController?.viewControllers, vc.count >= 2 {
+            _factory = EntryFormAddNewFactory(entryForm: ef, subGroup: subGroup, tableView: mainTbl, delegate: self)
+            mainTbl.dataSource = _factory
+            mainTbl.delegate = _factory
+            if let vc = navigationController?.viewControllers, vc.count >= 2 {
                 if ef.canAddAttachments() {
                     let previous = vc[vc.count - 2]
                     if !(previous is NewEntryFormViewController) {
                         _addAttachmentsButton = UIBarButtonItem(image: UIImage(named: "Btn-Attachment"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(NewEntryFormViewController.addAttachmentsButtonTapped(_:)))
-                        self.attachmentsSpec = ef.AttachmentsSpec
-                        self.navigationItem.setRightBarButton(_addAttachmentsButton, animated: true)
+                        attachmentsSpec = ef.AttachmentsSpec
+                        navigationItem.setRightBarButton(_addAttachmentsButton, animated: true)
                     }
                 }
             }

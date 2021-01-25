@@ -58,6 +58,7 @@ class EntryFormDetailsViewController: BaseViewController, EntryFormDetailFactory
             entryFormId = ef.FormId
         }
         
+        //packed TableView
         _entryFormFactory = EntryFormDetailsFactory(tableView:self.mainTbl, repository: ForensiDocEntryFormRepository(), formId: entryFormId, delegate: self)
         self.mainTbl.dataSource = _entryFormFactory
         self.mainTbl.delegate = _entryFormFactory
