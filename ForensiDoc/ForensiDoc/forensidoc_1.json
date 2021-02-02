@@ -3414,7 +3414,7 @@
             },
             {
                 "id": "witness_signature",
-                "title": "Witness Signature",
+                "title": "Examinee Witness",
                 "type": "Drawing",
                 "required": true,
                 "drawing_settings": {
@@ -3424,6 +3424,60 @@
                     "reset": true
                 }
             },
+            
+            {
+                
+                "group": "Additional Witnesses",
+                "title": "Additional Witnesses",
+                "id": "additional_witnesses",
+                "type": "MultipleEntry",
+                "required": false,
+                "basetype": "String",
+                "entry_type": "Textbox",
+                
+                "fields": [],
+                "allowed_attachments": {
+                    "images": true,
+                    "audio": false,
+                    "video": true,
+                    "drawings": {
+                        "allowed": true,
+                        "drawing_settings": {
+                            "color_settings": true,
+                            "eraser": true,
+                            "undo": true,
+                            "reset": true
+                        },
+                        "backgroundimages": [
+                            {
+                                "title": "Car Map",
+                                "img": "N-Car-Map.jpg"
+                            },
+                            {
+                                "title": "Crossroads",
+                                "img": "N-Crossroads.jpg"
+                            },
+                            {
+                                "title": "Dual Carriageway",
+                                "img": "N-Dual-carriageway.jpg"
+                            },
+                            {
+                                "title": "Roundabout",
+                                "img": "N-Roundabout.jpg"
+                            },
+                            {
+                                "title": "Straight Road",
+                                "img": "N-Straight-road.jpg"
+                            },
+                            {
+                                "title": "T Junction",
+                                "img": "N-T-junction.jpg"
+                            }
+                        ]
+                    }
+                }
+            },
+            
             {
                 "id": "assessment_completion_time",
                 "title": "Assessment Completion Time",

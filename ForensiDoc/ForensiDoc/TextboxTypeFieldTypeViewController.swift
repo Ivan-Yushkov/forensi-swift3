@@ -200,6 +200,7 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
     }
     
     @objc func doneEditingAndReturn() {
+        saveDataFromSignature()
         if pickerViewInt != nil {
             let selectedFirstRow = pickerViewInt.selectedRow(inComponent: 0)
             var text: String = ""
@@ -274,6 +275,66 @@ class TextboxTypeFieldTypeViewController: BaseViewController, UITextFieldDelegat
         DispatchQueue.main.async(execute: {
             self.navigationController?.popViewController(animated: true)
         })
+    }
+    
+    
+    private func saveDataFromSignature() {
+        let name = UserDefaults.standard.string(forKey: "name")
+        if name != "" {
+            var dictionary = [String: String]()
+            var array = [dictionary]
+            dictionary["signature"] = textField.text
+            dictionary["name"] = UserDefaults.standard.string(forKey: "name")
+            dictionary["address"] = UserDefaults.standard.string(forKey: "address")
+            dictionary["email"] = UserDefaults.standard.string(forKey: "email")
+            dictionary["telephone"] = UserDefaults.standard.string(forKey: "telephone")
+            dictionary["insurance"] = UserDefaults.standard.string(forKey: "insurance")
+            let jsonData = try! JSONSerialization.data(withJSONObject: dictionary, options: [])
+            let decoded = try! JSONSerialization.jsonObject(with: jsonData, options: [])
+            
+            saveArrayToDefaults(dictionary: dictionary)
+            //EntryForm.signatureJson.append(decoded)
+            deleteValuesFromDefaults()
+            
+//            if let documentDirectory = FileManager.default.urls(for: .documentDirectory,
+//                                                                in: .userDomainMask).first {
+//                let pathWithFilename = documentDirectory.appendingPathComponent(".json")
+//                do {
+//                    try jsonString.write(to: pathWithFilename,
+//                                         atomically: true,
+//                                         encoding: .utf8)
+//                } catch {
+//                    // Handle error
+//                }
+            //print(EntryForm.signatureJson)
+            fromDefaultsToJSON()
+        }
+    }
+    
+    private func deleteValuesFromDefaults() {
+        UserDefaults.standard.set("", forKey: "name")
+        UserDefaults.standard.set("", forKey: "address")
+        UserDefaults.standard.set("", forKey: "email")
+        UserDefaults.standard.set("", forKey: "telephone")
+        UserDefaults.standard.set("", forKey: "insurance")
+    }
+    
+    private func saveArrayToDefaults(dictionary: [String: String]) {
+        var defaultsArray = UserDefaults.standard.array(forKey: "array") as? [[String: String]]
+        defaultsArray?.append(dictionary)
+        UserDefaults.standard.set(defaultsArray, forKey: "array")
+    }
+    
+    private func fromDefaultsToJSON() {
+        guard let array = UserDefaults.standard.array(forKey: "array") as? [[String: String]] else { return }
+        var signatures = [Signature]()
+        for dict in array {
+            let signature = Signature(dictionary: dict)
+            signatures.append(signature)
+        }
+        let jsonData = try! JSONEncoder().encode(signatures)
+        let decodedSignatures = try! JSONSerialization.jsonObject(with: jsonData, options: [])
+        print(decodedSignatures)
     }
 }
 extension TextboxTypeFieldTypeViewController : UIPickerViewDelegate, UIPickerViewDataSource {

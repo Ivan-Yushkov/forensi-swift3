@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AttachmentsSelectorView" customModule="ForensiDoc" customModuleProvider="target">
             <connections>
+                <outlet property="addressTextField" destination="apy-jV-jMH" id="dvm-nL-Vd4"/>
+                <outlet property="emailTextField" destination="rP3-6P-juc" id="iMp-UW-gcf"/>
+                <outlet property="insuranceTextField" destination="hhy-mp-LaX" id="tNv-5v-bMZ"/>
                 <outlet property="lblNumberOfAttachments" destination="Bri-oG-Xfu" id="yQF-LC-GMc"/>
+                <outlet property="nameTextField" destination="jbp-ao-upl" id="kSt-ol-weH"/>
+                <outlet property="telephoneTextField" destination="6Yf-Lm-1d0" id="0IZ-cx-QH7"/>
                 <outlet property="view" destination="iN0-l3-epB" id="lFA-x2-wyt"/>
             </connections>
         </placeholder>
@@ -28,7 +33,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attachments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7SE-Ln-d6v">
-                    <rect key="frame" x="46" y="437.5" width="98" height="21"/>
+                    <rect key="frame" x="46" y="437.5" width="97" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -40,17 +45,57 @@
                         <action selector="addAttachmentsBtnTapped:" destination="-1" eventType="touchUpInside" id="msN-Gx-3Fb"/>
                     </connections>
                 </button>
+                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jbp-ao-upl">
+                    <rect key="frame" x="20" y="565" width="374" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apy-jV-jMH">
+                    <rect key="frame" x="20" y="607" width="374" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField hidden="YES" opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rP3-6P-juc">
+                    <rect key="frame" x="20" y="649" width="374" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField hidden="YES" opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telephone:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Yf-Lm-1d0">
+                    <rect key="frame" x="20" y="691" width="374" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField hidden="YES" opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Insurance Details:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hhy-mp-LaX">
+                    <rect key="frame" x="20" y="733" width="374" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="6Yf-Lm-1d0" secondAttribute="trailing" constant="20" symbolic="YES" id="0PR-IK-pvc"/>
                 <constraint firstItem="Bri-oG-Xfu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="1EE-g4-WGw"/>
+                <constraint firstItem="apy-jV-jMH" firstAttribute="top" secondItem="jbp-ao-upl" secondAttribute="bottom" constant="8" symbolic="YES" id="1h7-E8-UfD"/>
                 <constraint firstItem="73C-TO-u9n" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="7IC-cb-Y9M"/>
+                <constraint firstItem="jbp-ao-upl" firstAttribute="top" secondItem="73C-TO-u9n" secondAttribute="bottom" constant="100" id="8v3-MS-BZ9"/>
+                <constraint firstAttribute="trailing" secondItem="rP3-6P-juc" secondAttribute="trailing" constant="20" symbolic="YES" id="Gb3-IM-SeM"/>
+                <constraint firstItem="hhy-mp-LaX" firstAttribute="top" secondItem="6Yf-Lm-1d0" secondAttribute="bottom" constant="8" symbolic="YES" id="Gcw-PM-Vfn"/>
+                <constraint firstItem="6Yf-Lm-1d0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="GhO-G1-0he"/>
                 <constraint firstItem="Bri-oG-Xfu" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GuS-uF-v7g"/>
+                <constraint firstAttribute="trailing" secondItem="apy-jV-jMH" secondAttribute="trailing" constant="20" symbolic="YES" id="HEA-Ft-zJn"/>
                 <constraint firstAttribute="trailing" secondItem="73C-TO-u9n" secondAttribute="trailing" constant="8" id="Kms-7i-yTt"/>
                 <constraint firstItem="7SE-Ln-d6v" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="O6C-bv-d7L"/>
                 <constraint firstItem="7SE-Ln-d6v" firstAttribute="leading" secondItem="Bri-oG-Xfu" secondAttribute="trailing" constant="7.5" id="QGn-1P-pb2"/>
+                <constraint firstItem="rP3-6P-juc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="fYb-XL-qzy"/>
+                <constraint firstAttribute="trailing" secondItem="jbp-ao-upl" secondAttribute="trailing" constant="20" symbolic="YES" id="ibP-mP-nsd"/>
+                <constraint firstItem="6Yf-Lm-1d0" firstAttribute="top" secondItem="rP3-6P-juc" secondAttribute="bottom" constant="8" symbolic="YES" id="jEk-WC-XOK"/>
+                <constraint firstItem="apy-jV-jMH" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="qcD-x9-u4q"/>
+                <constraint firstAttribute="trailing" secondItem="hhy-mp-LaX" secondAttribute="trailing" constant="20" symbolic="YES" id="qd1-Db-jRH"/>
+                <constraint firstItem="rP3-6P-juc" firstAttribute="top" secondItem="apy-jV-jMH" secondAttribute="bottom" constant="8" symbolic="YES" id="uUs-yS-21j"/>
+                <constraint firstItem="hhy-mp-LaX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="vOR-eB-ldk"/>
+                <constraint firstItem="jbp-ao-upl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="xge-yT-GSo"/>
             </constraints>
-            <point key="canvasLocation" x="43" y="-25.75"/>
+            <point key="canvasLocation" x="42.028985507246382" y="-26.116071428571427"/>
         </view>
     </objects>
     <resources>

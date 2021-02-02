@@ -30,6 +30,9 @@ class MultipleEntryViewController: BaseViewController, EntryFormFieldDoneEditing
     }
     
     @objc func addNewEntryButtonTapped(_ sender: AnyObject) {
+        if title == "Additional Witnesses" {
+            UserDefaults.standard.set(true, forKey: "isTextfieldNeed")
+        }
         if let eField = self._entryField, let ef = self.entryForm {
             if let baseType = eField.baseType, let fieldType = eField.fieldType {
                 switch baseType {

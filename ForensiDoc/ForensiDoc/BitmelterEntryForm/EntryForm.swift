@@ -7,6 +7,7 @@ import Foundation
 
 open class EntryForm: JSONConvertible {
     public static let ATTACHMENT_ADDED_NOTIFICATION = "ATTACHMENT_ADDED_NOTIFICATION"
+   // public static var signatureJson = [Any]()
     
     fileprivate var _fields: [Any] = []
     fileprivate var _hiddenGroups = [String]()
